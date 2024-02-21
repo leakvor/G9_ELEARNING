@@ -7,6 +7,7 @@ $routes = [
     '/trainer-classroom' => 'controllers/classroom/classroom.controller.php',
     '/displayCategory'=>'controllers/category/displayCategory.controller.php',
     '/createcategory'=>'controllers/category/createCategory.controller.php',
+    '/updatecategory'=>'controllers/category/updateCategory.controller.php',
 
 ];
 

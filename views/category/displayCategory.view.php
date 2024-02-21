@@ -49,9 +49,8 @@
           <tr>
             <th scope="row"><?= $category['cat_id'] ?></th>
             <td><?= $category['cateName'] ?></td>
-            <td><i class="fa fa-trash" style="color:red;"><a href=""></a></i>
-              <i class="fa fa-edit" style="color:blue;"><a href=""></a></i>
-            </td>
+            <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>"><i class="fa fa-trash" style="color:red;"></i></a>
+            <a href="views/category/editCategory.view.php?id=<?=$category['cat_id'] ?>"><i class="fa fa-edit" style="color:blue;"></i></a>
           </tr>
         <?php endforeach ?>
       </tbody>
