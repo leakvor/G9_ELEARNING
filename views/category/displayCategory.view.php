@@ -16,7 +16,7 @@
   <!-- ----Madal body--- -->
   <div class="modal-body">
     <div class="modal-body">
-    <form action="controllers/categories/createCategory.controller.php" method="post">
+    <form action="controllers/category/createCategory.controller.php" method="post">
                 <div class="form-group">
                     <label for="category">Name category:</label>
                     <input type="text" class="form-control bg-white" name="cateName">
