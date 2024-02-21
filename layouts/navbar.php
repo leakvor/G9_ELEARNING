@@ -298,13 +298,24 @@
       </div> -->
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-          <img class="rounded-circle me-lg-2" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
+          <img class="rounded-circle me-lg-2" src="assets/images/testimonial-2.jpg" alt="" style="width: 40px; height: 40px;">
           <span class="d-none d-lg-inline-flex"><?php echo $user['username']?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-end bg-dark border-0 rounded-0 rounded-bottom m-0">
-          <a href="#" class="dropdown-item">My Profile</a>
-          <a href="#" class="dropdown-item">Settings</a>
-          <a href="controllers/logout/logout.controller.php" class="dropdown-item">Log Out</a>
+          <!-- <a href="views/profile/form.profile.view.php" class="dropdown-item" id="profile">My Profile</a> -->
+          <li class="dropdown-submenu">
+              <!-- <a class="dropdown-item dropdown-toggle" href="#">My Profile</a> -->
+              <div class="card dropdown-menu" data-bs-popper="none">
+                <img src="assets/images/testimonial-2.jpg" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 100px; height: 85px">
+                <h5 class="card-title dropdown-item"><?php echo $user['username']?></h5>
+                <p class="card-text dropdown-item">consectetur adipiscing elit. Fusce consectetur feugiat metus, vitae lacinia velit aliquet vitae.</p>
+                <input type="file" name="name" class="form-control custom-file-input" id="imageUpload" accept="image/*">
+                <a href="views/profile/form.profile.view.php" class="btn btn-primary">Edit Profile</a>
+            </div>
+          </li>
+
+          <li><a href="#" class="dropdown-item">Settings</a></li>
+          <li><a href="controllers/logout/logout.controller.php" class="dropdown-item">Log Out</a></li>
         </div>
       </div>
       <?php
@@ -318,4 +329,4 @@
   </header>
 <!-- Header END -->
 
-<!-- **************** MAIN CONTENT START **************** -->
+<!-- **************** MAIN CONTENT START **************** -
