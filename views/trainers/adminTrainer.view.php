@@ -32,14 +32,15 @@
               <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
               </div>
+              <button class="btn btn-danger mt-3">Create</button>
           </div>
-          <button class="btn btn-danger mt-3">Create</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar">
   <table class="table table-bordered table-striped mb-0">
@@ -71,6 +72,7 @@
     </tbody>
   </table>
 
+</div>
 </div>
 </div>
 
