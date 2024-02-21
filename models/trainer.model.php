@@ -9,15 +9,16 @@ function getTeacher() : array
 }
 
 
-function createTrainer(string $username, string $email, string $password) : bool
+function createTrainer(string $username, string $email, string $password, string $img) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (username,email,password,role) values (:username, :email,:password,:role)");
+    $statement = $connection->prepare("insert into users (username,email,password,role,img) values (:username, :email,:password,:role,:img)");
     $statement->execute([
         ':username'=>$username,
         ':email'=>$email,
         ':password'=>$password,
         ':role'=>"teacher",
+        ':img'=>$img,
 
     ]);
 
