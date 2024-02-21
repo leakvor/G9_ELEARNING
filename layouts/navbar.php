@@ -1,6 +1,6 @@
 
 <!-- Header START -->
-<header class="navbar-light navbar-sticky navbar-transparent">
+<header class="navbar-light bg-light navbar-sticky navbar-transparent">
   <!-- Logo Nav START -->
   <nav class="navbar navbar-expand-xl">
     <div class="container">
@@ -259,20 +259,6 @@
       </div>
   
       <!-- Language -->
-      <!-- <div class="dropdown ms-1 ms-lg-0">
-        <a class="nav-link" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
-          aria-expanded="true">
-          <i class="fas fa-globe me-2"></i>
-            <span class="d-none d-lg-inline-block">Language</span>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end min-w-auto shadow pt-3" aria-labelledby="profileDropdown">
-          <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/uk.svg" alt="">English</a></li>
-          <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/gr.svg" alt="">German</a></li>
-          <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li>
-        </ul>
-      </div> -->
-  
-      <!-- Language -->
       <ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -286,15 +272,49 @@
           </ul>
         </li>
       </ul>
-  
+
+      <!-- get start session -->
+      <?php
+        if (!isset($_SESSION['user'])){
+      ?>
       <!-- Signout button  -->
       <div class="navbar-nav d-none d-lg-inline-block">
-        <button class="btn btn-danger-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</button>
+        <a href="/signups" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Sign Up</a>
+        <a href="/signins" type="button" class="btn text-dark btn-dark-soft mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log in</a>
       </div>
+      <?php
+        }
+      ?>
+
+      <?php
+      if (isset($_SESSION['user'])){
+        $user = $_SESSION['user'];
+        
+      ?>
+      <!-- <div class="d-flex align-items-center">
+        <div class="navbar-nav d-none d-lg-inline-block">
+          <a href="controllers/logout.controller.php" type="button" class="btn text-dark mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log out</a>
+        </div>
+        <h3 class="btn-dark-soft p-2"><?php echo $user['firstName']?></h3>
+      </div> -->
+      <div class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+          <img class="rounded-circle me-lg-2" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
+          <span class="d-none d-lg-inline-flex"><?php echo $user['firstName']?></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end bg-dark border-0 rounded-0 rounded-bottom m-0">
+          <a href="#" class="dropdown-item">My Profile</a>
+          <a href="#" class="dropdown-item">Settings</a>
+          <a href="controllers/logout.controller.php" class="dropdown-item">Log Out</a>
+        </div>
+      </div>
+      <?php
+      }
+      ?>
       <!-- Right header content END -->
-    
-    </div>
+      
   </nav>
+
   <!-- Logo Nav END -->
   </header>
 <!-- Header END -->
