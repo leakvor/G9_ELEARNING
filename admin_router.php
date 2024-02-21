@@ -10,6 +10,8 @@ $routes = [
     '/createcategory'=>'controllers/category/createCategory.controller.php',
     '/updatecategory'=>'controllers/category/updateCategory.controller.php',
 
+    '/adminTrainer' => 'controllers/trainers/adminTrainer.controller.php',
+    '/addTrainer' => 'controllers/trainers/addTrainer.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
