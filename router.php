@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 $routes = [
