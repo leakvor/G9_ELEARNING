@@ -9,6 +9,8 @@ $routes = [
     // LOG------------------->
     '/signups' => 'controllers/signup/signup.controler.php',
     '/signins' => 'controllers/signin/signin.controller.php',
+    // '/trainers' => 'controllers/trainers/trainer.controller.php',
+    '/displayCategory'=>'controllers/category/displayCategory.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {

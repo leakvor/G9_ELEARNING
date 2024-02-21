@@ -1,4 +1,4 @@
-
+<?php require "models/category.model.php"?>
 <!-- Header START -->
 <header class="navbar-light bg-light navbar-sticky navbar-transparent">
   <!-- Logo Nav START -->
@@ -20,7 +20,7 @@
       <!-- Category menu START -->
       <ul class="navbar-nav navbar-nav-scroll dropdown-clickable">
         <li class="nav-item dropdown dropdown-menu-shadow-stacked">
-          <a class="nav-link" href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" href="" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="bi bi-grid-3x3-gap-fill me-3 fs-5 me-xl-1 d-xl-none"></i>
             <i class="bi bi-grid-3x3-gap-fill me-1 d-none d-xl-inline-block"></i>
             <span class="d-none d-xl-inline-block">Category</span>
@@ -30,32 +30,12 @@
   
             <!-- Dropdown submenu -->
             <li class="dropdown-submenu dropend">
-              <a class="dropdown-item dropdown-toggle" href="#">Development</a>
               <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-                <!-- dropdown submenu open right -->
-                <li class="dropdown-submenu dropend z-index-unset">
-                  <a class="dropdown-item dropdown-toggle" href="#">Web development</a>
-                  <ul class="dropdown-menu" data-bs-popper="none">
-                    <li> <a class="dropdown-item" href="#">Css</a> </li>
-                    <li> <a class="dropdown-item" href="#">Java script</a> </li>
-                    <li> <a class="dropdown-item" href="#">Angular</a> </li>
-                    <li> <a class="dropdown-item" href="#">Php</a> </li>
-                    <li> <a class="dropdown-item" href="#">HTML</a> </li>
-                    <li> <a class="dropdown-item" href="#">React</a> </li>
-                  </ul>
-                </li>
-                <li> <a class="dropdown-item" href="#">Data science</a> </li>
-                <li> <a class="dropdown-item" href="#">Mobile development</a> </li>
-                <li> <a class="dropdown-item" href="#">Programing language</a> </li>
-                <li> <a class="dropdown-item" href="#">Software testing</a> </li>
-                <li> <a class="dropdown-item" href="#">Software engineering</a> </li>
-                <li> <a class="dropdown-item" href="#">Software development tools</a> </li>
               </ul>
             </li>
-            <li> <a class="dropdown-item" href="#">Design</a></li>
             <!-- Dropdown submenu -->
             <li class="dropdown-submenu dropend">
-              <a class="dropdown-item dropdown-toggle" href="#">Marketing</a>
+              <!-- <a class="dropdown-item dropdown-toggle" href="#">Marketing</a> -->
               <div class="dropdown-menu dropdown-menu-start dropdown-width-lg" data-bs-popper="none">
                 <div class="row p-4">
                   <!-- Dropdown column item -->
@@ -184,10 +164,7 @@
                       </div>
                     </div>
                   </div>
-  
-  
                 </div>
-  
                 <!-- Advertisement -->
                 <div class="row d-none">
                   <div class="col-12">
@@ -216,14 +193,15 @@
                 </div>
               </div>
             </li>
-            <li> <a class="dropdown-item" href="#">Music</a></li>
-            <li> <a class="dropdown-item" href="#">Lifestyle</a></li>
-            <li> <a class="dropdown-item" href="#">IT & software</a></li>
-            <li> <a class="dropdown-item" href="#">Personal development</a></li>
-            <li> <a class="dropdown-item" href="#">Health & fitness</a></li>
-            <li> <a class="dropdown-item" href="#">Teaching</a></li>
-            <li> <a class="dropdown-item" href="#">Social science</a></li>
-            <li> <a class="dropdown-item" href="#">Math & logic</a></li>
+            <!-- ---------view all category--------------- -->
+            <?php 
+            $categories=getCategorys();
+           foreach ($categories as $key => $category) {
+            ?>
+            <li> <a class="dropdown-item" href="#"><?=$category['cateName']?></a></li>
+            <?php
+           }
+            ?>
             <li> <hr class="dropdown-divider"></li>
             <li> <a class="dropdown-item bg-primary text-primary bg-opacity-10 rounded-2 mb-0" href="#">View all categories</a></li>
           </ul>
@@ -257,6 +235,7 @@
           <span class="visually-hidden">unread messages</span>
         </span>
       </div>
+  
   
       <!-- Language -->
       <ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
