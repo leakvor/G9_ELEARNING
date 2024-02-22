@@ -56,5 +56,5 @@ if(empty($_POST['title']) || empty($_POST['teacher'])|| empty($_POST['category']
 <?php
 $courses=getCourse();
 // header('Location: /adminCourse');
-// require "views/course/adminCourse.view.php";
+require "views/course/adminCourse.view.php";
 
