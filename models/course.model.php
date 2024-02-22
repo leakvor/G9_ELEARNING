@@ -25,7 +25,7 @@ function createCourse( string $title,string $img,int $user_id,int $cate_id)
 function deleteCourse(int $id) : bool
 {
     global $connection;
-    $statement = $connection->prepare("delete from users where user_id = :id");
+    $statement = $connection->prepare("delete from course where course_id = :id");
     $statement->execute([':id' => $id]);
     return $statement->rowCount() > 0;
 }
