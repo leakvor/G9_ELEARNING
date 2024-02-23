@@ -44,12 +44,24 @@
         </tr>
       </thead>
       <tbody>
-      <?php foreach($categorys as $category):?>
+      <?php foreach ($categorys as $index => $category):?>
         
           <tr>
-            <th scope="row"><?= $category['cat_id'] ?></th>
+            <th scope="row"><?= $index+1 ?></th>
             <td><?= $category['cateName'] ?></td>
-            <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>"><i class="fa fa-trash" style="color:red;"></i></a>
+            <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
+            "onclick="return functionDelete()">
+            <i class="fa fa-trash" style="color:red;"></i></a>
+            <script>
+                        function functionDelete() {
+                          if (confirm("Are you sure you want to delete this category?")) {
+                            
+                            return true; // Proceed with deletion
+                          } else {
+                            return false; // Cancel deletion
+                          }
+                        }
+            </script>
             <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?=$category['cat_id'] ?>" style="cursor: pointer;color:blue;"></i>
             <div class="modal fade" id="editModal<?=$category['cat_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?=$category['cat_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
