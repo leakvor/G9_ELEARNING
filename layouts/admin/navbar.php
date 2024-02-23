@@ -19,7 +19,7 @@
              <a href="/adminTrainer" class="nav-item nav-link"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
              <a href="" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Students</a>
              <a href="/displayCategory" class="nav-item nav-link"><i class="far fa-folder-open me-2"></i>Category</a>
-             <a href="" class="nav-item nav-link"><i class="fas fa-book me-2"></i>Course</a>
+             <a href="/adminCourse" class="nav-item nav-link"><i class="fas fa-book me-2"></i>Course</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                  <div class="dropdown-menu bg-transparent border-0">
