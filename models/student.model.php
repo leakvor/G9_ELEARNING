@@ -43,3 +43,19 @@ function profile(string $email, string $image)
         return [];
     }
 }
+function getStudent() : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where role = 'user' ");
+    $statement->execute();
+    return $statement->fetchAll();
+}
+function deleteStudent(int $id) :bool
+{   
+    global $connection;
+    $statement = $connection->prepare("delete from users where user_id=:id");
+    $statement->execute([':id' => $id]);
+    $statement->fetchAll();
+    return $statement->rowCount() > 0;
+    
+}
