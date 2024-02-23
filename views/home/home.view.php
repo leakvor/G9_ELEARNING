@@ -93,7 +93,16 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-purple bg-opacity-10 rounded-circle text-purple"><i class="fas fa-tools"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Math &amp; Logic</a></h5>
+							<?php
+								if (isset($_SESSION['user'])){
+									$path = "views/profile/form.profile.view.php";  
+							?>
+							<?php
+								}else{
+									$path = "/signins";
+								}
+							?>
+							<h5 class="mb-0"><a href= <?=$path?> class="stretched-link">Math &amp; Logic</a></h5>
 							<span>89 Courses</span>
 						</div>
 					</div>

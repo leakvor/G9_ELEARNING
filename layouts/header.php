@@ -28,12 +28,14 @@
 
 	<!-- Bootstrap CSS
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+	/ -->
 	<style>
-		/* Custom CSS styles */
-		.profile-image {
-		cursor: pointer;
-		}
-	</style> -->
+		.dropdown-content a:hover {background-color: #ddd;}
+
+		.dropdown:hover .dropdown-content {display: block;}
+
+		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+	</style>
 
 </head>
 
