@@ -284,12 +284,12 @@
           <!-- <a href="views/profile/form.profile.view.php" class="dropdown-item" id="profile">My Profile</a> -->
           <li class="dropdown-submenu">
               <!-- <a class="dropdown-item dropdown-toggle" href="#">My Profile</a> -->
-              <div class="card dropdown-menu" data-bs-popper="none">
-                <img src="assets/images/testimonial-2.jpg" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 100px; height: 85px">
-                <h5 class="card-title dropdown-item"><?php echo $user['username']?></h5>
-                <p class="card-text dropdown-item">consectetur adipiscing elit. Fusce consectetur feugiat metus, vitae lacinia velit aliquet vitae.</p>
-                <input type="file" name="name" class="form-control custom-file-input" id="imageUpload" accept="image/*">
-                <a href="views/profile/form.profile.view.php" class="btn btn-primary">Edit Profile</a>
+              <div class="card dropdown-menu d-flex align-items-center" style="width:350px" data-bs-popper="none">
+                <img src="assets/images/testimonial-2.jpg" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 150px; height: 130px">
+                <h5 class="card-title dropdown-item text-center"><?php echo $user['username']?></h5>
+                <p class="card-text dropdown-item text-center"><?php echo $user['email']?></p>
+                <a href="views/profile/form.profile.view.php" class="btn btn-primary editProfile" style="width:100%">Edit Profile</a>
+                <input type="file" name="name" class="hidefile form-control custom-file-input" id="imageUpload" accept="image/*" style="display:none; width:100%; border: 1px blue solid; border-radius: 5px">
             </div>
           </li>
 
