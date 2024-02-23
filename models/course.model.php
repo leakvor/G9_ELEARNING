@@ -30,16 +30,16 @@ function deleteCourse(int $id) : bool
     return $statement->rowCount() > 0;
 }
 
-function updateCourse(string $title,int $user_id,int $cate_id) : bool
+function updateCourse(int $id,string $title,int $user_id,int $cate_id,string $img) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update course set title = :title, user_id=:user_id,cate_id=:cate_id where course_id=:id");
+    $statement = $connection->prepare("update course set title = :title, user_id=:user_id,cate_id=:cate_id, img=:img where course_id=:id");
     $statement->execute([
+        ':id'=>$id,
         ':title' => $title,
         ':user_id'=>$user_id,
         ':cate_id'=>$cate_id,
-        
-
+        ':img'=>$img,
     ]);
 
     return $statement->rowCount() > 0;

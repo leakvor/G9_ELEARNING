@@ -35,6 +35,7 @@
                     <option value="<?= $teacher['user_id'] ?>"><?= $teacher['username'] ?></option>
                   <?php endforeach ?>
                 </select>
+              
               </div>
               <div class="form-group mt-3">
                 <select name="category" class="form-control bg-white">
@@ -69,16 +70,16 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($courses as $course) : ?>
+        <?php foreach ($courses as $index => $course) : ?>
           <tr>
-            <th scope="row"><?= $course['course_id'] ?></th>
+            <th scope="row"><?=$index+1?></th>
             <td><?= $course['title'] ?></td>
             <td><?= $course['username'] ?></td>
             <td><?= $course['cateName'] ?></td>
             <td><img src="assets/images/course/<?= $course['img'] ?>" alt="" width="50px" style="border-radius: 50%;"></td>
             <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>" style="color: black;"><i class="fa fa-trash" style="color:red;"></i></a>
-              <i id="editIcon" class="fas fa-edit" style="cursor: pointer;color:blue;"></i>
-              <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:blue;"></i>
+              <div class="modal fade" id="editModal<?= $course['course_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $course['course_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content" style="background-color: black; border: 1px solid white;">
                     <div class="modal-header">
@@ -105,22 +106,28 @@
                         </div>
                         <div class="form-group mt-3">
                           <select name="teacher" class="form-control bg-white">
-                            <option value="<?= $course['username'] ?>"><?= $course['username'] ?></option>
+                            <!-- <option value="">Choose Teacher</option> -->
                             <?php foreach ($teachers as $teacher) : ?>
-                              <option value="<?= $teacher['user_id'] ?>"><?= $teacher['username'] ?></option>
+                              <?php $selected = ($course['user_id'] == $teacher['user_id']) ? 'selected' : ''; ?>
+                              <option value="<?= $teacher['user_id'] ?>" <?= $selected ?>>
+                                <?= $teacher['username'] ?>
+                              </option>
                             <?php endforeach ?>
                           </select>
                         </div>
                         <div class="form-group mt-3">
                           <select name="category" class="form-control bg-white">
-                            <option value="<?= $course['cateName'] ?>"><?= $course['cateName'] ?></option>
+                            <!-- <option value="">Choose Category</option> -->
                             <?php foreach ($categories as $category) : ?>
-                              <option value="<?= $category['cat_id'] ?>"><?= $course['cateName'] ?></option>
+                              <?php $selected = ($course['cate_id'] == $category['cat_id']) ? 'selected' : ''; ?>
+                              <option value="<?= $category['cat_id'] ?>" <?= $selected ?>>
+                                <?= $category['cateName'] ?>
+                              </option>
                             <?php endforeach ?>
                           </select>
                         </div>
                         <div class="form-group mt-3">
-                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
+                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img" value="$course['img']">
                         </div>
                         <button class="btn btn-danger mt-3">Edit</button>
                       </form>
@@ -145,3 +152,4 @@
     });
   });
 </script>
+

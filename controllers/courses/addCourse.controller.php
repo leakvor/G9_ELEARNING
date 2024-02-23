@@ -1,4 +1,4 @@
-<!-- <h1>leak</h1> -->
+
 <?php
 require('database/database.php');
 require('models/course.model.php');
@@ -30,12 +30,11 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
                     if($isCreate){
                         $courses = getCourse();
                         require "views/courses/adminCourse.view.php";
-                        // header("Location: /adminCourse");
                     }
                     }else{
                     
                         echo "<script>alert('Sorry, your file is wrong extention');</script>";
-                        // header('Location: /adminCourse');
+                        header('Location: /adminCourse');
                  }
              }
          }
@@ -43,11 +42,8 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
 
  }
 
-//  header('location: /adminCourse')
 }else{
-    // require "views/course/adminCourse.view.php";
-    header('location: /adminCourse');
-    
+    require "views/course/adminCourse.view.php";
 }
 if(empty($_POST['title']) || empty($_POST['teacher'])|| empty($_POST['category'])):?>
 <script>alert("You forgot fill some information")</script>
@@ -55,6 +51,5 @@ if(empty($_POST['title']) || empty($_POST['teacher'])|| empty($_POST['category']
 
 <?php
 $courses=getCourse();
-// header('Location: /adminCourse');
 require "views/course/adminCourse.view.php";
 

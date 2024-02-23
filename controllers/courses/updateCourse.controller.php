@@ -4,9 +4,46 @@ require "../../database/database.php";
 require "../../models/course.model.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $title = htmlspecialchars($_POST['title']);
-        // $img = htmlspecialchars($_POST['img']);
+        $id = ($_POST['id']);
         $teacher = htmlspecialchars($_POST['teacher']);
         $category = htmlspecialchars($_POST['category']);
-        updateCourse($title,$teacher,$category);
-        header('Location: /adminCourse');
-}
+        if(isset($_FILES['img'])){
+                $img_name=$_FILES['img']['name'];
+                $img_size=$_FILES['img']['size'];
+                $tmp_name=$_FILES['img']['tmp_name'];
+                $error=$_FILES['img']['error'];
+        
+                if($error===0){
+                    if($img_size>125000){
+                         $em="Sorry your file som large";
+                        echo "<script>alert('Sorry, your file is too large.');</script>";
+                     }else{
+                         $img_ex=pathinfo($img_name,PATHINFO_EXTENSION);
+                         $img_ex_lc=strtolower($img_ex);
+                         $allowed_exs=array("jpg","jpeg","png");
+                         if(in_array($img_ex_lc,$allowed_exs)){
+        
+                            $new_img_name = uniqid("", true).'.'.$img_ex_lc;
+                             $img_upload_path = 'assets/images/course/'.$new_img_name;
+                             move_uploaded_file($tmp_name, $img_upload_path);
+        
+                             $isCreate=updateCourse($id,$title,$teacher,$category,$new_img_name);
+                             var_dump($new_img_name);
+                            if($isCreate){
+                                // $courses = getCourse();
+                                // require "views/courses/adminCourse.view.php";
+                                // header('Location: /adminCourse');
+                            }
+                            }else{
+                            
+                                echo "<script>alert('Sorry, your file is wrong extention');</script>";
+                                header('Location: /adminCourse');
+                         }
+                     }
+                 }
+             }
+        
+         }
+        
+        
+
