@@ -267,29 +267,38 @@
 
       <?php
       if (isset($_SESSION['user'])){
-        $user = $_SESSION['user'];   
+        $user = $_SESSION['user'];  
       ?>
-      <!-- <div class="d-flex align-items-center">
-        <div class="navbar-nav d-none d-lg-inline-block">
-          <a href="controllers/logout.controller.php" type="button" class="btn text-dark mb-0"><i class="fas fa-sign-in-alt me-2"></i>Log out</a>
-        </div>
-        <h3 class="btn-dark-soft p-2"><?php echo $user['firstName']?></h3>
-      </div> -->
+
+      <?php 
+        require 'models/student.model.php';
+        $profile = accountExist($user['email']);
+        if (isset($profile)){
+          $profileImg = $profile['img'];
+        }else{
+          $profileImg = 'assets/images/profile/65d81497323c28.92025204.jpg';
+        }
+        ?>
+
       <div class="nav-item dropdown">
         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-          <img class="rounded-circle me-lg-2" src="assets/images/testimonial-2.jpg" alt="" style="width: 40px; height: 40px;">
+          <img class="rounded-circle me-lg-2" src="assets/images/profile/<?php echo $profileImg?>" alt="" style="width: 40px; height: 40px;">
           <span class="d-none d-lg-inline-flex"><?php echo $user['username']?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-end bg-dark border-0 rounded-0 rounded-bottom m-0">
           <!-- <a href="views/profile/form.profile.view.php" class="dropdown-item" id="profile">My Profile</a> -->
           <li class="dropdown-submenu">
               <!-- <a class="dropdown-item dropdown-toggle" href="#">My Profile</a> -->
-              <div class="card dropdown-menu d-flex align-items-center" style="width:350px" data-bs-popper="none">
-                <img src="assets/images/testimonial-2.jpg" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 150px; height: 130px">
+              <div class="card dropdown-menu d-flex align-items-center" style="width:330px" data-bs-popper="none">
+                
+                <img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 100px; height: 80px">
                 <h5 class="card-title dropdown-item text-center"><?php echo $user['username']?></h5>
                 <p class="card-text dropdown-item text-center"><?php echo $user['email']?></p>
-                <a href="views/profile/form.profile.view.php" class="btn btn-primary editProfile" style="width:100%">Edit Profile</a>
-                <input type="file" name="name" class="hidefile form-control custom-file-input" id="imageUpload" accept="image/*" style="display:none; width:100%; border: 1px blue solid; border-radius: 5px">
+                <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
+                  <input type="hidden" value="<?php echo $user['email']?>" name="email">
+                  <Button type="submit" class="btn btn-primary editProfile" style="width:320px">Edit Profile</button>
+                  <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">  
+                </form>
             </div>
           </li>
 

@@ -11,6 +11,7 @@ if(isset($_SESSION['user'])){
         // LOG------------------->
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
+        '/profileimg' => 'controllers/profiles/profile.controller.php',
     ];
 }else{
     $routes = [

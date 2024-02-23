@@ -21,9 +21,41 @@ function accountExist(string $email): array
     $statement->execute([
         ':email' => $email,
     ]);
+
     if ($statement->rowCount() > 0){
         return $results = $statement->fetch(PDO::FETCH_ASSOC);
     }else{
         return [];
     }
+}
+function profile(string $email, string $image)
+{
+    global $connection;
+    $statement = $connection->prepare("UPDATE users SET img= :image WHERE email= :email");
+    $statement->execute([
+        ':image' => $image,
+        ':email' => $email,
+    ]);
+    
+    if ($statement->rowCount() > 0){
+        return $results = $statement->fetch(PDO::FETCH_ASSOC);
+    }else{
+        return [];
+    }
+}
+function getStudent() : array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where role = 'user' ");
+    $statement->execute();
+    return $statement->fetchAll();
+}
+function deleteStudent(int $id) :bool
+{   
+    global $connection;
+    $statement = $connection->prepare("delete from users where user_id=:id");
+    $statement->execute([':id' => $id]);
+    $statement->fetchAll();
+    return $statement->rowCount() > 0;
+    
 }

@@ -14,6 +14,7 @@ $routes = [
     '/addTrainer' => 'controllers/trainers/addTrainer.controller.php',
     '/adminCourse' => 'controllers/courses/adminCourse.controller.php',
     '/addCourse' => 'controllers/courses/addCourse.controller.php',
+    '/displayStudent' => 'controllers/students/displayStudent.controller.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
