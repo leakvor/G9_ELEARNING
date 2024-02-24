@@ -7,6 +7,47 @@
     $adminname = "Unknown";
  }
  ?>
+ <?php
+ $URL = $_SERVER['REQUEST_URI'];
+ if ($URL == '/admins'){
+    $activeAdmin = 'active';
+    $activeTrainer = '';
+    $activeStudent = '';
+    $activeCourse= '';
+    $activeCategiry = '';
+}
+else if($URL == '/adminTrainer'){
+    $activeTrainer = 'active';
+    $activeAdmin = ''; 
+    $activeStudent = ''; 
+    $activeCategiry = '';
+    $activeCourse= '';
+}
+else if($URL == '/displayStudent'){
+    $activeStudent = 'active';
+    $activeAdmin = ''; 
+    $activeTrainer = ''; 
+    $activeCategiry = '';
+    $activeCourse= '';
+}
+else if($URL == '/displayCategory'){
+    $activeCategiry = 'active';
+    $activeStudent = '';
+    $activeAdmin = ''; 
+    $activeTrainer = ''; 
+    $activeCourse= '';
+}
+else if($URL == '/adminCourse'){
+    $activeCourse= 'active';
+    $activeCategiry = '';
+    $activeStudent = '';
+    $activeAdmin = ''; 
+    $activeTrainer = ''; 
+}
+  
+?>
+ 
+
 
 
  <div class="sidebar pe-4 pb-3">
@@ -25,7 +66,7 @@
              </div>
          </div>
          <div class="navbar-nav w-100">
-             <a href="" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+             <a href="/admins" class="nav-item nav-link <?= $activeAdmin?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
              <?php
                 if (isset($_SESSION['admin'])){
                     $teacherPath = "/adminTrainer";
@@ -39,10 +80,10 @@
                     $admincourse = "/admin";
                 }
             ?>
-             <a href="<?php echo $teacherPath?>" class="nav-item nav-link"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
-             <a href="<?php echo $studentPath?>" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Students</a>
-             <a href="<?php echo $categories?>" class="nav-item nav-link"><i class="far fa-folder-open me-2"></i>Category</a>
-             <a href="<?php echo $admincourse?>" class="nav-item nav-link"><i class="fas fa-book me-2"></i>Course</a>
+             <a href="<?php echo $teacherPath?>" class="nav-item nav-link <?= $activeTrainer?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
+             <a href="<?php echo $studentPath?>" class="nav-item nav-link <?=$activeStudent?>"><i class="fa fa-user me-2"></i>Students</a>
+             <a href="<?php echo $categories?>" class="nav-item nav-link <?=$activeCategiry?>"><i class="far fa-folder-open me-2"></i>Category</a>
+             <a href="<?php echo $admincourse?>" class="nav-item nav-link <?=$activeCourse?>"><i class="fas fa-book me-2"></i>Course</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                  <div class="dropdown-menu bg-transparent border-0">
