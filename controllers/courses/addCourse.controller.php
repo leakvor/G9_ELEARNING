@@ -16,7 +16,7 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
             if($img_size>500000){
                  $em="Sorry your file som large";
                 echo "<script>alert('Sorry, your file is too large.');</script>";
-                require "views/course/adminCourse.view.php";
+                // require "views/course/adminCourse.view.php";
              }else{
                  $img_ex=pathinfo($img_name,PATHINFO_EXTENSION);
                  $img_ex_lc=strtolower($img_ex);

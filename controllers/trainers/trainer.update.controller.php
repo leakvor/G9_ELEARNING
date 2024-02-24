@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $allowed_exs = array("jpg", "jpeg", "png");
                     if (in_array($img_ex, $allowed_exs)) {
                         $new_img_name = uniqid("", true) . '.' . $img_ex;
-                        $img_upload_path = '../../assets/images/course/' . $new_img_name;
+                        $img_upload_path = 'assets/images/instructor/' . $new_img_name;
                         if (move_uploaded_file($tmp_name, $img_upload_path)) {
                             $isCreate = updateTeacher($username, $email, $password, $id, $new_img_name);
                         } else {

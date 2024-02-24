@@ -22,7 +22,7 @@
             <td><?= $student['username'] ?></td>
             <td><?= $student['email'] ?></td>
             <td><?= $student['password'] ?></td>
-            <td><img src="<?= $student["img"] ?>" alt="" width="50px" style="border-radius: 50%"></td>
+            <td><img src="<?= $student["img"] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
             <td><a href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>
             "onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:red;"></i></a>

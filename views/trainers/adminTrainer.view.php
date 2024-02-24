@@ -57,31 +57,31 @@
     <tbody>
       <?php foreach ($teachers as $index => $teacher) : ?>
         <tr>
-          <th scope="row"><?= $index+1 ?></th>
+          <th scope="row"><?= $index + 1 ?></th>
           <!-- <td><img src="" alt=""></td> -->
           <td><?= $teacher['username'] ?></td>
           <td><?= $teacher['email'] ?></td>
           <td><?= $teacher['password'] ?></td>
-          <td><img src="assets/images/course/<?= $teacher['img']?>" alt="" width="30px" style="border-radius: 50%;"></td>
+          <td><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
           <td class="d-flex d-grid gap-3">
-              <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> "onclick="return functionDelete()">
-            <i class="fa fa-trash" style="color:red;"></i></a>
+            <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">
+              <i class="fa fa-trash" style="color:red;"></i></a>
             <script>
-                        function functionDelete() {
-                          if (confirm("Are you sure you want to delete this category?")) {
-                            
-                            return true; // Proceed with deletion
-                          } else {
-                            return false; // Cancel deletion
-                          }
-                        }
+              function functionDelete() {
+                if (confirm("Are you sure you want to delete this category?")) {
+
+                  return true; // Proceed with deletion
+                } else {
+                  return false; // Cancel deletion
+                }
+              }
             </script>
-              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue;"></i>
+            <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue;"></i>
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $course['course_id'] ?>" aria-hidden="true">
 
 
-            
-            <!-- ---------form edit--------- -->
+
+              <!-- ---------form edit--------- -->
               <div class="modal-dialog" role="document">
                 <div class="modal-content" style="background-color: black; border: 1px solid white;">
                   <div class="modal-header">
@@ -120,7 +120,7 @@
                 </div>
               </div>
             </div>
-            </td>
+          </td>
         </tr>
       <?php endforeach ?>
     </tbody>
@@ -129,4 +129,3 @@
 </div>
 </div>
 </div>
-

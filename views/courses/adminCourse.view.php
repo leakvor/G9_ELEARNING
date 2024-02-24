@@ -73,13 +73,15 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($courses as $index => $course) :?>
+        <?php foreach ($courses as $index => $course):
+          
+          ?>
           <tr>
             <th scope="row"><?=$index+1?></th>
             <td><?= $course['title'] ?></td>
             <td><?= $course['username'] ?></td>
             <td><?= $course['cateName'] ?></td>
-            <td><img src="assets/images/course/<?= $course['img'] ?>" alt="" width="50px" style="border-radius: 50%;"></td>
+            <td><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" style="width: 70px;height: 70px;object-fit: cover;"></td>
             <td><?=$course['paid']?>$</td>
             <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>"onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:red;"></i></a>
@@ -105,7 +107,7 @@
                     </div>
                     <div class="modal-body">
                       <?php
-                      $statement = $connection->prepare("SELECT course.course_id, course.img, course.paid, course.title, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where course_id=:id;");
+                      $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.paid, course.title, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where course_id=:id;");
                       $statement->execute(
                         [':id' => $course['course_id']],
                       );
@@ -153,7 +155,6 @@
                   </div>
                 </div>
               </div>
-
             </td>
           </tr>
         <?php endforeach ?>
