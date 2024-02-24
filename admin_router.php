@@ -1,9 +1,11 @@
 <?php
+session_start();
+
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 $routes = [
-    '/admins' => 'controllers/admin/signin_admin.controller.php',
-    '/admin' => 'controllers/admin/admin.controller.php',
+    '/admin' => 'controllers/admin/signin_admin.controller.php',
+    '/admins' => 'controllers/admin/admin.controller.php',
     '/trainer-review' => 'controllers/reviews/review.controller.php',
     '/trainer-classroom' => 'controllers/classroom/classroom.controller.php',
     '/displayCategory'=>'controllers/category/displayCategory.controller.php',
