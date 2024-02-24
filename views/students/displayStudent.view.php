@@ -1,7 +1,7 @@
 <div class="container-fluid pt-4 px-4">
       <!-- table student -->
   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-    <table class="table table-bordered table-striped mb-0">
+    <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
       <thead>
         <tr>
           <th scope="col">id</th>
