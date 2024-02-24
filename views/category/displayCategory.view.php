@@ -35,9 +35,9 @@
 
   <!-----------------------table category-------------------------- -->
   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-    <table class="table table-bordered table-striped mb-0">
+    <table class="table table-bordered table-striped mb-0"style="margin-top:15px">
       <thead>
-        <tr>
+        <tr style="border: 1px solid gray;">
           <th scope="col">id</th>
           <th scope="col">Name Category</th>
           <th scope="col">Action</th>
@@ -46,8 +46,8 @@
       <tbody>
       <?php foreach ($categorys as $index => $category):?>
         
-          <tr>
-            <th scope="row"><?= $index+1 ?></th>
+          <tr style="border: 1px solid gray;">
+            <th scope="row" ><?= $index+1 ?></th>
             <td><?= $category['cateName'] ?></td>
             <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
