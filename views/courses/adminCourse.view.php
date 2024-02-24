@@ -81,7 +81,18 @@
             <td><?= $course['cateName'] ?></td>
             <td><img src="assets/images/course/<?= $course['img'] ?>" alt="" width="50px" style="border-radius: 50%;"></td>
             <td><?=$course['paid']?>$</td>
-            <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>" style="color: black;"><i class="fa fa-trash" style="color:red;"></i></a>
+            <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>"onclick="return functionDelete()">
+            <i class="fa fa-trash" style="color:red;"></i></a>
+            <script>
+                        function functionDelete() {
+                          if (confirm("Are you sure you want to delete this category?")) {
+                            
+                            return true; // Proceed with deletion
+                          } else {
+                            return false; // Cancel deletion
+                          }
+                        }
+            </script>
               <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:blue;"></i>
               <div class="modal fade" id="editModal<?= $course['course_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $course['course_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
