@@ -55,16 +55,27 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($teachers as $teacher) : ?>
+      <?php foreach ($teachers as $index => $teacher) : ?>
         <tr>
-          <th scope="row"><?= $teacher['user_id'] ?></th>
+          <th scope="row"><?= $index+1 ?></th>
           <!-- <td><img src="" alt=""></td> -->
           <td><?= $teacher['username'] ?></td>
           <td><?= $teacher['email'] ?></td>
           <td><?= $teacher['password'] ?></td>
           <td><img src="assets/images/course/<?= $teacher['img']?>" alt="" width="30px" style="border-radius: 50%;"></td>
           <td class="d-flex d-grid gap-3">
-              <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?>"> <i class="fa fa-trash" style="color:red;"></i> </a>
+              <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> "onclick="return functionDelete()">
+            <i class="fa fa-trash" style="color:red;"></i></a>
+            <script>
+                        function functionDelete() {
+                          if (confirm("Are you sure you want to delete this category?")) {
+                            
+                            return true; // Proceed with deletion
+                          } else {
+                            return false; // Cancel deletion
+                          }
+                        }
+            </script>
               <a href="controllers/trainers/trainer.edit.controller.php?id=<?= $teacher['user_id'] ?>"> <i class="fa fa-edit" style="color:blue;"></i> </a>
             </td>
         </tr>
