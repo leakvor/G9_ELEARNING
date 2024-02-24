@@ -13,9 +13,10 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
         $error=$_FILES['img']['error'];
 
         if($error===0){
-            if($img_size>125000){
+            if($img_size>500000){
                  $em="Sorry your file som large";
                 echo "<script>alert('Sorry, your file is too large.');</script>";
+                require "views/course/adminCourse.view.php";
              }else{
                  $img_ex=pathinfo($img_name,PATHINFO_EXTENSION);
                  $img_ex_lc=strtolower($img_ex);
@@ -26,12 +27,12 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
                      $img_upload_path = 'assets/images/course/'.$new_img_name;
                      move_uploaded_file($tmp_name, $img_upload_path);
 
-                     $isCreate=createCourse($_POST['title'],$new_img_name,$_POST['teacher'],$_POST['category']);
-                    if($isCreate){
-                        $courses = getCourse();
-                        require "views/courses/adminCourse.view.php";
-                        // header("Location: /adminCourse");
-                    }
+                     $isCreate=createCourse($_POST['title'],$new_img_name,$_POST['teacher'],$_POST['category'],$_POST['paid']);
+                    // if($isCreate){
+                        // $courses = getCourse();
+                        // require "views/courses/adminCourse.view.php";
+                    //     // header("Location: /adminCourse");
+                    // }
                     }else{
                     
                         echo "<script>alert('Sorry, your file is wrong extention');</script>";
@@ -45,7 +46,6 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
 
 //  header('location: /adminCourse')
 }else{
-    // require "views/course/adminCourse.view.php";
     header('location: /adminCourse');
     
 }
@@ -56,5 +56,5 @@ if(empty($_POST['title']) || empty($_POST['teacher'])|| empty($_POST['category']
 <?php
 $courses=getCourse();
 // header('Location: /adminCourse');
-require "views/course/adminCourse.view.php";
+require "views/courses/adminCourse.view.php";
 
