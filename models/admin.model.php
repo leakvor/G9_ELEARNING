@@ -50,3 +50,22 @@ function deletePost(int $id) : bool
     $statement->execute([':id' => $id]);
     return $statement->rowCount() > 0;
 }
+
+
+
+// _________________senrin-code-function_____________________
+
+function accountExist(string $email): array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email");
+    $statement->execute([
+        ':email' => $email,
+    ]);
+
+    if ($statement->rowCount() > 0){
+        return $results = $statement->fetch(PDO::FETCH_ASSOC);
+    }else{
+        return [];
+    }
+}

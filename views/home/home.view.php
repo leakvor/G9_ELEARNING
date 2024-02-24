@@ -116,7 +116,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-danger bg-opacity-10 rounded-circle text-danger"><i class="fas fa-heartbeat"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Health &amp; Fitness</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Health &amp; Fitness</a></h5>
 							<span>95 Courses</span>
 						</div>
 					</div>
@@ -130,7 +130,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-blue bg-opacity-10 rounded-circle text-blue"><i class="fas fa-photo-video"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Photography</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Photography</a></h5>
 							<span>38 Courses</span>
 						</div>
 					</div>
@@ -144,7 +144,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-success bg-opacity-10 rounded-circle text-success"><i class="fas fa-laptop-code"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Development</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Development</a></h5>
 							<span>105 Courses</span>
 						</div>
 					</div>
@@ -158,7 +158,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-orange bg-opacity-10 rounded-circle text-orange"><i class="fas fa-crop-alt"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Design</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Design</a></h5>
 							<span>72 Courses</span>
 						</div>
 					</div>
@@ -172,7 +172,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-primary bg-opacity-10 rounded-circle text-primary"><i class="fas fa-business-time"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Business</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Business</a></h5>
 							<span>68 Courses</span>
 						</div>
 					</div>
@@ -186,7 +186,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-info bg-opacity-10 rounded-circle text-info"><i class="fas fa-music"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Music</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Music</a></h5>
 							<span>51 Courses</span>
 						</div>
 					</div>
@@ -200,7 +200,7 @@ Category START -->
 						<!-- Icon -->
 						<div class="icon-lg bg-warning bg-opacity-15 rounded-circle text-warning"><i class="fas fa-palette"></i></div>
 						<div class="ms-3">
-							<h5 class="mb-0"><a href="#" class="stretched-link">Painting</a></h5>
+							<h5 class="mb-0"><a href="<?=$path?>" class="stretched-link">Painting</a></h5>
 							<span>69 Courses</span>
 						</div>
 					</div>
@@ -236,7 +236,7 @@ Featured course START -->
 						<!-- Hover element -->
 						<div class="card-img-overlay">
 							<div class="card-element-hover d-flex justify-content-end">
-								<a href="#" class="icon-md bg-white rounded-circle">
+								<a href="<?=$path?>" class="icon-md bg-white rounded-circle">
 									<i class="fas fa-shopping-cart text-danger"></i>
 								</a>
 							</div>
@@ -267,10 +267,10 @@ Featured course START -->
 						<!-- Divider -->
 						<hr>
 						<!-- Title -->
-						<h6 class="card-title"><a href="#">The Complete Digital Marketing Course - 12 Courses in 1</a></h6>
+						<h6 class="card-title"><a href="<?=$path?>">The Complete Digital Marketing Course - 12 Courses in 1</a></h6>
 						<!-- Badge and Price -->
 						<div class="d-flex justify-content-between align-items-center mb-0">
-							<div><a href="#" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
+							<div><a href="<?=$path?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
 							<!-- Price -->
 							<h5 class="text-success mb-0">$140</h5>
 						</div>
@@ -969,7 +969,6 @@ Live courses START -->
 											</div>
 										</div>
 									</div>
-
 									<!-- Card body -->
 									<div class="card-body">
 										<!-- Title -->
@@ -1114,7 +1113,7 @@ Action box START -->
 								</div>
 								<!-- Content and input -->
 								<div class="col-lg-5 text-lg-end mt-3 mt-lg-0">
-									<a href="#" class="btn btn-warning mb-0">Sign Up for Free</a>
+									<a href="/signups" class="btn btn-warning mb-0">Sign Up for Free</a>
 								</div>
 							</div> <!-- Row END -->
 						</div>

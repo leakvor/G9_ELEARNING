@@ -32,3 +32,5 @@ require "layouts/header.php";
 require "layouts/navbar.php";
 require $page;
 require "layouts/footer.php";
+
+// echo $_SERVER['REQUEST_URI'];
