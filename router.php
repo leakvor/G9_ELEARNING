@@ -18,6 +18,7 @@ if(isset($_SESSION['user'])){
         '/'=>'controllers/home/home.controller.php',
         '/signups' => 'controllers/signup/signup.controler.php',
         '/signins' => 'controllers/signin/signin.controller.php',
+        '/studentEditProfile'=>'controllers/students/studentEditProfile.controller.php',
     ];
 }
 
