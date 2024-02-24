@@ -12,7 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = sanitize_input($_POST['email']);
     $password = sanitize_input($_POST['password']);
     $id = sanitize_input($_POST['id']);
-
+    if(empty($_POST['file'])){
+        updateTeacherNoImg($username, $email, $password, $id);
+    }
     if (!empty($username) && !empty($email) && !empty($password)) {
         if (isset($_FILES['img'])) {
             $img_name = $_FILES['img']['name'];

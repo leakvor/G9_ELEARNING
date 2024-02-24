@@ -8,8 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $teacher = htmlspecialchars($_POST['teacher']);
     $category = htmlspecialchars($_POST['category']);
     $paid = htmlspecialchars($_POST['paid']);
-    
-    if(isset($_FILES['img'])){
+    if(empty($_POST['file'])){
+        updateCourseNotImge($id, $title, $teacher, $category,$paid);
+        header('Location: /adminCourse');
+    }elseif(isset($_FILES['img'])){
         $img_name=$_FILES['img']['name'];
         $img_size=$_FILES['img']['size'];
         $tmp_name=$_FILES['img']['tmp_name'];

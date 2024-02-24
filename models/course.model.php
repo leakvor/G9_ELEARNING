@@ -46,3 +46,17 @@ function updateCourse(int $id,string $title,int $user_id,int $cate_id,string $im
 
     return $statement->rowCount() > 0;
 }
+function updateCourseNotImge(int $id,string $title,int $user_id,int $cate_id,int $paid) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update course set title = :title, user_id=:user_id,cate_id=:cate_id, paid=:paid where course_id=:id");
+    $statement->execute([
+        ':id'=>$id,
+        ':title' => $title,
+        ':user_id'=>$user_id,
+        ':cate_id'=>$cate_id,
+        ':paid'=>$paid,
+    ]);
+
+    return $statement->rowCount() > 0;
+}
