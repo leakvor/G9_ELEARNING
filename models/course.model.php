@@ -3,18 +3,19 @@
 function getCourse() : array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT course.course_id, course.img, course.title, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
+    $statement = $connection->prepare("SELECT course.course_id, course.img, course.title, course.paid, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
     $statement->execute();
     return $statement->fetchAll();
 }
 
-function createCourse( string $title,string $img,int $user_id,int $cate_id)
+function createCourse( string $title,string $img ,int $user_id,int $cate_id,int $paid)
 {
     global $connection;
-    $statement = $connection->prepare("insert into course (title,img,user_id,cate_id) values (:title, :img,:user_id,:cate_id)");
+    $statement = $connection->prepare("insert into course (title,img,paid,user_id,cate_id) values (:title, :img,:paid,:user_id,:cate_id)");
     $statement->execute([
         ':title'=>$title,
         ':img'=>$img,
+        ':paid'=>$paid,
         ':user_id'=>$user_id,
         ':cate_id'=>$cate_id,
     ]);
@@ -30,16 +31,17 @@ function deleteCourse(int $id) : bool
     return $statement->rowCount() > 0;
 }
 
-function updateCourse(int $id,string $title,int $user_id,int $cate_id,string $img) : bool
+function updateCourse(int $id,string $title,int $user_id,int $cate_id,string $img,int $paid) : bool
 {
     global $connection;
-    $statement = $connection->prepare("update course set title = :title, user_id=:user_id,cate_id=:cate_id, img=:img where course_id=:id");
+    $statement = $connection->prepare("update course set title = :title, user_id=:user_id,cate_id=:cate_id, img=:img, paid=:paid where course_id=:id");
     $statement->execute([
         ':id'=>$id,
         ':title' => $title,
         ':user_id'=>$user_id,
         ':cate_id'=>$cate_id,
         ':img'=>$img,
+        ':paid'=>$paid,
     ]);
 
     return $statement->rowCount() > 0;

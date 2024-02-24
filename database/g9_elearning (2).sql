@@ -50,6 +50,7 @@ CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `img` varchar(200) NOT NULL,
+  `paid` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `cate_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -58,11 +59,12 @@ CREATE TABLE `course` (
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`course_id`, `title`, `img`, `user_id`, `cate_id`) VALUES
-(5, 'Fugiat ad irure min', '65d2c785597493.68649152.jpg', 7, 1),
-(6, 'Dolore minima sed ir', '65d2c7dc345a76.47720879.jpg', 9, 1),
-(9, 'Atque occaecat iste ', '65d2cbf3c6e017.95634107.jpg', 2, 2),
-(23, 'Recusandae Architec', '65d2d383a0fca9.45161306.jpg', 2, 2);
+
+INSERT INTO `course` (`course_id`, `title`, `img`, `paid`, `user_id`, `cate_id`) VALUES
+(36, 'Aspernatur aliquam q', '65d95b5f5d9777.37837052.jpg', 78, 27, 2),
+(37, 'Aspernatur aliquam q', '65d95b6e801a14.76628570.jpg', 78, 27, 2),
+(38, 'Aspernatur aliquam q', '65d95c047f92a3.47838392.jpg', 78, 27, 2),
+(39, 'Aspernatur aliquam q', '65d95ca3544116.35658914.jpg', 78, 27, 2);
 
 -- --------------------------------------------------------
 

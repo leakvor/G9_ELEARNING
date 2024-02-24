@@ -25,12 +25,7 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
                     $new_img_name = uniqid("", true).'.'.$img_ex_lc;
                      $img_upload_path = 'assets/images/course/'.$new_img_name;
                      move_uploaded_file($tmp_name, $img_upload_path);
-
-                     $isCreate=createCourse($_POST['title'],$new_img_name,$_POST['teacher'],$_POST['category']);
-                    if($isCreate){
-                        $courses = getCourse();
-                        require "views/courses/adminCourse.view.php";
-                    }
+                     $isCreate=createCourse($_POST['title'],$new_img_name,$_POST['teacher'],$_POST['category'],$_POST['paid']);
                     }else{
                     
                         echo "<script>alert('Sorry, your file is wrong extention');</script>";
@@ -51,5 +46,6 @@ if(empty($_POST['title']) || empty($_POST['teacher'])|| empty($_POST['category']
 
 <?php
 $courses=getCourse();
-require "views/course/adminCourse.view.php";
+// header("Location: /adminCourse");
+// require "views/courses/adminCourse.view.php";
 
