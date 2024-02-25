@@ -12,7 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = sanitize_input($_POST['email']);
     $password = sanitize_input($_POST['password']);
     $id = sanitize_input($_POST['id']);
-
+    if(empty($_POST['file'])){
+        updateTeacherNoImg($username, $email, $password, $id);
+    }
     if (!empty($username) && !empty($email) && !empty($password)) {
         if (isset($_FILES['img'])) {
             $img_name = $_FILES['img']['name'];
@@ -28,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $allowed_exs = array("jpg", "jpeg", "png");
                     if (in_array($img_ex, $allowed_exs)) {
                         $new_img_name = uniqid("", true) . '.' . $img_ex;
-                        $img_upload_path = '../../assets/images/course/' . $new_img_name;
+                        $img_upload_path = 'assets/images/instructor/' . $new_img_name;
                         if (move_uploaded_file($tmp_name, $img_upload_path)) {
                             $isCreate = updateTeacher($username, $email, $password, $id, $new_img_name);
                         } else {
@@ -49,5 +51,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $teachers = getTeacher();
 header("Location: /adminTrainer");
-require "../../views/trainers/adminTrainer.view.php";
+// require "../../views/trainers/adminTrainer.view.php";
 
