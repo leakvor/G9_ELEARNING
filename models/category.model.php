@@ -7,12 +7,14 @@ function getCategorys() : array
     $statement->execute();
     return $statement->fetchAll();
 }
-function createCategory(string $category) : bool
+function createCategory(string $category, string $image) : bool
 {
     global $connection;
-    $statement = $connection->prepare("INSERT INTO category (cateName) VALUES(:cateName)");
+    $statement = $connection->prepare("INSERT INTO category (cateName,image) VALUES(:cateName,:image)");
     $statement->execute([
         ':cateName' => $category,
+        ':image'=>$image
+
     ]);
 
     return $statement->rowCount() > 0;
@@ -35,13 +37,14 @@ return $statement->fetch();
 }
 ?>
 <?php
-function updateCategory(string $category,int $id)
+function updateCategory(string $category,string $image,int $id)
 {
     global $connection;
-    $statement = $connection->prepare("UPDATE category SET cateName = :cateName WHERE cat_id=:id");
+    $statement = $connection->prepare("UPDATE category SET cateName = :cateName,image= :image WHERE cat_id=:id");
     $statement->execute([
         ':cateName' => $category,
-        ':id' => $id
+        ':image'=>$image,
+        ':id' => $id,
 
     ]);
 
