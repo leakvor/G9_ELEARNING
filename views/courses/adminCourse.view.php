@@ -147,7 +147,7 @@
                           </select>
                         </div>
                         <div class="form-group mt-3">
-                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img" value="$course['img']">
+                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img" value="<?=$course['course_img']?>">
                         </div>
                         <button class="btn btn-danger mt-3">Edit</button>
                       </form>

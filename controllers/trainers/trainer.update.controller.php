@@ -51,5 +51,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 $teachers = getTeacher();
 header("Location: /adminTrainer");
-require "../../views/trainers/adminTrainer.view.php";
+// require "../../views/trainers/adminTrainer.view.php";
 

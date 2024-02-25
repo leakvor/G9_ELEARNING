@@ -1,16 +1,17 @@
 <?php
 require "../../database/database.php";
 require "../../models/course.model.php";
-
+var_dump($_POST);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = htmlspecialchars($_POST['title']);
     $id = ($_POST['id']);
     $teacher = htmlspecialchars($_POST['teacher']);
     $category = htmlspecialchars($_POST['category']);
     $paid = htmlspecialchars($_POST['paid']);
-    if(empty($_POST['file'])){
+    
+    if(empty($_POST['img'])){
         updateCourseNotImge($id, $title, $teacher, $category,$paid);
-        header('Location: /adminCourse');
+        // header('Location: /adminCourse');
     }elseif(isset($_FILES['img'])){
         $img_name=$_FILES['img']['name'];
         $img_size=$_FILES['img']['size'];
@@ -34,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         
                         if($isCreate){
                             // Redirect or perform further actions
-                            header('Location: /adminCourse');
+                            // header('Location: /adminCourse');
                         } else {
                             echo "<script>alert('Error occurred while updating course.');</script>";
                         }
@@ -50,4 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+
 ?>
