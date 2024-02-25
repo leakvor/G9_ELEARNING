@@ -1,3 +1,12 @@
+<?php
+require "database/database.php";
+
+$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName,users.img FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
+$statement->execute();
+$courseTeachers = $statement->fetchAll();
+
+// var_dump($courseTeachers);
+?>
 <!-- =======================
 Main Banner START -->
 <section class="bg-light">
@@ -85,127 +94,30 @@ Category START -->
 <section>
 	<div class="container">
 		<div class="row g-4">
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-purple bg-opacity-10 rounded-circle text-purple"><i class="fas fa-tools"></i></div>
-						<div class="ms-3">
-							<?php
-							if (isset($_SESSION['user'])) {
-								$path = "views/profile/form.profile.view.php";
-							?>
-							<?php
-							} else {
-								$path = "/signins";
-							}
-							?>
-							<h5 class="mb-0"><a href=<?= $path ?> class="stretched-link">Math &amp; Logic</a></h5>
-							<span>89 Courses</span>
+			<?php
+			if (isset($_SESSION['user'])) {
+				$path = "views/profile/form.profile.view.php";
+			?>
+			<?php
+			} else {
+				$path = "/signins";
+			}
+			?>
+			<?php foreach ($courseTeachers as $courseTeacher) : ?>
+				<!-- Category item -->
+				<div class="col-sm-6 col-lg-4 col-xl-3">
+					<div class="card card-body shadow rounded-3">
+						<div class="d-flex align-items-center">
+							<!-- Icon -->
+							<div class="icon-lg bg-danger bg-opacity-10 rounded-circle text-danger"><i class="fas fa-heartbeat"></i></div>
+							<div class="ms-3">
+								<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link"><?=$courseTeacher['cateName']?></a></h5>
+								<span>95 Courses</span>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-danger bg-opacity-10 rounded-circle text-danger"><i class="fas fa-heartbeat"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Health &amp; Fitness</a></h5>
-							<span>95 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-blue bg-opacity-10 rounded-circle text-blue"><i class="fas fa-photo-video"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Photography</a></h5>
-							<span>38 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-success bg-opacity-10 rounded-circle text-success"><i class="fas fa-laptop-code"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Development</a></h5>
-							<span>105 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-orange bg-opacity-10 rounded-circle text-orange"><i class="fas fa-crop-alt"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Design</a></h5>
-							<span>72 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-primary bg-opacity-10 rounded-circle text-primary"><i class="fas fa-business-time"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Business</a></h5>
-							<span>68 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-info bg-opacity-10 rounded-circle text-info"><i class="fas fa-music"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Music</a></h5>
-							<span>51 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Category item -->
-			<div class="col-sm-6 col-lg-4 col-xl-3">
-				<div class="card card-body shadow rounded-3">
-					<div class="d-flex align-items-center">
-						<!-- Icon -->
-						<div class="icon-lg bg-warning bg-opacity-15 rounded-circle text-warning"><i class="fas fa-palette"></i></div>
-						<div class="ms-3">
-							<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link">Painting</a></h5>
-							<span>69 Courses</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php endforeach ?>
 		</div>
 	</div>
 </section>
@@ -225,15 +137,6 @@ Featured course START -->
 		</div>
 
 		<div class="row g-4">
-			<?php
-			require "database/database.php";
-
-			$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName,users.img FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
-			$statement->execute();
-			$courseTeachers = $statement->fetchAll();
-
-			// var_dump($courseTeachers);
-			?>
 			<?php
 			foreach ($courseTeachers as $courseTeacher) :
 				// var_dump($courseTeacher['img']);
