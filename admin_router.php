@@ -24,6 +24,7 @@ if (isset($_SESSION['admin'])){
     ];
 }
 
+
 if (array_key_exists($uri, $routes)) {
     $page = $routes[$uri];
 } else {

@@ -66,20 +66,22 @@ else if($URL == '/adminCourse'){
              </div>
          </div>
          <div class="navbar-nav w-100">
-             <a href="/admins" class="nav-item nav-link <?= $activeAdmin?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
              <?php
                 if (isset($_SESSION['admin'])){
+                    $dasboad = '/admins';
                     $teacherPath = "/adminTrainer";
                     $studentPath = "/displayStudent";
                     $categories = "/displayCategory";
                     $admincourse = "/adminCourse";
                 }else{
+                    $dasboad = '/admin';
                     $teacherPath = "/admin";
                     $studentPath = "/admin";
                     $categories = "/admin";
                     $admincourse = "/admin";
                 }
             ?>
+             <a href="<?php echo $dasboad?>" class="nav-item nav-link <?= $activeAdmin?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
              <a href="<?php echo $teacherPath?>" class="nav-item nav-link <?= $activeTrainer?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
              <a href="<?php echo $studentPath?>" class="nav-item nav-link <?=$activeStudent?>"><i class="fa fa-user me-2"></i>Students</a>
              <a href="<?php echo $categories?>" class="nav-item nav-link <?=$activeCategiry?>"><i class="far fa-folder-open me-2"></i>Category</a>
