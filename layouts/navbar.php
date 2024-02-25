@@ -291,7 +291,7 @@
               <!-- <a class="dropdown-item dropdown-toggle" href="#">My Profile</a> -->
               <div class="card dropdown-menu d-flex align-items-center" style="width:330px" data-bs-popper="none">
                 
-                <img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 100px; height: 80px">
+                <a href="assets/images/profile/<?php echo $profileImg?>"><img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
                 <h5 class="card-title dropdown-item text-center"><?php echo $user['username']?></h5>
                 <p class="card-text dropdown-item text-center"><?php echo $user['email']?></p>
                 <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
