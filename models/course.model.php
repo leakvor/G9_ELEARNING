@@ -19,7 +19,6 @@ function createCourse( string $title,string $img ,int $user_id,int $cate_id,int 
         ':user_id'=>$user_id,
         ':cate_id'=>$cate_id,
     ]);
-
     return $statement->rowCount() > 0;
 }
 
