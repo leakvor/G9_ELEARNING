@@ -138,6 +138,7 @@ Footer END -->
 <!-- Template Functions -->
 <script src="vendor/js/functions.js"></script>
 <script src="vendor/js/click.js"></script>
+<script src="vendor/js/search.js"></script>
 
 </body>
 </html>
