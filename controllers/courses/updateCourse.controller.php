@@ -1,7 +1,7 @@
 <?php
 require "../../database/database.php";
 require "../../models/course.model.php";
-var_dump($_POST);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = htmlspecialchars($_POST['title']);
     $id = ($_POST['id']);
@@ -9,9 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category = htmlspecialchars($_POST['category']);
     $paid = htmlspecialchars($_POST['paid']);
     
-    if(empty($_POST['img'])){
+    if(empty($_FILES['img']['name'])){
         updateCourseNotImge($id, $title, $teacher, $category,$paid);
-        // header('Location: /adminCourse');
+        header('Location: /adminCourse');
     }elseif(isset($_FILES['img'])){
         $img_name=$_FILES['img']['name'];
         $img_size=$_FILES['img']['size'];
@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error=$_FILES['img']['error'];
         
         if($error===0){
-            if($img_size > 125000){
+            if($img_size > 12500000){
                 echo "<script>alert('Sorry, your file is too large.');</script>";
             } else {
                 $img_ex=pathinfo($img_name,PATHINFO_EXTENSION);
@@ -48,10 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         } else {
             echo "<script>alert('Error occurred while uploading file.');</script>";
+
         }
     }
 }
-header('Location: /adminCourse');
 
 ?>
 
