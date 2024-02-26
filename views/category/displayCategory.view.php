@@ -53,7 +53,7 @@
             <tr style="border: 1px solid gray;">
             <th scope="row" ><?= $index+1 ?></th>
             <td><?= $category['cateName'] ?></td>
-            <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="50px" height="60px"  ></td>
+            <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="60px" height="60px"  ></td>
             <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:red;"></i></a>
