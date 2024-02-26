@@ -9,11 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $password = htmlspecialchars($_POST['password']);
 
     $user = accountExist($email);
-    if (count($user) > 0){
+    if (count($user) == 0){
+        // echo "<script>alert('Condition is true!');</script>";
+        $_SESSION['noacc'] = "No account!";
+        header('Location: /signins');
+    }
+    else if (count($user) > 0){
         if (password_verify($password, $user['password'])){
             header('Location: /');
             $_SESSION['user'] = $user;
-            // $_SESSION['success'] = "Login account succesfuly";
         }else{
             echo "incorrect pass!";
             header('Location: /signins');

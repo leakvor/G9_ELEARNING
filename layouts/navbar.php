@@ -216,7 +216,7 @@
           <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
             <div class="nav-item w-100">
               <form class="rounded position-relative">
-                <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" id="search" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y"
                   type="submit"><i class="fas fa-search fs-6 text-primary"></i></button>
               </form>
@@ -291,7 +291,7 @@
               <!-- <a class="dropdown-item dropdown-toggle" href="#">My Profile</a> -->
               <div class="card dropdown-menu d-flex align-items-center" style="width:330px" data-bs-popper="none">
                 
-                <img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item rounded-circle me-lg-2" style="width: 100px; height: 80px">
+                <a href="assets/images/profile/<?php echo $profileImg?>"><img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
                 <h5 class="card-title dropdown-item text-center"><?php echo $user['username']?></h5>
                 <p class="card-text dropdown-item text-center"><?php echo $user['email']?></p>
                 <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
