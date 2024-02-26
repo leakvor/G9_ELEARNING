@@ -1,10 +1,17 @@
 <?php
+session_start();
 require '../../database/database.php';
 require '../../models/category.model.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if(!empty($_POST['cateName'])){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // $category=$_POST['cateName'];
+        // echo($category);
+        // $image=$_POST['image'];
+        // echo($image);
+    
+   if(!empty($_POST['cateName'])){
       $worngfile="";
      if(isset($_FILES['image'])){
+        var_dump($_FILES['image']);
             $img_name=$_FILES['image']['name'];
             $img_size=$_FILES['image']['size'];
             $tmp_name=$_FILES['image']['tmp_name'];
@@ -38,14 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
      }
     
-    //  header('location: /adminCourse')
     }else{
         header('location: /displayCategory');
         
     }
-    if(empty($_POST['cateName'])):?>
-    <script>alert("You forgot fill some information")</script>
-    <?php endif ?>
+ if(empty($_POST['cateName'])):?>
+    <script>alert("You forgot fill some information")</script> 
+    <?php
+    endif
+    ?>
     
     <?php
     $categorys=getCategorys();
