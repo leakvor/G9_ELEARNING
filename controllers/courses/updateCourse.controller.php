@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         
                         if($isCreate){
                             // Redirect or perform further actions
-                            // header('Location: /adminCourse');
+                            header('Location: /adminCourse');
                         } else {
                             echo "<script>alert('Error occurred while updating course.');</script>";
                         }
@@ -51,6 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-
+header('Location: /adminCourse');
 
 ?>
