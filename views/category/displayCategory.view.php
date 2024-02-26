@@ -51,7 +51,7 @@
             <td><?= $category['cateName'] ?></td>
             <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
-            <i class="fa fa-trash" style="color:red;"></i></a>
+            <i class="fa fa-trash" style="color:red; margin-right:10px"></i></a>
             <script>
                         function functionDelete() {
                           if (confirm("Are you sure you want to delete this category?")) {
