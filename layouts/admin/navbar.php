@@ -82,7 +82,7 @@ else if($URL == '/adminCourse'){
             ?>
              <a href="<?php echo $teacherPath?>" class="nav-item nav-link <?= $activeTrainer?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
              <a href="<?php echo $studentPath?>" class="nav-item nav-link <?=$activeStudent?>"><i class="fa fa-user me-2"></i>Students</a>
-             <a href="<?php echo $categories?>" class="nav-item nav-link <?=$activeCategiry?>"><i class="far fa-folder-open me-2"></i>Category</a>
+             <a href="<?php echo $categories?>" class="nav-item nav-link <?=$activeCategiry?>"><i class="far fa-folder-open me-2"></i>Categories</a>
              <a href="<?php echo $admincourse?>" class="nav-item nav-link <?=$activeCourse?>"><i class="fas fa-book me-2"></i>Course</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>

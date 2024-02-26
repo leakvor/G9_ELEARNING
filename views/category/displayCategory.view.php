@@ -16,7 +16,7 @@
   <!-- ----Madal body--- -->
   <div class="modal-body">
     <div class="modal-body">
-    <form action="controllers/category/createCategory.controller.php" method="post"enctype="multipart/form-data">
+    <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="category">Name category:</label>
                     <input type="text" class="form-control bg-white" name="cateName">
@@ -50,10 +50,10 @@
       <tbody>
       <?php foreach ($categorys as $index => $category):?>
         
-          <tr style="border: 1px solid gray;">
+            <tr style="border: 1px solid gray;">
             <th scope="row" ><?= $index+1 ?></th>
             <td><?= $category['cateName'] ?></td>
-            <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="50px" style="border-radius: 50%;"></td>
+            <td><img src="assets/images/category/01.jpg<?= $category['image'] ?>" alt="" width="50px" style="border-radius: 50%;"></td>
             <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:red;"></i></a>
