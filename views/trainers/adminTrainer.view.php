@@ -1,13 +1,13 @@
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
   <!-- <a href="/addTrainer" class="btn btn-danger">Add new trainer</a> -->
-  <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
     Add new trainer
   </button>
 
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
-      <div class="modal-content" style="background-color: black; border: 1px solid white;">
+      <div class="modal-content m-4" style="background-color: black; border: 1px solid white;">
 
         <!-- Modal Header -->
         <div class="modal-header">
@@ -42,7 +42,7 @@
 </div>
 
 
-<div class="table-wrapper-scroll-y my-custom-scrollbar">
+<div class="table-wrapper-scroll-y my-custom-scrollbar m-4" >
   <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
     <thead>
       <tr>
@@ -58,7 +58,6 @@
       <?php foreach ($teachers as $index => $teacher) : ?>
         <tr>
           <th scope="row"><?= $index+1 ?></th>
-          <!-- <td><img src="" alt=""></td> -->
           <td><?= $teacher['username'] ?></td>
           <td><?= $teacher['email'] ?></td>
           <td><?= $teacher['password'] ?></td>
@@ -70,13 +69,13 @@
                         function functionDelete() {
                           if (confirm("Are you sure you want to delete this category?")) {
                             
-                            return true; // Proceed with deletion
+                            return true; 
                           } else {
-                            return false; // Cancel deletion
+                            return false; 
                           }
                         }
             </script>
-              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue;"></i>
+              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $course['course_id'] ?>" aria-hidden="true">
 
 
