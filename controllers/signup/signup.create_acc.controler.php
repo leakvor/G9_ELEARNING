@@ -12,8 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     
     $user = accountExist($email);
     var_dump($user);
-    
-    if (count($user) == 0){
+    if (count($user)!= 0){
+        header("Location: /signups");
+    }
+    else if (count($user) == 0){
         $createAcc = createAcc($username, $email, $password);
         header("Location: /signins");
         $_SESSION['success'] = "Create account succesfuly";
