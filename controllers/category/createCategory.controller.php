@@ -6,8 +6,9 @@ require '../../models/category.model.php';
         $category=$_POST['cateName'];
         echo($category);
         $image=$_FILES['image'];
-        echo $image;
+        var_dump ($image);
     
+
 //    if(!empty($_POST['cateName'])){
 //       $worngfile="";
 //      if(isset($_FILES['image'])){
