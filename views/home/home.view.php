@@ -5,6 +5,14 @@ $statement = $connection->prepare("SELECT course.course_id, course.course_img, c
 $statement->execute();
 $courseTeachers = $statement->fetchAll();
 
+$statement = $connection->prepare("select * from category");
+$statement->execute();
+$categories = $statement->fetchAll();
+
+$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName,users.img FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where category.cateName='IT'");
+$statement->execute();
+$courseITs = $statement->fetchAll();
+
 // var_dump($courseTeachers);
 ?>
 <!-- =======================
@@ -103,7 +111,7 @@ Category START -->
 				$path = "/signins";
 			}
 			?>
-			<?php foreach ($courseTeachers as $courseTeacher) : ?>
+			<?php foreach ($categories as $category) : ?>
 				<!-- Category item -->
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<div class="card card-body shadow rounded-3">
@@ -111,7 +119,7 @@ Category START -->
 							<!-- Icon -->
 							<div class="icon-lg bg-danger bg-opacity-10 rounded-circle text-danger"><i class="fas fa-heartbeat"></i></div>
 							<div class="ms-3">
-								<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link"><?=$courseTeacher['cateName']?></a></h5>
+								<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link"><?= $category['cateName'] ?></a></h5>
 								<span>95 Courses</span>
 							</div>
 						</div>
@@ -265,11 +273,11 @@ IT courses START -->
 
 
 		<div class="row g-4">
-			<?php foreach ($courseTeachers as $courseTeacher) : ?>
+			<?php foreach ($courseITs as $courseIT) : ?>
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<!-- Image -->
 					<div class="card card-metro overflow-hidden rounded-3">
-						<img src="assets/images/course/<?= $courseTeacher['course_img'] ?>" alt="">
+						<img src="assets/images/course/<?= $courseIT['course_img'] ?>" alt="">
 						<!-- Image overlay -->
 						<div class="card-img-overlay d-flex">
 							<!-- Info -->
