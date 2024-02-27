@@ -43,7 +43,7 @@
   </div>
 
 
-  <div class="table-wrapper-scroll-y my-custom-scrollbar">
+  <div class="table-wrapper-scroll-y my-custom-scrollbar m-4">
     <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
       <thead>
         <tr>
@@ -77,7 +77,7 @@
                   }
                 }
               </script>
-              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue;"></i>
+              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
               <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
 
 
