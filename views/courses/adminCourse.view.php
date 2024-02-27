@@ -23,7 +23,36 @@
           ?>
           <!-- Modal body -->
           <div class="modal-body">
+          <form action="/addCourse" method="post" enctype="multipart/form-data">
+              <div class="form-group mt-3">
+                <input type="text" class="form-control bg-white" name="title" placeholder="Title">
+              </div>
+              <div class="form-group mt-3">
+                <input type="number" class="form-control bg-white" name="paid" placeholder="Paid">
+              </div>
+              <div class="form-group mt-3">
+                <select name="teacher" class="form-control bg-white">
+                  <option value="#">Choose Teacher</option>
+                  <?php foreach ($teachers as $teacher) : ?>
+                    <option value="<?= $teacher['user_id'] ?>"><?= $teacher['username'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              
+              </div>
+              <div class="form-group mt-3">
+                <select name="category" class="form-control bg-white">
+                  <option value="#">Choose Category</option>
+                  <?php foreach ($categories as $category) : ?>
+                    <option value="<?= $category['cat_id'] ?>"><?= $category['cateName'] ?></option>
+                  <?php endforeach ?>
+                </select>
+              </div>
 
+              <div class="form-group mt-3">
+                <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
+              </div>
+              <button class="btn btn-danger mt-3">Create</button>
+            </form>
           </div>
         </div>
       </div>
