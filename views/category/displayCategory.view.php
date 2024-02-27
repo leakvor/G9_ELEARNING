@@ -16,11 +16,14 @@
   <!-- ----Madal body--- -->
   <div class="modal-body">
     <div class="modal-body">
-    <form action="controllers/category/createCategory.controller.php" method="post">
+    <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="category">Name category:</label>
                     <input type="text" class="form-control bg-white" name="cateName">
                 </div>
+                <div class="form-group mt-3">
+                <input type="file" class="form-control bg-white" name="image" placeholder="Choose image">
+              </div>
         </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
@@ -40,15 +43,17 @@
         <tr style="border: 1px solid gray;">
           <th scope="col">id</th>
           <th scope="col">Name Category</th>
+          <th scope="col">images</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
       <?php foreach ($categorys as $index => $category):?>
         
-          <tr style="border: 1px solid gray;">
+            <tr style="border: 1px solid gray;">
             <th scope="row" ><?= $index+1 ?></th>
             <td><?= $category['cateName'] ?></td>
+            <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="60px" height="60px"  ></td>
             <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:red;"></i></a>
@@ -76,11 +81,12 @@
                       // $id=$_GET['id'];
                       // $statement = $connection->prepare("select * from category where cat_id=:id");
                       // $statement->execute([':id' => $id]);
+
                       // $category=$statement->fetch();
                     ?> -->
 
                     <div class="modal-body">
-                    <form action="controllers/category/updateCategory.controller.php" method="post">
+                    <form action="controllers/category/updateCategory.controller.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="category">Name Category:</label>
                     <input type="hidden" name="id"
@@ -88,6 +94,9 @@
                 <div class="form-group">
                     <input type="text" class="form-control bg-white"
                      value="<?=$category['cateName']?>" name="cateName">
+              </div>
+              <div class="form-group mt-3">
+                          <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
               </div>
         </div>
                 <!-- Modal footer -->
