@@ -62,6 +62,8 @@ if (isset($_SESSION['success'])){
                     <?php
                     if (isset($_SESSION['acc'])){
                         $validation = $_SESSION['acc'];
+                    }else{
+                        $validation = '';
                     }
                     ?>
                     <form action="controllers/signin/signin.check.controller.php" method = 'post'>
