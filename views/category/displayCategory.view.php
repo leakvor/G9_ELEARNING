@@ -43,7 +43,7 @@
         <tr style="border: 1px solid gray;">
           <th scope="col">id</th>
           <th scope="col">Name Category</th>
-          <th scope="col">images</th>
+          <th scope="col">Images</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -56,7 +56,7 @@
             <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="60px" height="60px"  ></td>
             <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
-            <i class="fa fa-trash" style="color:red;"></i></a>
+            <i class="fa fa-trash" style="color:red; margin-right:10px"></i></a>
             <script>
                         function functionDelete() {
                           if (confirm("Are you sure you want to delete this category?")) {

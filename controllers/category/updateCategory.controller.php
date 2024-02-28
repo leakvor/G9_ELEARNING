@@ -1,6 +1,6 @@
 <?php
-require '../../database/database.php';
-require '../../models/category.model.php';
+require "../../database/database.php";
+require "../../models/category.model.php";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category= htmlspecialchars($_POST['cateName']);
     $id = ($_POST['id']);
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         
                         if($isCreate){
                             // Redirect or perform further actions
-                            header('Location: /displayCategory');
+                            header("Location: /displayCategory");
                         } else {
                             echo "<script>alert('Error occurred while updating category.');</script>";
                         }

@@ -1,7 +1,7 @@
 <?php
 // session_start();
-require '../../database/database.php';
-require '../../models/category.model.php';
+require "../../database/database.php";
+require "../../models/category.model.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category=$_POST['cateName'];
         echo($category);
@@ -38,7 +38,7 @@ require '../../models/category.model.php';
                         }else{
                         
                             echo "<script>alert('Sorry, your file is wrong extention');</script>";
-                            header('Location: /adminCourse');
+                            header("Location: /adminCourse");
                      }
                  }
              }
@@ -47,7 +47,7 @@ require '../../models/category.model.php';
      }
     
     }else{
-        header('location: /displayCategory');
+        header("location: /displayCategory");
         
     }
  if(empty($_POST['cateName'])):?>
@@ -58,5 +58,5 @@ require '../../models/category.model.php';
     
     <?php
     $categorys=getCategorys();
-    header('location: /displayCategory');
+    header("location: /displayCategory");
     

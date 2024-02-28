@@ -19,7 +19,7 @@ function createCategory(string $category, string $image) : bool
 
     return $statement->rowCount() > 0;
 }
-function deletecategory(int $id) :bool
+function deleteCategory(int $id) :bool
 {   
     global $connection;
     $statement = $connection->prepare("delete from category where cat_id=:id");

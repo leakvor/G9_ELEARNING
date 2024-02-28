@@ -1,10 +1,10 @@
 <?php
 require "../../database/database.php";
-require("../../models/category.model.php");
+require "../../models/category.model.php";
 if (isset($_GET['id']))
 {
     $id = $_GET['id'];
-    deletecategory($id);
+    deleteCategory($id);
 }
-header('Location:/displayCategory');
+header("Location:/displayCategory");
 ?>
