@@ -1,4 +1,4 @@
-<div class="container-fluid pt-2 px-4" style="overflow-x: auto">
+<div class="container-fluid pt-4 px-4" style="overflow-x: auto">
   <!-- <a href="/addTrainer" class="btn btn-danger">Add new trainer</a> -->
   <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
     Add new trainer
@@ -48,7 +48,7 @@
           <th scope="col">id</th>
           <th scope="col">FirstName</th>
           <th scope="col">Email</th>
-          <th scope="col">Password</th>
+          <!-- <th scope="col">Password</th> -->
           <th scope="col">Img</th>
           <th scope="col">Action</th>
         </tr>
@@ -60,7 +60,7 @@
             <!-- <td><img src="" alt=""></td> -->
             <td><?= $teacher['username'] ?></td>
             <td><?= $teacher['email'] ?></td>
-            <td><?= $teacher['password'] ?></td>
+            <!-- <td><?= $teacher['password'] ?></td> -->
             <td><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
             <td class="d-flex d-grid gap-3">
               <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">

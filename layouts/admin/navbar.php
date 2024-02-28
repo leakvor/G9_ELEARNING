@@ -1,52 +1,48 @@
  <!-- Sidebar Start -->
  <?php
- if (isset($_SESSION['admin'])){
-    $admin = $_SESSION['admin'];
-    $adminname = strtoupper($admin['username']);
- }else{
-    $adminname = "Unknown";
- }
- ?>
+    if (isset($_SESSION['admin'])) {
+        $admin = $_SESSION['admin'];
+        $adminname = strtoupper($admin['username']);
+    } else {
+        $adminname = "Unknown";
+    }
+    ?>
  <?php
- $URL = $_SERVER['REQUEST_URI'];
- if ($URL == '/admins'){
-    $activeAdmin = 'active';
-    $activeTrainer = '';
-    $activeStudent = '';
-    $activeCourse= '';
-    $activeCategiry = '';
-}
-else if($URL == '/adminTrainer'){
-    $activeTrainer = 'active';
-    $activeAdmin = ''; 
-    $activeStudent = ''; 
-    $activeCategiry = '';
-    $activeCourse= '';
-}
-else if($URL == '/displayStudent'){
-    $activeStudent = 'active';
-    $activeAdmin = ''; 
-    $activeTrainer = ''; 
-    $activeCategiry = '';
-    $activeCourse= '';
-}
-else if($URL == '/displayCategory'){
-    $activeCategiry = 'active';
-    $activeStudent = '';
-    $activeAdmin = ''; 
-    $activeTrainer = ''; 
-    $activeCourse= '';
-}
-else if($URL == '/adminCourse'){
-    $activeCourse= 'active';
-    $activeCategiry = '';
-    $activeStudent = '';
-    $activeAdmin = ''; 
-    $activeTrainer = ''; 
-}
-  
-?>
- 
+    $URL = $_SERVER['REQUEST_URI'];
+    if ($URL == '/admins') {
+        $activeAdmin = 'active';
+        $activeTrainer = '';
+        $activeStudent = '';
+        $activeCourse = '';
+        $activeCategiry = '';
+    } else if ($URL == '/adminTrainer') {
+        $activeTrainer = 'active';
+        $activeAdmin = '';
+        $activeStudent = '';
+        $activeCategiry = '';
+        $activeCourse = '';
+    } else if ($URL == '/displayStudent') {
+        $activeStudent = 'active';
+        $activeAdmin = '';
+        $activeTrainer = '';
+        $activeCategiry = '';
+        $activeCourse = '';
+    } else if ($URL == '/displayCategory') {
+        $activeCategiry = 'active';
+        $activeStudent = '';
+        $activeAdmin = '';
+        $activeTrainer = '';
+        $activeCourse = '';
+    } else if ($URL == '/adminCourse') {
+        $activeCourse = 'active';
+        $activeCategiry = '';
+        $activeStudent = '';
+        $activeAdmin = '';
+        $activeTrainer = '';
+    }
+
+    ?>
+
 
 
 
@@ -61,31 +57,31 @@ else if($URL == '/adminCourse'){
                  <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
              </div>
              <div class="ms-3">
-                 <h6 class="mb-0"><?=$adminname?></h6>
+                 <h6 class="mb-0"><?= $adminname ?></h6>
                  <span>Admin</span>
              </div>
          </div>
          <div class="navbar-nav w-100">
              <?php
-                if (isset($_SESSION['admin'])){
+                if (isset($_SESSION['admin'])) {
                     $dasboad = '/admins';
                     $teacherPath = "/adminTrainer";
                     $studentPath = "/displayStudent";
                     $categories = "/displayCategory";
                     $admincourse = "/adminCourse";
-                }else{
+                } else {
                     $dasboad = '/admin';
                     $teacherPath = "/admin";
                     $studentPath = "/admin";
                     $categories = "/admin";
                     $admincourse = "/admin";
                 }
-            ?>
-             <a href="<?php echo $dasboad?>" class="nav-item nav-link <?= $activeAdmin?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-             <a href="<?php echo $teacherPath?>" class="nav-item nav-link <?= $activeTrainer?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
-             <a href="<?php echo $studentPath?>" class="nav-item nav-link <?=$activeStudent?>"><i class="fa fa-user me-2"></i>Students</a>
-             <a href="<?php echo $categories?>" class="nav-item nav-link <?=$activeCategiry?>"><i class="far fa-folder-open me-2"></i>Categories</a>
-             <a href="<?php echo $admincourse?>" class="nav-item nav-link <?=$activeCourse?>"><i class="fas fa-book me-2"></i>Course</a>
+                ?>
+             <a href="<?php echo $dasboad ?>" class="nav-item nav-link <?= $activeAdmin ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+             <a href="<?php echo $teacherPath ?>" class="nav-item nav-link <?= $activeTrainer ?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
+             <a href="<?php echo $studentPath ?>" class="nav-item nav-link <?= $activeStudent ?>"><i class="fa fa-user me-2"></i>Students</a>
+             <a href="<?php echo $categories ?>" class="nav-item nav-link <?= $activeCategiry ?>"><i class="far fa-folder-open me-2"></i>Categories</a>
+             <a href="<?php echo $admincourse ?>" class="nav-item nav-link <?= $activeCourse ?>"><i class="fas fa-book me-2"></i>Course</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                  <div class="dropdown-menu bg-transparent border-0">
@@ -109,9 +105,18 @@ else if($URL == '/adminCourse'){
          <a href="#" class="sidebar-toggler flex-shrink-0">
              <i class="fa fa-bars"></i>
          </a>
+
+
+
+
+
          <form class="d-none d-md-flex ms-4">
              <input class="form-control bg-dark border-0" type="search" placeholder="Search">
-         </form>
+         </form> 
+
+
+
+        
          <div class="navbar-nav align-items-center ms-auto">
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
@@ -123,7 +128,7 @@ else if($URL == '/adminCourse'){
                          <div class="d-flex align-items-center">
                              <img class="rounded-circle" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
                              <div class="ms-2">
-                                 <h6 class="fw-normal mb-0"><?=strtolower($adminname)?> send you a message</h6>
+                                 <h6 class="fw-normal mb-0"><?= strtolower($adminname) ?> send you a message</h6>
                                  <small>15 minutes ago</small>
                              </div>
                          </div>
@@ -133,7 +138,7 @@ else if($URL == '/adminCourse'){
                          <div class="d-flex align-items-center">
                              <img class="rounded-circle" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
                              <div class="ms-2">
-                                 <h6 class="fw-normal mb-0"><?=strtolower($adminname)?> send you a message</h6>
+                                 <h6 class="fw-normal mb-0"><?= strtolower($adminname) ?> send you a message</h6>
                                  <small>15 minutes ago</small>
                              </div>
                          </div>
@@ -143,7 +148,7 @@ else if($URL == '/adminCourse'){
                          <div class="d-flex align-items-center">
                              <img class="rounded-circle" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
                              <div class="ms-2">
-                                 <h6 class="fw-normal mb-0"><?=strtolower($adminname)?> send you a message</h6>
+                                 <h6 class="fw-normal mb-0"><?= strtolower($adminname) ?> send you a message</h6>
                                  <small>15 minutes ago</small>
                              </div>
                          </div>
@@ -179,7 +184,7 @@ else if($URL == '/adminCourse'){
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                      <img class="rounded-circle me-lg-2" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
-                     <span class="d-none d-lg-inline-flex"><?=$adminname?></span>
+                     <span class="d-none d-lg-inline-flex"><?= $adminname ?></span>
                  </a>
                  <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                      <a href="#" class="dropdown-item">My Profile</a>
