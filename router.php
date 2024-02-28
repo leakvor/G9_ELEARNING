@@ -4,7 +4,7 @@ session_start();
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 
-if(isset($_SESSION['user'])){
+if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
     $routes = [
         '/'=>'controllers/home/home.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
@@ -12,12 +12,15 @@ if(isset($_SESSION['user'])){
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
+        
     ];
 }else{
     $routes = [
         '/'=>'controllers/home/home.controller.php',
         '/signups' => 'controllers/signup/signup.controler.php',
         '/signins' => 'controllers/signin/signin.controller.php',
+        '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
+        '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
     ];
 }
 

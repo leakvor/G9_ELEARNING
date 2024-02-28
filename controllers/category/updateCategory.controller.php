@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error=$_FILES['image']['error'];
         
         if($error===0){
-            if($img_size > 125000){
+            if($img_size > 12500000){
                 echo "<script>alert('Sorry, your file is too large.');</script>";
             } else {
                 $img_ex=pathinfo($img_name,PATHINFO_EXTENSION);

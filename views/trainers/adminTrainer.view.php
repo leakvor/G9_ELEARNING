@@ -48,7 +48,7 @@
           <th scope="col">id</th>
           <th scope="col">FirstName</th>
           <th scope="col">Email</th>
-          <th scope="col">Password</th>
+          <!-- <th scope="col">Password</th> -->
           <th scope="col">Img</th>
           <th scope="col">Action</th>
         </tr>
@@ -108,7 +108,7 @@
                           <input type="text" class="form-control bg-white" name="email" placeholder="Email" value="<?= $teacher['email'] ?>">
                         </div>
                         <div class="form-group mt-3">
-                          <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" value="<?= $teacher['password'] ?>">
+                          <!-- <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" value=""> -->
                         </div>
                         <div class="form-group mt-3">
                           <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">

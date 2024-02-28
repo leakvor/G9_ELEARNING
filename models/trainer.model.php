@@ -58,3 +58,17 @@ function updateTeacherNoImg($username,$email,$password,$id){
     ]);
     $statement->rowCount() >0;
 }
+function accountExist(string $email): array
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email");
+    $statement->execute([
+        ':email' => $email,
+    ]);
+
+    if ($statement->rowCount() > 0){
+        return $results = $statement->fetch(PDO::FETCH_ASSOC);
+    }else{
+        return [];
+    }
+}

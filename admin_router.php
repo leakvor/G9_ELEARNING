@@ -21,6 +21,14 @@ if (isset($_SESSION['admin'])){
 }else{
     $routes = [
         '/admin' => 'controllers/admin/signin_admin.controller.php',
+        
+    '/adminTrainer' => 'controllers/trainers/adminTrainer.controller.php',
+    '/addTrainer' => 'controllers/trainers/addTrainer.controller.php',
+    //Course
+    '/adminCourse' => 'controllers/courses/adminCourse.controller.php',
+    '/addCourse' => 'controllers/courses/addCourse.controller.php',
+    '/displayStudent' => 'controllers/students/displayStudent.controller.php',
+
     ];
 }
 

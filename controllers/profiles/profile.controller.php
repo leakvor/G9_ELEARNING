@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $error=$_FILES['img']['error'];
 
         if($error===0){
-            if($img_size>125000){
+            if($img_size>12500000){
                 $em="Sorry your file som large";
                 echo "<script>alert('Sorry, your file is too large.');</script>";
                 
