@@ -7,7 +7,6 @@
           <th scope="col">id</th>
           <th scope="col">Username</th>
           <th scope="col">Email</th>
-          <th scope="col">Password</th>
           <th scope="col">Img</th>
           <th scope="col">Action</th>
         </tr>
@@ -19,9 +18,8 @@
         ?>
         <tr>
             <td><?= $index+1 ?></td>
-            <td><?= $student['username'] ?></td>
-            <td><?= $student['email'] ?></td>
-            <td><?= $student['password'] ?></td>
+            <td><?= $student["username"] ?></td>
+            <td><?= $student["email"] ?></td>
             <td><img src="assets/images/profile/<?= $student["img"] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
             <td><a href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>
             "onclick="return functionDelete()">
