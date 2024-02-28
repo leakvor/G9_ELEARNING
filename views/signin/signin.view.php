@@ -59,6 +59,11 @@ if (isset($_SESSION['success'])){
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <?php
+                    if (isset($_SESSION['acc'])){
+                        $validation = $_SESSION['acc'];
+                    }
+                    ?>
                     <form action="controllers/signin/signin.check.controller.php" method = 'post'>
                         <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                             <div class="d-flex align-items-center justify-content-between mb-3">
@@ -75,6 +80,7 @@ if (isset($_SESSION['success'])){
                                 <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
+                            <p class="text-danger"><?= $validation?></p>
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
