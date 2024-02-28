@@ -240,14 +240,14 @@
       <!-- Language -->
       <ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="language" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-globe me-2"></i>
-            <span class="d-none d-lg-inline-block">Language</span>
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-friends"></i>
+            <span class="d-none d-lg-inline-block">Roles</span>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end min-w-auto" aria-labelledby="language">
-            <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/uk.svg" alt="">English</a></li>
-            <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/gr.svg" alt="">German</a></li>
-            <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li>
+          <ul class="dropdown-menu dropdown-menu-end min-w-auto">
+            <li> <a class="dropdown-item" href=""><i class="fas fa-chalkboard-teacher fa-fw me-2"></i>Trainers</a></li>
+            <li> <a class="dropdown-item" href="/"><i class="fas fa-user-graduate fa-fw me-2"></i>Students</a></li>
+            <!-- <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li> -->
           </ul>
         </li>
       </ul>
