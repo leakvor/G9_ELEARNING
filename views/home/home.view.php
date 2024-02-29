@@ -135,14 +135,17 @@ Category START -->
 		<div class="row g-4">
 			<?php
 			if (isset($_SESSION['user'])) {
-				$path = "views/profile/form.profile.view.php";
+				$path = "/displayAllcourse";
 			?>
 			<?php
 			} else {
 				$path = "/signins";
 			}
 			?>
-			<?php foreach ($categories as $category) : ?>
+			<?php foreach ($categories as $category) : 
+				$path = "controllers/courses/displayAllcourse.controller.php". "?category=" . urlencode($category['cat_id']);
+				?>
+				
 				<!-- Category item -->
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<div class="card card-body shadow rounded-3">
@@ -150,6 +153,7 @@ Category START -->
 							<!-- Icon -->
 							<div class="icon-lg bg-danger bg-opacity-10 rounded-circle text-danger"><i class="fas fa-heartbeat"></i></div>
 							<div class="ms-3">
+								
 								<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link"><?= $category['cateName'] ?></a></h5>
 								<span><?= isset($categoryCoursesCount[$category['cateName']]) ? $categoryCoursesCount[$category['cateName']] : 0 ?></span>
 							</div>
