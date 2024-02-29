@@ -58,7 +58,7 @@
                     //     $validation = '';
                     // }
                     ?>
-                    <form action="controllers/signin/signin.check.controller.php" method = 'post'>
+                    <form action="controllers/trainers/check.trainer_lognin.php" method = 'post'>
                         <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                             <div class="d-flex align-items-center justify-content-between mb-3">
                                 <a href="index.html" class="">
