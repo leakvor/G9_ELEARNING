@@ -23,7 +23,7 @@
                 </div>
                 <small class="text-danger" id="p"></small>
                 <div class="form-group mt-3">
-                <input type="file" class="form-control bg-white" name="image" placeholder="Choose image">
+                <input type="file" class="form-control bg-white" name="image" id="image" placeholder="Choose image">
               </div>
         </div>
                 <!-- Modal footer -->
@@ -127,13 +127,14 @@
     submitBtn.removeAttribute("disabled");
   });
 
-  const regex = /^[a-zA-Z\s]{4,20}$/;
+  const regex = /^[a-zA-Z\s]{3,20}$/;
+  console.log(regex)
   function checkInput(text) {
     let category = regex.test(text);
     if (category) {
       p.textContent = "Success for create category";
     } else {
-      p.textContent = "Please enter a category between 4 and 20 characters, containing only letters and spaces.";
+      p.textContent = "Please enter a category between 3 and 20 characters, containing only letters and spaces.";
     }
   }
 </script>
