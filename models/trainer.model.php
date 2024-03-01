@@ -9,20 +9,48 @@ function getTeacher() : array
 }
 
 
+// function createTrainer(string $username, string $email, string $password, string $img) : bool
+// {
+//     global $connection;
+//     $statement = $connection->prepare("insert into users (username,email,password,role,img) values (:username, :email,:password,:role,:img)");
+//     $statement->execute([
+//         ':username'=>$username,
+//         ':email'=>$email,
+//         ':password'=>$password,
+//         ':role'=>"teacher",
+//         ':img'=>$img,
+
+//     ]);
+
+//     return $statement->rowCount() > 0;
+// }
+
+
+
+
+
+
 function createTrainer(string $username, string $email, string $password, string $img) : bool
 {
     global $connection;
-    $statement = $connection->prepare("insert into users (username,email,password,role,img) values (:username, :email,:password,:role,:img)");
-    $statement->execute([
-        ':username'=>$username,
-        ':email'=>$email,
-        ':password'=>$password,
-        ':role'=>"teacher",
-        ':img'=>$img,
+    $checkStatement = $connection->prepare("select count(*) from users where email = :email");
+    $checkStatement->execute([':email' => $email]);
+    $count = $checkStatement->fetchColumn();
 
+    if ($count > 0) {
+        return false;
+    }
+
+    $statement = $connection->prepare("insert into users (username, email, password, role, img) values (:username, :email, :password, :role, :img)");
+    $result = $statement->execute([
+        ':username' => $username,
+        ':email' => $email,
+        ':password' => $password,
+        ':role' => "teacher",
+        ':img' => $img,
     ]);
 
-    return $statement->rowCount() > 0;
+    return $result;
 }
 
 

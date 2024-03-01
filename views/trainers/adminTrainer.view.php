@@ -1,6 +1,9 @@
 <script>
   (function() {
     'use strict';
+    // $usernameError = "";
+    // $emailError = "";
+    // $passwordError = "";
     let regex_email = /^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/;
     let $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
 
@@ -68,6 +71,11 @@
               </div>
               <div class="form-group mt-3">
                 <input type="email" class="form-control bg-white" name="email" placeholder="Email" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                <!-- <span style="color:red"><?php echo $emailError ?></span> -->
+                <?php if (isset($emailError)) : ?>
+                  <span style="color:red"><?php echo $emailError ?></span>
+                <?php endif; ?>
+
               </div>
               <div class="form-group mt-3">
                 <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" required>
@@ -121,7 +129,7 @@
             </script>
             <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
-            
+
 
               <script>
                 (function() {
@@ -140,7 +148,7 @@
                         let emailInput = form.querySelector('input[name="email"]');
                         let email = emailInput.value.trim();
                         if (!regex_email.test(email)) {
-                          alert("Invalid email format. Please enter a valid email address.");
+                          // alert("Invalid email format. Please enter a valid email address.");
                           emailInput.focus();
                           event.preventDefault();
                           event.stopPropagation();
@@ -151,7 +159,7 @@
                         let passwordInput = form.querySelector('input[name="password"]');
                         let password = passwordInput.value.trim();
                         if (password !== '' && (password.length < 8 || !(/[a-z]/.test(password)) || !(/[A-Z]/.test(password)) || !(/\d/.test(password)) || !(/[^\da-zA-Z]/.test(password)))) {
-                          alert("Password must be at least 8 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character.");
+                          // alert("Password must be at least 8 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character.");
                           passwordInput.focus();
                           event.preventDefault();
                           event.stopPropagation();
