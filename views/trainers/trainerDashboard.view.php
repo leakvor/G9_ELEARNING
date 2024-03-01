@@ -1,5 +1,7 @@
 <body>
-
+	<?php
+	// session_start()
+	?>
 	<!-- Header START -->
 	<header class="navbar-light navbar-sticky">
 		<!-- Logo Nav START -->
@@ -109,6 +111,15 @@ Page Banner START -->
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
 										</ul>
 									</div>
+
+									<?php
+										if (isset($_SESSION['trainer'])){
+										var_dump($_SESSION['trainer']);
+										}else{
+											echo 'NOT SET!';
+										}
+									?>
+
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
 										<a href="/trainer_create_course" class="btn btn-success mb-0">Create a

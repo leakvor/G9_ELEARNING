@@ -60,7 +60,6 @@
             <!-- <td><img src="" alt=""></td> -->
             <td><?= $teacher['username'] ?></td>
             <td><?= $teacher['email'] ?></td>
-            <td><?= $teacher['password'] ?></td>
             <td><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
             <td class="d-flex d-grid gap-3">
               <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">

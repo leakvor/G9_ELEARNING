@@ -310,6 +310,14 @@
       }
       ?>
       <!-- Right header content END -->
+
+      <?php
+        if (isset($_SESSION['trainer'])){
+  
+        }else{
+          echo 'NOT SET!';
+        }
+      ?>
       
   </nav>
 
