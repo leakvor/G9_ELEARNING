@@ -19,9 +19,6 @@ $statement->execute();
 $courseITs = $statement->fetchAll();
 
 
-$statement->execute();
-$courseTeachers = $statement->fetchAll();
-
 // Fetching all categories
 $statement = $connection->prepare("SELECT * FROM category");
 $statement->execute();
@@ -143,7 +140,8 @@ Category START -->
 			}
 			?>
 			<?php foreach ($categories as $category) : 
-				$path = "controllers/courses/displayAllcourse.controller.php". "?category=" . urlencode($category['cat_id']);
+				$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+				
 				?>
 				
 				<!-- Category item -->
@@ -155,7 +153,7 @@ Category START -->
 							<div class="ms-3">
 								
 								<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link"><?= $category['cateName'] ?></a></h5>
-								<span><?= isset($categoryCoursesCount[$category['cateName']]) ? $categoryCoursesCount[$category['cateName']] : 0 ?></span>
+								<span> <?= isset($categoryCoursesCount[$category['cateName']]) ? ($categoryCoursesCount[$category['cateName']] < 2 ? $categoryCoursesCount[$category['cateName']] . " course" : $categoryCoursesCount[$category['cateName']] . " courses") : 0 ?></span>
 							</div>
 						</div>
 					</div>
@@ -181,9 +179,7 @@ Featured course START -->
 
 		<div class="row g-4">
 			<?php
-			foreach ($courseTeachers as $courseTeacher) :
-				// var_dump($courseTeacher['img']);
-			?>
+			foreach ($courseTeachers as $courseTeacher) :?>
 				<div class="col-md-6 col-lg-4 col-xxl-3">
 					<div class="card p-2 shadow h-100">
 						<div class="rounded-top overflow-hidden">

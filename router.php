@@ -12,7 +12,7 @@ if(isset($_SESSION['user'])){
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
-        '/displayAllcourse' => 'controllers/courses/displayAllcourse.view.php',
+        '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
         
     ];
 }else{

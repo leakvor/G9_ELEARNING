@@ -1,11 +1,11 @@
 <?php
-require "../../database/database.php";
-require "../../models/course.model.php";
-if(isset($_GET['category'])){
-    // Retrieve the value of the 'category' parameter
-    $category = $_GET['category'];
-    $displayCourses=displayAllcourse($category);
-    // var_dump($displayCourse);
-}  
+// Start the session
+// session_start();
 
-require "../../views/courses/displayAllcourse.view.php";
+// Check if the session variable is set
+if(isset($_SESSION['displayCourse'])){
+    // Retrieve the value from the session
+    $displayCourses = $_SESSION['displayCourse'];
+    require "views/courses/displayAllcourse.view.php";
+}
+?>
