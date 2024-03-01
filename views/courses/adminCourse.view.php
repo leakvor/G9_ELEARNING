@@ -1,5 +1,36 @@
+<?php
+require "database/database.php";
+$statement = $connection->prepare("select * from users where role='teacher'");
+$statement->execute();
+$teachers = $statement->fetchAll();
+
+$statement = $connection->prepare("select * from category");
+$statement->execute();
+$categories = $statement->fetchAll();
+?>
 <div class="container-fluid pt-4 px-4">
   <div class="container-fluid pt-2 px-4" style="overflow-x: auto">
+    <div class="form-row" style="display: flex;">
+      <div class="col-md-4 mb-3">
+        <input class="form-control bg-dark border-1  border-white mt-3 mr-3" type="search" id="search" placeholder="Search" style="width: 200px;">
+      </div>
+      <div class="col-md-4 mb-3">
+        <select name="category" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">
+          <option value="#">Select by Category</option>
+          <?php foreach ($categories as $category) : ?>
+            <option value="<?= $category['cateName'] ?>"><?= $category['cateName'] ?></option>
+          <?php endforeach ?>
+        </select>
+      </div>
+      <div class="col-md-4 mb-3">
+        <select name="teacher" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">>
+          <option value="#">Choose Teacher</option>
+          <?php foreach ($teachers as $teacher) : ?>
+            <option value="<?= $teacher['username'] ?>"><?= $teacher['username'] ?></option>
+          <?php endforeach ?>
+        </select>
+      </div>
+    </div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-right:11px;"> Add new Course</button>
 
     <!-- The Modal -->
@@ -11,21 +42,12 @@
             <h4 class="modal-title">Form Add new course</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
           </div>
-          <?php
-          require "database/database.php";
-          $statement = $connection->prepare("select * from users where role='teacher'");
-          $statement->execute();
-          $teachers = $statement->fetchAll();
 
-          $statement = $connection->prepare("select * from category");
-          $statement->execute();
-          $categories = $statement->fetchAll();
-          ?>
           <!-- Modal body -->
           <div class="modal-body">
-          <form action="/addCourse" method="post" enctype="multipart/form-data">
+            <form action="/addCourse" method="post" enctype="multipart/form-data">
               <div class="form-group mt-3">
-                <input type="text" class="form-control bg-white" name="title" placeholder="Title">
+                <input type="text" class="form-control bg-white" name="title" placeholder="Title" id="title">
               </div>
               <div class="form-group mt-3">
                 <input type="number" class="form-control bg-white" name="paid" placeholder="Paid">
@@ -37,7 +59,7 @@
                     <option value="<?= $teacher['user_id'] ?>"><?= $teacher['username'] ?></option>
                   <?php endforeach ?>
                 </select>
-              
+
               </div>
               <div class="form-group mt-3">
                 <select name="category" class="form-control bg-white">
@@ -51,7 +73,7 @@
               <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
               </div>
-              <button class="btn btn-danger mt-3">Create</button>
+              <button type="submit" id="submitBtn" class="btn btn-danger mt-3" disabled>Create</button>
             </form>
           </div>
         </div>
@@ -115,7 +137,7 @@
                       // var_dump($course['img'])
                       ?>
                       <form action="controllers/courses/updateCourse.controller.php" method="post" enctype="multipart/form-data">
-                      <div class="form-group mt-3">
+                        <div class="form-group mt-3">
                           <input type="hidden" class="form-control bg-white" name="id" placeholder="Title" value="<?= $course['course_id'] ?>">
                         </div>
                         <div class="form-group mt-3">
@@ -148,7 +170,7 @@
                         </div>
 
                         <div class="form-group mt-3">
-                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img" >
+                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
                         </div>
                         <button class="btn btn-danger mt-3">Edit</button>
                       </form>
@@ -170,5 +192,48 @@
     $("#editIcon").click(function() {
       $("#editModal").modal('show');
     });
+  });
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('#search');
+    const tableRows = document.querySelectorAll('tbody tr');
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      tableRows.forEach(function(row) {
+        const title = row.cells[1].textContent.trim().toLowerCase();
+
+        if (title.includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+
+    const categorySelect = document.querySelector('select[name="category"]');
+    categorySelect.addEventListener('change', filterCourses);
+
+    const teacherSelect = document.querySelector('select[name="teacher"]');
+    teacherSelect.addEventListener('change', filterCourses);
+
+    function filterCourses() {
+      const selectedCategory = categorySelect.value;
+      const selectedTeacher = teacherSelect.value;
+
+      tableRows.forEach(function(row) {
+        const courseCategory = row.cells[3].textContent.trim();
+        const courseTeacher = row.cells[2].textContent.trim();
+
+        if ((selectedCategory === '#' || courseCategory === selectedCategory) &&
+          (selectedTeacher === '#' || courseTeacher === selectedTeacher)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
   });
 </script>
