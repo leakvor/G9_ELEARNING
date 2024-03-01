@@ -1,6 +1,6 @@
 <?php
 require('../../database/database.php');
-require('../../models/student.model.php');
+require('../../models/trainer.model.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $img_size=$_FILES['img']['size'];
         $tmp_name=$_FILES['img']['tmp_name'];
         $error=$_FILES['img']['error'];
-        header("Location: /");
+        header('Location: /trainerdashboard');
 
         if($error===0){
             if($img_size>12500000){
@@ -29,13 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     $usGetimg  = profile($email,  $new_img_name);
                     if(isset($usGetimg)){
-                        $_SERVER['profile'] = $new_img_name;
-                        header("Location: /");
+                        $_SERVER['trainer_profile'] = $new_img_name;
+                        header("Location: /trainerdashboard");
                         echo "<script>alert('your profile has changed!');</script>";
                     }
                     }else{
                         echo "<script>alert('Sorry, your file is wrong extention');</script>";
-                        header("Location: /");
+                        header("Location: /trainerdashboard");
                  }
              }
          }
