@@ -105,61 +105,9 @@
          <a href="#" class="sidebar-toggler flex-shrink-0">
              <i class="fa fa-bars"></i>
          </a>
-
-
-         <form class="d-none d-md-flex ms-4" id="searchForm" action="/addTrainer" method="GET" enctype="multipart/form-data">
+         <!-- <form class="d-none d-md-flex ms-4" id="searchForm" action="/addTrainer" method="GET" enctype="multipart/form-data">
              <input type="text" name="search" id="searchInput" class="form-control" placeholder="Searh " aria-label="FirstName" aria-describedby="basic-addon1">
-             <script>
-                 document.addEventListener('DOMContentLoaded', function() {
-                    //  let searchForm = document.getElementById('searchForm');
-                    //  let searchInput = document.getElementById('searchInput');
-                    //  let citiesSelect = document.getElementById('cities');
-                    //  let dataTable = document.getElementById('dataTable');
-                     let searchForm = document.getElementById('Full name');
-                     let searchInput = document.getElementById('emaul');
-                    //  let citiesSelect = document.getElementById('cities');
-                     let dataTable = document.getElementById('password');
-
-                     searchForm.addEventListener('keyup', function(event) {
-                         event.preventDefault();
-                         let searchTerm = searchInput.value.trim().toLowerCase();
-                         let rows = dataTable.querySelectorAll('tbody tr');
-
-                         rows.forEach(function(row) {
-                             let nameCell = row.querySelector('td:nth-child(2)');
-                             if (nameCell.textContent.toLowerCase().includes(searchTerm)) {
-                                 row.style.display = '';
-                             } else {
-                                 row.style.display = 'none';
-                             }
-                         });
-                         searchedName.textContent = "Searched Name: " + searchTerm;
-                     });
-                 });
-             </script>
-
-         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+         </form> -->
          <div class="navbar-nav align-items-center ms-auto">
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
