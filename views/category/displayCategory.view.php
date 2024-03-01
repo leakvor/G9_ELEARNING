@@ -19,8 +19,9 @@
     <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="category">Name category:</label>
-                    <input type="text" class="form-control bg-white" name="cateName">
+                    <input type="text" class="form-control bg-white" name="cateName" id="cateName">
                 </div>
+                <small class="text-danger" id="p"></small>
                 <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="image" placeholder="Choose image">
               </div>
@@ -28,7 +29,8 @@
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <!-- <a href="" class="btn btn-danger">Create</a> -->
-                    <button type="submit"class="btn btn-danger">Create</button>
+                    <button id="submitBtn" type="submit" name="submit" class="btn btn-danger" disabled >Create</button>
+                    
                 </div>
             </form>
         </div>
@@ -115,3 +117,23 @@
     </table>
 
   </div>
+  <script>
+  const input = document.querySelector("#cateName");
+  const submitBtn = document.querySelector("#submitBtn");
+  const p = document.querySelector("#p");
+  input.addEventListener("input", (e) => {
+    console.log(input.value);
+    checkInput(input.value);
+    submitBtn.removeAttribute("disabled");
+  });
+
+  const regex = /^[a-zA-Z\s]{4,20}$/;
+  function checkInput(text) {
+    let category = regex.test(text);
+    if (category) {
+      p.textContent = "Success for create category";
+    } else {
+      p.textContent = "Please enter a category between 4 and 20 characters, containing only letters and spaces.";
+    }
+  }
+</script>
