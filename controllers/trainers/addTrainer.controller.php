@@ -51,7 +51,12 @@ if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['passwor
         alert("You forgot fill some information")
     </script>
 <?php endif ?>
-
 <?php
 $teachers = getTeacher();
 require "views/trainers/adminTrainer.view.php";
+?>
+
+
+
+
+
