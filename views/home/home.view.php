@@ -1,4 +1,9 @@
-<?php
+
+<!-- =======================
+Main Banner START -->
+<section class="bg-light">
+	<div class="container pt-5 mt-0 mt-lg-5">
+	<?php
 require "database/database.php";
 
 $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName,users.img FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
@@ -13,12 +18,35 @@ $statement = $connection->prepare("SELECT course.course_id, course.course_img, c
 $statement->execute();
 $courseITs = $statement->fetchAll();
 
+
+// Fetching all categories
+$statement = $connection->prepare("SELECT * FROM category");
+$statement->execute();
+$categories = $statement->fetchAll();
+
+// Initializing an array to store the count of courses in each category
+$categoryCoursesCount = [];
+
+// Looping through each category and counting the number of courses
+foreach ($categories as $category) {
+    $statement = $connection->prepare("SELECT COUNT(*) AS count FROM course WHERE cate_id = ?");
+    $statement->execute([$category['cat_id']]);
+    $count = $statement->fetchColumn();
+    $categoryCoursesCount[$category['cateName']] = $count;
+}
+
+// Fetching IT courses specifically
+$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username, category.cateName, users.img 
+                                   FROM course 
+                                   INNER JOIN category ON category.cat_id = course.cate_id 
+                                   INNER JOIN users ON users.user_id = course.user_id 
+                                   WHERE category.cateName = 'IT'");
+$statement->execute();
+$courseITs = $statement->fetchAll();
+
+
 // var_dump($courseTeachers);
 ?>
-<!-- =======================
-Main Banner START -->
-<section class="bg-light">
-	<div class="container pt-5 mt-0 mt-lg-5">
 
 		<!-- Title and SVG START -->
 		<div class="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
@@ -104,14 +132,18 @@ Category START -->
 		<div class="row g-4">
 			<?php
 			if (isset($_SESSION['user'])) {
-				$path = "views/profile/form.profile.view.php";
+				$path = "/displayAllcourse";
 			?>
 			<?php
 			} else {
 				$path = "/signins";
 			}
 			?>
-			<?php foreach ($categories as $category) : ?>
+			<?php foreach ($categories as $category) : 
+				$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+				
+				?>
+				
 				<!-- Category item -->
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<div class="card card-body shadow rounded-3">
@@ -119,8 +151,9 @@ Category START -->
 							<!-- Icon -->
 							<div class="icon-lg bg-danger bg-opacity-10 rounded-circle text-danger"><i class="fas fa-heartbeat"></i></div>
 							<div class="ms-3">
+								
 								<h5 class="mb-0"><a href="<?= $path ?>" class="stretched-link"><?= $category['cateName'] ?></a></h5>
-								<span>95 Courses</span>
+								<span> <?= isset($categoryCoursesCount[$category['cateName']]) ? ($categoryCoursesCount[$category['cateName']] < 2 ? $categoryCoursesCount[$category['cateName']] . " course" : $categoryCoursesCount[$category['cateName']] . " courses") : 0 ?></span>
 							</div>
 						</div>
 					</div>
@@ -146,9 +179,7 @@ Featured course START -->
 
 		<div class="row g-4">
 			<?php
-			foreach ($courseTeachers as $courseTeacher) :
-				// var_dump($courseTeacher['img']);
-			?>
+			foreach ($courseTeachers as $courseTeacher) :?>
 				<div class="col-md-6 col-lg-4 col-xxl-3">
 					<div class="card p-2 shadow h-100">
 						<div class="rounded-top overflow-hidden">

@@ -59,3 +59,12 @@ function updateCourseNotImge(int $id,string $title,int $user_id,int $cate_id,int
 
     return $statement->rowCount() > 0;
 }
+
+function displayAllcourse($id){
+    global $connection;
+    $statement = $connection->prepare("select * from course where cate_id=:id");
+    $statement->execute([
+        ':id'=>$id,
+    ]);
+    return $statement->fetchAll();
+}
