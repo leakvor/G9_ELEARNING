@@ -46,7 +46,7 @@
       <thead>
         <tr>
           <th scope="col">id</th>
-          <th scope="col">FirstName</th>
+          <th scope="col">Full name</th>
           <th scope="col">Email</th>
           <!-- <th scope="col">Password</th> -->
           <th scope="col">Img</th>
