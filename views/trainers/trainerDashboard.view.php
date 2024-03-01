@@ -73,8 +73,6 @@
 		<!-- Logo Nav END -->
 	</header>
 
-
-
 	<!-- Header END -->
 
 	<!-- **************** MAIN CONTENT START **************** -->
@@ -83,6 +81,27 @@
 		<!-- =======================
 Page Banner START -->
 		<section class="pt-0">
+
+			<!-- php-code__________________ -->
+			<?php
+				if (isset($_SESSION['trainer'])){
+					$trainer = ($_SESSION['trainer']);
+					// var_dump($trainer);
+				}else{
+					echo 'NOT SET!';
+				}
+
+				require('models/trainer.model.php');
+
+				$trainer_email = $trainer['email'];
+				$trainer_data = accountExist($trainer_email);
+				if (isset($trainer_data)){
+					$trainer_profile = $trainer_data['img'];
+				}else{
+					$trainer_profile = $trainer['img'];
+				}
+			?>
+
 			<!-- Main banner background image -->
 			<div class="container-fluid px-0">
 				<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -97,13 +116,14 @@ Page Banner START -->
 								<!-- Avatar -->
 								<div class="col-auto mt-4 mt-md-0">
 									<div class="avatar avatar-xxl mt-n3">
-										<img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt="">
+										<a href="assets/images/profile/<?= $trainer_profile?>"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?= $trainer_profile?>" alt="trainer_profile"></a>
 									</div>
 								</div>
 								<!-- Profile info -->
 								<div class="col d-md-flex justify-content-between align-items-center mt-4">
 									<div>
-										<h1 class="my-1 fs-4">Lori Stevens <i class="bi bi-patch-check-fill text-info small"></i></h1>
+										<h1 class="my-1 fs-4"><?= $trainer['username']?><i class="bi bi-patch-check-fill text-info small"></i></h1>
+										<p><?php echo $trainer['email']?></p>
 										<ul class="list-inline mb-0">
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled
@@ -111,14 +131,6 @@ Page Banner START -->
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
 										</ul>
 									</div>
-
-									<?php
-										if (isset($_SESSION['trainer'])){
-										var_dump($_SESSION['trainer']);
-										}else{
-											echo 'NOT SET!';
-										}
-									?>
 
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
@@ -167,14 +179,26 @@ Page content START -->
 									<div class="bg-dark border rounded-3 pb-0 p-3 w-100">
 										<!-- Dashboard menu -->
 										<div class="list-group list-group-dark list-group-borderless">
-											<a class="list-group-item" href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-											<a class="list-group-item" href=""><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
-											<a class="list-group-item" href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-											<a class="list-group-item" href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item active" href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
-											<a class="list-group-item" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</a>
-											<a class="list-group-item" href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
-											<a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign
+											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
+											<a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
+											<a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
+											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
+											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
+
+											<form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
+												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
+													<li class="nav-item dropdown">
+														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
+														<ul class="dropdown-menu dropdown-menu-end min-w-auto">
+															<input type="hidden" value="<?php echo $trainer['email']?>" name="email">
+															<li><input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload"></li>
+														</ul>
+													</li>
+												</ul>	
+											</form>
+
+											<a class="list-group-item " href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+											<a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign
 												Out</a>
 										</div>
 									</div>
@@ -362,6 +386,12 @@ Page content END -->
 
 	<!-- Template Functions -->
 	<script src="assets/js/functions.js"></script>
+
+	<script>
+		function showAlert() {
+			alert("<?php echo 'you will signout?'; ?>");
+		}
+	</script>
 
 </body>
 

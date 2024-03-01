@@ -276,7 +276,7 @@
         if (isset($profile)){
           $profileImg = $profile['img'];
         }else{
-          $profileImg = 'assets/images/profile/65d81497323c28.92025204.jpg';
+          $profileImg = '65d81497323c28.92025204.jpg';
         }
         ?>
 
@@ -315,7 +315,7 @@
         if (isset($_SESSION['trainer'])){
   
         }else{
-          echo 'NOT SET!';
+          // echo 'NOT SET!';
         }
       ?>
       
