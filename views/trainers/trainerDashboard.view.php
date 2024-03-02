@@ -86,7 +86,6 @@ Page Banner START -->
 			<?php
 				if (isset($_SESSION['trainer'])){
 					$trainer = ($_SESSION['trainer']);
-					// var_dump($trainer);
 				}else{
 					echo 'NOT SET!';
 				}
