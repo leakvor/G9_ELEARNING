@@ -140,7 +140,7 @@ Category START -->
 			}
 			?>
 			<?php foreach ($categories as $category) : 
-				$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+				$path = "controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
 				
 				?>
 				

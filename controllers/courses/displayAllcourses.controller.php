@@ -8,7 +8,7 @@ session_start();
 if(isset($_GET['category'])){
     $id = $_GET['category'];
     $displayCourses = displayAllcourse($id);
-    
+    // var_dump($displayCourses);
     // Set the value in the session variable
     $_SESSION['displayCourse'] = $displayCourses;
 
