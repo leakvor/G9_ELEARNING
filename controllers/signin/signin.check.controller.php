@@ -6,7 +6,7 @@ require('../../models/student.model.php');
 $no_account = "Undefine your account!";
 $wrong_password = "Please correct email or password!";
 
-$regex_email = "/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/";
+$regex_email = "/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z\.]{2,30}\.[a-z]{1,3}$/";
 $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
 
 

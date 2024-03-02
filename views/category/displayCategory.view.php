@@ -1,4 +1,7 @@
 <!-- -------------form category------ -->
+<form class="d-none d-md-flex mx-4 mr-3">
+      <input class="form-control border-1 mt-3 " style="border: 1px solid gray;" type="search" id="search" placeholder="Search">
+</form>
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
     Add new Category
@@ -115,3 +118,24 @@
     </table>
 
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('#search');
+    const tableRows = document.querySelectorAll('tbody tr');
+    console.log(tableRows);
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      tableRows.forEach(function(row) {
+        const title = row.cells[1].textContent.trim().toLowerCase();
+
+        if (title.includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  });
+  </script>
