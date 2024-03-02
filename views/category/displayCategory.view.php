@@ -117,24 +117,28 @@
     </table>
 
   </div>
-  <script>
-  const input = document.querySelector("#cateName");
-  const submitBtn = document.querySelector("#submitBtn");
-  const p = document.querySelector("#p");
-  input.addEventListener("input", (e) => {
-    console.log(input.value);
-    checkInput(input.value);
-    submitBtn.removeAttribute("disabled");
-  });
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const input = document.querySelector("#cateName");
+      const submitBtn = document.querySelector("#submitBtn");
+      const p = document.querySelector("#p");
 
-  const regex = /^[a-zA-Z\s]{3,20}$/;
-  console.log(regex)
-  function checkInput(text) {
-    let category = regex.test(text);
-    if (category) {
-      p.textContent = "Success for create category";
-    } else {
-      p.textContent = "Please enter a category between 3 and 20 characters, containing only letters and spaces.";
+    input.addEventListener("input", (e) => {
+      const text = input.value.trim();
+      checkInput(text);
+    });
+
+    function checkInput(text) {
+      const regex = /^[a-zA-Z\s]{4,}$/; // Modify the regex pattern as needed
+      const category = regex.test(text);
+      if (category) {
+        p.textContent = ""; // Clear any existing validation message
+        submitBtn.removeAttribute("disabled");
+        
+      } else {
+        p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
+        submitBtn.setAttribute("disabled", "true");
+      }
     }
-  }
+  });
 </script>
