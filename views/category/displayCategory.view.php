@@ -94,17 +94,18 @@
                     <input type="hidden" name="id"
                      value="<?= $category['cat_id'] ?>">
                 <div class="form-group">
-                    <input type="text" class="form-control bg-white"
+                    <input type="text" class="form-control bg-white" id="editName"
                      value="<?=$category['cateName']?>" name="cateName">
               </div>
+              <small class="text-danger" id="showerror">vc </small>
               <div class="form-group mt-3">
-                          <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
+                    <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
               </div>
         </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     
-                    <button type="submit"class="btn btn-danger">Update</button>
+                    <button type="submit" id="submit" class="btn btn-danger" disabled >Update</button>
                 </div>
             </form>
                     </div>
@@ -119,26 +120,34 @@
   </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const input = document.querySelector("#cateName");
-      const submitBtn = document.querySelector("#submitBtn");
-      const p = document.querySelector("#p");
+    const cateNameInput = document.querySelector("#cateName");
+    const submitBtn = document.querySelector("#submitBtn");
+    const p = document.querySelector("#p");
+    const editNameInput = document.querySelector("#editName");
+    const submitEditBtn = document.querySelector("#submit");
 
-    input.addEventListener("input", (e) => {
-      const text = input.value.trim();
-      checkInput(text);
+    cateNameInput.addEventListener("input", () => {
+        const text = cateNameInput.value.trim();
+        checkInput(text, p, submitBtn);
     });
 
-    function checkInput(text) {
-      const regex = /^[a-zA-Z\s]{4,}$/; // Modify the regex pattern as needed
-      const category = regex.test(text);
-      if (category) {
-        p.textContent = ""; // Clear any existing validation message
-        submitBtn.removeAttribute("disabled");
-        
-      } else {
-        p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
-        submitBtn.setAttribute("disabled", "true");
-      }
+    editNameInput.addEventListener("input", () => {
+        const text = editNameInput.value.trim();
+        checkInput(text, showerror, submitEditBtn);
+    });
+
+    function checkInput(text, errorElement, submitButton) {
+        const regex = /^[a-zA-Z\s]{4,}$/;
+        const isValid = regex.test(text);
+        if (isValid) {
+            errorElement.textContent = "";
+            submitButton.removeAttribute("disabled");
+        } else {
+            errorElement.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only.";
+            submitButton.setAttribute("disabled", "true");
+        }
     }
-  });
+});
+
+
 </script>
