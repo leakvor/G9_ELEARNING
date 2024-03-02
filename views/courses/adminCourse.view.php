@@ -45,9 +45,10 @@ $categories = $statement->fetchAll();
 
           <!-- Modal body -->
           <div class="modal-body">
-            <form action="/addCourse" method="post" enctype="multipart/form-data">
+          <form action="/addCourse" method="post" enctype="multipart/form-data">
               <div class="form-group mt-3">
                 <input type="text" class="form-control bg-white" name="title" placeholder="Title" id="title">
+                <span id="titleValidationMsg" class="text-danger"></span> <!-- Validation message for Title -->
               </div>
               <div class="form-group mt-3">
                 <input type="number" class="form-control bg-white" name="paid" placeholder="Paid">
@@ -68,6 +69,7 @@ $categories = $statement->fetchAll();
                     <option value="<?= $category['cat_id'] ?>"><?= $category['cateName'] ?></option>
                   <?php endforeach ?>
                 </select>
+                <span id="categoryValidationMsg" class="text-danger"></span>
               </div>
 
               <div class="form-group mt-3">
@@ -234,6 +236,30 @@ $categories = $statement->fetchAll();
           row.style.display = 'none';
         }
       });
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const input = document.querySelector("#title");
+    const submitBtn = document.querySelector("#submitBtn");
+    const validationMsg = document.querySelector("#titleValidationMsg");
+
+    input.addEventListener("input", (e) => {
+      const text = input.value.trim();
+      checkInput(text);
+    });
+
+    function checkInput(text) {
+      const regex = /^[a-zA-Z\s]{4,20}$/; // Modify the regex pattern as needed
+      const isValid = regex.test(text);
+
+      if (isValid) {
+        validationMsg.textContent = ""; // Clear any existing validation message
+        submitBtn.removeAttribute("disabled");
+      } else {
+        validationMsg.textContent = "Please enter a valid title (at least 4 and small than 20 characters with letters and spaces only).";
+        submitBtn.setAttribute("disabled", "true");
+      }
     }
   });
 </script>
