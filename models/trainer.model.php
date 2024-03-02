@@ -72,3 +72,19 @@ function accountExist(string $email): array
         return [];
     }
 }
+
+function profile(string $email, string $image)
+{
+    global $connection;
+    $statement = $connection->prepare("UPDATE users SET img= :image WHERE email= :email");
+    $statement->execute([
+        ':image' => $image,
+        ':email' => $email,
+    ]);
+    
+    if ($statement->rowCount() > 0){
+        return $results = $statement->fetch(PDO::FETCH_ASSOC);
+    }else{
+        return [];
+    }
+}

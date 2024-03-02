@@ -4,9 +4,27 @@ require('models/trainer.model.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = htmlspecialchars($_POST['username']);
-    $email = htmlspecialchars($_POST['email']);
-    $password = htmlspecialchars($_POST['password']);
+    // Check if the expected form fields are present in $_POST
+    if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
+        // Retrieve and sanitize form data
+        $username = htmlspecialchars($_POST['username']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
+
+//         // Process the form data (e.g., insert into database, perform validation)
+//         // Your logic goes here
+//     } 
+//     // else {
+//     //     // Handle missing form fields
+//     //     echo "One or more required form fields are missing.";
+//     // }
+
+
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $username = htmlspecialchars($_POST['username']);
+//     print_r($_POST['username']);
+//     $email = htmlspecialchars($_POST['email']);
+//     $password = htmlspecialchars($_POST['password']);
     
     if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
         $worngfile = "";
@@ -31,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $img_upload_path = 'assets/images/instructor/' . $new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
 
+                        $password = password_hash($password, PASSWORD_BCRYPT);
                         $isCreate = createTrainer($username, $email, $password, $new_img_name);
                         if ($isCreate) {
                             $teachers = getTeacher();
@@ -44,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
     }
+}
 } else {
     require "views/trainers/adminTrainer.view.php";
 }
@@ -56,3 +76,5 @@ if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['passwor
 <?php
 $teachers = getTeacher();
 require "views/trainers/adminTrainer.view.php";
+
+?>
