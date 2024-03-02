@@ -74,7 +74,7 @@
                                 <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                            <p class="text-danger"><?= $validation?></p>
+                            <!-- <p class="text-danger"><?= $validation?></p> -->
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
