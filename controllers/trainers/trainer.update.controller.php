@@ -1,6 +1,6 @@
 <?php
-require('../../database/database.php');
-require('../../models/trainer.model.php');
+require "../../database/database.php";
+require "../../models/trainer.model.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = htmlspecialchars($_POST['username']);
@@ -10,8 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     if(empty($_FILES['img']['name'])){
         updateTeacherNoImg($username, $email, $password, $id);
-        // require "../../views/trainers/adminTrainer.view.php";
-        // header("Location: /adminTrainer");
     }elseif(isset($_FILES['img'])){
         $img_name=$_FILES['img']['name'];
         $img_size=$_FILES['img']['size'];
@@ -28,15 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 if(in_array($img_ex_lc,$allowed_exs)){
                     $new_img_name = uniqid("", true).'.'.$img_ex_lc;
-                    $img_upload_path = '../../assets/images/instructor/'.$new_img_name;
+                    $img_upload_path = "../../assets/images/instructor/".$new_img_name;
                     
                     if(move_uploaded_file($tmp_name, $img_upload_path)){
                         $isCreate = updateTeacher($username, $email, $password, $id, $new_img_name);
                         
                         if($isCreate){
-                            // Redirect or perform further actions
                             header("Location: /adminTrainer");
-                            // require "../../views/trainers/adminTrainer.view.php";
                         } else {
                             echo "<script>alert('Error occurred while updating course.');</script>";
                         }
@@ -55,6 +51,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 header("Location: /adminTrainer");
 ?>
-
-
-

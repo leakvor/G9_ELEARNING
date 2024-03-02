@@ -3,16 +3,20 @@ session_start();
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
-
-if (isset($_SESSION['path'])){
     $routes = [
         '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
-    ];
-}else{
-    $routes = [
         '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
     ];
-}
+
+// if (isset($_SESSION['path'])){
+//     $routes = [
+//         '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
+//     ];
+// }else{
+    //     $routes = [
+    //         '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
+//     ];
+// }
 
 if (array_key_exists($uri, $routes)) {
     $page = $routes[$uri];
