@@ -28,7 +28,7 @@
           // Validate password strength
           let passwordInput = form.querySelector('input[name="password"]');
           let password = passwordInput.value.trim();
-          if (password.length < 8 || !(/[a-z]/.test(password)) || !(/[A-Z]/.test(password)) || !(/\d/.test(password)) || !(/[^\da-zA-Z]/.test(password))) {
+          if (password.length = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/".test(password)) {
             alert("Password must be at least 8 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character.");
             passwordInput.focus();
             event.preventDefault();
@@ -71,7 +71,6 @@
               </div>
               <div class="form-group mt-3">
                 <input type="email" class="form-control bg-white" name="email" placeholder="Email" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-                <!-- <span style="color:red"><?php echo $emailError ?></span> -->
                 <?php if (isset($emailError)) : ?>
                   <span style="color:red"><?php echo $emailError ?></span>
                 <?php endif; ?>
@@ -79,6 +78,9 @@
               </div>
               <div class="form-group mt-3">
                 <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" required>
+                <?php if (isset($passwordError)) : ?>
+                  <span><?php echo $passwordError ?></span>
+                <?php endif; ?>
               </div>
               <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
