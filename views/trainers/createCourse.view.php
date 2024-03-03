@@ -415,6 +415,32 @@ Page Banner END -->
 				</div>
 			</div>
 				
+			<div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3 mt-4">
+				<!-- Image -->
+				<img src="assets/images/element/gallery.svg" class="h-50px" alt="">
+				<div>
+				    <h6 class="my-2">Upload course image here, or<a href="#!" class="text-primary"> Browse</a></h6>
+					<label style="cursor:pointer;">
+						<span> 
+							<input class="form-control stretched-link" type="file" name="my-image" id="image" accept="image/gif, image/jpeg, image/png">
+						</span>
+					</label>
+				</div>	
+            </div>	
+            <!-- Button -->
+			<div class="d-sm-flex justify-content-end mt-2">
+				<button type="button" class="btn btn-sm btn-danger-soft mb-3">Remove image</button>
+			</div>
+			<div class="col-12">
+					<label class="form-label">Upload file lession</label>
+						<div class="input-group mb-3">
+							<input type="file" class="form-control" id="inputGroupFile01">
+						</div>
+						<label class="form-label">Upload video</label>
+						<div class="input-group mb-3">
+							<input type="file" class="form-control" id="inputGroupFile01">
+						</div>
+			</div>
 			<div class="d-flex justify-content-end mt-3">
 					<button class="btn btn-primary next-btn mb-3">Create</button>
 			</div>
