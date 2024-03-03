@@ -376,27 +376,8 @@ Page Banner END -->
 				<label for="course-title">Course title</label>
 				<input type="text" class="form-control" id="course-title" placeholder="Enter course title">
 			</div>
-			<div class="form-group mt-4">
-				<label for="course-description">Description</label>
-				<textarea class="form-control" id="course-description" rows="3" placeholder="Enter course description"></textarea>
-			</div>
-			<div class="col-md-12 mt-4 ">
-				<label for="course-description">Course price</label>
-					<input type="text" class="form-control" id="course-price" placeholder="Enter course price">
-			</div>
-			<div class="col-12 mt-4">
-					<label class="form-label">Upload file lession</label>
-						<div class="input-group mb-3">
-							<input type="file" class="form-control" id="inputGroupFile01">
-						</div>
-						<label class="form-label">Upload video</label>
-						<div class="input-group mb-3">
-							<input type="file" class="form-control" id="inputGroupFile01">
-						</div>
-			</div>
-			
 			<div class="row d-flex justify-content-end mt-3">
-				<div class="col-md-6 ">
+				<div class="col-md-12 ">
 					<label for="#">Course category</label>
 					<select class="form-select" >
 					<option selected>Selete category</option>
@@ -404,18 +385,14 @@ Page Banner END -->
 					<option value="2">Two</option>
 					<option value="3">Three</option>
 					</select>
-				</div>
-				<div class="col-md-6">
-					<label>Language</label>
-					<select class="form-select" >
-					<option selected>Selete language</option>
-					<option value="1">Khmer</option>
-					<option value="2">English</option>
-					</select>
-					
-				</div>			
+				</div>		
 					
 			</div>
+			<div class="col-md-12 mt-4 ">
+				<label for="course-description">Course price</label>
+					<input type="text" class="form-control" id="course-price" placeholder="Enter course price">
+			</div>
+			
 			
 				
 			<div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3 mt-4">
