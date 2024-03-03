@@ -14,6 +14,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
         
+        
     ];
 }else{
     $routes = [
@@ -22,6 +23,8 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         // '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
+        '/createCourse' => 'controllers/trainers/createCourse.controller.php',
+        
     ];
 }
 
