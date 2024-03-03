@@ -1,13 +1,63 @@
-<form class="d-none d-md-flex mx-4 " >
+<form class="d-none d-md-flex mx-5 " >
   <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;" type="search" id="search" placeholder="Search">
 </form>
 <div class="container-fluid pt-2 px-4" style="overflow-x: auto">
 
   <!-- <a href="/addTrainer" class="btn btn-danger">Add new trainer</a> -->
+<script>
+  (function() {
+    'use strict';
+    // $usernameError = "";
+    // $emailError = "";
+    // $passwordError = "";
+    let regex_email = /^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/;
+    let $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    let forms = document.querySelectorAll('.needs-validation');
+
+    // Loop  prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          // Validate email
+          let emailInput = form.querySelector('input[name="email"]');
+          let email = emailInput.value.trim();
+          if (!regex_email.test(email)) {
+            alert("Invalid email format. Please enter a valid email address.");
+            emailInput.focus();
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+          }
+
+          // Validate password strength
+          let passwordInput = form.querySelector('input[name="password"]');
+          let password = passwordInput.value.trim();
+          if (password.length = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/".test(password)) {
+            alert("Password must be at least 8 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character.");
+            passwordInput.focus();
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+          }
+
+          // form is valid allow form submission
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+  })();
+</script>
+
+
+<div class="container-fluid pt-4 px-4" style="overflow-x: auto">
   <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
     Add new trainer
   </button>
-
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -21,20 +71,28 @@
         <!-- Modal body -->
         <div class="modal-body ">
           <div class="modal-body">
-            <form action="/addTrainer" method="post" enctype="multipart/form-data">
+            <form action="/addTrainer" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
               <div class="form-group mt-3">
-                <input type="text" class="form-control bg-white" name="username" placeholder="UserName">
+                <input type="text" class="form-control bg-white" name="username" placeholder="UserName" id="validationCustom03" required>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control bg-white" name="email" placeholder="Email" name="email">
+                <input type="email" class="form-control bg-white" name="email" placeholder="Email" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
+                <?php if (isset($emailError)) : ?>
+                  <span style="color:red"><?php echo $emailError ?></span>
+                <?php endif; ?>
+
               </div>
               <div class="form-group mt-3">
-                <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password">
+                <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" required>
+                <?php if (isset($passwordError)) : ?>
+                  <span><?php echo $passwordError ?></span>
+                <?php endif; ?>
               </div>
               <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
               </div>
-              <button class="btn btn-danger mt-3">Create</button>
+              <button type="submit" class="btn btn-danger mt-3" name="submit" value="submit">Create</button>
+            </form>
           </div>
           </form>
         </div>
@@ -49,7 +107,7 @@
     <thead>
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Full name</th>
+        <th scope="col">FirstName</th>
         <th scope="col">Email</th>
         <!-- <th scope="col">Password</th> -->
         <th scope="col">Img</th>
@@ -63,6 +121,7 @@
           <!-- <td><img src="" alt=""></td> -->
           <td><?= $teacher['username'] ?></td>
           <td><?= $teacher['email'] ?></td>
+          <!-- <td><?= $teacher['password'] ?></td> -->
           <td><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
           <td class="d-flex d-grid gap-3">
             <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">
@@ -126,6 +185,7 @@
       <?php endforeach ?>
     </tbody>
   </table>
+</div>
 </div>
 </div>
 </div>
