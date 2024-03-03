@@ -368,59 +368,58 @@ Page Banner START -->
 <!-- =======================
 Page Banner END -->
 <div class="container">
-<div class="row g-4">
-								
-	<form>
-		<h4>Course details</h4>
-		<hr>
-		<div class="form-group ">
-			<label for="course-title">Course title</label>
-			<input type="text" class="form-control" id="course-title" placeholder="Enter course title">
-		</div>
-		<div class="form-group mt-4">
-			<label for="course-description">Description</label>
-			<textarea class="form-control" id="course-description" rows="3" placeholder="Enter course description"></textarea>
-		</div>
-		<div class="row g-4 d-flex justify-content-end mt-3">
-			<div class="col-md-6 ">
-					<label for="#">Course category</label>
+	<div class="row g-4">					
+		<form>
+			<h5>Course details</h5>
+			<hr>
+			<div class="form-group ">
+				<label for="course-title">Course title</label>
+				<input type="text" class="form-control" id="course-title" placeholder="Enter course title">
+			</div>
+			<div class="form-group mt-4">
+				<label for="course-description">Description</label>
+				<textarea class="form-control" id="course-description" rows="3" placeholder="Enter course description"></textarea>
+			</div>
+			<div class="row g-4 d-flex justify-content-end mt-3">
+				<div class="col-md-6 ">
+						<label for="#">Course category</label>
+						<select class="form-select" >
+						<option selected>Selete category</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+						</select>
+				</div>
+				<div class="col-md-6 ">
+					<label >Course level</label>
 					<select class="form-select" >
-					<option selected>Selete category</option>
-					<option value="1">One</option>
-					<option value="2">Two</option>
-					<option value="3">Three</option>
+					<option selected>Selete Course lavel</option>
+					<option value="1">Advance</option>
+					<option value="2">Beginner</option>
+					<option value="3">Intermediate</option>
 					</select>
+				</div>	
 			</div>
-			<div class="col-md-6 ">
-				<label >Course level</label>
-				<select class="form-select" >
-				<option selected>Selete Course lavel</option>
-				<option value="1">Advance</option>
-				<option value="2">Beginner</option>
-				<option value="3">Intermediate</option>
-				</select>
-			</div>	
-		</div>
-		<div class="row g-4 d-flex justify-content-end mt-3">
-			<div class="col-md-6 ">
-				<label for="course-description">Course price</label>
-				<input type="text" class="form-control" id="course-price" placeholder="Enter course price">
+			<div class="row g-4 d-flex justify-content-end mt-3">
+				<div class="col-md-6 ">
+					<label for="course-description">Course price</label>
+					<input type="text" class="form-control" id="course-price" placeholder="Enter course price">
+				</div>
+				<div class="col-md-6">				
+					<label>Language</label>
+					<select class="form-select" >
+					<option selected>Selete language</option>
+					<option value="1">Khmer</option>
+					<option value="2">English</option>
+					</select>
+				</div>
 			</div>
-			<div class="col-md-6">				
-				<label>Language</label>
-				<select class="form-select" >
-				<option selected>Selete language</option>
-				<option value="1">Khmer</option>
-				<option value="2">English</option>
-				</select>
+				
+			<div class="d-flex justify-content-end mt-3">
+					<button class="btn btn-primary next-btn mb-3">Next</button>
 			</div>
-		</div>
-			
-		<div class="d-flex justify-content-end mt-3">
-				<button class="btn btn-primary next-btn mb-3">Next</button>
-		</div>
-	</form>
-</div>
+		</form>
+	</div>
 </div>							
 									
 <!--Footer START -->
