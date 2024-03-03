@@ -162,15 +162,18 @@ Action box START -->
 		</section>
 		<!-- =======================
 Action box END -->
-		<script>
- document.addEventListener('DOMContentLoaded', function() {
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
         const searchInput = document.querySelector('#search');
-        const courseCards = document.querySelectorAll('.card-title');
+        const courseTitles = document.querySelectorAll('.card-title');
 
-        searchInput.addEventListener('input', function() {
+        searchInput.addEventListener('keyup', function() {
             const searchTerm = searchInput.value.trim().toLowerCase();
+            filterCourses(searchTerm);
+        });
 
-            courseCards.forEach(function(card) {
+        function filterCourses(searchTerm) {
+            courseTitles.forEach(function(card) {
                 const title = card.textContent.trim().toLowerCase();
                 const parentCard = card.closest('.card');
 
@@ -180,9 +183,9 @@ Action box END -->
                     parentCard.style.display = 'none';
                 }
             });
-        });
+        }
     });
-		</script>
+</script>
 
 	</main>
 	<!-- **************** MAIN CONTENT END **************** -->
