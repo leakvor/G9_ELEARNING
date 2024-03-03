@@ -201,46 +201,14 @@ Page content START -->
 								</div>
 							</div>
 
-							<!-- Username -->
-							<div class="col-md-6">
-								<label class="form-label">Username</label>
-								<div class="input-group">
-									<span class="input-group-text">Eduport.com</span>
-									<input type="text" class="form-control" value="loristev">
-								</div>
-							</div>
-
 							<!-- Email id -->
 							<div class="col-md-6">
 								<label class="form-label">Email id</label>
 								<input class="form-control" type="email" value="example@gmail.com" placeholder="Email">
 							</div>
-
-							<!-- Phone number -->
 							<div class="col-md-6">
-								<label class="form-label">Phone number</label>
-								<input type="text" class="form-control" value="1234567890" placeholder="Phone number">
-							</div>
-
-							<!-- Location -->
-							<div class="col-md-6">
-								<label class="form-label">Location</label>
-								<input class="form-control" type="text" value="California">
-							</div>
-							
-							<!-- About me -->
-							<div class="col-12">
-								<label class="form-label">About me</label>
-								<textarea class="form-control" rows="3">I’ve found a way to get paid for my favorite hobby, and do so while following my dream of traveling the world.</textarea>
-								<div class="form-text">Brief description for your profile.</div> 
-							</div>
-
-							<!-- Education -->
-							<div class="col-12">
-								<label class="form-label">Education</label>
-								<input class="form-control mb-2" type="text" value="Bachelor in Computer Graphics">
-								<input class="form-control mb-2" type="text" value="Masters in Computer Graphics">
-								<button class="btn btn-sm btn-light mb-0"><i class="bi bi-plus me-1"></i>Add more</button>
+								<label class="form-label">Password</label>
+								<input class="form-control" type="password" value="example@gmail.com" placeholder="Email">
 							</div>
 
 							<!-- Save button -->

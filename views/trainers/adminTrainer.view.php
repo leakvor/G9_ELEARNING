@@ -41,16 +41,10 @@ if (isset($_POST['submit'])){
 }
 ?>
 
-
-
-
-
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
   <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
     Add new trainer
   </button>
-
-
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -126,9 +120,6 @@ if (isset($_POST['submit'])){
             </script>
             <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
-
-
-
               <!-- ---------form edit--------- -->
               <div class="modal-dialog" role="document">
                 <div class="modal-content" style="background-color: black; border: 1px solid white;">
@@ -173,7 +164,6 @@ if (isset($_POST['submit'])){
       <?php endforeach ?>
     </tbody>
   </table>
-
 </div>
 </div>
 </div>
