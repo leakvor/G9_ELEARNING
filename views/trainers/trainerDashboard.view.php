@@ -89,7 +89,8 @@ Page Banner START -->
 				}else{
 					echo 'NOT SET!';
 				}
-
+				require('database/database.php');
+				require('models/student.model.php');
 				require('models/trainer.model.php');
 
 				$trainer_email = $trainer['email'];
@@ -99,6 +100,10 @@ Page Banner START -->
 				}else{
 					$trainer_profile = $trainer['img'];
 				}
+
+				$tra_student = trainer_students($trainer_email);
+				// var_dump($tra_student[0]['title']);
+				
 			?>
 
 			<!-- Main banner background image -->
@@ -214,19 +219,20 @@ Page content START -->
 						<!-- Counter boxes START -->
 						<div class="row g-4">
 							<!-- Counter item -->
-							<div class="col-sm-6 col-lg-4">
+							<div class="col-sm-6 col-lg-4"  id="show_course">
 								<div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-15 rounded-3">
 									<span class="display-6 text-warning mb-0"><i class="fas fa-tv fa-fw"></i></span>
 									<div class="ms-4">
 										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-delay="200">0</h5>
+											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?= count($tra_student)?>" data-purecounter-delay="200">0</h5>
 										</div>
 										<span class="mb-0 h6 fw-light">Total Courses</span>
 									</div>
 								</div>
+								<hr class="mt-2 custom-hr active_barc" style="display:none">
 							</div>
 							<!-- Counter item -->
-							<div class="col-sm-6 col-lg-4">
+							<div class="col-sm-6 col-lg-4"  id="show_student">
 								<div class="d-flex justify-content-center align-items-center p-4 bg-purple bg-opacity-10 rounded-3">
 									<span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
 									<div class="ms-4">
@@ -237,6 +243,7 @@ Page content START -->
 										<span class="mb-0 h6 fw-light">Total Students</span>
 									</div>
 								</div>
+								<hr class="mt-2 custom-hr active_bars" style="display:none">
 							</div>
 							<!-- Counter item -->
 							<div class="col-sm-6 col-lg-4">
@@ -253,6 +260,41 @@ Page content START -->
 							</div>
 						</div>
 						<!-- Counter boxes END -->
+
+						<!-- display teacher cours name -->
+						<div class="d-flex gap-2 mt-3">
+							<?php
+								foreach($tra_student as $item){
+							?>
+								<div class="card text-white bg-success mb-3 all_courses" style="max-width: 18rem; display:none">
+									<div class="card-header text-white bg-dark"><?= $item['title']?></div>
+									<div class="card-body">
+										<h5 class="card-title">Secondary card title</h5>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									</div>
+								</div>
+							<?php
+								}
+							?>
+						</div>
+
+						<!-- display teacher stuents -->
+						<div class="d-flex gap-2 mt-0.5" >
+							<?php
+								foreach($tra_student as $item){
+							?>
+								<div class="card text-white bg-primary mb-3 all_student" style="max-width: 18rem; display:none">
+									<div class="card-header text-white bg-dark"><?= $item['title']?></div>
+									<div class="card-body">
+										<h5 class="card-title">Secondary card title</h5>
+										<p class="card-text">Some quick example Ytext to build on the card title and make up the bulk of the card's content.</p>
+									</div>
+								</div>
+							<?php
+								}
+							?>
+						</div>
+
 
 						<!-- Chart START -->
 						<div class="row mt-5">
@@ -385,12 +427,14 @@ Page content END -->
 
 	<!-- Template Functions -->
 	<script src="assets/js/functions.js"></script>
-
+	<script src="vendor/js/display_page.js"></script>
+	
 	<script>
 		function showAlert() {
 			alert("<?php echo 'you will signout?'; ?>");
 		}
 	</script>
+
 
 </body>
 
