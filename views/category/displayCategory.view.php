@@ -22,16 +22,18 @@
     <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="category">Name category:</label>
-                    <input type="text" class="form-control bg-white" name="cateName">
+                    <input type="text" class="form-control bg-white" name="cateName" id="cateName">
                 </div>
+                <small class="text-danger" id="p"></small>
                 <div class="form-group mt-3">
-                <input type="file" class="form-control bg-white" name="image" placeholder="Choose image">
+                <input type="file" class="form-control bg-white" name="image" id="image" placeholder="Choose image">
               </div>
         </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <!-- <a href="" class="btn btn-danger">Create</a> -->
-                    <button type="submit"class="btn btn-danger">Create</button>
+                    <button id="submitBtn" type="submit" name="submit" class="btn btn-danger" disabled >Create</button>
+                    
                 </div>
             </form>
         </div>
@@ -99,13 +101,12 @@
                      value="<?=$category['cateName']?>" name="cateName">
               </div>
               <div class="form-group mt-3">
-                          <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
+                    <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
               </div>
         </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    
-                    <button type="submit"class="btn btn-danger">Update</button>
+                    <button type="submit" class="btn btn-danger" >Update</button>
                 </div>
             </form>
                     </div>
@@ -139,3 +140,26 @@
     });
   });
   </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const cateNameInput = document.querySelector("#cateName");
+    const submitBtn = document.querySelector("#submitBtn");
+    const p = document.querySelector("#p");
+
+    cateNameInput.addEventListener("input", () => {
+        const text = cateNameInput.value.trim();
+        checkInput(text);
+    });
+    function checkInput(text) {
+        const regex = /^[a-zA-Z\s]{4,}$/;
+        const isValid_category = regex.test(text);
+        if (isValid_category) {
+            p.textContent = "";
+            submitBtn.removeAttribute("disabled");
+        } else {
+            p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
+            submitBtn.setAttribute("disabled", "true");
+        }
+    }
+});
+</script>
