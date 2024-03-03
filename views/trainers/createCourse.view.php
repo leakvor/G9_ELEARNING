@@ -416,7 +416,7 @@ Page Banner END -->
 			</div>
 				
 			<div class="d-flex justify-content-end mt-3">
-					<button class="btn btn-primary next-btn mb-3">Next</button>
+					<button class="btn btn-primary next-btn mb-3">Create</button>
 			</div>
 		</form>
 	</div>
