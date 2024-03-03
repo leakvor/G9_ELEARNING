@@ -380,40 +380,43 @@ Page Banner END -->
 				<label for="course-description">Description</label>
 				<textarea class="form-control" id="course-description" rows="3" placeholder="Enter course description"></textarea>
 			</div>
-			<div class="row g-4 d-flex justify-content-end mt-3">
-				<div class="col-md-6 ">
-						<label for="#">Course category</label>
-						<select class="form-select" >
-						<option selected>Selete category</option>
-						<option value="1">One</option>
-						<option value="2">Two</option>
-						<option value="3">Three</option>
-						</select>
-				</div>
-				<div class="col-md-6 ">
-					<label >Course level</label>
-					<select class="form-select" >
-					<option selected>Selete Course lavel</option>
-					<option value="1">Advance</option>
-					<option value="2">Beginner</option>
-					<option value="3">Intermediate</option>
-					</select>
-				</div>	
-			</div>
-			<div class="row g-4 d-flex justify-content-end mt-3">
-				<div class="col-md-6 ">
-					<label for="course-description">Course price</label>
+			<div class="col-md-12 mt-4 ">
+				<label for="course-description">Course price</label>
 					<input type="text" class="form-control" id="course-price" placeholder="Enter course price">
+			</div>
+			<div class="col-12 mt-4">
+					<label class="form-label">Upload file lession</label>
+						<div class="input-group mb-3">
+							<input type="file" class="form-control" id="inputGroupFile01">
+						</div>
+						<label class="form-label">Upload video</label>
+						<div class="input-group mb-3">
+							<input type="file" class="form-control" id="inputGroupFile01">
+						</div>
+			</div>
+			
+			<div class="row d-flex justify-content-end mt-3">
+				<div class="col-md-6 ">
+					<label for="#">Course category</label>
+					<select class="form-select" >
+					<option selected>Selete category</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					</select>
 				</div>
-				<div class="col-md-6">				
+				<div class="col-md-6">
 					<label>Language</label>
 					<select class="form-select" >
 					<option selected>Selete language</option>
 					<option value="1">Khmer</option>
 					<option value="2">English</option>
 					</select>
-				</div>
+					
+				</div>			
+					
 			</div>
+			
 				
 			<div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3 mt-4">
 				<!-- Image -->
@@ -427,22 +430,8 @@ Page Banner END -->
 					</label>
 				</div>	
             </div>	
-            <!-- Button -->
-			<div class="d-sm-flex justify-content-end mt-2">
-				<button type="button" class="btn btn-sm btn-danger-soft mb-3">Remove image</button>
-			</div>
-			<div class="col-12">
-					<label class="form-label">Upload file lession</label>
-						<div class="input-group mb-3">
-							<input type="file" class="form-control" id="inputGroupFile01">
-						</div>
-						<label class="form-label">Upload video</label>
-						<div class="input-group mb-3">
-							<input type="file" class="form-control" id="inputGroupFile01">
-						</div>
-			</div>
 			<div class="d-flex justify-content-end mt-3">
-					<button class="btn btn-primary next-btn mb-3">Create</button>
+					<button class="btn btn-primary next-btn mb-5">Create</button>
 			</div>
 		</form>
 	</div>
