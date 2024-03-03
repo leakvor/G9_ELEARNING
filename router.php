@@ -22,6 +22,8 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         // '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
+        '/templateEditTrainer' => 'controllers/trainers/templateEditTrainer.controller.php',
+        '/templateCoursTrainer' => 'controllers/trainers/templateCoursTrainer.controller.php',
     ];
 }
 
