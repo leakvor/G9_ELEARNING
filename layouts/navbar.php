@@ -235,7 +235,14 @@
           <span class="visually-hidden">unread messages</span>
         </span>
       </div>
-  
+      
+      <?php
+        if (!isset($_SESSION['path'])){
+            $path = "/trainer";
+        }else{
+            $path = "/trainerdashboard";
+        }
+      ?>
   
       <!-- Language -->
       <ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
@@ -245,7 +252,7 @@
             <span class="d-none d-lg-inline-block">Roles</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end min-w-auto">
-            <li> <a class="dropdown-item" href="/trainer"><i class="fas fa-chalkboard-teacher fa-fw me-2"></i>Trainers</a></li>
+            <li> <a class="dropdown-item" href="<?= $path?>"><i class="fas fa-chalkboard-teacher fa-fw me-2"></i>Trainers</a></li>
             <li> <a class="dropdown-item" href="/"><i class="fas fa-user-graduate fa-fw me-2"></i>Students</a></li>
             <!-- <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li> -->
           </ul>

@@ -1,5 +1,5 @@
 let search = document.querySelector('#search');
-console.log(search)
+// console.log(search)
 // let trHis = document.querySelectorAll('tbody tr');
 // search.addEventListener('keyup', (e) => {
 //     let searchCha = e.target.value;

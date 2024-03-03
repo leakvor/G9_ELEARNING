@@ -58,3 +58,14 @@ function updateTeacherNoImg($username,$email,$password,$id){
     ]);
     $statement->rowCount() >0;
 }
+
+function trainer_students($email) {
+    // return $email;
+    global $connection;
+    $statement = $connection->prepare("SELECT title, username FROM course INNER JOIN users ON course.user_id = users.user_id WHERE email = :email");
+    $statement->execute([":email" => $email]);
+    
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
