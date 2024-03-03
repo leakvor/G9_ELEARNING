@@ -38,7 +38,7 @@ require '../../models/category.model.php';
                         }else{
                         
                             echo "<script>alert('Sorry, your file is wrong extention');</script>";
-                            header('Location: /adminCourse');
+                            header('Location: /displayCategory');
                      }
                  }
              }

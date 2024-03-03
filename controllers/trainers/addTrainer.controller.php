@@ -1,6 +1,6 @@
 <?php
-require('database/database.php');
-require('models/trainer.model.php');
+require "database/database.php";
+require "models/trainer.model.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -45,7 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if (in_array($img_ex_lc, $allowed_exs)) {
 
                         $new_img_name = uniqid("", true) . '.' . $img_ex_lc;
-                        // var_dump($new_img_name);
                         $img_upload_path = 'assets/images/instructor/' . $new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
 
@@ -72,9 +71,12 @@ if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['passwor
         alert("You forgot fill some information")
     </script>
 <?php endif ?>
-
 <?php
 $teachers = getTeacher();
 require "views/trainers/adminTrainer.view.php";
-
 ?>
+
+
+
+
+
