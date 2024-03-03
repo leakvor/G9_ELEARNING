@@ -55,8 +55,3 @@ if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['passwor
 $teachers = getTeacher();
 require "views/trainers/adminTrainer.view.php";
 ?>
-
-
-
-
-

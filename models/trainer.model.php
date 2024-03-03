@@ -61,19 +61,26 @@ function deleteTeacher(int $id): bool
     $statement->execute([':user_id' => $id]);
     return $statement->rowCount() > 0;
 }
-
-function updateTeacher($username,$email,$password,$id,$img){
+function updateTeacher($username, $email, $password, $id, $img) {
     global $connection;
-    $statement= $connection->prepare("update users set username=:username,email =:email,password =:password,img=:img where user_id=:id");
+    $stmt_check = $connection->prepare("select count(*) FROM users where email = :email AND user_id != :id");
+    $stmt_check->execute([':email' => $email, ':id' => $id]);
+    $email_exists = $stmt_check->fetchColumn();
+
+    if ($email_exists) {
+        throw new Exception("Email address already exists in the database.");
+    }
+    $statement = $connection->prepare("update users set username = :username, email = :email, password = :password, img = :img where user_id = :id");
     $statement->execute([
         ':id' => $id,
-        ':username'=>$username,
+        ':username' => $username,
         ':email' => $email,
         ':password' => $password,
-        ':img'=>$img,
+        ':img' => $img,
     ]);
-    $statement->rowCount() >0;
+    return $statement->rowCount() > 0;
 }
+
 
 function updateTeacherNoImg($username,$email,$password,$id){
     global $connection;
@@ -86,3 +93,4 @@ function updateTeacherNoImg($username,$email,$password,$id){
     ]);
     $statement->rowCount() >0;
 }
+
