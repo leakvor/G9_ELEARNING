@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         $new_img_name = uniqid("", true) . '.' . $img_ex_lc;
                         // var_dump($new_img_name);
-                        $img_upload_path = 'assets/images/instructor/' . $new_img_name;
+                        $img_upload_path = 'assets/images/instpructor/' . $new_img_name;
                         move_uploaded_file($tmp_name, $img_upload_path);
 
                         $password = password_hash($password, PASSWORD_BCRYPT);

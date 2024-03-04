@@ -86,6 +86,7 @@ Page Banner START -->
 			<?php
 				if (isset($_SESSION['trainer'])){
 					$trainer = ($_SESSION['trainer']);
+					// var_dump($trainer);
 				}else{
 					echo 'NOT SET!';
 				}
@@ -95,14 +96,11 @@ Page Banner START -->
 
 				$trainer_email = $trainer['email'];
 				$trainer_data = accountExist($trainer_email);
-				if (isset($trainer_data)){
-					$trainer_profile = $trainer_data['img'];
-				}else{
-					$trainer_profile = $trainer['img'];
+				if (isset($trainer)){
+					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
 				}
-
+				
 				$tra_student = trainer_students($trainer_email);
-				// var_dump($tra_student[0]['title']);
 				
 			?>
 
@@ -120,7 +118,7 @@ Page Banner START -->
 								<!-- Avatar -->
 								<div class="col-auto mt-4 mt-md-0">
 									<div class="avatar avatar-xxl mt-n3">
-										<a href="assets/images/profile/<?= $trainer_profile?>"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?= $trainer_profile?>" alt="trainer_profile"></a>
+									<a href="<?= $trainer_profile?>"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="<?= $trainer_profile?>" alt="trainer_profile"></a>
 									</div>
 								</div>
 								<!-- Profile info -->
@@ -189,7 +187,7 @@ Page content START -->
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
-											<form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
+											<form action="" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
 													<li class="nav-item dropdown">
 														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
