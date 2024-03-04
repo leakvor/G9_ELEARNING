@@ -14,6 +14,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
         '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
+        '/studentEditprofile' => 'controllers/students/studentEditprofile.controller.php',
         
     ];
 }else{

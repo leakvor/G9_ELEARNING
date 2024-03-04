@@ -53,6 +53,48 @@
   })();
 </script>
 
+<?php
+$usernameError = "";
+$emailError = "";
+$passwordError = "";
+if (isset($_POST['submit'])){
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  if (empty($username)){
+    $usernameError ="username is required";
+
+  }else{
+    $username = trim($username);
+    $username = htmlspecialchars($username);
+    if (!preg_match("/^[a-zA-Z]+$/",$username)){
+      $usernameError ="username is not a valid";
+  }
+}
+  if (empty($email)){
+    $emailError ="username is required";
+
+  }else{
+    $email = trim($email);
+    $email = htmlspecialchars($email);
+    if (!preg_match("/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/",$email)){
+      $emailError ="your email is not a valid";
+  }
+}
+  if (empty($password)){
+    $passwordError ="your username is required";
+
+  }else{
+    $password = trim($password);
+    $password = htmlspecialchars($password);
+    if (!preg_match("/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/",$password)){
+      $passwordError ="your password is not a valid";
+  }
+}
+
+}
+?>
 
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
   <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
@@ -138,9 +180,6 @@
             </script>
             <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
-
-
-
               <!-- ---------form edit--------- -->
               <div class="modal-dialog" role="document">
                 <div class="modal-content" style="background-color: black; border: 1px solid white;">
@@ -185,7 +224,7 @@
       <?php endforeach ?>
     </tbody>
   </table>
-</div>
+
 </div>
 </div>
 </div>

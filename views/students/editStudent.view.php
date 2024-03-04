@@ -97,18 +97,13 @@
 						<!-- Avatar -->
 						<div class="col-auto mt-4 mt-md-0">
 							<div class="avatar avatar-xxl mt-n3">
-								<img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt="">
+                            <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>" alt="studentProfile">
 							</div>
 						</div>
 						<!-- Profile info -->
 						<div class="col d-md-flex justify-content-between align-items-center mt-4">
 							<div>
-								<h1 class="my-1 fs-4"><?= $user['username'] ?> <i class="bi bi-patch-check-fill text-info small"></i></h1>
-								<ul class="list-inline mb-0">
-									<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-									<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled Students</li>
-									<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
-								</ul>
+								<h1 class="my-1 fs-4"><i class="bi bi-patch-check-fill text-info small"></i><?= $user['username'] ?></h1>
 							</div>
 							<!-- Button -->
 						</div>
@@ -146,7 +141,7 @@ Page content START -->
 						<div class="bg-dark border rounded-3 pb-0 p-3 w-100">
 							<!-- Dashboard menu -->
 							<div class="list-group list-group-dark list-group-borderless">
-								<a class="list-group-item" href="instructor-dashboard.html"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
+								<a class="list-group-item" href="/studentDashboard"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 								<a class="list-group-item" href="instructor-manage-course.html"><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
 								<a class="list-group-item" href="instructor-manage-course.html"><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
 								<a class="list-group-item" href="instructor-earning.html"><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
@@ -170,9 +165,9 @@ Page content START -->
 						<h3 class="card-header-title mb-0">Edit Profile</h3>
 					</div>
 					<!-- Card body START -->
-					<div class="card-body">
+					<div class="card-body" >
 						<!-- Form -->
-						<form class="row g-4">
+						<form action="controllers/students/editStudent.controller.php"  method="post" enctype="multipart/form-data" class="row g-4">
 
 							<!-- Profile picture -->
 							<div class="col-12 justify-content-center align-items-center">
@@ -181,14 +176,15 @@ Page content START -->
 									<label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
 										<!-- Avatar place holder -->
 										<span class="avatar avatar-xl">
-											<img id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/07.jpg" alt="">
+											<img id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/profile/<?=$user['img']?>" alt="">
 										</span>
 										<!-- Remove btn -->
 										<button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
 									</label>
 									<!-- Upload button -->
 									<label class="btn btn-primary-soft mb-0" for="uploadfile-1">Change</label>
-									<input id="uploadfile-1" class="form-control d-none" type="file">
+									<input id="uploadfile-1" class="form-control d-none" type="file" name="img">
+									<input type="hidden" value="<?= $user['user_id'] ?>" name="id">
 								</div>
 							</div>
 
@@ -196,24 +192,23 @@ Page content START -->
 							<div class="col-12">
 								<label class="form-label">Full name</label>
 								<div class="input-group">
-									<input type="text" class="form-control" value="Lori" placeholder="First name">
-									<input type="text" class="form-control" value="Stevens" placeholder="Last name">
+									<input type="text" class="form-control" value="<?= $user['username'] ?>" placeholder="Username" name="username">
 								</div>
 							</div>
 
 							<!-- Email id -->
 							<div class="col-md-6">
 								<label class="form-label">Email id</label>
-								<input class="form-control" type="email" value="example@gmail.com" placeholder="Email">
+								<input class="form-control" type="email" value="<?php echo $user['email'] ?>" placeholder="Email" name="email">
 							</div>
 							<div class="col-md-6">
 								<label class="form-label">Password</label>
-								<input class="form-control" type="password" value="example@gmail.com" placeholder="Email">
+								<input class="form-control" type="password" value="<?php echo $user['password'] ?>" placeholder="Password" name="password">
 							</div>
 
 							<!-- Save button -->
 							<div class="d-sm-flex justify-content-end">
-								<button type="button" class="btn btn-primary mb-0">Save changes</button>
+                                <button class="btn btn-primary mb-0">Save changes</button>
 							</div>
 						</form>
 					</div>
@@ -232,38 +227,6 @@ Page content END -->
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
 
-<!-- =======================
-Footer START -->
-<footer class="bg-dark p-3">
-	<div class="container">
-		<div class="row align-items-center">
-			<!-- Widget -->
-			<div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-				<!-- Logo START -->
-				<a href="index.html"> <img class="h-20px" src="assets/images/logo-light.svg" alt="logo"> </a>
-			</div>
-			
-			<!-- Widget -->
-			<div class="col-md-4 mb-3 mb-md-0">
-				<div class="text-center text-white text-primary-hover">
-					Copyrights ©2023 Eduport. Build by <a href="https://www.webestica.com/" target="_blank" class="text-white">Webestica</a>.
-				</div>
-			</div>
-			<!-- Widget -->
-			<div class="col-md-4">
-				<!-- Rating -->
-				<ul class="list-inline mb-0 text-center text-md-end">
-					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-facebook"></i></a></li>
-					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-instagram"></i></a></li>
-					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-linkedin-in"></i></a></li>
-					<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-twitter"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</footer>
-<!-- =======================
-Footer END -->
 
 <!-- Back to top -->
 <div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
