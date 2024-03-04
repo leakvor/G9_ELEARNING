@@ -26,7 +26,7 @@
 
     function validateEmail() {
       let emailText = emailInput.value.trim();
-      let emailRegex = /^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/;;
+      let emailRegex = /^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$}/;;
       let isValid = emailRegex.test(emailText);
       if (isValid) {
         emailValidationMsg.textContent = "";
@@ -38,11 +38,11 @@
 
     function validatePassword() {
       let passwordText = passwordInput.value.trim();
-      let isValid = passwordText.length >= 8; 
+      let isValid = passwordText.length == 8; 
       if (isValid) {
         passwordValidationMsg.textContent = "";
       } else {
-        passwordValidationMsg.textContent = "Password must be at least 6 characters long";
+        passwordValidationMsg.textContent = "Password must be at least 8 characters";
       }
       validateForm();
     }
