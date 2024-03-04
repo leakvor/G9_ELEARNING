@@ -86,19 +86,22 @@ Page Banner START -->
 			<?php
 				if (isset($_SESSION['trainer'])){
 					$trainer = ($_SESSION['trainer']);
+					// var_dump($trainer);
 				}else{
 					echo 'NOT SET!';
 				}
-
+				require('database/database.php');
+				require('models/student.model.php');
 				require('models/trainer.model.php');
 
 				$trainer_email = $trainer['email'];
 				$trainer_data = accountExist($trainer_email);
-				if (isset($trainer_data)){
-					$trainer_profile = $trainer_data['img'];
-				}else{
-					$trainer_profile = $trainer['img'];
+				if (isset($trainer)){
+					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
 				}
+				
+				$tra_student = trainer_students($trainer_email);
+				
 			?>
 
 			<!-- Main banner background image -->
@@ -115,7 +118,7 @@ Page Banner START -->
 								<!-- Avatar -->
 								<div class="col-auto mt-4 mt-md-0">
 									<div class="avatar avatar-xxl mt-n3">
-										<a href="assets/images/profile/<?= $trainer_profile?>"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?= $trainer_profile?>" alt="trainer_profile"></a>
+									<a href="<?= $trainer_profile?>"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="<?= $trainer_profile?>" alt="trainer_profile"></a>
 									</div>
 								</div>
 								<!-- Profile info -->
@@ -184,7 +187,7 @@ Page content START -->
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
-											<form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
+											<form action="" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
 													<li class="nav-item dropdown">
 														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
@@ -214,19 +217,20 @@ Page content START -->
 						<!-- Counter boxes START -->
 						<div class="row g-4">
 							<!-- Counter item -->
-							<div class="col-sm-6 col-lg-4">
+							<div class="col-sm-6 col-lg-4"  id="show_course">
 								<div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-15 rounded-3">
 									<span class="display-6 text-warning mb-0"><i class="fas fa-tv fa-fw"></i></span>
 									<div class="ms-4">
 										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-delay="200">0</h5>
+											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?= count($tra_student)?>" data-purecounter-delay="200">0</h5>
 										</div>
 										<span class="mb-0 h6 fw-light">Total Courses</span>
 									</div>
 								</div>
+								<hr class="mt-2 custom-hr active_barc" style="display:none">
 							</div>
 							<!-- Counter item -->
-							<div class="col-sm-6 col-lg-4">
+							<div class="col-sm-6 col-lg-4"  id="show_student">
 								<div class="d-flex justify-content-center align-items-center p-4 bg-purple bg-opacity-10 rounded-3">
 									<span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
 									<div class="ms-4">
@@ -237,6 +241,7 @@ Page content START -->
 										<span class="mb-0 h6 fw-light">Total Students</span>
 									</div>
 								</div>
+								<hr class="mt-2 custom-hr active_bars" style="display:none">
 							</div>
 							<!-- Counter item -->
 							<div class="col-sm-6 col-lg-4">
@@ -253,6 +258,41 @@ Page content START -->
 							</div>
 						</div>
 						<!-- Counter boxes END -->
+
+						<!-- display teacher cours name -->
+						<div class="d-flex gap-2 mt-3">
+							<?php
+								foreach($tra_student as $item){
+							?>
+								<div class="card text-white bg-success mb-3 all_courses" style="max-width: 18rem; display:none">
+									<div class="card-header text-white bg-dark"><?= $item['title']?></div>
+									<div class="card-body">
+										<h5 class="card-title">Secondary card title</h5>
+										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									</div>
+								</div>
+							<?php
+								}
+							?>
+						</div>
+
+						<!-- display teacher stuents -->
+						<div class="d-flex gap-2 mt-0.5" >
+							<?php
+								foreach($tra_student as $item){
+							?>
+								<div class="card text-white bg-primary mb-3 all_student" style="max-width: 18rem; display:none">
+									<div class="card-header text-white bg-dark"><?= $item['title']?></div>
+									<div class="card-body">
+										<h5 class="card-title">Secondary card title</h5>
+										<p class="card-text">Some quick example Ytext to build on the card title and make up the bulk of the card's content.</p>
+									</div>
+								</div>
+							<?php
+								}
+							?>
+						</div>
+
 
 						<!-- Chart START -->
 						<div class="row mt-5">
@@ -385,12 +425,14 @@ Page content END -->
 
 	<!-- Template Functions -->
 	<script src="assets/js/functions.js"></script>
-
+	<script src="vendor/js/display_page.js"></script>
+	
 	<script>
 		function showAlert() {
 			alert("<?php echo 'you will signout?'; ?>");
 		}
 	</script>
+
 
 </body>
 
