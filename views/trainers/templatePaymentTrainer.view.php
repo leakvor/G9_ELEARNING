@@ -1,5 +1,4 @@
 <body>
-
 	<!-- Header START -->
 	<header class="navbar-light navbar-sticky">
 		<!-- Logo Nav START -->
@@ -11,7 +10,6 @@
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
 				<!-- Logo END -->
-
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -20,10 +18,8 @@
 						<span></span>
 					</span>
 				</button>
-
 				<!-- Main navbar START -->
 				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-
 					<!-- Nav Main menu START -->
 					<ul class="navbar-nav navbar-nav-scroll mx-auto">
 						<!-- Nav item 1 Demos -->
@@ -43,7 +39,6 @@
 								<li> <a class="dropdown-item" href="index-11.html">Home Workshop</a></li>
 							</ul>
 						</li>
-
 						<!-- Nav item 2 Pages -->
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
@@ -73,7 +68,6 @@
 										<li> <a class="dropdown-item" href="course-video-player.html">Course Full Screen Video</a></li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">About</a>
@@ -86,7 +80,6 @@
 										<li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Hero Banner</a>
@@ -98,14 +91,12 @@
 										</li>
 									</ul>
 								</li>
-
 								<li> <a class="dropdown-item" href="instructor-list.html">Instructor List</a></li>
 								<li> <a class="dropdown-item" href="instructor-single.html">Instructor Single</a></li>
 								<li> <a class="dropdown-item" href="become-instructor.html">Become an Instructor</a></li>
 								<li> <a class="dropdown-item" href="abroad-single.html">Abroad Single</a></li>
 								<li> <a class="dropdown-item" href="workshop-detail.html">Workshop Detail</a></li>
 								<li> <a class="dropdown-item" href="event-detail.html">Event Detail</a></li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Shop</a>
@@ -118,7 +109,6 @@
 										<li> <a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Help</a>
@@ -128,7 +118,6 @@
 										<li> <a class="dropdown-item" href="faq.html">FAQs</a></li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
@@ -138,7 +127,6 @@
 										<li> <a class="dropdown-item" href="forgot-password.html">Forgot Password</a></li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Form</a>
@@ -149,7 +137,6 @@
 										<li> <a class="dropdown-item" href="university-admission-form.html">Admission Form</a></li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Specialty</a>
@@ -160,7 +147,6 @@
 								</li>
 							</ul>
 						</li>
-
 						<!-- Nav item 3 Account -->
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
@@ -181,7 +167,6 @@
 										<li> <a class="dropdown-item" href="instructor-payout.html"><i class="fas fa-wallet fa-fw me-1"></i>Payout</a> </li>
 									</ul>
 								</li>
-
 								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>Student</a>
@@ -195,7 +180,6 @@
 										<li> <a class="dropdown-item" href="student-bookmark.html"><i class="fas bi-cart-check-fill fa-fw me-1"></i>Wishlist</a> </li>
 									</ul>
 								</li>
-
 								<li> <a class="dropdown-item" href="admin-dashboard.html"><i class="fas fa-user-cog fa-fw me-1"></i>Admin</a> </li>
 								<li>
 									<hr class="dropdown-divider">
@@ -203,7 +187,6 @@
 								<li> <a class="dropdown-item" href="instructor-edit-profile.html"><i class="fas fa-fw fa-edit me-1"></i>Edit Profile</a> </li>
 								<li> <a class="dropdown-item" href="instructor-setting.html"><i class="fas fa-fw fa-cog me-1"></i>Settings</a> </li>
 								<li> <a class="dropdown-item" href="instructor-delete-account.html"><i class="fas fa-fw fa-trash-alt me-1"></i>Delete Profile</a> </li>
-
 								<li>
 									<hr class="dropdown-divider">
 								</li>
@@ -211,7 +194,6 @@
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-
 										<!-- dropdown submenu open right -->
 										<li class="dropdown-submenu dropend">
 											<a class="dropdown-item dropdown-toggle" href="#">Dropdown (end)</a>
@@ -221,7 +203,6 @@
 											</ul>
 										</li>
 										<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-
 										<!-- dropdown submenu open left -->
 										<li class="dropdown-submenu dropstart">
 											<a class="dropdown-item dropdown-toggle" href="#">Dropdown (start)</a>
@@ -235,10 +216,8 @@
 								</li>
 							</ul>
 						</li>
-
 						<!-- Nav item 4 Component-->
 						<li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
-
 						<!-- Nav item 5 link-->
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -285,7 +264,6 @@
 						</li>
 					</ul>
 					<!-- Nav Main menu END -->
-
 					<!-- Nav Search START -->
 					<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
 						<div class="nav-item w-100">
@@ -300,7 +278,6 @@
 					<!-- Nav Search END -->
 				</div>
 				<!-- Main navbar END -->
-
 				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
 					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
@@ -369,8 +346,8 @@
 	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
 
-		<!-- =======================
-Page Banner START -->
+
+		<!-- ------------------Page Banner START-------------- -->
 		<section class="pt-0">
 			<div class="container-fluid px-0">
 				<div class="card bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -414,9 +391,7 @@ Page Banner START -->
 								</div>
 							</div>
 						</div>
-
 						<!-- Advanced filter responsive toggler START -->
-						<!-- Divider -->
 						<hr class="d-xl-none">
 						<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
 							<a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
@@ -440,17 +415,7 @@ Page content START -->
 					<!-- Left sidebar START -->
 					<div class="col-xl-3">
 						<!-- Responsive offcanvas body START -->
-						<div class="offcanvas-xl offcanvas-end" tabindex="-1" id="offcanvasSidebar">
-							<!-- Offcanvas header -->
-
-
-							<!-- <div class="offcanvas-header bg-light">  -->
-							<!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">My profile</h5> -->
-							<!-- <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button> -->
-							<!-- </div> -->
-
-
-							<!-- Offcanvas body -->
+						<div class="offcanvas-xl offcanvas-center" tabindex="-1" id="offcanvasSidebar">
 							<div class="offcanvas-body p-3 p-xl-0">
 								<div class="bg-dark border rounded-3 p-3 w-100">
 									<!-- Dashboard menu -->
@@ -483,7 +448,8 @@ Page content START -->
 					</div>
 					<div class="col-xl-9">
 						<!-- Payment method START -->
-						<div class="card bg-transparent border rounded-3 mb-4 z-index-9">
+						<div class="card bg-transparent border rounded-3">
+							<!-- <div class="card bg-transparent border rounded-3 mb-4 z-index-9"> -->
 							<!-- Card header START -->
 							<div class="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
 								<h3 class="mb-2 mb-sm-0">Payment methods</h3>
@@ -584,71 +550,14 @@ Page content START -->
 							<!-- Card body START -->
 						</div>
 						<!-- Payment method END -->
-
-						<!-- Billing address START -->
-						<div class="card bg-transparent border rounded-3 mb-4">
-							<!-- Card header START -->
-							<div class="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
-								<h3 class="mb-2 mb-sm-0">Billing address</h3>
-								<a href="#" class="btn btn-sm btn-primary-soft mb-0">Add new address</a>
-							</div>
-							<!-- Card header END -->
-
-							<!-- Card body START -->
-							<div class="card-body">
-								<!-- Address 1 START -->
-								<div class="bg-body border border-1 p-3 rounded-3 d-sm-flex justify-content-sm-between align-items-center mb-4">
-
-									<!-- Radio button button -->
-									<div class="form-check">
-										<input class="form-check-input mb-1" type="radio" name="address" id="address1" checked="">
-										<label class="form-check-label mb-0 h5" for="address1">Address-1</label>
-										<p class="mb-0">2492 Centennial NW, Acworth, GA, 30102</p>
-									</div>
-
-									<!-- Button -->
-									<div>
-										<a href="#" class="btn btn-sm btn-success mb-0">Edit</a>
-										<button class="btn btn-sm btn-danger mb-0">Delete</button>
-									</div>
-
-								</div>
-								<!-- Address 1 END -->
-
-								<!-- Address 2 START -->
-								<div class="bg-body border border-1 p-3 rounded-3 d-sm-flex justify-content-sm-between align-items-center mb-4">
-
-									<!-- Radio button button -->
-									<div class="form-check">
-										<input class="form-check-input mb-1" type="radio" name="address" id="address2">
-										<label class="form-check-label mb-0 h5" for="address2">Address-2</label>
-										<p class="mb-0">2002 Horton Ford Rd, Eidson, TN, 37731</p>
-									</div>
-
-									<!-- Button -->
-									<div>
-										<a href="#" class="btn btn-sm btn-success mb-0">Edit</a>
-										<button class="btn btn-sm btn-danger mb-0">Delete</button>
-									</div>
-
-								</div>
-								<!-- Address 2 END -->
-							</div>
-							<!-- Card body START -->
-						</div>
-						<!-- Billing address END -->
-
-						<!-- Billing history START -->
-						<div class="card bg-transparent border rounded-3">
+						<div class="card bg-transparent border rounded-3 mt-4">
 							<!-- Card header START -->
 							<div class="card-header bg-transparent border-bottom">
 								<h3 class="mb-0">Billing history</h3>
 							</div>
 							<!-- Card header END -->
-
 							<!-- Card body START -->
 							<div class="card-body">
-
 								<!-- Title and select START -->
 								<div class="row g-3 align-items-center justify-content-between mb-4">
 									<!-- Content -->
@@ -660,184 +569,171 @@ Page content START -->
 											</button>
 										</form>
 									</div>
-
 									<!-- Select option -->
 									<div class="col-md-3">
 										<!-- Short by filter -->
 										<form>
-											<div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-expanded="false">
-												<div class="choices__inner"><select class="form-select js-choice border-0 z-index-9 bg-transparent choices__input" aria-label=".form-select-sm" hidden="" tabindex="-1" data-choice="active">
-														<option value="" data-custom-properties="[object Object]">Sort by</option>
-													</select>
-													<div class="choices__list choices__list--single">
-														<div class="choices__item choices__placeholder choices__item--selectable" data-item="" data-id="1" data-value="" data-custom-properties="[object Object]" aria-selected="true">Sort by</div>
-													</div>
-												</div>
-												<div class="choices__list choices__list--dropdown" aria-expanded="false"><input type="search" name="search_terms" class="choices__input choices__input--cloned" autocomplete="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" aria-label="Sort by" placeholder="">
-													<div class="choices__list" role="listbox">
-														<div id="choices--f4cw-item-choice-3" class="choices__item choices__item--choice is-selected choices__placeholder choices__item--selectable is-highlighted" role="option" data-choice="" data-id="3" data-value="" data-select-text="Press to select" data-choice-selectable="" aria-selected="true">Sort by</div>
-														<div id="choices--f4cw-item-choice-1" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="1" data-value="Newest" data-select-text="Press to select" data-choice-selectable="">Newest</div>
-														<div id="choices--f4cw-item-choice-2" class="choices__item choices__item--choice choices__item--selectable" role="option" data-choice="" data-id="2" data-value="Oldest" data-select-text="Press to select" data-choice-selectable="">Oldest</div>
-													</div>
-												</div>
-											</div>
-										</form>
+											<select class="form-select form-select-sm form-control" name="asign" aria-label=".form-select-sm example">
+												<option selected disabled>Sort by</option>
+												<option value="1" data-custom-properties="[object Object]">Newest</option>
+												<option value="1" data-custom-properties="[object Object]">Oldest</option>
+											</select>
 									</div>
+									</form>
 								</div>
-								<!-- Title and select END -->
-
-								<!-- Student list table START -->
-								<div class="table-responsive border-0">
-									<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
-										<!-- Table head -->
-										<thead>
-											<tr>
-												<th scope="col" class="border-0 rounded-start">Date</th>
-												<th scope="col" class="border-0">Course name</th>
-												<th scope="col" class="border-0">Payment method</th>
-												<th scope="col" class="border-0">Status</th>
-												<th scope="col" class="border-0">Total</th>
-												<th scope="col" class="border-0 rounded-end">Action</th>
-											</tr>
-										</thead>
-										<!-- Table body -->
-										<tbody>
-											<!-- Table item -->
-											<tr>
-												<!-- Date item -->
-												<td>4/2/2023</td>
-
-												<!-- Title item -->
-												<td>
-													<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Sketch from A to Z: for app designer</a></h6>
-												</td>
-
-												<!-- Payment method item -->
-												<td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span class="ms-2">****4568</span></td>
-
-												<!-- Status item -->
-												<td>
-													<span class="badge bg-success bg-opacity-10 text-success">Paid</span>
-												</td>
-
-												<!-- total item -->
-												<td>$350</td>
-
-												<!-- Action item -->
-												<td>
-													<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
-												</td>
-											</tr>
-
-											<!-- Table item -->
-											<tr>
-												<!-- Date item -->
-												<td>10/1/2023</td>
-
-												<!-- Title item -->
-												<td>
-													<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Create a Design System in Figma</a></h6>
-												</td>
-
-												<!-- Payment method item -->
-												<td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span class="ms-2">****2588</span></td>
-
-												<!-- Status item -->
-												<td>
-													<span class="badge bg-success bg-opacity-10 text-success">Paid</span>
-												</td>
-
-												<!-- total item -->
-												<td>$242</td>
-
-												<!-- Action item -->
-												<td>
-													<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
-												</td>
-											</tr>
-
-											<!-- Table item -->
-											<tr>
-												<!-- Date item -->
-												<td>21/1/2023</td>
-
-												<!-- Title item -->
-												<td>
-													<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">The Complete Web Development in python</a></h6>
-												</td>
-
-												<!-- Payment method item -->
-												<td><img src="assets/images/client/paypal.svg" class="w-80px" alt=""></td>
-
-												<!-- Status item -->
-												<td>
-													<span class="badge bg-orange bg-opacity-10 text-orange">Pending</span>
-												</td>
-
-												<!-- total item -->
-												<td>$576</td>
-
-												<!-- Action item -->
-												<td>
-													<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
-												</td>
-											</tr>
-
-											<!-- Table item -->
-											<tr>
-												<!-- Date item -->
-												<td>18/1/2023</td>
-
-												<!-- Title item -->
-												<td>
-													<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Deep Learning with React-Native</a></h6>
-												</td>
-
-												<!-- Payment method item -->
-												<td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span class="ms-2">****2588</span></td>
-
-												<!-- Status item -->
-												<td>
-													<span class="badge bg-danger bg-opacity-10 text-danger">Cancel</span>
-												</td>
-
-												<!-- total item -->
-												<td>$425</td>
-
-												<!-- Action item -->
-												<td>
-													<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<!-- Student list table END -->
-
-								<!-- Pagination START -->
-								<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
-									<!-- Content -->
-									<p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-									<!-- Pagination -->
-									<nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-										<ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-											<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
-											<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-											<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-											<li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-											<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
-										</ul>
-									</nav>
-								</div>
-								<!-- Pagination END -->
 							</div>
-							<!-- Card body START -->
-						</div>
-						<!-- Billing history END -->
+							<!-- Title and select END -->
+							<!-- Student list table START -->
+							<div class="table-responsive border-0">
+								<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+									<!-- Table head -->
+									<thead>
+										<tr>
+											<th scope="col" class="border-0 rounded-start">Date</th>
+											<th scope="col" class="border-0">Course name</th>
+											<th scope="col" class="border-0">Payment method</th>
+											<th scope="col" class="border-0">Status</th>
+											<th scope="col" class="border-0">Total</th>
+											<th scope="col" class="border-0 rounded-end">Action</th>
+										</tr>
+									</thead>
+									<!-- Table body -->
+									<tbody>
+										<!-- Table item -->
+										<tr>
+											<!-- Date item -->
+											<td>4/2/2023</td>
 
-						<!-- Main content END -->
-					</div><!-- Row END -->
-				</div>
+											<!-- Title item -->
+											<td>
+												<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Sketch from A to Z: for app designer</a></h6>
+											</td>
+
+											<!-- Payment method item -->
+											<td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span class="ms-2">****4568</span></td>
+
+											<!-- Status item -->
+											<td>
+												<span class="badge bg-success bg-opacity-10 text-success">Paid</span>
+											</td>
+
+											<!-- total item -->
+											<td>$350</td>
+
+											<!-- Action item -->
+											<td>
+												<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
+											</td>
+										</tr>
+
+										<!-- Table item -->
+										<tr>
+											<!-- Date item -->
+											<td>10/1/2023</td>
+
+											<!-- Title item -->
+											<td>
+												<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Create a Design System in Figma</a></h6>
+											</td>
+
+											<!-- Payment method item -->
+											<td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span class="ms-2">****2588</span></td>
+
+											<!-- Status item -->
+											<td>
+												<span class="badge bg-success bg-opacity-10 text-success">Paid</span>
+											</td>
+
+											<!-- total item -->
+											<td>$242</td>
+
+											<!-- Action item -->
+											<td>
+												<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
+											</td>
+										</tr>
+
+										<!-- Table item -->
+										<tr>
+											<!-- Date item -->
+											<td>21/1/2023</td>
+
+											<!-- Title item -->
+											<td>
+												<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">The Complete Web Development in python</a></h6>
+											</td>
+
+											<!-- Payment method item -->
+											<td><img src="assets/images/client/paypal.svg" class="w-80px" alt=""></td>
+
+											<!-- Status item -->
+											<td>
+												<span class="badge bg-orange bg-opacity-10 text-orange">Pending</span>
+											</td>
+
+											<!-- total item -->
+											<td>$576</td>
+
+											<!-- Action item -->
+											<td>
+												<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
+											</td>
+										</tr>
+
+										<!-- Table item -->
+										<tr>
+											<!-- Date item -->
+											<td>18/1/2023</td>
+
+											<!-- Title item -->
+											<td>
+												<h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Deep Learning with React-Native</a></h6>
+											</td>
+
+											<!-- Payment method item -->
+											<td><img src="assets/images/client/mastercard.svg" class="h-40px" alt=""><span class="ms-2">****2588</span></td>
+
+											<!-- Status item -->
+											<td>
+												<span class="badge bg-danger bg-opacity-10 text-danger">Cancel</span>
+											</td>
+
+											<!-- total item -->
+											<td>$425</td>
+
+											<!-- Action item -->
+											<td>
+												<a href="#" class="btn btn-primary-soft btn-round me-1 mb-1 mb-md-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Download" data-bs-original-title="Download"><i class="bi bi-download"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- Student list table END -->
+
+							<!-- Pagination START -->
+							<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-4 mt-sm-3">
+								<!-- Content -->
+								<p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
+								<!-- Pagination -->
+								<nav class="d-flex justify-content-center mb-0" aria-label="navigation">
+									<ul class="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+										<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
+										<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+										<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+										<li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
+										<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
+									</ul>
+								</nav>
+							</div>
+							<!-- Pagination END -->
+						</div>
+						<!-- Card body START -->
+					</div>
+					<!-- Billing history END -->
+					<!-- Main content END -->
+				</div><!-- Row END -->
+			</div>
 			</div>
 		</section>
 		<!-- =======================
@@ -946,6 +842,4 @@ Footer END -->
 
 	<!-- Template Functions -->
 	<script src="assets/js/functions.js"></script>
-
-
 </body>
