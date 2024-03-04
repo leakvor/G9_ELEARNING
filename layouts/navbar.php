@@ -302,7 +302,7 @@
             </div>
           </li>
 
-          <li><a href="#" class="dropdown-item">Settings</a></li>
+          <li><a href="/studentDashboard" class="dropdown-item">Settings</a></li>
           <li><a href="controllers/logout/logout.controller.php" class="dropdown-item">Log Out</a></li>
         </div>
       </div>

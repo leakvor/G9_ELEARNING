@@ -1,2 +1,2 @@
 <?php 
-require "../../views/students/displayStudent.view.php";
+require "views/students/studentDashboard.view.php";
