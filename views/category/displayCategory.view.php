@@ -59,9 +59,9 @@
             <th scope="row" ><?= $index+1 ?></th>
             <td><?= $category['cateName'] ?></td>
             <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="60px" height="60px"  ></td>
-            <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
+            <td><a class="btn bg-gradient-danger btn-danger" href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
             "onclick="return functionDelete()">
-            <i class="fa fa-trash" style="color:red;"></i></a>
+            <i class="fa fa-trash" style="color:white;"></i></a>
             <script>
                         function functionDelete() {
                           if (confirm("Are you sure you want to delete this category?")) {
@@ -72,7 +72,10 @@
                           }
                         }
             </script>
-            <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?=$category['cat_id'] ?>" style="cursor: pointer;color:blue;"></i>
+            <a href="#" class="btn bg-gradient-danger btn-info">
+            <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?=$category['cat_id'] ?>" style="cursor: pointer;color:white;"></i>
+              </a>
+            
             <div class="modal fade" id="editModal<?=$category['cat_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?=$category['cat_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content" style="background-color: black; border: 1px solid white;">

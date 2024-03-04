@@ -30,19 +30,6 @@
                 <div class="dropdown ms-1 ms-lg-0">
                     <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
                         <!-- Profile info -->
-                        <li class="px-3">
-                            <div class="d-flex align-items-center">
-                                <!-- Avatar -->
-                                <div class="avatar me-3">
-                                    <img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
-                                </div>
-                                <div>
-                                    <a class="h6" href="#">Lori Ferguson</a>
-                                    <p class="small m-0">example@gmail.com</p>
-                                </div>
-                            </div>
-                            <hr>
-                        </li>
                         <!-- Links -->
                         <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a>
                         </li>

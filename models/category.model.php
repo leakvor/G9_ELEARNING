@@ -50,4 +50,16 @@ function updateCategory(string $category,string $image,int $id)
 
     return $statement->rowCount() > 0;
 }
+function updateCategorynoImg(string $category,int $id)
+{
+    global $connection;
+    $statement = $connection->prepare("UPDATE category SET cateName = :cateName WHERE cat_id=:id");
+    $statement->execute([
+        ':cateName' => $category,
+        ':id' => $id,
+
+    ]);
+
+    return $statement->rowCount() > 0;
+}
 ?>

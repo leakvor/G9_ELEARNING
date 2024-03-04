@@ -9,10 +9,9 @@ $statement->execute();
 $categories = $statement->fetchAll();
 ?>
 <div class="container-fluid pt-4 px-4">
-  <div class="container-fluid pt-2 px-4" style="overflow-x: auto">
-    <div class="form-row" style="display: flex;">
-      <div class="col-md-4 mb-3">
-        <input class="form-control bg-dark border-1  border-white mt-3 mr-3" type="search" id="search" placeholder="Search" style="width: 200px;">
+<div class="form-row" style="display: flex;">
+      <div class="col-md-4 mb-3" style="display: flex;">
+        <input class="form-control bg-dark border-1  border-white mt-3 mr-3" type="search" id="search" placeholder="Search" style="width: 200px;"  >
       </div>
       <div class="col-md-4 mb-3">
         <select name="category" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">
@@ -31,8 +30,12 @@ $categories = $statement->fetchAll();
         </select>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-right:11px;"> Add new Course</button>
+    
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-right:11px;"> Add new Course</button>
+  <div class="container-fluid pt-2 px-4" style="overflow-x: auto">
 
+
+    
     <!-- The Modal -->
     <div class="modal" id="myModal">
       <div class="modal-dialog">
@@ -84,7 +87,7 @@ $categories = $statement->fetchAll();
   </div>
 
   <div class="table-wrapper-scroll-y my-custom-scrollbar mt-3">
-    <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
+    <table class="table table-bordered table-striped mb-0 table table-striped" style="border: 1px solid gray;">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -100,6 +103,7 @@ $categories = $statement->fetchAll();
         <?php foreach ($courses as $index => $course) :
 
         ?>
+        <!-- <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div> -->
           <tr>
             <th scope="row"><?= $index + 1 ?></th>
             <td><?= $course['title'] ?></td>
@@ -107,8 +111,8 @@ $categories = $statement->fetchAll();
             <td><?= $course['cateName'] ?></td>
             <td><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" style="width: 70px;height: 70px;object-fit: cover;"></td>
             <td><?= $course['paid'] ?>$</td>
-            <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>" onclick="return functionDelete()">
-                <i class="fa fa-trash" style="color:red;"></i></a>
+            <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>" class="btn bg-gradient-danger btn-danger" onclick="return functionDelete()">
+                <i class="fa fa-trash" style="color:white;"></i></a>
               <script>
                 function functionDelete() {
                   if (confirm("Are you sure you want to delete this course?")) {
@@ -119,7 +123,9 @@ $categories = $statement->fetchAll();
                   }
                 }
               </script>
-              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:blue;"></i>
+              <a href="#" class="btn bg-gradient-danger btn-info">
+              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:white;" ></i>
+              </a>
               <div class="modal fade" id="editModal<?= $course['course_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $course['course_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content" style="background-color: black; border: 1px solid white;">

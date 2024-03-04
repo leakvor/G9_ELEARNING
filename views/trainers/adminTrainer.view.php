@@ -166,8 +166,8 @@ if (isset($_POST['submit'])){
           <!-- <td><?= $teacher['password'] ?></td> -->
           <td><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
           <td class="d-flex d-grid gap-3">
-            <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">
-              <i class="fa fa-trash" style="color:red;"></i></a>
+            <a class="btn bg-gradient-danger btn-danger" href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">
+              <i class="fa fa-trash" style="color:white;"></i></a>
             <script>
               function functionDelete() {
                 if (confirm("Are you sure you want to delete this category?")) {

@@ -97,7 +97,7 @@
 						<!-- Avatar -->
 						<div class="col-auto mt-4 mt-md-0">
 							<div class="avatar avatar-xxl mt-n3">
-                            <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>" alt="studentProfile">
+                            <img class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/profile/<?=$user['img']?>" alt="studentProfile">
 							</div>
 						</div>
 						<!-- Profile info -->
