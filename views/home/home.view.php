@@ -130,18 +130,12 @@ Category START -->
 <section>
 	<div class="container">
 		<div class="row g-4">
-			<?php
-			if (isset($_SESSION['user'])) {
-				$path = "/displayAllcourse";
-			?>
-			<?php
-			} else {
-				$path = "/signins";
-			}
-			?>
 			<?php foreach ($categories as $category) : 
-				$path = "controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
-				
+				if(isset($_SESSION['user'])) {
+					$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+				}else{
+					$path = "/signins";
+				}
 				?>
 				
 				<!-- Category item -->
