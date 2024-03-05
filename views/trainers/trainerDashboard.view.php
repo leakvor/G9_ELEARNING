@@ -1,7 +1,4 @@
 <body>
-	<?php
-	// session_start()
-	?>
 	<!-- Header START -->
 	<header class="navbar-light navbar-sticky">
 		<!-- Logo Nav START -->
@@ -139,8 +136,7 @@ Page Banner START -->
 
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
-										<a href="" class="btn btn-success mb-0">Create a
-											course</a>
+										<a href="/createCourse" class="btn btn-success mb-0">Create a course</a>
 									</div>
 								</div>
 							</div>
@@ -353,7 +349,7 @@ Page content START -->
 												</thead>
 												<!-- Table body START -->
 												<tbody>
-
+												
 													<!-- Table item -->
 													<tr>
 														<!-- Course item -->

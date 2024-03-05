@@ -97,3 +97,15 @@ function trainer_students($email) {
 
     return $result;
 }
+function createCourse(string $title) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("insert into users (username,email,password,role,img) values (:title)");
+    $statement->execute([
+        ':title'=>$title
+        
+
+    ]);
+
+    return $statement->rowCount() > 0;
+}
