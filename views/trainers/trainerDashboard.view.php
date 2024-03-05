@@ -86,7 +86,7 @@ Page Banner START -->
 			<?php
 				if (isset($_SESSION['trainer'])){
 					$trainer = ($_SESSION['trainer']);
-					// var_dump($trainer);
+					$train_img = $trainer['img'];
 				}else{
 					echo 'NOT SET!';
 				}
@@ -98,6 +98,9 @@ Page Banner START -->
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
+					if (isset($trainer_profile)){
+						echo "<script>alert('Edit profile!');</script>";
+					}
 				}
 				
 				$tra_student = trainer_students($trainer_email);
@@ -187,7 +190,7 @@ Page content START -->
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
-											<form action="" method="post" enctype="multipart/form-data">
+											<form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
 													<li class="nav-item dropdown">
 														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
