@@ -8,7 +8,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
     $routes = [
         '/'=>'controllers/home/home.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
-        // LOG------------------->
+        '/signins' => 'controllers/home/home.controller.php',
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',

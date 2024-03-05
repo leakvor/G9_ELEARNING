@@ -37,6 +37,12 @@
 		.dropdown:hover .dropdown-content {display: block;}
 
 		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+		/* Custom bold horizontal bar */
+		.custom-hr {
+			border: none; /* Remove the default border */
+			border-top: 3px solid #222; /* Set the top border with custom thickness and color */
+		}
+
 	</style>
 
 </head>
