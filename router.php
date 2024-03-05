@@ -25,6 +25,8 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/templateEditTrainer' => 'controllers/trainers/templateEditTrainer.controller.php',
         '/templateStudentCours' => 'controllers/students/templateStudentCours.controller.php',
         '/templatePaymentTrainer' => 'controllers/trainers/templatePaymentTrainer.controller.php',
+
+    
     ];
 }
 
