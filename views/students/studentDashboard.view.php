@@ -147,7 +147,6 @@ Page content START -->
                                             <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
                                             <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
                                             <a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-                                            <a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
                                                 <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
@@ -161,8 +160,8 @@ Page content START -->
                                                 </ul>
                                             </form>
 
-                                            <a class="list-group-item " href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
-                                            <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign
+                                            <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?=$user['user_id']?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                                            <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Log
                                                 Out</a>
                                         </div>
                                     </div>

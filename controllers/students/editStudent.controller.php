@@ -51,5 +51,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-// header("Location: /studentEditprofile");
+header("Location: /studentEditprofile");
 ?>
