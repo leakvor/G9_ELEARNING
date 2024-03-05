@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         // '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
-        '/createCourse' => 'controllers/trainers/createCourse.controller.php',
+       
         
     ];
 }

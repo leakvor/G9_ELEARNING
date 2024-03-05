@@ -8,6 +8,7 @@ $page = "";
 if (isset($_SESSION['path'])){
     $routes = [
         '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
+        '/createCourse' => 'controllers/trainers/createCourse.controller.php',
         
     ];
 }else{
