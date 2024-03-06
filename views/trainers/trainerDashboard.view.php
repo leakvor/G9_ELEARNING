@@ -103,7 +103,6 @@ Page Banner START -->
 				$tra_student = trainer_students($trainer_email);
 				
 			?>
-
 			<!-- Main banner background image -->
 			<div class="container-fluid px-0">
 				<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -133,13 +132,13 @@ Page Banner START -->
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
 										</ul>
 									</div>
-									<?php var_dump($tra_student) ?>
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
 										<form action="/createCourse" method="post">
-											<input type="hidden" value="">
+											<input type="hidden" value="<?= $tra_student[0]['user_id'] ?>" name="id">
+											<button class="btn btn-success mb-0">Create a course</button>
 										</form>
-										<button class="btn btn-success mb-0">Create a course</button>
+										
 									</div>
 								</div>
 							</div>
