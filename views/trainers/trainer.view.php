@@ -10,7 +10,7 @@ Page Banner START -->
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
 									<li class="breadcrumb-item"><a href="#">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">instructor list</li>
+									<li class="breadcrumb-item active" aria-current="page">teachers$teachers list</li>
 								</ol>
 							</nav>
 						</div>
@@ -27,12 +27,12 @@ Inner part START -->
 	<section class="pt-4">
 		<div class="container">
 			<!-- Search option START -->
-			<div class="row mb-4 align-items-center">
+			<div class="row mb-4 align-items-center ">
 				<!-- Search bar -->
 				<div class="col-sm-6 col-xl-4">
 					<form class="bg-body shadow rounded p-2">
 						<div class="input-group input-borderless">
-							<input class="form-control me-1" type="search" placeholder="Search instructor">
+							<input class="form-control me-1" type="search" placeholder="Search teachers$teachers">
 							<button type="button" class="btn btn-primary mb-0 rounded"><i class="fas fa-search"></i></button>
 						</div>
 					</form>
@@ -68,48 +68,30 @@ Inner part START -->
 					</form>
 				</div>
 
-				<!-- Button -->
-				<div class="col-sm-6 col-xl-2 mt-3 mt-xl-0 d-grid">
-					<a href="#" class="btn btn-lg btn-primary mb-0">Filter Results</a>
-				</div>
-			</div>
-			<!-- Search option END -->
 
-
-
-
-
-			<!-------------------------------- Instructor list START ------------------------------------------->
-
-			<?php
-			$instructors = [
-				["username" => "Dennis Barrett", "image" => "assets/images/instructor1.jpg"],
-				["username" => "Jane Doe", "image" => "assets/images/instructor2.jpg"],
-				// Add more instructors as needed
-			];
-
-			foreach ($instructors as $instructor) {
-			?>
+				<!-- Instructor list START -->
 				<div class="row g-4 justify-content-center">
+				<?php
+				$statement = $connection->prepare("select * from users where role='teacher'");
+				$statement->execute();
+				$teachers = $statement->fetchAll();
+				?>
+				<?php foreach ($teachers as $teacher) : ?>
 					<div class="col-lg-10 col-xl-6">
-						<div class="card shadow p-2">
+					<div class="card shadow p-2">
 							<div class="row g-0">
 								<!-- Image -->
-
 								<div class="col-md-4">
-									<img src="assets/images/course<?php echo $instructor['image']; ?>" class="rounded-3" alt="...">
-									<!-- <img src="assets/images/instructor<?php echo $instructor['image']; ?>" class="rounded-3" alt="..."> -->
+									<img src="assets/images/instructor/01.jpg" class="rounded-3" alt="...">
 								</div>
-								<!-- <div class="col-md-4">
-									<img src="<?php echo $instructor['image']; ?>" class="rounded-3" alt="...">
-								</div> -->
+
 								<!-- Card body -->
 								<div class="col-md-8">
 									<div class="card-body">
 										<!-- Title -->
 										<div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
 											<div>
-												<h5 class="card-title mb-0"><a href="/trainer-classroom" class="username"><?php echo $instructor['username']; ?></a></h5>
+												<h5 class="card-title mb-0"><a href="/trainer-classroom">Dennis Barrett</a></h5>
 												<p class="small mb-2 mb-sm-0">Professor at Sigma College</p>
 											</div>
 											<span class="h6 fw-light">4.3<i class="fas fa-star text-warning ms-1"></i></span>
@@ -120,6 +102,7 @@ Inner part START -->
 										<div class="d-sm-flex justify-content-sm-between align-items-center">
 											<!-- Title -->
 											<h6 class="text-orange mb-0">Digital Marketing</h6>
+
 											<!-- Social button -->
 											<ul class="list-inline mb-0 mt-3 mt-sm-0">
 												<li class="list-inline-item">
@@ -141,37 +124,88 @@ Inner part START -->
 							</div>
 						</div>
 					</div>
+					<!-- Button -->
+					<div class="col-sm-6 col-xl-2 mt-3 mt-xl-0 d-grid">
+						<a href="#" class="btn btn-lg btn-primary mb-0">Filter Results</a>
+					</div>
 				</div>
-			<?php } ?>
+				<!-- Search option END -->
+				<!-- ========================================trainer list=========================================== -->
+				
+				
+					<div class="bg-black" style="display:flex; flex-direction:row flex-wrap">
+						<div class=" flex-wrap">
+							<div class="d-sm-flex m-2">
 
 
+								<div class="col-lg-10 col-xl-5">
+									<div class="card shadow p-3">
+										<div class="row g-0">
+											<!-- Image -->
+											<div class="col-md-3">
+												<img src="assets/images/instructor/<?php echo $teacher['img']; ?>" alt="">
+											</div>
+											<!-- Card body -->
+											<div class="col-md-8">
+												<div class="card-body">
+													<!-- Title -->
+													<div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
+														<div>
+															<h5 class="card-title mb-0"><a href="/trainer-classroom" class="username" name="username"><?php echo $teacher['username']; ?></a></h5>
+														</div>
+														<span class="h6 fw-light">4.3<i class="fas fa-star text-warning ms-1"></i></span>
+													</div>
+													<!-- Content -->
+													<p class="text-truncate-2 mb-3">Perceived end knowledge certainly day sweetness why cordially. Ask a quick six seven offer see among.</p>
+													<!-- Info -->
+													<div class="d-sm-flex justify-content-sm-between align-items-center">
+														<!-- Title -->
+														<h6 class="text-orange mb-0">Digital Marketing</h6>
+														<!-- Social button -->
+														<ul class="list-inline mb-0 mt-3 mt-sm-0">
+															<li class="list-inline-item">
+																<a class="mb-0 me-1 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+															</li>
+															<li class="list-inline-item">
+																<a class="mb-0 me-1 text-instagram-gradient" href="#"><i class="fab fa-fw fa-instagram"></i></a>
+															</li>
+															<li class="list-inline-item">
+																<a class="mb-0 me-1 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a>
+															</li>
+															<li class="list-inline-item">
+																<a class="mb-0 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				<?php endforeach ?>
+					<!-- Card item START -->
+					
+			
+				
 
+				<!-- Pagination START -->
+				<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
+					<ul class="pagination pagination-primary-soft rounded mb-0">
+						<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
+						<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
+						<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
+					</ul>
+				</nav>
+				<!-- Pagination END -->
 
-
-
-
-
-
-
-
-
-
-
-
-			<!-- Pagination START -->
-			<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
-				<ul class="pagination pagination-primary-soft rounded mb-0">
-					<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-double-left"></i></a></li>
-					<li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-					<li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-					<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>
-					<li class="page-item mb-0"><a class="page-link" href="#">6</a></li>
-					<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
-				</ul>
-			</nav>
-			<!-- Pagination END -->
-
-		</div>
+			</div>
 	</section>
 	<!-- =======================
 Inner part END -->

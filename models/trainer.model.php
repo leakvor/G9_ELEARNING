@@ -7,29 +7,6 @@ function getTeacher() : array
     $statement->execute();
     return $statement->fetchAll();
 }
-
-
-// function createTrainer(string $username, string $email, string $password, string $img) : bool
-// {
-//     global $connection;
-//     $statement = $connection->prepare("insert into users (username,email,password,role,img) values (:username, :email,:password,:role,:img)");
-//     $statement->execute([
-//         ':username'=>$username,
-//         ':email'=>$email,
-//         ':password'=>$password,
-//         ':role'=>"teacher",
-//         ':img'=>$img,
-
-//     ]);
-
-//     return $statement->rowCount() > 0;
-// }
-
-
-
-
-
-
 function createTrainer(string $username, string $email, string $password, string $img) : bool
 {
     global $connection;
@@ -86,3 +63,5 @@ function updateTeacherNoImg($username,$email,$password,$id){
     ]);
     $statement->rowCount() >0;
 }
+
+
