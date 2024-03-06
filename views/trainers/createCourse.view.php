@@ -369,12 +369,12 @@ Page Banner START -->
 Page Banner END -->
 <div class="container">
 	<div class="row g-4">					
-		<form action="controllers/courses/createCourse.controller.php" method="post" enctype="multipart/form-data">
+		<form action="controllers/trainerCourse/createCourse.controller.php" method="POST" enctype="multipart/form-data">
 			<h5>Course details</h5>
 			<hr>
 			<div class="form-group ">
 				<label for="course-title">Course title</label>
-				<input type="text" class="form-control" id="course-title" placeholder="Enter course title">
+				<input type="text" class="form-control" name="title" id="course-title" placeholder="Enter course title">
 			</div>
 			<div class="row d-flex justify-content-end mt-3">
 				<div class="col-md-12 ">
@@ -390,19 +390,19 @@ Page Banner END -->
 			</div>
 			<div class="col-md-12 mt-4 ">
 				<label for="course-description">Course price</label>
-					<input type="text" class="form-control" id="course-price" placeholder="Enter course price">
+					<input type="text" class="form-control" name="paid" id="course-price" placeholder="Enter course price">
 			</div>
 			
 			
 				
 			<div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3 mt-4">
 				<!-- Image -->
-				<img src="assets/images/element/gallery.svg" class="h-50px" alt="">
+				<img src="assets/images/course/<?= $course['course_img'] ?>" alt="" >
 				<div>
 				    <h6 class="my-2">Upload course image here, or<a href="#!" class="text-primary"> Browse</a></h6>
 					<label style="cursor:pointer;">
 						<span> 
-							<input class="form-control stretched-link" type="file" name="my-image" id="image" accept="image/gif, image/jpeg, image/png">
+							<input class="form-control stretched-link" type="file" name="img" id="image" accept="image/gif, image/jpeg, image/png">
 						</span>
 					</label>
 				</div>	
@@ -443,6 +443,7 @@ Page Banner END -->
 		</div>
 	</div>
 </footer>
+
 <!-- =======================
 Footer END -->
 </body>

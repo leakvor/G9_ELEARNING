@@ -6,7 +6,7 @@ if (urlIs("/admins") || urlIs("/admin")|| urlIs("/displayCategory")|| urlIs("/up
     require "admin_router.php";
 } else if (urlIs('/signin') || urlIs('/signup')) {
     require "authentication_router.php";
-}else if(urlIs('/trainer') || urlIs('/trainerdashboard') || urlIs("/createCourse")){
+}else if(urlIs('/trainer') || urlIs('/trainerdashboard') || urlIs("/createCourse") ){
     require 'trainer_router.php';
 }else{
     require 'router.php';

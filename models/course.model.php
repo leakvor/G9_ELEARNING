@@ -21,7 +21,19 @@ function createCourse( string $title,string $img ,int $user_id,int $cate_id,int 
     ]);
     return $statement->rowCount() > 0;
 }
+function trainer_createCourse(string $title,string $img ,int $cate_id, int $paid)
+{
+    global $connection;
+    $statement = $connection->prepare("insert into course (title,course_img,paid,cate_id) values (:title, :img,:paid,:cate_id)");
+    $statement->execute([
+        ':title'=>$title,
+        ':img'=>$img,
+        ':paid'=>$paid,
+        ':cate_id'=>$cate_id,
 
+    ]);
+    return $statement->rowCount() > 0;
+}
 function deleteCourse(int $id) : bool
 {
     global $connection;

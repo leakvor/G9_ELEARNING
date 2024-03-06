@@ -133,10 +133,13 @@ Page Banner START -->
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
 										</ul>
 									</div>
-
+									<?php var_dump($tra_student) ?>
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
-										<a href="/createCourse" class="btn btn-success mb-0">Create a course</a>
+										<form action="/createCourse" method="post">
+											<input type="hidden" value="">
+										</form>
+										<button class="btn btn-success mb-0">Create a course</button>
 									</div>
 								</div>
 							</div>
@@ -349,7 +352,11 @@ Page content START -->
 												</thead>
 												<!-- Table body START -->
 												<tbody>
-												
+												<?php 
+														foreach ($courses as $index =>$course):
+													?>
+												<!-- Table body START -->
+												<tbody>
 													<!-- Table item -->
 													<tr>
 														<!-- Course item -->
@@ -357,24 +364,27 @@ Page content START -->
 															<div class="d-flex align-items-center">
 																<!-- Image -->
 																<div class="w-100px w-md-60px">
-																	<img src="assets/images/courses/4by3/08.jpg" class="rounded" alt="">
+																<img src="assets/images/course/<?= $course['course_img'] ?>" alt="" >
 																</div>
 																<!-- Title -->
 																<h6 class="mb-0 ms-2">
-																	<a href="#">Building Scalable APIs with GraphQL</a>
+																	<a href="#"><?= $course["title"]; ?></a>
 																</h6>
 															</div>
 														</td>
 														<!-- Selling item -->
-														<td>34</td>
+														<td><?= $course["cateName"]; ?></td>
 														<!-- Amount item -->
-														<td>$1,25,478</td>
+														<td><?= $course["paid"]."$"; ?></td>
 														<!-- Action item -->
 														<td>
-															<a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
-															<button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
+															<a href="controllers/trainerCourse/updateCourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+															<a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?=$course["course_id"] ?>"><button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button></a>
 														</td>
 													</tr>
+												</tbody>
+												<?php endforeach; ?>
+			
 												</tbody>
 												<!-- Table body END -->
 											</table>
@@ -397,7 +407,7 @@ Page content START -->
 											</nav>
 										</div>
 									</div>
-									<!-- Card body START -->
+										<!-- Card body START -->
 								</div>
 							</div>
 						</div>
@@ -409,7 +419,6 @@ Page content START -->
 		</section>
 		<!-- =======================
 Page content END -->
-
 	</main>
 
 	<!-- Back to top -->
