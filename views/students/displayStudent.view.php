@@ -1,10 +1,12 @@
-<form class="d-none d-md-flex mx-4 " >
-  <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;" type="search" id="search" placeholder="Search">
-</form>
+
 <div class="container-fluid pt-4 px-4">
+<div class="form-row" style="display: flex; flex-direction: column;">
+<form class="d-none d-md-flex " >
+  <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;width:200px" type="search" id="search" placeholder="Search">
+</form>
       <!-- table student -->
   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-    <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
+    <table class="table table-dark">
       <thead>
         <tr>
           <th scope="col">id</th>

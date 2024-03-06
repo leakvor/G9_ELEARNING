@@ -1,7 +1,5 @@
-<form class="d-none d-md-flex mx-5 " >
-  <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;" type="search" id="search" placeholder="Search">
-</form>
-<div class="container-fluid pt-2 px-4" style="overflow-x: auto">
+
+
 
   <!-- <a href="/addTrainer" class="btn btn-danger">Add new trainer</a> -->
 <script>
@@ -97,9 +95,13 @@ if (isset($_POST['submit'])){
 ?>
 
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
-  <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
-    Add new trainer
+<div class="form-row" style="display: flex; flex-direction: column;">
+<form style="display: flex;">
+<input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;flex:3.5" type="search" id="search" placeholder="Search">
+    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#myModal" style="margin-left:50%;flex:2; height: 40px;" >
+    Add new Trainer
   </button>
+  <form>
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -144,8 +146,8 @@ if (isset($_POST['submit'])){
 </div>
 
 
-<div class="table-wrapper-scroll-y my-custom-scrollbar m-4">
-  <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
+<div class="table-wrapper-scroll-y my-custom-scrollbar ">
+  <table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -178,7 +180,10 @@ if (isset($_POST['submit'])){
                 }
               }
             </script>
-            <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
+             <a href="#" class="btn bg-gradient-danger btn-info">
+             <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
+              </a>
+            
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
               <!-- ---------form edit--------- -->
               <div class="modal-dialog" role="document">
@@ -225,7 +230,6 @@ if (isset($_POST['submit'])){
     </tbody>
   </table>
 
-</div>
 </div>
 </div>
 

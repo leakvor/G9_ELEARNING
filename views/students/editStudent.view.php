@@ -201,7 +201,7 @@ Page content START -->
 							</div>
 							<div class="col-md-6">
 								<label class="form-label">Password</label>
-								<input class="form-control" type="password" value="<?php echo $user['password'] ?>" placeholder="Password" name="password">
+								<input class="form-control" type="password" value="" placeholder="Password" name="password">
 							</div>
 
 							<!-- Save button -->

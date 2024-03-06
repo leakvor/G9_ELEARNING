@@ -10,7 +10,6 @@ function createAcc(string $username, string $email, string $password) : bool
         ':password' => $password,
         ':role' => 'user',
     ]);
-
     return $statement->rowCount() > 0;
 }
 

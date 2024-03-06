@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $isCreate = updateStudent($username, $email, $password, $id, $new_img_name);
                         
                         if($isCreate){
-                            // header("Location: /studentEditprofile");
+                            header("Location: /studentEditprofile");
                         } else {
                             echo "<script>alert('Error occurred while updating student.');</script>";
                         }
@@ -51,5 +51,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-header("Location: /studentEditprofile");
+// header("Location: /studentEditprofile");
 ?>

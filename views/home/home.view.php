@@ -1,4 +1,5 @@
 
+
 <!-- =======================
 Main Banner START -->
 <section class="bg-light">
@@ -132,15 +133,12 @@ Category START -->
 		<div class="row g-4">
 
 			<?php foreach ($categories as $category) : 
-				if (isset($_SESSION['user'])) {
-					$path = "/displayAllcourse";
-				?>
-				<?php
-				} else {
-					$path = "/signins";
-				}
-				
-				?>
+			if(isset($_SESSION['user'])) {
+				$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+			}else{
+				$path = "/signins";
+			}
+			?>
 				
 				<!-- Category item -->
 				<div class="col-sm-6 col-lg-4 col-xl-3">

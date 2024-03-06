@@ -9,33 +9,30 @@ $statement->execute();
 $categories = $statement->fetchAll();
 ?>
 <div class="container-fluid pt-4 px-4">
-<div class="form-row" style="display: flex;">
-      <div class="col-md-4 mb-3" style="display: flex;">
-        <input class="form-control bg-dark border-1  border-white mt-3 mr-3" type="search" id="search" placeholder="Search" style="width: 200px;"  >
-      </div>
-      <div class="col-md-4 mb-3">
-        <select name="category" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">
-          <option value="#">Select by Category</option>
-          <?php foreach ($categories as $category) : ?>
-            <option value="<?= $category['cateName'] ?>"><?= $category['cateName'] ?></option>
-          <?php endforeach ?>
-        </select>
-      </div>
-      <div class="col-md-4 mb-3">
-        <select name="teacher" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">>
-          <option value="#">Choose Teacher</option>
-          <?php foreach ($teachers as $teacher) : ?>
-            <option value="<?= $teacher['username'] ?>"><?= $teacher['username'] ?></option>
-          <?php endforeach ?>
-        </select>
-      </div>
-    </div>
-    
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-right:11px;"> Add new Course</button>
+  <div style="display: flex;flex-direction: column;">
+  <div style="display: flex; justify-content: space-between;">
+  <input class="form-control bg-dark border-1  border-white mt-3 mr-3" type="search" id="search" placeholder="Search" style="width: 200px;">
+    <select name="category" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">
+      <option value="#">Select by Category</option>
+      <?php foreach ($categories as $category) : ?>
+        <option value="<?= $category['cateName'] ?>"><?= $category['cateName'] ?></option>
+      <?php endforeach ?>
+    </select>
+    <select name="teacher" class="form-control bg-dark border-1  border-white mt-3 mr-3" style="width: 200px;">>
+      <option value="#">Choose Teacher</option>
+      <?php foreach ($teachers as $teacher) : ?>
+        <option value="<?= $teacher['username'] ?>"><?= $teacher['username'] ?></option>
+      <?php endforeach ?>
+    </select>
+  </div>
+    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#myModal" style="margin-left:80%;"> Add new Course</button>
+  </div>
+
+
   <div class="container-fluid pt-2 px-4" style="overflow-x: auto">
 
 
-    
+
     <!-- The Modal -->
     <div class="modal" id="myModal">
       <div class="modal-dialog">
@@ -48,7 +45,7 @@ $categories = $statement->fetchAll();
 
           <!-- Modal body -->
           <div class="modal-body">
-          <form action="/addCourse" method="post" enctype="multipart/form-data">
+            <form action="/addCourse" method="post" enctype="multipart/form-data">
               <div class="form-group mt-3">
                 <input type="text" class="form-control bg-white" name="title" placeholder="Title" id="title">
                 <span id="titleValidationMsg" class="text-danger"></span> <!-- Validation message for Title -->
@@ -87,7 +84,7 @@ $categories = $statement->fetchAll();
   </div>
 
   <div class="table-wrapper-scroll-y my-custom-scrollbar mt-3">
-    <table class="table table-bordered table-striped mb-0 table table-striped" style="border: 1px solid gray;">
+    <table class="table table-dark">
       <thead>
         <tr>
           <th scope="col">id</th>
@@ -103,7 +100,7 @@ $categories = $statement->fetchAll();
         <?php foreach ($courses as $index => $course) :
 
         ?>
-        <!-- <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div> -->
+          <!-- <div class="btn bg-gradient-danger btn-danger"><i class="fas fa-fw fa-trash"></i></div> -->
           <tr>
             <th scope="row"><?= $index + 1 ?></th>
             <td><?= $course['title'] ?></td>
@@ -124,7 +121,7 @@ $categories = $statement->fetchAll();
                 }
               </script>
               <a href="#" class="btn bg-gradient-danger btn-info">
-              <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:white;" ></i>
+                <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:white;"></i>
               </a>
               <div class="modal fade" id="editModal<?= $course['course_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $course['course_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
