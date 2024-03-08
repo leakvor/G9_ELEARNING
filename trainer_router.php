@@ -5,16 +5,18 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 
 
-if (isset($_SESSION['path'])){
+if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
     $routes = [
         '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
         '/createCourse' => 'controllers/trainerCourse/course.controller.php',
-        '/updateCourse' => 'controllers/trainerCourse/updateCourses.controller.php',
-        
+      '/updateCourse' => 'controllers/trainerCourse/formupdateCourses.controller.php',
+    
     ];
 }else{
         $routes = [
             '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
+        
+      
             
     ];
 }

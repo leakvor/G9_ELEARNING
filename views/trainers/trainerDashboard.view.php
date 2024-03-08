@@ -89,14 +89,14 @@ Page Banner START -->
 				}
 				require('database/database.php');
 				require('models/student.model.php');
-				require('models/trainer.model.php');
+				require('./models/trainer.model.php');
 
 				$trainer_email = $trainer['email'];
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
 					if (isset($trainer_profile)){
-						echo "<script>alert('Edit profile!');</script>";
+						// echo "<script>alert('Edit profile!');</script>";
 					}
 				}
 				
@@ -352,7 +352,7 @@ Page content START -->
 												<!-- Table body START -->
 												<tbody>
 												<?php 
-														foreach ($courses as $index =>$course):
+														foreach ($tra_student as $course):
 													?>
 												<!-- Table body START -->
 												<tbody>
@@ -377,8 +377,19 @@ Page content START -->
 														<td><?= $course["paid"]."$"; ?></td>
 														<!-- Action item -->
 														<td>
-															<a href="controllers/trainerCourse/updateCourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
-															<a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?=$course["course_id"] ?>"><button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button></a>
+															
+															<a href="controllers/trainerCourse/editcourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+															<a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-danger-soft btn-round mb-0" onclick="return functionDelete()">
+                <i class="fas fa-fw fa-times"></i></a>
+              <script>
+                function functionDelete() {
+                  if (confirm("Are you sure you want to delete this course?")) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+              </script>
 														</td>
 													</tr>
 												</tbody>

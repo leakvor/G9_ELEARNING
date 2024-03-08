@@ -151,7 +151,6 @@
 							</li>
 						</ul>
 					</li>
-
 					<!-- Nav item 3 Account -->
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
@@ -226,7 +225,14 @@
 					$statement = $connection->prepare("select * from category");
 					$statement->execute();
 					$categories = $statement->fetchAll();
-					 ?>
+
+					$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.paid, course.title, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where course_id=:id;");
+                      $statement->execute(
+                        [':id' => $id],
+                      );
+                      $course = $statement->fetch();
+
+					?>
 					<!-- Nav item 4 Component-->
 					<li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
 
@@ -376,22 +382,25 @@ Page Banner START -->
 Page Banner END -->
 <div class="container">
 	<div class="row g-4">					
-		<form action="controllers/trainerCourse/createCourse.controller.php" method="POST" enctype="multipart/form-data">
+		<form action="controllers/trainerCourse/updateCourse.controller.php" method="POST" enctype="multipart/form-data">
 			<h5>Course details</h5>
 			<hr>
 			<div class="form-group ">
-				<input type="hidden" value="<?=$id?>" name ="teacher">
+				<input type="hidden" value="<?=$id?>" name ="id">
 				<label for="course-title">Course title</label>
-				<input type="text" class="form-control" name="title" id="course-title" placeholder="Enter course title">
+				<input type="text" class="form-control" name="title" id="course-title" placeholder="Enter course title" value="<?= $course['title'] ?>">
+				
 			</div>
 			<div class="row d-flex justify-content-end mt-3">
 				<div class="col-md-12 ">
 					<label for="#">Course category</label>
 					<select class="form-select" name='category'>
-					<option selected>Selete category</option>
-						<?php foreach($categories as $category): ?>
-							<option value="<?= $category['cat_id'] ?>"><?= $category['cateName'] ?></option>
-						<?php endforeach ?>
+					<?php foreach ($categories as $category) : ?>
+                              <?php $selected = ($course['cate_id'] == $category['cat_id']) ? 'selected' : ''; ?>
+                              <option value="<?= $category['cat_id'] ?>" <?= $selected ?>>
+                                <?= $category['cateName'] ?>
+                              </option>
+                            <?php endforeach ?>
 					
 					</select>
 				</div>		
@@ -399,7 +408,7 @@ Page Banner END -->
 			</div>
 			<div class="col-md-12 mt-4 ">
 				<label for="course-description">Course price</label>
-					<input type="number" class="form-control" name="paid" id="course-price" placeholder="Enter course price" name='paid'>
+					<input type="number" class="form-control" name="paid" id="course-price" placeholder="Enter course price" value="<?= $course['paid'] ?>">
 			</div>
 			
 			
@@ -417,7 +426,7 @@ Page Banner END -->
 				</div>	
             </div>	
 			<div class="d-flex justify-content-end mt-3">
-					<button class="btn btn-primary next-btn mb-5">Create</button>
+					<button class="btn btn-primary next-btn mb-5">Edit</button>
 			</div>
 		</form>
 	</div>

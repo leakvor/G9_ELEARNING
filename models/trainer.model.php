@@ -90,7 +90,8 @@ function updateTeacherNoImg($username,$email,$password,$id){
 function trainer_students($email) {
     // return $email;
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM course INNER JOIN users ON course.user_id = users.user_id WHERE email = :email");
+    $statement = $connection->prepare(" SELECT * FROM course INNER JOIN users ON course.user_id = users.user_id
+    INNER JOIN category ON course.cate_id=category.cat_id  WHERE email =:email");
     $statement->execute([":email" => $email]);
     
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);

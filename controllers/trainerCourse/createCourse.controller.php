@@ -28,10 +28,11 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
                      move_uploaded_file($tmp_name, $img_upload_path);
 
                      $isCreate=createCourse($_POST['title'],$new_img_name,$_POST['teacher'],$_POST['category'],$_POST['paid']);
+                     var_dump($_POST['title'],$new_img_name,$_POST['teacher'],$_POST['category'],$_POST['paid']);
                     if($isCreate){
                         $courses = getCourse();
                         // require "views/courses/adminCourse.view.php";
-                        header("Location: /trainerdashboard");
+                        // header("Location: /trainerdashboard");
                     }
                     }else{
                     

@@ -226,7 +226,9 @@
 					$statement = $connection->prepare("select * from category");
 					$statement->execute();
 					$categories = $statement->fetchAll();
-					 ?>
+
+					?>
+			
 					<!-- Nav item 4 Component-->
 					<li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
 
@@ -347,10 +349,11 @@
 	<!-- Logo Nav END -->
 </header><div id="sticky-space" style="height: 0px;"></div>
 <!-- Header END -->
-<?php
-			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   				 $id= ($_POST['id']);}
-			?>
+<?php if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+						$id = ($_POST['id']);
+						var_dump($id);
+					}
+					?> 
 <!-- =======================
 Page Banner START -->
 <section class="py-0 bg-blue h-100px align-items-center d-flex h-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">

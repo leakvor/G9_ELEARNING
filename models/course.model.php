@@ -21,19 +21,7 @@ function createCourse( string $title,string $img ,int $user_id,int $cate_id,int 
     ]);
     return $statement->rowCount() > 0;
 }
-function trainer_createCourse(string $title,string $img ,int $cate_id, int $paid)
-{
-    global $connection;
-    $statement = $connection->prepare("insert into course (title,course_img,paid,cate_id) values (:title, :img,:paid,:cate_id)");
-    $statement->execute([
-        ':title'=>$title,
-        ':img'=>$img,
-        ':paid'=>$paid,
-        ':cate_id'=>$cate_id,
 
-    ]);
-    return $statement->rowCount() > 0;
-}
 function deleteCourse(int $id) : bool
 {
     global $connection;
@@ -57,6 +45,7 @@ function updateCourse(int $id,string $title,int $user_id,int $cate_id,string $im
 
     return $statement->rowCount() > 0;
 }
+
 function updateCourseNotImge(int $id,string $title,int $user_id,int $cate_id,int $paid) : bool
 {
     global $connection;
@@ -71,6 +60,33 @@ function updateCourseNotImge(int $id,string $title,int $user_id,int $cate_id,int
 
     return $statement->rowCount() > 0;
 }
+function editcourse(int $id,string $title,int $cate_id,int $paid) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update course set title = :title,cate_id=:cate_id, paid=:paid where course_id=:id");
+    $statement->execute([
+        ':id'=>$id,
+        ':title' => $title,
+        ':cate_id'=>$cate_id,
+        ':paid'=>$paid,
+    ]);
+    return $statement->rowCount() > 0;
+}
+function editcourseImg(int $id,string $title,int $cate_id,string $img,int $paid) : bool
+{
+    global $connection;
+    $statement = $connection->prepare("update course set title = :title,cate_id=:cate_id, course_img=:img, paid=:paid where course_id=:id");
+    $statement->execute([
+        ':id'=>$id,
+        ':title' => $title,
+        ':cate_id'=>$cate_id,
+        ':img'=>$img,
+        ':paid'=>$paid,
+    ]);
+    return $statement->rowCount() > 0;
+}
+
+
 
 function displayAllcourse($id){
     global $connection;
