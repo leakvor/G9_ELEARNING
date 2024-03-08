@@ -174,11 +174,12 @@ Featured course START -->
 		<div class="row g-4">
 			<?php
 			foreach ($courseTeachers as $courseTeacher) :?>
+			
+				
 				<div class="col-md-6 col-lg-4 col-xxl-3">
 					<div class="card p-2 shadow h-100">
 						<div class="rounded-top overflow-hidden">
 							<div class="card-overlay-hover">
-
 								<img src="assets/images/course/<?= $courseTeacher['course_img'] ?>" class="card-img-top" alt="course image" style="width: 100%;height: 100%;object-fit: cover;">
 							</div>
 							<!-- Hover element -->
@@ -215,7 +216,7 @@ Featured course START -->
 							<!-- Divider -->
 							<hr>
 							<!-- Title -->
-							<h6 class="card-title"><a href="<?= $path ?>">The Complete Digital Marketing Course - 12 Courses in 1</a></h6>
+							<h6 class="card-title"><a href="/coursepay?idc=<?= $courseTeacher['course_id']?>"><?= $courseTeacher['title']?></a></h6>
 							<!-- Badge and Price -->
 							<div class="d-flex justify-content-between align-items-center mb-0">
 								<div><a href="<?= $path ?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
@@ -225,7 +226,7 @@ Featured course START -->
 						</div>
 					</div>
 				</div>
-			<?php endforeach ?>
+			<?php endforeach;?>
 
 		</div>
 		<!-- Button -->

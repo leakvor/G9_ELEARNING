@@ -68,3 +68,11 @@ function displayAllcourse($id){
     ]);
     return $statement->fetchAll();
 }
+function eachCourse($course_id){
+    global $connection;
+    $statement = $connection->prepare("select * from course where course_id=:id");
+    $statement->execute([
+        ':id'=>$course_id,
+    ]);
+    return $statement->fetchAll();
+}
