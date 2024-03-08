@@ -10,9 +10,11 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         // LOG------------------->
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
-        '/trainers' => 'controllers/trainers/trainer.controller.php',
+        // '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
+        '/trainerList' => 'controllers/trainers/trainer.controller.php',
+        '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
     ];
 }else{
     $routes = [
@@ -24,7 +26,9 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/templateEditTrainer' => 'controllers/trainers/templateEditTrainer.controller.php',
         '/templateStudentCours' => 'controllers/students/templateStudentCours.controller.php',
         '/templatePaymentTrainer' => 'controllers/trainers/templatePaymentTrainer.controller.php',
-        '/trainerList' => 'controllers/trainers/trainer.controller.php',
+        // '/trainerList' => 'controllers/trainers/trainer.controller.php',
+        '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
+        
     ];
 }
 

@@ -44,6 +44,8 @@ Page content START -->
 				<!-- Search option END -->
 
 				<!-- Course list START -->
+
+				
 				<div class="row g-4 justify-content-center">
 					<?php
 					if (empty($displayCourses)) {
@@ -52,6 +54,8 @@ Page content START -->
 					} else {
 						foreach ($displayCourses as $displayCourse) :
 					?>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
 							<!-- Card item START -->
 							<div class="col-lg-10 col-xxl-6">
 								<div class="card rounded overflow-hidden shadow">
