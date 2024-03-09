@@ -388,7 +388,8 @@ Page Banner END -->
 			<div class="form-group ">
 				<input type="hidden" value="<?=$id?>" name ="id">
 				<label for="course-title">Course title</label>
-				<input type="text" class="form-control" name="title" id="course-title" placeholder="Enter course title" value="<?= $course['title'] ?>">
+				<input type="text" class="form-control" name="title" id="title" placeholder="Enter course title" value="<?= $course['title'] ?>">
+				<small class="text-danger" id="p"></small>
 				
 			</div>
 			<div class="row d-flex justify-content-end mt-3">
@@ -403,6 +404,7 @@ Page Banner END -->
                             <?php endforeach ?>
 					
 					</select>
+					<span id="categoryValidationMsg" class="text-danger"></span>
 				</div>		
 					
 			</div>
@@ -426,7 +428,7 @@ Page Banner END -->
 				</div>	
             </div>	
 			<div class="d-flex justify-content-end mt-3">
-					<button class="btn btn-primary next-btn mb-5">Edit</button>
+					<button type="submit" id="submitBtn" class="btn btn-primary next-btn mb-5">Edit</button>
 			</div>
 		</form>
 	</div>
@@ -459,4 +461,27 @@ Page Banner END -->
 
 <!-- =======================
 Footer END -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const titleInput = document.querySelector("#title");
+    const submitBtn = document.querySelector("#submitBtn");
+    const p = document.querySelector("#p");
+
+    titleInput.addEventListener("input", () => {
+        const text = titleInput.value.trim();
+        checkInput(text);
+    });
+    function checkInput(text) {
+        const regex = /^[a-zA-Z\s]{4,}$/;
+        const isValid_course = regex.test(text);
+        if (isValid_course) {
+            p.textContent = "";
+            submitBtn.removeAttribute("disabled");
+        } else {
+            p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
+            submitBtn.setAttribute("disabled", "true");
+        }
+    }
+});
+</script>
 </body>
