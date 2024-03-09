@@ -97,3 +97,12 @@ function displayCourseCategory()
     }
     return $categoryCoursesCount;
 }
+
+function trainerCourse($id){
+    global $connection;
+    $statement=$connection->prepare("select * from course where user_id=:id");
+    $statement->execute(
+        [':id'=>$id]
+    );
+    return $statement->fetchAll();
+}

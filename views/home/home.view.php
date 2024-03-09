@@ -290,12 +290,10 @@ IT courses START -->
 			</div>
 		</div>
 
-
-
 		<div class="row g-4">
 			<?php foreach ($teachers as $teacher) : 
 			if(isset($_SESSION['user'])) {
-				$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+				$path = "controllers/courses/trainerCourseid.contoller.php". "?id=" . urlencode($teacher['user_id']);
 			  }else{
 				$path = "/signins";
 			  }
@@ -303,15 +301,8 @@ IT courses START -->
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<!-- Image -->
 					<div class="card card-metro overflow-hidden rounded-3">
-						<img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="">
+						<a href="<?=$path?>"><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt=""></a>			
 						<!-- Image overlay -->
-						<div class="card-img-overlay d-flex">
-							<!-- Info -->
-							<div class="mt-auto card-text">
-								<a href="#" class="text-white mt-auto h5 stretched-link">Digital Marketing</a>
-								<div class="text-white">23 Courses</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			<?php endforeach ?>
