@@ -76,6 +76,12 @@
 	</header>
     <?php
 		require "models/course.model.php";
+		if (isset($_SESSION['user'])){
+			$student_id = ($_SESSION['user']['user_id']);
+			date_default_timezone_set('Asia/Phnom_Penh');
+			$date_join = date("Y-m-d H:i:s");;
+
+		}
         if ($_SERVER['REQUEST_METHOD'] == 'GET'){
             $cours_id = $_GET['idc'];
 			$course = eachCourse($cours_id);
@@ -87,7 +93,7 @@
 			}else{
 				$to_pay = 'Free course';
 				$pay_btn = 'Learn free';
-				$path = '/displayAllcourse';
+				$path = 'controllers/students/student.course.controller.php';
 			}
 		}
 
@@ -110,7 +116,10 @@
                     <li>Confirmation Message Upon Successful Submission</li>
                     <li>Information on Next Steps</li>
                 </div>
-                <form action="<?= $path?>" id="paymentForm">
+                <form action="<?= $path?>" id="paymentForm" method="post">
+					<input type="text" name="course_id" value="<?= $cours_id?>">
+					<input type="text" name="user_id" value="<?= $student_id?>">
+					<input type="text" name="datejoin" value="<?= $date_join?>">
                     <div class="form-group">
                     <button type="submit" class="btn-primary btn-custom btn-lg mt-2" style="width: 100%;"><?= $pay_btn?></button>
                     </div>
