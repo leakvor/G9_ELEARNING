@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $img_size=$_FILES['img']['size'];
         $tmp_name=$_FILES['img']['tmp_name'];
         $error=$_FILES['img']['error'];
-        header('Location:  /trainerdashb;oard');
+        header('Location:  /trainerdashboard');
 
         if($error===0){
             if($img_size>12500000){
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if(in_array($img_ex_lc,$allowed_exs)){
 
                     $new_img_name = uniqid("", true).'.'.$img_ex_lc;
-                    $img_upload_path = '../../assets/images/instpructor'.$new_img_name;
+                    $img_upload_path = '../../assets/images/instructor/'.$new_img_name;
                     move_uploaded_file($tmp_name, $img_upload_path);
 
                     $usGetimg  = profile($email,  $new_img_name);
@@ -44,3 +44,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
