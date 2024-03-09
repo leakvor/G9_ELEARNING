@@ -1,53 +1,55 @@
 <?php
 
-function getCategorys() : array
+function getCategorys(): array
 {
     global $connection;
     $statement = $connection->prepare("select * from category");
     $statement->execute();
     return $statement->fetchAll();
 }
-function createCategory(string $category, string $image) : bool
+
+function createCategory(string $category, string $image): bool
 {
     global $connection;
     $statement = $connection->prepare("INSERT INTO category (cateName,image) VALUES(:cateName,:image)");
     $statement->execute([
         ':cateName' => $category,
-        ':image'=>$image
+        ':image' => $image
 
     ]);
 
     return $statement->rowCount() > 0;
 }
-function deletecategory(int $id) :bool
-{   
+function deletecategory(int $id): bool
+{
     global $connection;
     $statement = $connection->prepare("delete from category where cat_id=:id");
     $statement->execute([':id' => $id]);
     $statement->fetchAll();
     return $statement->rowCount() > 0;
-
 }
-function getCategory(int $id) : array
+function getCategory(int $id): array
 {
-global $connection;
-$statement = $connection->prepare("select * from category where cat_id=:id");
-$statement->execute([':id' => $id]);
-return $statement->fetch();
+    global $connection;
+    $statement = $connection->prepare("select * from category where cat_id=:id");
+    $statement->execute([':id' => $id]);
+    return $statement->fetch();
 }
 ?>
 <?php
-function updateCategory(string $category,string $image,int $id)
+function updateCategory(string $category, string $image, int $id)
 {
     global $connection;
     $statement = $connection->prepare("UPDATE category SET cateName = :cateName,image= :image WHERE cat_id=:id");
     $statement->execute([
         ':cateName' => $category,
-        ':image'=>$image,
+        ':image' => $image,
         ':id' => $id,
 
     ]);
 
     return $statement->rowCount() > 0;
 }
+
+
 ?>

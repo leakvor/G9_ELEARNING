@@ -5,44 +5,40 @@ Main Banner START -->
 	<div class="container pt-5 mt-0 mt-lg-5">
 	<?php
 require "database/database.php";
+require "models/course.model.php";
+require "models/trainer.model.php";
+$courseTeachers = displayCourses();
+$categories=getCategorys();
+$categoryCoursesCount=displayCourseCategory();
+$teachers=getTeacher();
 
-$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName,users.img FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
-$statement->execute();
-$courseTeachers = $statement->fetchAll();
-
-$statement = $connection->prepare("select * from category");
-$statement->execute();
-$categories = $statement->fetchAll();
-
-$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName,users.img FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where category.cateName='IT'");
-$statement->execute();
-$courseITs = $statement->fetchAll();
+// $statement = $connection->prepare("select * from category");
+// $statement->execute();
+// $categories = $statement->fetchAll();
 
 
-// Fetching all categories
-$statement = $connection->prepare("SELECT * FROM category");
-$statement->execute();
-$categories = $statement->fetchAll();
 
-// Initializing an array to store the count of courses in each category
-$categoryCoursesCount = [];
 
-// Looping through each category and counting the number of courses
-foreach ($categories as $category) {
-    $statement = $connection->prepare("SELECT COUNT(*) AS count FROM course WHERE cate_id = ?");
-    $statement->execute([$category['cat_id']]);
-    $count = $statement->fetchColumn();
-    $categoryCoursesCount[$category['cateName']] = $count;
-}
 
-// Fetching IT courses specifically
-$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username, category.cateName, users.img 
-                                   FROM course 
-                                   INNER JOIN category ON category.cat_id = course.cate_id 
-                                   INNER JOIN users ON users.user_id = course.user_id 
-                                   WHERE category.cateName = 'IT'");
-$statement->execute();
-$courseITs = $statement->fetchAll();
+// // Initializing an array to store the count of courses in each category
+// $categoryCoursesCount = [];
+
+// // Looping through each category and counting the number of courses
+// foreach ($categories as $category) {
+//     $statement = $connection->prepare("SELECT COUNT(*) AS count FROM course WHERE cate_id = ?");
+//     $statement->execute([$category['cat_id']]);
+//     $count = $statement->fetchColumn();
+//     $categoryCoursesCount[$category['cateName']] = $count;
+// }
+
+// // Fetching IT courses specifically
+// $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username, category.cateName, users.img 
+//                                    FROM course 
+//                                    INNER JOIN category ON category.cat_id = course.cate_id 
+//                                    INNER JOIN users ON users.user_id = course.user_id 
+//                                    WHERE category.cateName = 'IT'");
+// $statement->execute();
+// $courseITs = $statement->fetchAll();
 
 
 // var_dump($courseTeachers);
@@ -290,19 +286,24 @@ IT courses START -->
 		<!-- Title -->
 		<div class="row mb-4">
 			<div class="col-lg-8 text-center mx-auto">
-				<h2 class="fs-1">Top Courses for IT</h2>
-				<p class="mb-0">Information Technology Courses to expand your skills and boost your career & salary</p>
+				<h2 class="fs-1">Top Trainer</h2>
 			</div>
 		</div>
 
 
 
 		<div class="row g-4">
-			<?php foreach ($courseITs as $courseIT) : ?>
+			<?php foreach ($teachers as $teacher) : 
+			if(isset($_SESSION['user'])) {
+				$path = "../../controllers/courses/displayAllcourses.controller.php". "?category=" . urlencode($category['cat_id']);
+			  }else{
+				$path = "/signins";
+			  }
+				?>
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<!-- Image -->
 					<div class="card card-metro overflow-hidden rounded-3">
-						<img src="assets/images/course/<?= $courseIT['course_img'] ?>" alt="">
+						<img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="">
 						<!-- Image overlay -->
 						<div class="card-img-overlay d-flex">
 							<!-- Info -->
