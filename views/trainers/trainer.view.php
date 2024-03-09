@@ -27,7 +27,7 @@ Inner part START -->
 				<div class="col-sm-6 col-xl-4">
 					<form class="bg-body shadow rounded p-2">
 						<div class="input-group input-borderless">
-							<input class="form-control me-1" type="search" placeholder="Search instructor">
+							<input class="form-control me-1" type="search" id="search" placeholder="search">
 							<button type="button" class="btn btn-primary mb-0 rounded"><i class="fas fa-search"></i></button>
 						</div>
 					</form>
@@ -192,3 +192,25 @@ Action box START -->
 Action box END -->
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		const searchInput = document.getElementById('search');
+		console.log(searchInput.value);
+		const cardTitles = document.querySelectorAll('.card-title');
+
+		searchInput.addEventListener('input', function() {
+			const searchTerm = searchInput.value.trim().toLowerCase();
+
+			cardTitles.forEach(function(title) {
+				const card = title.closest('.card');
+
+				if (title.textContent.trim().toLowerCase().includes(searchTerm)) {
+					card.style.display = '';
+				} else {
+					card.style.display = 'none';
+				}
+			});
+		});
+	});
+</script>

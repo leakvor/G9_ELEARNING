@@ -7,9 +7,6 @@
 <script>
   (function() {
     'use strict';
-    // $usernameError = "";
-    // $emailError = "";
-    // $passwordError = "";
     let regex_email = /^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/;
     let $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
 
