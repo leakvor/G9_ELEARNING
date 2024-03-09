@@ -44,7 +44,7 @@ Page content START -->
 		<!-- Search option END -->
 
 		<!-- Course list START -->
-		<div class="row g-4">
+		<div class="row g-4 ">
 		<?php
 if (empty($displayCourses)) {
     // Display message when $displayCourses is empty

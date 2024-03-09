@@ -13,6 +13,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
+        '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
         '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
     ];
 }else{
@@ -21,6 +22,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signups' => 'controllers/signup/signup.controler.php',
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
+       
     ];
 }
 

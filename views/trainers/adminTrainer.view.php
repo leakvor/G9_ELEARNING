@@ -1,7 +1,5 @@
-<form class="d-none d-md-flex mx-5 " >
-  <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;" type="search" id="search" placeholder="Search">
-</form>
-<div class="container-fluid pt-2 px-4" style="overflow-x: auto">
+
+
 
   <!-- <a href="/addTrainer" class="btn btn-danger">Add new trainer</a> -->
 <script>
@@ -53,11 +51,57 @@
   })();
 </script>
 
+<?php
+$usernameError = "";
+$emailError = "";
+$passwordError = "";
+if (isset($_POST['submit'])){
+  $username = $_POST['username'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  if (empty($username)){
+    $usernameError ="username is required";
+
+  }else{
+    $username = trim($username);
+    $username = htmlspecialchars($username);
+    if (!preg_match("/^[a-zA-Z]+$/",$username)){
+      $usernameError ="username is not a valid";
+  }
+}
+  if (empty($email)){
+    $emailError ="username is required";
+
+  }else{
+    $email = trim($email);
+    $email = htmlspecialchars($email);
+    if (!preg_match("/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/",$email)){
+      $emailError ="your email is not a valid";
+  }
+}
+  if (empty($password)){
+    $passwordError ="your username is required";
+
+  }else{
+    $password = trim($password);
+    $password = htmlspecialchars($password);
+    if (!preg_match("/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/",$password)){
+      $passwordError ="your password is not a valid";
+  }
+}
+
+}
+?>
 
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
-  <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
-    Add new trainer
+<div class="form-row" style="display: flex; flex-direction: column;">
+<form style="display: flex;">
+<input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;flex:3.5" type="search" id="search" placeholder="Search">
+    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#myModal" style="margin-left:50%;flex:2; height: 40px;" >
+    Add new Trainer
   </button>
+  <form>
   <!-- The Modal -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -102,8 +146,8 @@
 </div>
 
 
-<div class="table-wrapper-scroll-y my-custom-scrollbar m-4">
-  <table class="table table-bordered table-striped mb-0" style="border: 1px solid gray;">
+<div class="table-wrapper-scroll-y my-custom-scrollbar ">
+  <table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -124,8 +168,8 @@
           <!-- <td><?= $teacher['password'] ?></td> -->
           <td><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
           <td class="d-flex d-grid gap-3">
-            <a href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">
-              <i class="fa fa-trash" style="color:red;"></i></a>
+            <a class="btn bg-gradient-danger btn-danger" href="controllers/trainers/trainer.delete.controller.php?id=<?= $teacher['user_id'] ?> " onclick="return functionDelete()">
+              <i class="fa fa-trash" style="color:white;"></i></a>
             <script>
               function functionDelete() {
                 if (confirm("Are you sure you want to delete this category?")) {
@@ -136,11 +180,11 @@
                 }
               }
             </script>
-            <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
+             <a href="#" class="btn bg-gradient-danger btn-info">
+             <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:blue; margin-top:3px"></i>
+              </a>
+            
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
-
-
-
               <!-- ---------form edit--------- -->
               <div class="modal-dialog" role="document">
                 <div class="modal-content" style="background-color: black; border: 1px solid white;">
@@ -185,8 +229,7 @@
       <?php endforeach ?>
     </tbody>
   </table>
-</div>
-</div>
+
 </div>
 </div>
 
