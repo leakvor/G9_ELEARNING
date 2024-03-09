@@ -293,7 +293,7 @@ IT courses START -->
 		<div class="row g-4">
 			<?php foreach ($teachers as $teacher) : 
 			if(isset($_SESSION['user'])) {
-				$path = "controllers/courses/trainerCourseid.contoller.php". "?id=" . urlencode($teacher['user_id']);
+				$path = "../../controllers/courses/trainerCourseid.contoller.php". "?id=" . urlencode($teacher['user_id']);
 			  }else{
 				$path = "/signins";
 			  }
