@@ -120,7 +120,7 @@ Steps START -->
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $course_id = ($_POST['id']);}
-	// var_dump($course_id);
+	var_dump($course_id);
 ?>
 <!-- HTML code -->
 <div class="container">

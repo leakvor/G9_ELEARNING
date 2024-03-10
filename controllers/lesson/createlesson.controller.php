@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     var_dump($lesson_title);
     var_dump($video_url);
     // Access the video URL
-
     $course_id = $_POST['id'];
+    echo $course_id;
 
     // Check if lesson title and video URL are provided
     if (!empty($lesson_title) && !empty($video_url)) {

@@ -1,6 +1,6 @@
 <?php
 require '../../database/database.php';
-require '../../models/​student_course.model.php';
+require '../../models/cours_student.model.php';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $user_id = $_POST['user_id'];

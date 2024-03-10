@@ -73,6 +73,6 @@ function eachCourse($course_id){
     $statement = $connection->prepare("select * from course where course_id=:id");
     $statement->execute([
         ':id'=>$course_id,
-    ]);
+    ]); 
     return $statement->fetchAll();
 }

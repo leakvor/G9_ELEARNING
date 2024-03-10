@@ -108,13 +108,14 @@ Page Banner START -->
                       <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
                     </ul>
                   </div>
+                  <!-- <?php var_dump ($displaylessons[0]['course_id']) ?> -->
                   <!-- Button -->
                   <div class="d-flex align-items-center mt-2 mt-md-0">
                     <form action="/formlessoncreate" method='post'>
                       <!-- -------------------------------------------------------------------------------------------- -->
                       <input type="hidden" value="<?=$displaylessons[0]['course_id']?>" name="id">
                       <?php
-                      // var_dump($displaylessons[0]['course_id'])
+                      // var_dump($displaylessons['course_id'])
                       ?>
                     <button  class="btn btn-success mb-0">Create a Lesson</button>
                     </form>

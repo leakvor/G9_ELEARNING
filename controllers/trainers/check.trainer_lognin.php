@@ -19,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $trainer = accountExist($email);
 
     $hass_pass = $trainer['password'];
-    echo $hass_pass;
     if (count($trainer) > 0){
         if (preg_match($regex_email, $email) && preg_match($regex_password, $password)){
             if (password_verify($password, $hass_pass)){
