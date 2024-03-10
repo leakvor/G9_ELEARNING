@@ -5,12 +5,18 @@ require "../../models/lesson.model.php";
 // Start the session
 session_start();
 
+
 if(isset($_GET['course'])){
-    $id = $_GET['course'];
+    $id = intval($_GET['course']);
+
     $displayLessons = displayAlllesson($id);
+
+    $_SESSION['course_id'] = $id;
     
     // Set the value in the session variable
     $_SESSION['displaylessons'] = $displayLessons;
+
+    // var_dump($_SESSION['displaylessons']);
 
     // Redirect to the appropriate view file
     header("Location: /displaylesson");

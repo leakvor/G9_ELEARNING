@@ -44,7 +44,7 @@ Page content START -->
 		<!-- Search option END -->
 
 		<!-- Course list START -->
-		<div class="row g-4 justify-content-center">
+		<div class="row g-4">
 		<?php
 		
 		// echo "here";

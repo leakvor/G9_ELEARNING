@@ -351,16 +351,16 @@ Page content START -->
 												<!-- Table body START -->
 												<tbody>
 												
-														<tr>								
+												<tr>								
 												<?php 
-														foreach ($tra_student as $course):
-															if (isset($_SESSION['trainer'])){
-																$path="controllers/lesson/displayEachlesson.controller.php"."?course=" . urlencode($item['course_id']);
+													foreach ($tra_student as $course):
+													if (isset($_SESSION['trainer'])){
+														$path="controllers/lesson/displayEachlesson.controller.php"."?course=" . $course['course_id'];
 																
-															}else{
-																echo 'NOT SET!';
-															}
-													?>
+													}else{
+														echo 'NOT SET!';
+													}
+												?>
 												<!-- Table body START -->
 												<tbody>
 													<!-- Table item -->
@@ -379,7 +379,7 @@ Page content START -->
 															</div>
 														</td>
 														<!-- Selling item -->
-														<td><?= $course["cateName"]; ?></td>
+														<!-- <td><?= $course["cateName"]; ?></td> -->
 														<!-- Amount item -->
 														<td><?= $course["paid"]."$"; ?></td>
 														<!-- Action item -->
@@ -387,16 +387,16 @@ Page content START -->
 															
 															<a href="controllers/trainerCourse/editcourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
 															<a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-danger-soft btn-round mb-0" onclick="return functionDelete()">
-                <i class="fas fa-fw fa-times"></i></a>
-              <script>
-                function functionDelete() {
-                  if (confirm("Are you sure you want to delete this course?")) {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                }
-              </script>
+														<i class="fas fa-fw fa-times"></i></a>
+														<script>
+															function functionDelete() {
+															if (confirm("Are you sure you want to delete this course?")) {
+																return true;
+															} else {
+																return false;
+															}
+															}
+														</script>
 														</td>
 													</tr>
 												</tbody>

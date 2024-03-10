@@ -1,7 +1,4 @@
 <?php
-// Start the session
-// session_start();
-require "views/courses/displayAllcourse.view.php";
 
 if(isset($_SESSION['displayCourse'])){
     // Retrieve the value from the session

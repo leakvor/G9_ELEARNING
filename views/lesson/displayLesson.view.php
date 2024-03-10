@@ -79,8 +79,29 @@
 
 <!-- =======================
 Page Banner START -->
+
     <section class="pt-0">
       <!-- Main banner background image -->
+      <?php
+        if (isset($_SESSION['trainer'])){
+          $trainer = ($_SESSION['trainer']);
+          // var_dump($trainer);
+        }else{
+          echo 'NOT SET!';
+        }
+        require('database/database.php');
+        require('models/student.model.php');
+        require('models/trainer.model.php');
+
+        $trainer_email = $trainer['email'];
+        $trainer_data = accountExist($trainer_email);
+        if (isset($trainer)){
+          $trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
+        }
+        
+        $tra_student = trainer_students($trainer_email);
+        
+      ?>
       <div class="container-fluid px-0">
         <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
         </div>
@@ -94,13 +115,14 @@ Page Banner START -->
                 <!-- Avatar -->
                 <div class="col-auto mt-4 mt-md-0">
                   <div class="avatar avatar-xxl mt-n3">
-                    <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/01.jpg" alt="">
+                  <a href="<?= $trainer_profile?>"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="<?= $trainer_profile?>" alt="trainer_profile"></a>
                   </div>
                 </div>
                 <!-- Profile info -->
                 <div class="col d-md-flex justify-content-between align-items-center mt-4">
                   <div>
-                    <h1 class="my-1 fs-4">Lori Stevens <i class="bi bi-patch-check-fill text-info small"></i></h1>
+                    <h1 class="my-1 fs-4"><?= $trainer['username']?><i class="bi bi-patch-check-fill text-info small"></i></h1>
+                    <p><?php echo $trainer['email']?></p>
                     <ul class="list-inline mb-0">
                       <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
                       <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled
@@ -108,12 +130,22 @@ Page Banner START -->
                       <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
                     </ul>
                   </div>
-                  <!-- <?php var_dump ($displaylessons[0]['course_id']) ?> -->
+                  <?php 
+                  
+                  ?>
                   <!-- Button -->
                   <div class="d-flex align-items-center mt-2 mt-md-0">
                     <form action="/formlessoncreate" method='post'>
-                      <!-- -------------------------------------------------------------------------------------------- -->
-                      <input type="hidden" value="<?=$displaylessons[0]['course_id']?>" name="id">
+                      <!-- ------------------------------------------------------------------------------------------- -->
+                      <?php
+                        if (isset( $_SESSION['displaylessons'])){
+                          $displaylessons = $_SESSION['displaylessons'];
+                          if (isset($_SESSION['course_id'])){
+                            $course_id = $_SESSION['course_id'];
+                          }
+                        }
+                      ?>
+                      <input type="hidden" value="<?=$course_id?>" name="id">
                       <?php
                       // var_dump($displaylessons['course_id'])
                       ?>
