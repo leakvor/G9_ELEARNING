@@ -9,12 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     
     $recordStuCou = getcourse_student($user_id, $course_id);
     if (count($recordStuCou) > 0){
-        $_SESSION['StuRecCou'] = $recordStuCou;
+        // $_SESSION['StuRecCou'] = $recordStuCou;
         header('Location: /displayAllcourse');
     }else{
-        // courseStudent($user_id, $course_id, $date_join); 
-        $_SESSION['stu_id'] = $user_id;
-        $_SESSION['cou_id'] = $course_id;
+        courseStudent($user_id, $course_id, $date_join); 
+        // $_SESSION['stu_id'] = $user_id;
+        // $_SESSION['cou_id'] = $course_id;
         header('Location: /displayAllcourse');
     }
 }
