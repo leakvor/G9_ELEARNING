@@ -1,8 +1,3 @@
-<?php 
-	$statement = $connection->prepare("SELECT * FROM category");
-	$statement->execute();
-	$categories = $statement->fetchAll();
-?>
 
 <body>
 <!-- **************** MAIN CONTENT START **************** -->
@@ -44,16 +39,14 @@ Page content START -->
 		<!-- Search option END -->
 
 		<!-- Course list START -->
-		<div class="row g-4 ">
+		<div class="row g-4">
 		<?php
-		
-		// echo "here";
-		if (empty($displayCourses)) {
-			// Display message when $displayCourses is empty
-			echo "<h1>This page will have Courses Soon....</h1>";
-		} else {
-			foreach($displayCourses as $displayCourse):
-		?>
+if (empty($trainerCourse)) {
+    // Display message when $displayCourses is empty
+    echo "<h1>This page will have Courses Soon....</h1>";
+} else {
+    foreach($trainerCourse as $displayCourse):
+?>
         <!-- Card item START -->
         <div class="col-lg-10 col-xxl-6">
             <div class="card rounded overflow-hidden shadow">

@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
 
-
     
         if (!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])) {
             $worngfile = "";

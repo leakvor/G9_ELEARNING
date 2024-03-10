@@ -266,7 +266,7 @@ Page content START -->
 								foreach($tra_student as $item){
 							?>
 								<div class="card text-white bg-success mb-3 all_courses" style="max-width: 18rem; display:none">
-									<div class="card-header text-white bg-dark"><?= $item['title']?></div>
+									<div class="card-header text-white bg-dark"><?= $item['course_img']?></div>
 									<div class="card-body">
 										<h5 class="card-title">Secondary card title</h5>
 										<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
