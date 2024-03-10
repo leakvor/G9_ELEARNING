@@ -16,4 +16,3 @@ if(isset($_GET['category'])){
     header("Location: /displayAllcourse");
     exit(); // It's good practice to exit after a header redirect to prevent further execution
 }  
-?>

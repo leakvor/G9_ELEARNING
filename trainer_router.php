@@ -5,11 +5,18 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 
 
-if (isset($_SESSION['path'])){
+if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
     $routes = [
         '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
+        '/trainerdashboards' => 'controllers/trainers/trainercheck.controller.php',
         '/trainer' => 'controllers/trainers/trainerDashboard.controller.php',
         '/'=>'controllers/trainers/trainerDashboard.controller.php',
+        '/displaylesson'=>'controllers/lesson/displaylesson.controller.php',
+        '/formlessoncreate'=>'controllers/lesson/formcreatelesson.controller.php',
+        '/formlessonedit'=>'controllers/lesson/editlesson.controller.php',
+        '/editlesson'=>'controllers/lesson/formedit.controller.php',
+        '/updatelesson'=>'controllers/lesson/updatelesson.controller.php',
+
     ];
 }else{
         $routes = [

@@ -346,39 +346,43 @@ Page content START -->
 												<thead>
 													<tr>
 														<th scope="col" class="border-0 rounded-start">Course Name</th>
-														<th scope="col" class="border-0">Selling</th>
-														<th scope="col" class="border-0">Amount</th>
+														<th scope="col" class="border-0">Paid</th>
 														<th scope="col" class="border-0 rounded-end">Action</th>
 													</tr>
 												</thead>
 												<!-- Table body START -->
 												<tbody>
-
-													<!-- Table item -->
-													<tr>
-														<!-- Course item -->
-														<td>
-															<div class="d-flex align-items-center">
-																<!-- Image -->
-																<div class="w-100px w-md-60px">
-																	<img src="assets/images/courses/4by3/08.jpg" class="rounded" alt="">
-																</div>
-																<!-- Title -->
-																<h6 class="mb-0 ms-2">
-																	<a href="#">Building Scalable APIs with GraphQL</a>
-																</h6>
-															</div>
-														</td>
-														<!-- Selling item -->
-														<td>34</td>
-														<!-- Amount item -->
-														<td>$1,25,478</td>
-														<!-- Action item -->
-														<td>
-															<a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
-															<button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
-														</td>
-													</tr>
+													<?php foreach($tra_student as $item):
+														// var_dump($item['course_id']);
+													// var_dump($item);
+														if (isset($_SESSION['trainer'])){
+															$path="controllers/lesson/displayEachlesson.controller.php"."?course=" . urlencode($item['course_id']);
+															
+														}else{
+															echo 'NOT SET!';
+														} ?>
+														<tr>								
+                            <!-- Course item -->
+                            <td>
+                              <div class="d-flex align-items-center">
+                                <!-- Image -->
+                                <div class="w-100px w-md-60px">
+									<a href="<?=$path?>"><img src="assets/images/course/<?=$item['course_img']?>" class="rounded" alt=""></a>
+                                  
+                                </div>
+                                <!-- Title -->
+                                <h6 class="mb-0 ms-2"><a href="<?=$path?>"><?=$item['title']?></a>
+                                </h6>
+                              </div>
+                            </td>
+                            <!-- Selling item -->
+                            <td><?=$item['paid']?>$</td>
+                            <td>
+                              <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+                              <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
+                            </td>
+                          </tr>
+													<?php endforeach ?>
 												</tbody>
 												<!-- Table body END -->
 											</table>
