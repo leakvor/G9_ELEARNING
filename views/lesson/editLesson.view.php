@@ -132,7 +132,7 @@ Steps START -->
         </div>
         <div class="form-group">
             <label for="video_url">Video URL:</label><br>
-            <input type="text" class="form-control mt-2 mb-2" id="video_url" name="document"  placeholder="Enter lesson url" required >
+            <input type="text" class="form-control mt-2 mb-2" id="video_url" name="document"  placeholder="Enter lesson url" required value="<?=$lesson['document']?>" >
         </div>
         <button type="submit" name="submit" value="Upload file" class="btn btn-primary mt-2" style="margin-top:10px">Upload</button>
     </form>

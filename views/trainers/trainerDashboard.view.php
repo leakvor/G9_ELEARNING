@@ -135,7 +135,7 @@ Page Banner START -->
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
 										<form action="/createCourse" method="post">
-											<input type="hidden" value="<?= $tra_student[0]['user_id'] ?>" name="id">
+											<input type="hidden" value="<?= $trainer['user_id'] ?>" name="id">
 											<button class="btn btn-success mb-0">Create a course</button>
 										</form>
 										

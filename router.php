@@ -10,7 +10,6 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/signins' => 'controllers/home/home.controller.php',
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
-        '/addTrainer' => 'controllers/trainers/addTrainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
         '/coursepay' => 'views/students/student_pay.view.php',

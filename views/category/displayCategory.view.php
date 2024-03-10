@@ -8,8 +8,6 @@
     Add new Category
   </button>
   </form>
-  
-
   <!-- ----The Modal--- -->
   <div class="modal" id="myModal">
     <div class="modal-dialog">
@@ -88,13 +86,6 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <!-- <?php
-                          // $id=$_GET['id'];
-                          // $statement = $connection->prepare("select * from category where cat_id=:id");
-                          // $statement->execute([':id' => $id]);
-
-                          // $category=$statement->fetch();
-                          ?> -->
 
                     <div class="modal-body">
                       <form action="controllers/category/updateCategory.controller.php" method="post" enctype="multipart/form-data">
@@ -105,7 +96,7 @@
                             <input type="text" class="form-control bg-white" value="<?= $category['cateName'] ?>" name="cateName">
                           </div>
                           <div class="form-group mt-3">
-                            <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
+                            <input type="file" class="form-control bg-white" name="img" placeholder="Choose img" value="$category['image']">
                           </div>
                         </div>
                         <!-- Modal footer -->
