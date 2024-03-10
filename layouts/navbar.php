@@ -242,6 +242,7 @@
         }else{
             $path = "/trainerdashboard";
         }
+
       ?>
   
       <!-- Language -->

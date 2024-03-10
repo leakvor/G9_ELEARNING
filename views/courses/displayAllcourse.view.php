@@ -46,12 +46,14 @@ Page content START -->
 		<!-- Course list START -->
 		<div class="row g-4 justify-content-center">
 		<?php
-if (empty($displayCourses)) {
-    // Display message when $displayCourses is empty
-    echo "<h1>This page will have Courses Soon....</h1>";
-} else {
-    foreach($displayCourses as $displayCourse):
-?>
+		
+		// echo "here";
+		if (empty($displayCourses)) {
+			// Display message when $displayCourses is empty
+			echo "<h1>This page will have Courses Soon....</h1>";
+		} else {
+			foreach($displayCourses as $displayCourse):
+		?>
         <!-- Card item START -->
         <div class="col-lg-10 col-xxl-6">
             <div class="card rounded overflow-hidden shadow">

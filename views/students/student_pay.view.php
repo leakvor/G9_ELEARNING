@@ -117,9 +117,9 @@
                     <li>Information on Next Steps</li>
                 </div>
                 <form action="<?= $path?>" id="paymentForm" method="post">
-					<input type="text" name="course_id" value="<?= $cours_id?>">
-					<input type="text" name="user_id" value="<?= $student_id?>">
-					<input type="text" name="datejoin" value="<?= $date_join?>">
+					<input type="hidden" name="course_id" value="<?= $cours_id?>">
+					<input type="hidden" name="user_id" value="<?= $student_id?>">
+					<input type="hidden" name="datejoin" value="<?= $date_join?>">
                     <div class="form-group">
                     <button type="submit" class="btn-primary btn-custom btn-lg mt-2" style="width: 100%;"><?= $pay_btn?></button>
                     </div>

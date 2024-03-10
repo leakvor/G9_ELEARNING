@@ -1,6 +1,7 @@
 <?php
 // Start the session
 // session_start();
+require "views/courses/displayAllcourse.view.php";
 
 // Check if the session variable is set
 if(isset($_SESSION['displayCourse'])){
