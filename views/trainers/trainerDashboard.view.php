@@ -1,7 +1,4 @@
 <body>
-	<?php
-	// session_start()
-	?>
 	<!-- Header START -->
 	<header class="navbar-light navbar-sticky">
 		<!-- Logo Nav START -->
@@ -92,21 +89,20 @@ Page Banner START -->
 				}
 				require('database/database.php');
 				require('models/student.model.php');
-				require('models/trainer.model.php');
+				require('./models/trainer.model.php');
 
 				$trainer_email = $trainer['email'];
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
 					if (isset($trainer_profile)){
-						echo "<script>alert('Edit profile!');</script>";
+						// echo "<script>alert('Edit profile!');</script>";
 					}
 				}
 				
 				$tra_student = trainer_students($trainer_email);
 				
 			?>
-
 			<!-- Main banner background image -->
 			<div class="container-fluid px-0">
 				<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -136,11 +132,13 @@ Page Banner START -->
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
 										</ul>
 									</div>
-
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
-										<a href="/trainer_create_course" class="btn btn-success mb-0">Create a
-											course</a>
+										<form action="/createCourse" method="post">
+											<input type="hidden" value="<?= $tra_student[0]['user_id'] ?>" name="id">
+											<button class="btn btn-success mb-0">Create a course</button>
+										</form>
+										
 									</div>
 								</div>
 							</div>
@@ -352,37 +350,58 @@ Page content START -->
 												</thead>
 												<!-- Table body START -->
 												<tbody>
-													<?php foreach($tra_student as $item):
-														// var_dump($item['course_id']);
-													// var_dump($item);
-														if (isset($_SESSION['trainer'])){
-															$path="controllers/lesson/displayEachlesson.controller.php"."?course=" . urlencode($item['course_id']);
-															
-														}else{
-															echo 'NOT SET!';
-														} ?>
+												
 														<tr>								
-                            <!-- Course item -->
-                            <td>
-                              <div class="d-flex align-items-center">
-                                <!-- Image -->
-                                <div class="w-100px w-md-60px">
-									<a href="<?=$path?>"><img src="assets/images/course/<?=$item['course_img']?>" class="rounded" alt=""></a>
-                                  
-                                </div>
-                                <!-- Title -->
-                                <h6 class="mb-0 ms-2"><a href="<?=$path?>"><?=$item['title']?></a>
-                                </h6>
-                              </div>
-                            </td>
-                            <!-- Selling item -->
-                            <td><?=$item['paid']?>$</td>
-                            <td>
-                              <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
-                              <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
-                            </td>
-                          </tr>
-													<?php endforeach ?>
+												<?php 
+														foreach ($tra_student as $course):
+															if (isset($_SESSION['trainer'])){
+																$path="controllers/lesson/displayEachlesson.controller.php"."?course=" . urlencode($item['course_id']);
+																
+															}else{
+																echo 'NOT SET!';
+															}
+													?>
+												<!-- Table body START -->
+												<tbody>
+													<!-- Table item -->
+													<tr>
+														<!-- Course item -->
+														<td>
+															<div class="d-flex align-items-center">
+																<!-- Image -->
+																<div class="w-100px w-md-60px">
+																<a href="<?=$path?>"><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" ></a>
+																</div>
+																<!-- Title -->
+																<h6 class="mb-0 ms-2">
+																	<a href="<?=$path?>"><?= $course["title"]; ?></a>
+																</h6>
+															</div>
+														</td>
+														<!-- Selling item -->
+														<td><?= $course["cateName"]; ?></td>
+														<!-- Amount item -->
+														<td><?= $course["paid"]."$"; ?></td>
+														<!-- Action item -->
+														<td>
+															
+															<a href="controllers/trainerCourse/editcourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
+															<a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-danger-soft btn-round mb-0" onclick="return functionDelete()">
+                <i class="fas fa-fw fa-times"></i></a>
+              <script>
+                function functionDelete() {
+                  if (confirm("Are you sure you want to delete this course?")) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+              </script>
+														</td>
+													</tr>
+												</tbody>
+												<?php endforeach; ?>
+			
 												</tbody>
 												<!-- Table body END -->
 											</table>
@@ -405,7 +424,7 @@ Page content START -->
 											</nav>
 										</div>
 									</div>
-									<!-- Card body START -->
+										<!-- Card body START -->
 								</div>
 							</div>
 						</div>
@@ -417,7 +436,6 @@ Page content START -->
 		</section>
 		<!-- =======================
 Page content END -->
-
 	</main>
 
 	<!-- Back to top -->
