@@ -95,12 +95,6 @@ Page Banner START -->
                                             <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
                                         </ul>
                                     </div>
-
-                                    <!-- Button -->
-                                    <div class="d-flex align-items-center mt-2 mt-md-0">
-                                        <a href="/trainer_create_course" class="btn btn-success mb-0">Create a
-                                            course</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -144,9 +138,7 @@ Page content START -->
                                         <!-- Dashboard menu -->
                                         <div class="list-group list-group-dark list-group-borderless">
                                             <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-                                            <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
                                             <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-                                            <a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
                                                 <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
@@ -245,82 +237,8 @@ Page content START -->
                         </div>
                         <!-- Chart END -->
 
-                        <!-- Course List table START -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card border rounded-3 mt-5">
-                                    <!-- Card header START -->
-                                    <div class="card-header border-bottom">
-                                        <div class="d-sm-flex justify-content-sm-between align-items-center">
-                                            <h3 class="mb-2 mb-sm-0">Most Selling Courses</h3>
-                                            <a href="#" class="btn btn-sm btn-primary-soft mb-0">View all</a>
-                                        </div>
-                                    </div>
-                                    <!-- Card header END -->
-
-                                    <!-- Card body START -->
-                                    <div class="card-body">
-                                        <div class="table-responsive-lg border-0 rounded-3">
-                                            <!-- Table START -->
-                                            <table class="table table-dark-gray align-middle p-4 mb-0">
-                                                <!-- Table head -->
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="border-0 rounded-start">Course Name</th>
-                                                        <th scope="col" class="border-0">Selling</th>
-                                                        <th scope="col" class="border-0">Amount</th>
-                                                        <th scope="col" class="border-0 rounded-end">Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <!-- Table body START -->
-                                                <tbody>
-
-                                                    <!-- Table item -->
-                                                    <tr>
-                                                        <!-- Course item -->
-                                                        <td>
-                                                            <div class="d-flex align-items-center">
-                                                                <!-- Image -->
-                                                                <div class="w-100px w-md-60px">
-                                                                    <img src="assets/images/courses/4by3/08.jpg" class="rounded" alt="">
-                                                                </div>
-                                                                <!-- Title -->
-                                                                <h6 class="mb-0 ms-2">
-                                                                    <a href="#">Building Scalable APIs with GraphQL</a>
-                                                                </h6>
-                                                            </div>
-                                                        </td>
-                                                        <!-- Selling item -->
-                                                        <td>34</td>
-                                                        <!-- Amount item -->
-                                                        <td>$1,25,478</td>
-                                                        <!-- Action item -->
-                                                        <td>
-                                                            <a href="#" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
-                                                            <button class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                <!-- Table body END -->
-                                            </table>
-                                            <!-- Table END -->
-                                        </div>
-
-                                        <!-- Pagination -->
-                                        <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-3">
-                                            <!-- Content -->
-                                            <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-                                            <!-- Pagination -->
-                                            <nav class="d-flex justify-content-center mb-0" aria-label="navigation">
-                                                <ul class="pagination pagination-sm pagination-primary-soft mb-0 pb-0">
-                                                    <li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
-                                                    <li class="page-item mb-0"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item mb-0 active"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item mb-0"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-right"></i></a></li>
-                                                </ul>
-                                            </nav>
-                                        </div>
+                      
+                                       
                                     </div>
                                     <!-- Card body START -->
                                 </div>
