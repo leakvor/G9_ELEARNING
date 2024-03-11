@@ -6,7 +6,7 @@ require('../../models/course.model.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['category'])){
   $worngfile="";
- if(isset($_FILES['img'])){
+ if(isset($_FILES['img']) && $_POST['category']!="#"){
         $img_name=$_FILES['img']['name'];
         $img_size=$_FILES['img']['size'];
         $tmp_name=$_FILES['img']['tmp_name'];
