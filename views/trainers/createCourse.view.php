@@ -392,7 +392,7 @@ Page Banner END -->
 				<div class="col-md-12 ">
 					<label for="#">Course category</label>
 					<select class="form-select" name='category'>
-					<option selected>Selete category</option>
+					<option selected value="#">Selete category</option>
 						<?php foreach($categories as $category): ?>
 							<option value="<?= $category['cat_id'] ?>"><?= $category['cateName'] ?></option>
 						<?php endforeach ?>

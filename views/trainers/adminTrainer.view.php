@@ -134,6 +134,35 @@
     </div>
   </div>
 
+  <script>
+  $(document).ready(function() {
+    $("#editIcon").click(function() {
+      $("#editModal").modal('show');
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('#search');
+    const tableRows = document.querySelectorAll('tbody tr');
+    console.log(tableRows);
+
+    searchInput.addEventListener('input', function() {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+
+      tableRows.forEach(function(row) {
+        const title = row.cells[1].textContent.trim().toLowerCase();
+
+        if (title.includes(searchTerm)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+
 
 
 
