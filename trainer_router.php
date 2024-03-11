@@ -16,9 +16,9 @@ if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
         '/formlessonedit'=>'controllers/lesson/editlesson.controller.php',
         '/editlesson'=>'controllers/lesson/formedit.controller.php',
         '/updatelesson'=>'controllers/lesson/updatelesson.controller.php',
-
         '/createCourse' => 'controllers/trainerCourse/course.controller.php',
         '/updateCourse' => 'controllers/trainerCourse/formupdateCourses.controller.php',
+        '/homepagelesson'=>'controllers/lesson/homepagelesson.controller.php',
     
     ];
 }else{
