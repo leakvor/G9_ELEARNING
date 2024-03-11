@@ -23,8 +23,6 @@ if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
 }else{
         $routes = [
             '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
-        
-      
             
     ];
 }
