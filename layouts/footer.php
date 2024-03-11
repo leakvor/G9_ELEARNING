@@ -139,6 +139,10 @@ Footer END -->
 <script src="vendor/js/functions.js"></script>
 <script src="vendor/js/click.js"></script>
 <script src="vendor/js/search.js"></script>
+<script src="vendor/js/deleteData.js"></script>
+<script src="vendor/js/validationLesson.js"></script>
+<script src="vendor/js/validationCourse.js"></script>
+<script src="vendor/js/validationAdmin.js"></script>
 
 
 </body>
