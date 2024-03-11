@@ -171,9 +171,7 @@ Featured course START -->
 
 		<div class="row g-4">
 			<?php
-			foreach ($courseTeachers as $courseTeacher) :?>
-			
-				
+			foreach ($courseTeachers as $courseTeacher):?>
 				<div class="col-md-6 col-lg-4 col-xxl-3">
 					<div class="card p-2 shadow h-100">
 						<div class="rounded-top overflow-hidden">
@@ -213,11 +211,18 @@ Featured course START -->
 							</div>
 							<!-- Divider -->
 							<hr>
+							<?php
+							if (isset($_SESSION['user'])){
+								$coursePay = "/coursepay";
+							}else{
+								$coursePay = "/";
+							}
+							?>
 							<!-- Title -->
-							<h6 class="card-title"><a href="/coursepay?idc=<?= $courseTeacher['course_id']?>"><?= $courseTeacher['title']?></a></h6>
+							<h6 class="card-title"><a href="<?=$coursePay?>?idc=<?= $courseTeacher['course_id']?>"><?= $courseTeacher['title']?></a></h6>
 							<!-- Badge and Price -->
 							<div class="d-flex justify-content-between align-items-center mb-0">
-								<div><a href="<?= $path ?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
+								<div><a href="<?= $path?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
 								<!-- Price -->
 								<h5 class="text-success mb-0"><?= $courseTeacher['paid'] ?>$</h5>
 							</div>
