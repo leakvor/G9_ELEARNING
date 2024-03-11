@@ -101,6 +101,8 @@ Page Banner START -->
 				}
 				
 				$tra_student = trainer_students($trainer_email);
+				// $tra_student_course=trainer_students_course()
+				var_dump($tra_student);
 				
 			?>
 			<!-- Main banner background image -->
@@ -183,8 +185,7 @@ Page content START -->
 										<!-- Dashboard menu -->
 										<div class="list-group list-group-dark list-group-borderless">
 											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-											<a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
-											<a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
+											<a class="list-group-item " href="/trainerViewCourse"><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
@@ -273,7 +274,7 @@ Page content START -->
 									</div>
 								</div>
 							<?php
-								}
+								} 
 							?>
 						</div>
 

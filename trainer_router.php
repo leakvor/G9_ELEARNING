@@ -10,11 +10,13 @@ if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
         '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
         '/createCourse' => 'controllers/trainerCourse/course.controller.php',
       '/updateCourse' => 'controllers/trainerCourse/formupdateCourses.controller.php',
+      '/trainerViewCourse' => 'controllers/trainerCourse/trainerViewCourse.controller.php',
     
     ];
 }else{
         $routes = [
             '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
+            // '/trainerViewCourse' => 'controllers/trainerCourse/trainerViewCourse.controller.php',
         
       
             
