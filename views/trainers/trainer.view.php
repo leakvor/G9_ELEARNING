@@ -25,12 +25,14 @@ Inner part START -->
 			<div class="row mb-4 align-items-center">
 				<!-- Search bar -->
 				<div class="col-sm-6 col-xl-4">
+
 					<form class="bg-body shadow rounded p-2">
 						<div class="input-group input-borderless">
 							<input class="form-control me-1" type="search" id="search" placeholder="search">
-							<button type="button" class="btn btn-primary mb-0 rounded"><i class="fas fa-search"></i></button>
+							<!-- <button type="button" class="btn btn-primary mb-0 rounded" ><i class="fas fa-search"></i></button> -->
 						</div>
 					</form>
+
 				</div>
 				<!-- Select option -->
 				<div class="col-sm-6 col-xl-3 mt-3 mt-lg-0">
@@ -50,7 +52,6 @@ Inner part START -->
 						</select>
 					</form>
 				</div>
-
 				<!-- Select option -->
 				<div class="col-sm-6 col-xl-3 mt-3 mt-xl-0">
 					<form class="bg-body shadow rounded p-2 input-borderless">
@@ -100,7 +101,7 @@ Inner part START -->
 										<!-- Title -->
 										<div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
 											<div>
-												<h5 class="card-title mb-0"><a href="/trainer-classroom"></a><?= $teacher['username'] ?></h5>
+												<h5 class="card-title" id="Nameteacher"><a href="/trainer-classroom"></a><?= $teacher['username'] ?></h5>
 											</div>
 											<span class="h6 fw-light">4.3<i class="fas fa-star text-warning ms-1"></i></span>
 										</div>
@@ -195,17 +196,14 @@ Action box END -->
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
-		const searchInput = document.getElementById('search');
-		console.log(searchInput.value);
-		const cardTitles = document.querySelectorAll('.card-title');
+		let searchInput = document.querySelector('#search');
 
+		let cardTitles = document.querySelector('.card-title');
 		searchInput.addEventListener('input', function() {
-			const searchTerm = searchInput.value.trim().toLowerCase();
-
+			let searchTerm = searchInput.value.trim().toLowerCase();
 			cardTitles.forEach(function(title) {
-				const card = title.closest('.card');
-
-				if (title.textContent.trim().toLowerCase().includes(searchTerm)) {
+				let card = title.closest('.card');
+				if (title.textContent.trim(1).toLowerCase().includes(searchTerm)) {
 					card.style.display = '';
 				} else {
 					card.style.display = 'none';

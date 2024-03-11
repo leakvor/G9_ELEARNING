@@ -125,7 +125,7 @@
               <i class="fa fa-trash" style="color:red;"></i></a>
             <script>
               function functionDelete() {
-                if (confirm("Are you sure you want to delete this category?")) {
+                if (confirm("Are you sure you want to delete this teacher?")) {
 
                   return true; // Proceed with deletion
                 } else {
