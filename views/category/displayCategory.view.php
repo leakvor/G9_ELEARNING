@@ -23,7 +23,7 @@
             <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="category">Name category:</label>
-                <input type="text" class="form-control bg-white" name="cateName" id="cateName">
+                <input type="text" class="form-control bg-white" name="cateName" id="cateName"  placeholder="Category">
               </div>
               <small class="text-danger" id="p"></small>
               <div class="form-group mt-3">
@@ -63,16 +63,6 @@
             <td><a class="btn bg-gradient-danger btn-danger" href="controllers/category/deleteCategory.controller.php?id=<?= $category['cat_id'] ?>
             " onclick="return functionDelete()">
                 <i class="fa fa-trash" style="color:white;"></i></a>
-              <script>
-                function functionDelete() {
-                  if (confirm("Are you sure you want to delete this category?")) {
-
-                    return true; // Proceed with deletion
-                  } else {
-                    return false; // Cancel deletion
-                  }
-                }
-              </script>
               <a href="#" class="btn bg-gradient-danger btn-info">
                 <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $category['cat_id'] ?>" style="cursor: pointer;color:white;"></i>
               </a>
@@ -114,48 +104,4 @@
     </table>
               </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const searchInput = document.querySelector('#search');
-      const tableRows = document.querySelectorAll('tbody tr');
-      console.log(tableRows);
-
-      searchInput.addEventListener('input', function() {
-        const searchTerm = searchInput.value.trim().toLowerCase();
-
-        tableRows.forEach(function(row) {
-          const title = row.cells[1].textContent.trim().toLowerCase();
-
-          if (title.includes(searchTerm)) {
-            row.style.display = '';
-          } else {
-            row.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const cateNameInput = document.querySelector("#cateName");
-      const submitBtn = document.querySelector("#submitBtn");
-      const p = document.querySelector("#p");
-
-      cateNameInput.addEventListener("input", () => {
-        const text = cateNameInput.value.trim();
-        checkInput(text);
-      });
-
-      function checkInput(text) {
-        const regex = /^[a-zA-Z\s]{4,}$/;
-        const isValid_category = regex.test(text);
-        if (isValid_category) {
-          p.textContent = "";
-          submitBtn.removeAttribute("disabled");
-        } else {
-          p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
-          submitBtn.setAttribute("disabled", "true");
-        }
-      }
-    });
-  </script>
+ 
