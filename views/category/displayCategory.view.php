@@ -1,41 +1,42 @@
 <!-- -------------form category------ -->
-<form class="d-none d-md-flex mx-4 mr-3">
-      <input class="form-control border-1 mt-3 " style="border: 1px solid gray;" type="search" id="search" placeholder="Search">
-</form>
+
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+<div class="form-row" style="display: flex; flex-direction: column;">
+  <form style="display: flex;">
+    <input class="form-control border-1 mt-3 " style="border: 1px solid gray;flex:3.5 " type="search" id="search" placeholder="Search">
+    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#myModal" style="margin-left:50%;flex:2; height: 40px;" >
     Add new Category
   </button>
-
-<!-- ----The Modal--- -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content" style="background-color:black;border:1px solid white;">
-  <!-- -----Modal Header---- -->
-  <div class="modal-header">
-    <h4 class="modal-title">Form Add new Category</h4>
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-  </div>
-  <!-- ----Madal body--- -->
-  <div class="modal-body">
-    <div class="modal-body">
-    <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="category">Name category:</label>
-                    <input type="text" class="form-control bg-white" name="cateName" id="cateName">
-                </div>
-                <small class="text-danger" id="p"></small>
-                <div class="form-group mt-3">
+  </form>
+  <!-- ----The Modal--- -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="background-color:black;border:1px solid white;">
+        <!-- -----Modal Header---- -->
+        <div class="modal-header">
+          <h4 class="modal-title">Form Add new Category</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- ----Madal body--- -->
+        <div class="modal-body">
+          <div class="modal-body">
+            <form action="controllers/category/createCategory.controller.php" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="category">Name category:</label>
+                <input type="text" class="form-control bg-white" name="cateName" id="cateName">
+              </div>
+              <small class="text-danger" id="p"></small>
+              <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="image" id="image" placeholder="Choose image">
               </div>
-        </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <!-- <a href="" class="btn btn-danger">Create</a> -->
-                    <button id="submitBtn" type="submit" name="submit" class="btn btn-danger" disabled >Create</button>
-                    
-                </div>
-            </form>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <!-- <a href="" class="btn btn-danger">Create</a> -->
+            <button id="submitBtn" type="submit" name="submit" class="btn btn-danger" disabled>Create</button>
+
+          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -43,9 +44,9 @@
 
   <!-----------------------table category-------------------------- -->
   <div class="table-wrapper-scroll-y my-custom-scrollbar">
-    <table class="table table-bordered table-striped mb-0"style="margin-top:15px">
+    <table class="table table-dark">
       <thead>
-        <tr style="border: 1px solid gray;">
+        <tr>
           <th scope="col">id</th>
           <th scope="col">Name Category</th>
           <th scope="col">images</th>
@@ -53,27 +54,30 @@
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($categorys as $index => $category):?>
-        
-            <tr style="border: 1px solid gray;">
-            <th scope="row" ><?= $index+1 ?></th>
+        <?php foreach ($categorys as $index => $category) : ?>
+
+          <tr>
+            <th scope="row"><?= $index + 1 ?></th>
             <td><?= $category['cateName'] ?></td>
-            <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="60px" height="60px"  ></td>
-            <td><a href="controllers/category/deleteCategory.controller.php?id=<?=$category['cat_id'] ?>
-            "onclick="return functionDelete()">
-            <i class="fa fa-trash" style="color:red;"></i></a>
-            <script>
-                        function functionDelete() {
-                          if (confirm("Are you sure you want to delete this category?")) {
-                            
-                            return true; // Proceed with deletion
-                          } else {
-                            return false; // Cancel deletion
-                          }
-                        }
-            </script>
-            <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?=$category['cat_id'] ?>" style="cursor: pointer;color:blue;"></i>
-            <div class="modal fade" id="editModal<?=$category['cat_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?=$category['cat_id'] ?>" aria-hidden="true">
+            <td><img src="assets/images/category/<?= $category['image'] ?>" alt="" width="60px" height="60px"></td>
+            <td><a class="btn bg-gradient-danger btn-danger" href="controllers/category/deleteCategory.controller.php?id=<?= $category['cat_id'] ?>
+            " onclick="return functionDelete()">
+                <i class="fa fa-trash" style="color:white;"></i></a>
+              <script>
+                function functionDelete() {
+                  if (confirm("Are you sure you want to delete this category?")) {
+
+                    return true; // Proceed with deletion
+                  } else {
+                    return false; // Cancel deletion
+                  }
+                }
+              </script>
+              <a href="#" class="btn bg-gradient-danger btn-info">
+                <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $category['cat_id'] ?>" style="cursor: pointer;color:white;"></i>
+              </a>
+
+              <div class="modal fade" id="editModal<?= $category['cat_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $category['cat_id'] ?>" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content" style="background-color: black; border: 1px solid white;">
                     <div class="modal-header">
@@ -82,33 +86,24 @@
                         <span aria-hidden="true">&times;</span>
                       </button>
                     </div>
-                    <!-- <?php 
-                      // $id=$_GET['id'];
-                      // $statement = $connection->prepare("select * from category where cat_id=:id");
-                      // $statement->execute([':id' => $id]);
-
-                      // $category=$statement->fetch();
-                    ?> -->
 
                     <div class="modal-body">
-                    <form action="controllers/category/updateCategory.controller.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="category">Name Category:</label>
-                    <input type="hidden" name="id"
-                     value="<?= $category['cat_id'] ?>">
-                <div class="form-group">
-                    <input type="text" class="form-control bg-white"
-                     value="<?=$category['cateName']?>" name="cateName">
-              </div>
-              <div class="form-group mt-3">
-                    <input type="file" class="form-control bg-white" name="image" placeholder="Choose img" value="$category['image']">
-              </div>
-        </div>
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger" >Update</button>
-                </div>
-            </form>
+                      <form action="controllers/category/updateCategory.controller.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                          <label for="category">Name Category:</label>
+                          <input type="hidden" name="id" value="<?= $category['cat_id'] ?>">
+                          <div class="form-group">
+                            <input type="text" class="form-control bg-white" value="<?= $category['cateName'] ?>" name="cateName">
+                          </div>
+                          <div class="form-group mt-3">
+                            <input type="file" class="form-control bg-white" name="img" placeholder="Choose img" value="$category['image']">
+                          </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-danger">Update</button>
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -117,49 +112,50 @@
         <?php endforeach ?>
       </tbody>
     </table>
-
+              </div>
   </div>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('#search');
-    const tableRows = document.querySelectorAll('tbody tr');
-    console.log(tableRows);
+      const searchInput = document.querySelector('#search');
+      const tableRows = document.querySelectorAll('tbody tr');
+      console.log(tableRows);
 
-    searchInput.addEventListener('input', function() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
+      searchInput.addEventListener('input', function() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
 
-      tableRows.forEach(function(row) {
-        const title = row.cells[1].textContent.trim().toLowerCase();
+        tableRows.forEach(function(row) {
+          const title = row.cells[1].textContent.trim().toLowerCase();
 
-        if (title.includes(searchTerm)) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
+          if (title.includes(searchTerm)) {
+            row.style.display = '';
+          } else {
+            row.style.display = 'none';
+          }
+        });
       });
     });
-  });
   </script>
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
-    const cateNameInput = document.querySelector("#cateName");
-    const submitBtn = document.querySelector("#submitBtn");
-    const p = document.querySelector("#p");
+      const cateNameInput = document.querySelector("#cateName");
+      const submitBtn = document.querySelector("#submitBtn");
+      const p = document.querySelector("#p");
 
-    cateNameInput.addEventListener("input", () => {
+      cateNameInput.addEventListener("input", () => {
         const text = cateNameInput.value.trim();
         checkInput(text);
-    });
-    function checkInput(text) {
+      });
+
+      function checkInput(text) {
         const regex = /^[a-zA-Z\s]{4,}$/;
         const isValid_category = regex.test(text);
         if (isValid_category) {
-            p.textContent = "";
-            submitBtn.removeAttribute("disabled");
+          p.textContent = "";
+          submitBtn.removeAttribute("disabled");
         } else {
-            p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
-            submitBtn.setAttribute("disabled", "true");
+          p.textContent = "Please enter a valid title (at least 4 characters with letters and spaces only).";
+          submitBtn.setAttribute("disabled", "true");
         }
-    }
-});
-</script>
+      }
+    });
+  </script>

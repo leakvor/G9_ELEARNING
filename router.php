@@ -8,12 +8,13 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
     $routes = [
         '/'=>'controllers/home/home.controller.php',
         '/trainers' => 'controllers/trainers/trainer.controller.php',
-        // LOG------------------->
+        '/signins' => 'controllers/home/home.controller.php',
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
-        '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
-        
+        '/coursepay' => 'views/students/student_pay.view.php',
+        '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
+        '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
     ];
 }else{
     $routes = [
@@ -21,7 +22,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signups' => 'controllers/signup/signup.controler.php',
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
-        // '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
+       
     ];
 }
 

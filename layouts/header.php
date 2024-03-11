@@ -25,6 +25,7 @@
 
 	<!-- Theme CSS -->
 	<link id="style-switch" rel="stylesheet" type="text/css" href="vendor/css/style.css">
+	
 
 	<!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
 
@@ -37,6 +38,12 @@
 		.dropdown:hover .dropdown-content {display: block;}
 
 		.dropdown:hover .dropbtn {background-color: #3e8e41;}
+		/* Custom bold horizontal bar */
+		.custom-hr {
+			border: none; /* Remove the default border */
+			border-top: 3px solid #222; /* Set the top border with custom thickness and color */
+		}
+
 	</style>
 
 </head>

@@ -5,6 +5,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 if (isset($_SESSION['admin'])){
     $routes = [
+        '/admin' => 'controllers/admin/admin.controller.php',
         '/admins' => 'controllers/admin/admin.controller.php',
         '/trainer-review' => 'controllers/reviews/review.controller.php',
         '/trainer-classroom' => 'controllers/classroom/classroom.controller.php',
@@ -21,8 +22,7 @@ if (isset($_SESSION['admin'])){
     ];
 }else{
     $routes = [
-        '/admin' => 'controllers/admin/signin_admin.controller.php',
-        
+    '/admin' => 'controllers/admin/signin_admin.controller.php',   
     '/adminTrainer' => 'controllers/trainers/adminTrainer.controller.php',
     '/addTrainer' => 'controllers/trainers/addTrainer.controller.php',
     //Course

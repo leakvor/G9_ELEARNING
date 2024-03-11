@@ -1,15 +1,22 @@
 <?php
 require '../../database/database.php';
 require '../../models/category.model.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $category= htmlspecialchars($_POST['cateName']);
-    $id = ($_POST['id']);
+    $category=$_POST['cateName'];
+    $id=$_POST['id'];
+    echo($category);
+    $image=$_FILES['im'];
+    var_dump ($img);
+
     
-    if(isset($_FILES['image'])){
-        $img_name=$_FILES['image']['name'];
-        $img_size=$_FILES['image']['size'];
-        $tmp_name=$_FILES['image']['tmp_name'];
-        $error=$_FILES['image']['error'];
+    if(empty($_FILES['img']['name'])){
+        updateCategorynoImg($category,$id);
+    }elseif(isset($_FILES['img'])){
+        $img_name=$_FILES['img']['name'];
+        $img_size=$_FILES['img']['size'];
+        $tmp_name=$_FILES['img']['tmp_name'];
+        $error=$_FILES['img']['error'];
         
         if($error===0){
             if($img_size > 12500000){
@@ -21,16 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 if(in_array($img_ex_lc,$allowed_exs)){
                     $new_img_name = uniqid("", true).'.'.$img_ex_lc;
-                    $img_upload_path = '../../assets/images/category/'.$new_img_name;
+                    $img_upload_path = "../../assets/images/category/".$new_img_name;
                     
                     if(move_uploaded_file($tmp_name, $img_upload_path)){
-                        $isCreate = updateCategory($category, $new_img_name,$id,);
+                        $isCreate = updateCategory($category, $new_img_name, $id,);
                         
                         if($isCreate){
-                            // Redirect or perform further actions
                             header('Location: /displayCategory');
                         } else {
-                            echo "<script>alert('Error occurred while updating category.');</script>";
+                            echo "<script>alert('Error occurred while updating course.');</script>";
                         }
                     } else {
                         echo "<script>alert('Error occurred while uploading file.');</script>";
@@ -41,7 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         } else {
             echo "<script>alert('Error occurred while uploading file.');</script>";
+
         }
     }
 }
-?>
+
+header('Location: /displayCategory');

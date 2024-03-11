@@ -10,7 +10,6 @@ function createAcc(string $username, string $email, string $password) : bool
         ':password' => $password,
         ':role' => 'user',
     ]);
-
     return $statement->rowCount() > 0;
 }
 
@@ -59,3 +58,29 @@ function deleteStudent(int $id) :bool
     return $statement->rowCount() > 0;
     
 }
+
+function updateStudent($username,$email,$password,$id,$img){
+    global $connection;
+    $statement= $connection->prepare("update users set username=:username,email =:email,password =:password,img=:img where user_id=:id");
+    $statement->execute([
+        ':id' => $id,
+        ':username'=>$username,
+        ':email' => $email,
+        ':password' => $password,
+        ':img'=>$img,
+    ]);
+    $statement->rowCount() >0;
+}
+
+function updateStudentNoImg($username,$email,$password,$id){
+    global $connection;
+    $statement= $connection->prepare("update users set username=:username,email =:email,password =:password where user_id=:id");
+    $statement->execute([
+        ':id' => $id,
+        ':username'=>$username,
+        ':email' => $email,
+        ':password' => $password,
+    ]);
+    $statement->rowCount() >0;
+}
+
