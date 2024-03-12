@@ -59,28 +59,28 @@ function updateCourseNotImge(int $id, string $title, int $user_id, int $cate_id,
 
     return $statement->rowCount() > 0;
 }
-function editcourse(int $id,string $title,int $cate_id,int $paid) : bool
+function editcourse(int $id, string $title, int $cate_id, int $paid): bool
 {
     global $connection;
     $statement = $connection->prepare("update course set title = :title,cate_id=:cate_id, paid=:paid where course_id=:id");
     $statement->execute([
-        ':id'=>$id,
+        ':id' => $id,
         ':title' => $title,
-        ':cate_id'=>$cate_id,
-        ':paid'=>$paid,
+        ':cate_id' => $cate_id,
+        ':paid' => $paid,
     ]);
     return $statement->rowCount() > 0;
 }
-function editcourseImg(int $id,string $title,int $cate_id,string $img,int $paid) : bool
+function editcourseImg(int $id, string $title, int $cate_id, string $img, int $paid): bool
 {
     global $connection;
     $statement = $connection->prepare("update course set title = :title,cate_id=:cate_id, course_img=:img, paid=:paid where course_id=:id");
     $statement->execute([
-        ':id'=>$id,
+        ':id' => $id,
         ':title' => $title,
-        ':cate_id'=>$cate_id,
-        ':img'=>$img,
-        ':paid'=>$paid,
+        ':cate_id' => $cate_id,
+        ':img' => $img,
+        ':paid' => $paid,
     ]);
     return $statement->rowCount() > 0;
 }
@@ -125,20 +125,40 @@ function displayCourseCategory()
     return $categoryCoursesCount;
 }
 
-function trainerCourse($id){
+function trainerCourse($id)
+{
     global $connection;
-    $statement=$connection->prepare("select * from course where user_id=:id");
+    $statement = $connection->prepare("select * from course where user_id=:id");
     $statement->execute(
-        [':id'=>$id]
+        [':id' => $id]
     );
     return $statement->fetchAll();
 }
 
-function eachCourse($course_id){
+function eachCourse($course_id)
+{
     global $connection;
     $statement = $connection->prepare("select * from course where course_id=:id");
     $statement->execute([
-        ':id'=>$course_id,
-    ]); 
+        ':id' => $course_id,
+    ]);
     return $statement->fetchAll();
+}
+
+function displaylessonid($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from lessons where lesson_id=:id");
+    $statement->execute([':id' => $id]);
+    return $statement->fetch();
+}
+
+function trainerCourseid($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where user_id=:id");
+    $statement->execute(
+        [':id' => $id]
+    );
+    return $statement->fetch();
 }

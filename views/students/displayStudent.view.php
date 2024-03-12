@@ -29,46 +29,9 @@
               
             <td><a class="btn bg-gradient-danger btn-danger" href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>  "onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:white;"></i></a>
-            <script>
-                        function functionDelete() {
-                          if (confirm("Are you sure you want to delete this student ?")) {
-                            
-                            return true;
-                          } else {
-                            return false;
-                          }
-                        }
-            </script> 
         </tr>
       <?php endforeach; ?>
       </tbody>
     </table>
   </div>
 </div>
-<script>
-  $(document).ready(function() {
-    $("#editIcon").click(function() {
-      $("#editModal").modal('show');
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('#search');
-    const tableRows = document.querySelectorAll('tbody tr');
-    console.log(tableRows);
-
-    searchInput.addEventListener('input', function() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-
-      tableRows.forEach(function(row) {
-        const title = row.cells[1].textContent.trim().toLowerCase();
-
-        if (title.includes(searchTerm)) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
