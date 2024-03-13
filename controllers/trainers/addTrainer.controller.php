@@ -4,6 +4,7 @@ require "models/trainer.model.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    var_dump($_POST);
     // Check if the expected form fields are present in $_POST
     if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
         // Retrieve and sanitize form data
@@ -39,7 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             $isCreate = createTrainer($username, $email, $password, $new_img_name);
                             if ($isCreate) {
                                 $teachers = getTeacher();
-                                    // require "views/trainers/adminTrainer.view.php";
+                                    require "views/trainers/adminTrainer.view.php";
+                                    // header("Location: /adminTrainer");
                             }
                         }else{
 
