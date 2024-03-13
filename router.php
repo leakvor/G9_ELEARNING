@@ -15,7 +15,6 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/coursepay' => 'views/students/student_pay.view.php',
         '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
         '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
-        '/displaystudentListTrainer' => 'controllers/trainers/displaystudentListTrainer.controller.php',
     ];
 }else{
     $routes = [
