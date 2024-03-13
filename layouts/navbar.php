@@ -302,17 +302,17 @@
                 <a href="/studentDashboard"><img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
                 <h5 class="card-title dropdown-item text-center"><?php echo $user['username']?></h5>
                 <p class="card-text dropdown-item text-center"><?php echo $user['email']?></p>
-                <!-- <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
+                <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
                   <input type="hidden" value="<?php echo $user['email']?>" name="email">
                   <Button type="submit" class="btn btn-primary editProfile" style="width:320px">Edit Profile</button>
                   <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">  
-                </form> -->
-                <form action="/updateprofile" method="post" enctype="multipart/form-data">
+                </form>
+                <!-- <form action="/updateprofile" method="post" enctype="multipart/form-data">
                   <input type="hidden" value="<?php echo $user['email']?>" name="email">
                   <Button type="submit" class="btn btn-primary editProfile" style="width:320px">Edit Profile</button>
-                  <!-- <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" 
+                  <!-<input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" 
                   style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">   -->
-                </form>
+                <!-- </form>  -->
             </div>
           </li>
 

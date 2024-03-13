@@ -80,7 +80,7 @@
                                 <!-- Avatar -->
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <a href="/studentEditprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>" alt="studentProfile"></a>
+                                        <a href="/updateprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
                                     </div>
                                 </div>
                                 <!-- Profile info -->
@@ -115,10 +115,10 @@
             </div>
         </section>
         <!-- =======================
-Page Banner END -->
+                Page Banner END -->
 
         <!-- =======================
-Page content START -->
+                Page content START -->
         <section class="pt-0">
             <div class="container">
                 <div class="row">

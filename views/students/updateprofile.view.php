@@ -100,7 +100,7 @@
             <!-- =========================================pic Students================== -->
             <div class="col-auto mt-4 mt-md-0">
               <div class="avatar avatar-xxl mt-n3">
-                <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>" alt="studentProfile">
+                <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile">
               </div>
             </div>
             <!-- Profile info -->
@@ -185,7 +185,7 @@ Page content START -->
                   <label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
                     <!-- Avatar place holder -->
                     <span class="avatar avatar-xl">
-                      <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>"  alt="">
+                      <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>"  alt="">
                     </span>
                     <!-- Remove btn -->
                     <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
