@@ -23,6 +23,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         '/displaystudentCourse' => 'controllers/courses/displaystudentCourse.controller.php',
+        '/displaystudentCourse' => 'controllers/courses/displaystudentCourse.controller.php',
 
        
     ];
