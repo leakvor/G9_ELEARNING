@@ -90,11 +90,6 @@ if (empty($trainerCourse)) {
     endforeach;
 }
 ?>
-	
-			
-
-		
-
 		<!-- Pagination START -->
 		<div class="col-12">
 			<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">

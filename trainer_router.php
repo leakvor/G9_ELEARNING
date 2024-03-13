@@ -18,11 +18,13 @@ if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
         '/updatelesson'=>'controllers/lesson/updatelesson.controller.php',
         '/createCourse' => 'controllers/trainerCourse/course.controller.php',
         '/updateCourse' => 'controllers/trainerCourse/formupdateCourses.controller.php',
+        
     
     ];
 }else{
         $routes = [
             '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
+            
         
       
             
