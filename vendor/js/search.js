@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
+
     const categorySelect = document.querySelector('select[name="category"]');
     categorySelect.addEventListener('change', filterCourses);
 
@@ -40,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 
+
+
+  
 // let trHis = document.querySelectorAll('tbody tr');
 // search.addEventListener('keyup', (e) => {
 //     let searchCha = e.target.value;

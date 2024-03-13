@@ -40,7 +40,7 @@
     <script src="vendor/js/deleteData.js"></script>
     <script src="vendor/js/validationCourseAdmin.js"></script>
     <script src="vendor/js/validationCategory.js"></script>
-    <!-- <script src="vendor/js/filterCategoryandTrainer.js"></script> -->
+    <script src="vendor/js/search_trainer.js"></script>
 </body>
 
 </html>
