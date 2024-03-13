@@ -1,97 +1,47 @@
 
 
 
-  <!-- <a href="/addTrainer" class="btn btn-danger">Add new trainer</a> -->
-<script>
-  (function() {
-    'use strict';
-    // $usernameError = "";
-    // $emailError = "";
-    // $passwordError = "";
-    let regex_email = /^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/;
-    let $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    let forms = document.querySelectorAll('.needs-validation');
-
-    // Loop  prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function(form) {
-        form.addEventListener('submit', function(event) {
-          // Validate email
-          let emailInput = form.querySelector('input[name="email"]');
-          let email = emailInput.value.trim();
-          if (!regex_email.test(email)) {
-            alert("Invalid email format. Please enter a valid email address.");
-            emailInput.focus();
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-          }
-
-          // Validate password strength
-          let passwordInput = form.querySelector('input[name="password"]');
-          let password = passwordInput.value.trim();
-          if (password.length = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/".test(password)) {
-            alert("Password must be at least 8 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character.");
-            passwordInput.focus();
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-          }
-
-          // form is valid allow form submission
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-  })();
-</script>
-
 <?php
-$usernameError = "";
-$emailError = "";
-$passwordError = "";
-if (isset($_POST['submit'])){
-  $username = $_POST['username'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+// $usernameError = "";
+// $emailError = "";
+// $passwordError = "";
+// if (isset($_POST['submit'])){
+//   $username = $_POST['username'];
+//   $email = $_POST['email'];
+//   $password = $_POST['password'];
 
-  if (empty($username)){
-    $usernameError ="username is required";
+//   if (empty($username)){
+//     $usernameError ="username is required";
 
-  }else{
-    $username = trim($username);
-    $username = htmlspecialchars($username);
-    if (!preg_match("/^[a-zA-Z]+$/",$username)){
-      $usernameError ="username is not a valid";
-  }
-}
-  if (empty($email)){
-    $emailError ="username is required";
+//   }else{
+//     $username = trim($username);
+//     $username = htmlspecialchars($username);
+//     if (!preg_match("/^[a-zA-Z]+$/",$username)){
+//       $usernameError ="username is not a valid";
+//   }
+// }
+//   if (empty($email)){
+//     $emailError ="username is required";
 
-  }else{
-    $email = trim($email);
-    $email = htmlspecialchars($email);
-    if (!preg_match("/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/",$email)){
-      $emailError ="your email is not a valid";
-  }
-}
-  if (empty($password)){
-    $passwordError ="your username is required";
+//   }else{
+//     $email = trim($email);
+//     $email = htmlspecialchars($email);
+//     if (!preg_match("/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z]{2,18}\.[a-z]{1,3}$/",$email)){
+//       $emailError ="your email is not a valid";
+//   }
+// }
+//   if (empty($password)){
+//     $passwordError ="your username is required";
 
-  }else{
-    $password = trim($password);
-    $password = htmlspecialchars($password);
-    if (!preg_match("/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/",$password)){
-      $passwordError ="your password is not a valid";
-  }
-}
+//   }else{
+//     $password = trim($password);
+//     $password = htmlspecialchars($password);
+//     if (!preg_match("/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/",$password)){
+//       $passwordError ="your password is not a valid";
+//   }
+// }
 
-}
+// }
 ?>
 
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
@@ -115,22 +65,15 @@ if (isset($_POST['submit'])){
         <!-- Modal body -->
         <div class="modal-body ">
           <div class="modal-body">
-            <form action="/addTrainer" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <form action="/addTrainer" method="post" enctype="multipart/form-data" >
               <div class="form-group mt-3">
                 <input type="text" class="form-control bg-white" name="username" placeholder="UserName" id="validationCustom03" required>
               </div>
               <div class="form-group mt-3">
                 <input type="email" class="form-control bg-white" name="email" placeholder="Email" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-                <?php if (isset($emailError)) : ?>
-                  <span style="color:red"><?php echo $emailError ?></span>
-                <?php endif; ?>
-
               </div>
               <div class="form-group mt-3">
-                <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" required>
-                <?php if (isset($passwordError)) : ?>
-                  <span><?php echo $passwordError ?></span>
-                <?php endif; ?>
+                <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" >
               </div>
               <div class="form-group mt-3">
                 <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
@@ -153,7 +96,6 @@ if (isset($_POST['submit'])){
         <th scope="col">id</th>
         <th scope="col">FirstName</th>
         <th scope="col">Email</th>
-        <!-- <th scope="col">Password</th> -->
         <th scope="col">Img</th>
         <th scope="col">Action</th>
       </tr>
@@ -232,26 +174,3 @@ if (isset($_POST['submit'])){
 
 </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('#search');
-    console.log(searchInput.value);
-    const tableRows = document.querySelectorAll('tbody tr');
-    console.log(tableRows);
-
-    searchInput.addEventListener('input', function() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-      console.log(searchTerm);
-      tableRows.forEach(function(row) {
-        const name = row.cells[1].textContent.trim().toLowerCase();
-
-        if (name.includes(searchTerm)) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    });
-  });
-</script>

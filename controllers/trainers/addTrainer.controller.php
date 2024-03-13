@@ -4,6 +4,7 @@ require "models/trainer.model.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    var_dump($_POST);
     // Check if the expected form fields are present in $_POST
     if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
         // Retrieve and sanitize form data
@@ -51,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }else{
-    require "views/trainers/adminTrainer.view.php";
+    // require "views/trainers/adminTrainer.view.php";
 }
 if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['password'])) : ?>
     <script>
@@ -60,7 +61,7 @@ if (empty($_POST['username']) && empty($_POST['email']) && empty($_POST['passwor
 <?php endif ?>
 <?php
 $teachers = getTeacher();
-require "views/trainers/adminTrainer.view.php";
+// require "views/trainers/adminTrainer.view.php";
 ?>
 
 

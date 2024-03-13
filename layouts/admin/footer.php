@@ -35,6 +35,8 @@
 
     <!-- Template Javascript -->
     <script src="vendor/js/main.js"></script>
+    <script src="vendor/js/search.js"></script>
+
 </body>
 
 </html>
