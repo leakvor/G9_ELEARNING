@@ -1,7 +1,7 @@
 <?php
 // session_start();
-require '../../database/database.php';
-require '../../models/category.model.php';
+require "../../database/database.php";
+require "../../models/category.model.php";
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $category=$_POST['cateName'];
         echo($category);

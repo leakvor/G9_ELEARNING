@@ -1,6 +1,6 @@
 <?php
-require '../../database/database.php';
-require '../../models/lesson.model.php';
+require "../../database/database.php";
+require "../../models/lesson.model.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $lesson_title = $_POST['lesson_title'];

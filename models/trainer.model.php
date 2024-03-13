@@ -1,6 +1,5 @@
 <?php
-
-function getTeacher() : array
+function getTeacher(): array
 {
     global $connection;
     $statement = $connection->prepare("select * from users where role='teacher'");
@@ -8,35 +7,12 @@ function getTeacher() : array
     return $statement->fetchAll();
 }
 
-
-// function createTrainer(string $username, string $email, string $password, string $img) : bool
-// {
-//     global $connection;
-//     $statement = $connection->prepare("insert into users (username,email,password,role,img) values (:username, :email,:password,:role,:img)");
-//     $statement->execute([
-//         ':username'=>$username,
-//         ':email'=>$email,
-//         ':password'=>$password,
-//         ':role'=>"teacher",
-//         ':img'=>$img,
-
-//     ]);
-
-//     return $statement->rowCount() > 0;
-// }
-
-
-
-
-
-
-function createTrainer(string $username, string $email, string $password, string $img) : bool
+function createTrainer(string $username, string $email, string $password, string $img): bool
 {
     global $connection;
     $checkStatement = $connection->prepare("select count(*) from users where email = :email");
     $checkStatement->execute([':email' => $email]);
     $count = $checkStatement->fetchColumn();
-
     if ($count > 0) {
         return false;
     }
@@ -49,7 +25,6 @@ function createTrainer(string $username, string $email, string $password, string
         ':role' => "teacher",
         ':img' => $img,
     ]);
-
     return $result;
 }
 
@@ -62,39 +37,38 @@ function deleteTeacher(int $id): bool
     return $statement->rowCount() > 0;
 }
 
-function updateTeacher($username,$email,$password,$id,$img){
+function updateTeacher($username, $email, $password, $id, $img)
+{
     global $connection;
-    $statement= $connection->prepare("update users set username=:username,email =:email,password =:password,img=:img where user_id=:id");
+    $statement = $connection->prepare("update users set username=:username,email =:email,password =:password,img=:img where user_id=:id");
     $statement->execute([
         ':id' => $id,
-        ':username'=>$username,
+        ':username' => $username,
         ':email' => $email,
         ':password' => $password,
-        ':img'=>$img,
+        ':img' => $img,
     ]);
-    $statement->rowCount() >0;
+    $statement->rowCount() > 0;
 }
 
-function updateTeacherNoImg($username,$email,$password,$id){
+function updateTeacherNoImg($username, $email, $password, $id)
+{
     global $connection;
-    $statement= $connection->prepare("update users set username=:username,email =:email,password =:password where user_id=:id");
+    $statement = $connection->prepare("update users set username=:username,email =:email,password =:password where user_id=:id");
     $statement->execute([
         ':id' => $id,
-        ':username'=>$username,
+        ':username' => $username,
         ':email' => $email,
         ':password' => $password,
     ]);
-    $statement->rowCount() >0;
+    $statement->rowCount() > 0;
 }
 
-function trainer_students($email) {
-    // return $email;
+function trainer_students($email)
+{
     global $connection;
     $statement = $connection->prepare("SELECT * FROM course INNER JOIN users ON course.user_id = users.user_id WHERE email = :email");
     $statement->execute([":email" => $email]);
-    
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
     return $result;
 }
-

@@ -4,9 +4,7 @@ require "models/trainer.model.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Check if the expected form fields are present in $_POST
     if (isset($_POST['username'], $_POST['email'], $_POST['password'])) {
-        // Retrieve and sanitize form data
         $username = htmlspecialchars($_POST['username']);
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);

@@ -10,7 +10,6 @@
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
 				<!-- Logo END -->
-
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -19,12 +18,10 @@
 						<span></span>
 					</span>
 				</button>
-
 				<!-- Main navbar START -->
 				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
 				</div>
 				<!-- Main navbar END -->
-
 				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
 					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
@@ -87,16 +84,16 @@ Page Banner START -->
 				}else{
 					echo 'NOT SET!';
 				}
-				require('database/database.php');
-				require('models/student.model.php');
-				require('./models/trainer.model.php');
+				require "database/database.php";
+				require "models/student.model.php";
+				require "./models/trainer.model.php";
 
 				$trainer_email = $trainer['email'];
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
 					if (isset($trainer_profile)){
-						// echo "<script>alert('Edit profile!');</script>";
+						
 					}
 				}
 				

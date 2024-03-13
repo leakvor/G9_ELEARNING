@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('../../database/database.php');
-require('../../models/student.model.php');
+require "../../database/database.php";
+require "../../models/student.model.php";
 
 $no_account = "Undefine your account!";
 $wrong_password = "Please correct email or password!";
