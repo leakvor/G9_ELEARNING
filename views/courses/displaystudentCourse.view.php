@@ -165,6 +165,7 @@
                                         <li> <a class="dropdown-item" href="instructor-payout.html"><i class="fas fa-wallet fa-fw me-1"></i>Payout</a> </li>
                                     </ul>
                                 </li>
+                                
                                 <!-- Dropdown submenu -->
                                 <li class="dropdown-submenu dropend">
                                     <a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>Student</a>
@@ -214,12 +215,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <?php
-                        $statement = $connection->prepare("select * from category");
-                        $statement->execute();
-                        $categories = $statement->fetchAll();
-                        ?>
-                        <!-- Nav item 4 Component-->
+                        
                         <li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
                         <!-- Nav item 5 link-->
                         <li class="nav-item dropdown">
@@ -573,7 +569,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                       
+                            <?php 
+                            if(isset($_SESSION['user'])){
+                                $user=$_SESSION['user'];
+                                $id=$user['user_id'];
+                                // var_dump($id);
+                            }
+                             ?>
                             <!-- Card item END -->
                             <!-- Card item START -->
                             <div class="col-sm-6 col-lg-4 col-xl-3">
