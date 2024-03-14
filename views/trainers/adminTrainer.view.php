@@ -103,7 +103,7 @@
                         <input type="text" class="form-control bg-white" name="email" placeholder="Email" value="<?= $teacher['email'] ?>">
                       </div>
                       <div class="form-group mt-3">
-                        <!-- <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" value=""> -->
+                        <input type="hidden" class="form-control bg-white" name="password" placeholder="Password" id="password" value="<?=$teacher['password']?>">
                       </div>
                       <div class="form-group mt-3">
                         <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
