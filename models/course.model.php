@@ -1,12 +1,18 @@
 <?php
 
-function getCourse(): array
-{
-    global $connection;
+if (!function_exists('getCourse')) {
+    function getCourse() {
+        // Function logic here
+        global $connection;
     $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
     $statement->execute();
     return $statement->fetchAll();
+    }
 }
+// function getCourse(): array
+// {
+    
+// }
 
 function createCourse(string $title, string $img, int $user_id, int $cate_id, int $paid)
 {
@@ -59,28 +65,28 @@ function updateCourseNotImge(int $id, string $title, int $user_id, int $cate_id,
 
     return $statement->rowCount() > 0;
 }
-function editcourse(int $id,string $title,int $cate_id,int $paid) : bool
+function editcourse(int $id, string $title, int $cate_id, int $paid): bool
 {
     global $connection;
     $statement = $connection->prepare("update course set title = :title,cate_id=:cate_id, paid=:paid where course_id=:id");
     $statement->execute([
-        ':id'=>$id,
+        ':id' => $id,
         ':title' => $title,
-        ':cate_id'=>$cate_id,
-        ':paid'=>$paid,
+        ':cate_id' => $cate_id,
+        ':paid' => $paid,
     ]);
     return $statement->rowCount() > 0;
 }
-function editcourseImg(int $id,string $title,int $cate_id,string $img,int $paid) : bool
+function editcourseImg(int $id, string $title, int $cate_id, string $img, int $paid): bool
 {
     global $connection;
     $statement = $connection->prepare("update course set title = :title,cate_id=:cate_id, course_img=:img, paid=:paid where course_id=:id");
     $statement->execute([
-        ':id'=>$id,
+        ':id' => $id,
         ':title' => $title,
-        ':cate_id'=>$cate_id,
-        ':img'=>$img,
-        ':paid'=>$paid,
+        ':cate_id' => $cate_id,
+        ':img' => $img,
+        ':paid' => $paid,
     ]);
     return $statement->rowCount() > 0;
 }
@@ -125,20 +131,40 @@ function displayCourseCategory()
     return $categoryCoursesCount;
 }
 
-function trainerCourse($id){
+function trainerCourse($id)
+{
     global $connection;
-    $statement=$connection->prepare("select * from course where user_id=:id");
+    $statement = $connection->prepare("select * from course where user_id=:id");
     $statement->execute(
-        [':id'=>$id]
+        [':id' => $id]
     );
     return $statement->fetchAll();
 }
 
-function eachCourse($course_id){
+function eachCourse($course_id)
+{
     global $connection;
     $statement = $connection->prepare("select * from course where course_id=:id");
     $statement->execute([
-        ':id'=>$course_id,
-    ]); 
+        ':id' => $course_id,
+    ]);
     return $statement->fetchAll();
+}
+
+function displaylessonid($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from lessons where lesson_id=:id");
+    $statement->execute([':id' => $id]);
+    return $statement->fetch();
+}
+
+function trainerCourseid($id)
+{
+    global $connection;
+    $statement = $connection->prepare("select * from users where user_id=:id");
+    $statement->execute(
+        [':id' => $id]
+    );
+    return $statement->fetch();
 }

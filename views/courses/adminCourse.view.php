@@ -1,12 +1,11 @@
 <?php
 require "database/database.php";
-$statement = $connection->prepare("select * from users where role='teacher'");
-$statement->execute();
-$teachers = $statement->fetchAll();
+require "models/trainer.model.php";
+require "models/category.model.php";
+// require "models/course.model.php";
+$teachers=getTeacher();
+$categories= getCategorys();
 
-$statement = $connection->prepare("select * from category");
-$statement->execute();
-$categories = $statement->fetchAll();
 ?>
 <div class="container-fluid pt-4 px-4">
   <div style="display: flex;flex-direction: column;">
@@ -110,16 +109,7 @@ $categories = $statement->fetchAll();
             <td><?= $course['paid'] ?>$</td>
             <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>" class="btn bg-gradient-danger btn-danger" onclick="return functionDelete()">
                 <i class="fa fa-trash" style="color:white;"></i></a>
-              <script>
-                function functionDelete() {
-                  if (confirm("Are you sure you want to delete this course?")) {
-
-                    return true; // Proceed with deletion
-                  } else {
-                    return false; // Cancel deletion
-                  }
-                }
-              </script>
+            
               <a href="#" class="btn bg-gradient-danger btn-info">
                 <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $course['course_id'] ?>" style="cursor: pointer;color:white;"></i>
               </a>
@@ -134,12 +124,7 @@ $categories = $statement->fetchAll();
                     </div>
                     <div class="modal-body">
                       <?php
-                      $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.paid, course.title, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where course_id=:id;");
-                      $statement->execute(
-                        [':id' => $course['course_id']],
-                      );
-                      $course = $statement->fetch();
-                      // var_dump($course['img'])
+                      $course=displayCourseid($course['course_id']);
                       ?>
                       <form action="controllers/courses/updateCourse.controller.php" method="post" enctype="multipart/form-data">
                         <div class="form-group mt-3">
@@ -191,78 +176,3 @@ $categories = $statement->fetchAll();
   </div>
 </div>
 </div>
-
-<script>
-  $(document).ready(function() {
-    $("#editIcon").click(function() {
-      $("#editModal").modal('show');
-    });
-  });
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.querySelector('#search');
-    const tableRows = document.querySelectorAll('tbody tr');
-
-    searchInput.addEventListener('input', function() {
-      const searchTerm = searchInput.value.trim().toLowerCase();
-
-      tableRows.forEach(function(row) {
-        const title = row.cells[1].textContent.trim().toLowerCase();
-
-        if (title.includes(searchTerm)) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    });
-
-    const categorySelect = document.querySelector('select[name="category"]');
-    categorySelect.addEventListener('change', filterCourses);
-
-    const teacherSelect = document.querySelector('select[name="teacher"]');
-    teacherSelect.addEventListener('change', filterCourses);
-
-    function filterCourses() {
-      const selectedCategory = categorySelect.value;
-      const selectedTeacher = teacherSelect.value;
-
-      tableRows.forEach(function(row) {
-        const courseCategory = row.cells[3].textContent.trim();
-        const courseTeacher = row.cells[2].textContent.trim();
-
-        if ((selectedCategory === '#' || courseCategory === selectedCategory) &&
-          (selectedTeacher === '#' || courseTeacher === selectedTeacher)) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    }
-  });
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const input = document.querySelector("#title");
-    const submitBtn = document.querySelector("#submitBtn");
-    const validationMsg = document.querySelector("#titleValidationMsg");
-
-    input.addEventListener("input", (e) => {
-      const text = input.value.trim();
-      checkInput(text);
-    });
-
-    function checkInput(text) {
-      const regex = /^[a-zA-Z\s]{4,20}$/; // Modify the regex pattern as needed
-      const isValid = regex.test(text);
-
-      if (isValid) {
-        validationMsg.textContent = ""; // Clear any existing validation message
-        submitBtn.removeAttribute("disabled");
-      } else {
-        validationMsg.textContent = "Please enter a valid title (at least 4 and small than 20 characters with letters and spaces only).";
-        submitBtn.setAttribute("disabled", "true");
-      }
-    }
-  });
-</script>

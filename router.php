@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $page = "";
 
@@ -15,6 +16,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/coursepay' => 'views/students/student_pay.view.php',
         '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
         '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
+        '/stu_lesson' => 'controllers/students/stu_lesson.view.controller.php'
     ];
 }else{
     $routes = [
@@ -38,3 +40,4 @@ require "layouts/navbar.php";
 require $page;
 require "layouts/footer.php";
 
+// already

@@ -115,9 +115,8 @@ Page Banner START -->
 Page Banner END -->
 <?php
 	require("database/database.php");
-		$statement = $connection->prepare("select * from lessons where lesson_id=:id");
-		$statement->execute([':id' => $id]);
-		$lesson=$statement->fetch();
+	require ("models/course.model.php");
+	$lesson=displaylessonid($id);
 	?>
 <!-- =======================
 Steps START -->

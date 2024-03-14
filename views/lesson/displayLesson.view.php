@@ -179,137 +179,74 @@ Page Banner END -->
 Page content START -->
     <section class="pt-0">
       <div class="container">
-        <div class="row">
-          <!-- Right sidebar START -->
-          <div class="col-xl-3">
-            <!-- Responsive offcanvas body START -->
-            <nav class="navbar navbar-light navbar-expand-xl mx-0">
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <!-- Offcanvas header -->
-                <div class="offcanvas-header bg-light">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">My profile</h5>
-                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <!-- Offcanvas body -->
-                <div class="offcanvas-body p-3 p-xl-0">
-                  <div class="bg-dark border rounded-3 pb-0 p-3 w-100">
-                    <!-- Dashboard menu -->
-                    <div class="list-group list-group-dark list-group-borderless">
-                      <a class="list-group-item" href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-                      <a class="list-group-item" href=""><i class="bi bi-basket fa-fw me-2"></i>My Category</a>
-                      <a class="list-group-item active" href="instructor-manage-course.html"><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-                      <a class="list-group-item" href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-                      <a class="list-group-item" href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
-                      <a class="list-group-item" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</a>
-                      <a class="list-group-item" href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
-                      <a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign
-                        Out</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </nav>
-            <!-- Responsive offcanvas body END -->
-          </div>
-          <!-- Right sidebar END -->
 
-          <!-- Main content START -->
-          <div class="col-xl-9">
-
-            
-            <!-- Counter boxes END -->
-
-            <!-- Chart START -->
-            <!-- <div class="row mt-5"> -->
-              <div class="col-1">
-                <div class="card">
-                  <div class="row ">
-                </div>
-              </div>
-            </div>
-            <!-- Chart END -->
-
-            <!-- Course List table START -->
-            <div class="row">
-              <div class="col-12">
-                <div class="card border rounded-3">
-                  <!-- Card header START -->
-                  <div class="card-header border-bottom">
-                    <div class="d-sm-flex justify-content-sm-between align-items-center">
-                      <h3 class="mb-2 mb-sm-0">Most Selling Lesson</h3>
-                      <a href="#" class="btn btn-sm btn-primary-soft mb-0">View all</a>
-                    </div>
-                  </div>
+        <div class="card-header border-bottom">
+          <div class="d-sm-flex justify-content-sm-between align-items-center">
+            <h3 class="mb-2 mb-sm-0">Most Selling Lesson</h3>
+            <a href="#" class="btn btn-sm btn-primary-soft mb-0">View all</a>
+        </div>
+      </div>
                   <!-- Card header END -->
-
-
-<!-- Card body START -->
-                  <div class="card-body">
-                    <div class="table-responsive-lg border-0 rounded-3">
-                      <!-- Table START -->
-                      <table class="table table-dark-gray align-middle p-4 mb-0">
+      <div class="card-body">
+        <div class="table-responsive-lg border-0 rounded-3">
+          <!-- Table START -->
+          <table class="table table-dark-gray align-middle p-4 mb-0">
                         <!-- Table head -->
-                        <thead>
-                          <tr>
-                            <th scope="col" class="border-0 rounded-start">Document</th>
-                            <th scope="col" class="border-0 ">Lesson Name</th>
-                            <th scope="col" class="border-0 rounded-end">Action</th>
-                          </tr>
-                        </thead>
+            <thead>
+              <tr>
+                <th scope="col" class="border-0 rounded-start">Document</th>
+                <th scope="col" class="border-0 ">Lesson Name</th>
+                <th scope="col" class="border-0 rounded-end">Action</th>
+              </tr>
+            </thead>
                         <!-- Table body START -->
-                        <tbody>
+            <tbody>
 <!-- ====================================for loop============================================= -->
-                        <?php  
-                        foreach ($displaylessons as $lesson):
-                        // var_dump($lesson)
-                        ?>
-                          <tr>
+            <?php  
+            foreach ($displaylessons as $lesson):
+            // var_dump($lesson)
+            ?>
                          
-                            <!-- Course item -->
-                            <!-- document item -->
-                          <td>
-                          <iframe width="200" height="100" src="<?= $lesson['document']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                          </td>
-                          <td>
-                              <div class="d-flex align-items-center">
-                                <!-- Image -->
-                                <!-- <div class="w-100px w-md-60px">
-                                  <img src="assets/images/courses/4by3/08.jpg" class="rounded" alt="">
-                                  
-                                </div> -->
-                                <!-- Title -->
-                                <h6 class="mb-0 ms-2">
-                                  <a href="#"​><?= $lesson['lesson_title']?></a>
-                                </h6>
-                              </div>
-                            </td>
-                          <td style="display: flex;margin-top:30px;">
-                            <form action="/formlessonedit" method='post' style=" margin-bottom:50px;">
-                              <input type="hidden" value="<?=$lesson['lesson_id']; ?>" name="id">
-                              <button type="submit" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></button>
-                            </form>
-                              <a href="../../controllers/lesson/deletelesson.controller.php?id=<?=$lesson['lesson_id'] ?>"onclick="return functionDelete()"class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></a>
-                              <script>
-                                          function functionDelete() {
-                                            if (confirm("Are you sure you want to delete this lesson?")) {
+            <!-- Course item -->
+            <!-- document item -->
+            <td>
+              <iframe width="200" height="100" src="<?= $lesson['document']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </td>
+            <td>
+              <div class="d-flex align-items-center">                  
+                <!-- Title -->
+                <h6 class="mb-0 ms-2">
+                  <a href="#"​><?= $lesson['lesson_title']?></a>
+                </h6>
+              </div>
+            </td>
+            <td style="display: flex;margin-top:30px;">
+              <form action="/formlessonedit" method='post' style=" margin-bottom:50px;">
+                <input type="hidden" value="<?=$lesson['lesson_id']; ?>" name="id">
+                <button type="submit" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></button>
+              </form>
+              <a href="../../controllers/lesson/deletelesson.controller.php?id=<?=$lesson['lesson_id'] ?>"onclick="return functionDelete()"class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fas fa-fw fa-times"></i></a>
+                <script>
+                  function functionDelete() {
+                    if (confirm("Are you sure you want to delete this lesson?")) {
                                               
-                                              return true; // Proceed with deletion
-                                            } else {
-                                              return false; // Cancel deletion
-                                            }
-                                          }
-                              </script>
-                            </td>
-                          </tr>
-                          <?php endforeach?>
-                        </tbody>
-                        <!-- Table body END -->
-                      </table>
-                      <!-- Table END -->
-                    </div>
+                    return true; // Proceed with deletion
+                    } else {
+                      return false; // Cancel deletion
+                    }
+                  }
+                </script>
+              </td>
+              </tr>
+                <?php endforeach?>
+                  </tbody>
+                    <!-- Table body END -->
+                  </table>
+                  <!-- Table END -->
+              </div>
 
                     <!-- Pagination -->
-                    <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-3">
+              <div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-3">
                       <!-- Content -->
                       <p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
                       <!-- Pagination -->
