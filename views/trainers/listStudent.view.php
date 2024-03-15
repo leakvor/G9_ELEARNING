@@ -369,6 +369,17 @@ Page content START -->
               </div>
               <!-- Card header END -->
 
+
+          <!-- Main content START -->
+          <div class="col-xl-9">
+            <!-- Card START -->
+            <div class="card border bg-transparent rounded-3">
+              <!-- Card header START -->
+              <div class="card-header bg-transparent border-bottom">
+                <h3 class="mb-0">My Students List</h3>
+              </div>
+              <!-- Card header END -->
+
               <!-- Card body START -->
               <div class="card-body">
 
