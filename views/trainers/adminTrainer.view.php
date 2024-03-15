@@ -92,6 +92,25 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
+                  <div class="modal-body">
+                      <form action="controllers/trainers/trainer.update.controller.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group mt-3">
+                          <input type="hidden" name="id" value="<?= $teacher['user_id'] ?>">
+                          <input type="text" class="form-control bg-white" name="username" placeholder="UserName" value="<?= $teacher['username'] ?>">
+                        </div>
+                        <div class="form-group mt-3">
+                          <input type="text" class="form-control bg-white" name="email" placeholder="Email" value="<?= $teacher['email'] ?>">
+                        </div>
+                        <div class="form-group mt-3">
+                          <!-- <input type="password" class="form-control bg-white" name="password" placeholder="Password" id="password" value=""> -->
+                        </div>
+                        <div class="form-group mt-3">
+                          <input type="file" class="form-control bg-white" name="img" placeholder="Choose img">
+                        </div>
+                        <button class="btn btn-danger mt-3">Edit</button>
+                    </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
