@@ -71,9 +71,6 @@
                 <i class="fas fa-edit editIcon" data-toggle="modal" data-target="#editModal<?= $teacher['user_id'] ?>" style="cursor: pointer;color:white; margin-top:3px"></i>
               </a>
             <div class="modal fade" id="editModal<?= $teacher['user_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel<?= $teacher['user_id'] ?>" aria-hidden="true">
-
-
-
               <!-- ---------form edit--------- -->
               <div class="modal-dialog" role="document">
                 <div class="modal-content" style="background-color: black; border: 1px solid white;">
