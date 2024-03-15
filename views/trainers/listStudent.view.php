@@ -1,5 +1,4 @@
 <body>
-
   <!-- Header START -->
   <header class="navbar-light navbar-sticky">
     <!-- Logo Nav START -->
@@ -20,10 +19,8 @@
             <span></span>
           </span>
         </button>
-
         <!-- Main navbar START -->
         <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-
           <!-- Nav Main menu START -->
           <ul class="navbar-nav navbar-nav-scroll mx-auto">
             <!-- Nav item 1 Demos -->
@@ -46,14 +43,12 @@
                 <li> <a class="dropdown-item" href="request-access.html">Free Access</a></li>
                 <li> <a class="dropdown-item" href="university-admission-form.html">Admission Form</a>
                 </li>
-
                 <li>
                   <hr class="dropdown-divider">
                 </li>
                 <li class="dropdown-submenu dropend">
                   <a class="dropdown-item dropdown-toggle" href="#">Dropdown levels</a>
                   <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-
                     <!-- dropdown submenu open right -->
                     <li class="dropdown-submenu dropend">
                       <a class="dropdown-item dropdown-toggle" href="#">Dropdown (end)</a>
@@ -63,7 +58,7 @@
                       </ul>
                     </li>
                     <li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-					<!-- dropdown submenu open left -->
+                    <!-- dropdown submenu open left -->
                     <li class="dropdown-submenu dropstart">
                       <a class="dropdown-item dropdown-toggle" href="#">Dropdown (start)</a>
                       <ul class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
@@ -76,7 +71,6 @@
                 </li>
               </ul>
             </li>
-
             <!-- Nav item 2 Pages -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
@@ -109,7 +103,6 @@
                         Video</a></li>
                   </ul>
                 </li>
-
                 <!-- Dropdown submenu -->
                 <li class="dropdown-submenu dropend">
                   <a class="dropdown-item dropdown-toggle" href="#">About</a>
@@ -122,12 +115,11 @@
                     <li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
                   </ul>
                 </li>
-
                 <li> <a class="dropdown-item" href="/trainers">Instructor List</a></li>
                 <li> <a class="dropdown-item" href="/trainers">Instructor Single</a></li>
                 <li> <a class="dropdown-item" href="become-instructor.html">Become an Instructor</a>
                 </li>
-				<!-- Dropdown submenu -->
+                <!-- Dropdown submenu -->
                 <li class="dropdown-submenu dropend">
                   <a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
                   <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -137,7 +129,6 @@
                     </li>
                   </ul>
                 </li>
-
                 <li> <a class="dropdown-item" href="faq.html">FAQs</a></li>
                 <li> <a class="dropdown-item" href="error-404.html">Error 404</a></li>
                 <li> <a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
@@ -179,7 +170,7 @@
 
           <!-- Nav item 4 Component-->
           <li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
-		  <!-- Nav item 5 link-->
+          <!-- Nav item 5 link-->
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fas fa-ellipsis-h"></i>
@@ -225,7 +216,7 @@
           <!-- Nav Search END -->
         </div>
         <!-- Main navbar END -->
-		<!-- Profile START -->
+        <!-- Profile START -->
         <div class="dropdown ms-1 ms-lg-0">
           <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
             <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
@@ -272,16 +263,11 @@
     </nav>
     <!-- Logo Nav END -->
   </header>
-
-
-
-  <!-- Header END -->
-
   <!-- **************** MAIN CONTENT START **************** -->
   <main>
-	<!-- =======================
+    <!-- =======================
 Page Banner START -->
-<section class="pt-0">
+    <section class="pt-0">
       <!-- Main banner background image -->
       <div class="container-fluid px-0">
         <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -319,9 +305,7 @@ Page Banner START -->
               </div>
             </div>
             <!-- Profile banner END -->
-
             <!-- Advanced filter responsive toggler START -->
-            <!-- Divider -->
             <hr class="d-xl-none">
             <div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
               <a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
@@ -336,9 +320,9 @@ Page Banner START -->
     </section>
     <!-- =======================
 Page Banner END -->
-<!-- =======================
+    <!-- =======================
 Page content START -->
-<section class="pt-0">
+    <section class="pt-0">
       <div class="container">
         <div class="row">
           <!-- Right sidebar START -->
@@ -375,317 +359,315 @@ Page content START -->
             <!-- Responsive offcanvas body END -->
           </div>
           <!-- Right sidebar END -->
+          <!-- Main content START -->
+          <div class="col-xl-9">
+            <!-- Card START -->
+            <div class="card border bg-transparent rounded-3">
+              <!-- Card header START -->
+              <div class="card-header bg-transparent border-bottom">
+                <h3 class="mb-0">My Students List</h3>
+              </div>
+              <!-- Card header END -->
 
-         
-			<!-- Main content START -->
-			<div class="col-xl-9">
-				<!-- Card START -->
-				<div class="card border bg-transparent rounded-3">
-					<!-- Card header START -->
-					<div class="card-header bg-transparent border-bottom">
-						<h3 class="mb-0">My Students List</h3>
-					</div>
-					<!-- Card header END -->
+              <!-- Card body START -->
+              <div class="card-body">
 
-					<!-- Card body START -->
-					<div class="card-body">
+                <!-- Search and select START -->
+                <div class="row g-3 align-items-center justify-content-between mb-4">
+                  <!-- Search -->
+                  <div class="col-md-8">
+                    <form class="rounded position-relative">
+                      <input class="form-control pe-5 bg-transparent" name="search" type="search" placeholder="Search" aria-label="Search">
+                      <button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
+                        <i class="fas fa-search fs-6 "></i>
+                      </button>
+                    </form>
+                  </div>
 
-						<!-- Search and select START -->
-						<div class="row g-3 align-items-center justify-content-between mb-4">
-							<!-- Search -->
-							<div class="col-md-8">
-								<form class="rounded position-relative">
-									<input class="form-control pe-5 bg-transparent" name="search" type="search" placeholder="Search" aria-label="Search">
-									<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
-								<i class="fas fa-search fs-6 "></i>
-							</button>
-								</form>
-							</div>
+                  <!-- Select option -->
+                  <div class="col-md-3">
+                    <!-- Short by filter -->
+                    <form>
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </form>
+                  </div>
+                </div>
+                <!-- Search and select END -->
 
-							<!-- Select option -->
-							<div class="col-md-3">
-								<!-- Short by filter -->
-								<form>
-									<select class="form-select" aria-label="Default select example">
-									<option selected>Open this select menu</option>
-									<option value="1">One</option>
-									<option value="2">Two</option>
-									<option value="3">Three</option>
-									</select>
-								</form>
-							</div>
-						</div>
-						<!-- Search and select END -->
+                <!-- Student list table START -->
+                <div class="table-responsive border-0">
+                  <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                    <!-- Table head -->
+                    <thead>
+                      <tr>
+                        <th scope="col" class="border-0 rounded-start">Student name</th>
+                        <th scope="col" class="border-0">Progress</th>
+                        <th scope="col" class="border-0">Courses</th>
+                        <th scope="col" class="border-0">Enrolled date</th>
+                        <th scope="col" class="border-0 rounded-end">Action</th>
+                      </tr>
+                    </thead>
 
-						<!-- Student list table START -->
-						<div class="table-responsive border-0">
-							<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
-								<!-- Table head -->
-								<thead>
-									<tr>
-										<th scope="col" class="border-0 rounded-start">Student name</th>
-										<th scope="col" class="border-0">Progress</th>
-										<th scope="col" class="border-0">Courses</th>
-										<th scope="col" class="border-0">Enrolled date</th>
-										<th scope="col" class="border-0 rounded-end">Action</th>
-									</tr>
-								</thead>
+                    <!-- Table body START -->
+                    <tbody>
+                      <!-- Table item -->
+                      <tr>
+                        <!-- Table data -->
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <!-- Image -->
+                            <div class="avatar avatar-md mb-2 mb-md-0">
+                              <img src="assets/images/avatar/01.jpg" class="rounded" alt="">
+                            </div>
+                            <div class="mb-0 ms-2">
+                              <!-- Title -->
+                              <h6 class="mb-0"><a href="#" class="stretched-link">Lori Stevens</a></h6>
+                              <!-- Address -->
+                              <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Mumbai</span>
+                            </div>
+                          </div>
+                        </td>
 
-								<!-- Table body START -->
-								<tbody>
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex align-items-center position-relative">
-												<!-- Image -->
-												<div class="avatar avatar-md mb-2 mb-md-0">
-													<img src="assets/images/avatar/01.jpg" class="rounded" alt="">
-												</div>
-												<div class="mb-0 ms-2">
-													<!-- Title -->
-													<h6 class="mb-0"><a href="#" class="stretched-link">Lori Stevens</a></h6>
-													<!-- Address -->
-													<span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Mumbai</span>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td class="text-center text-sm-start">
+                          <div class=" overflow-hidden">
+                            <h6 class="mb-0">85%</h6>
+                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                              <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </td>
 
-										<!-- Table data -->
-										<td class="text-center text-sm-start">
-											<div class=" overflow-hidden">
-												<h6 class="mb-0">85%</h6>
-												<div class="progress progress-sm bg-primary bg-opacity-10">
-													<div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-													</div>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td>10</td>
 
-										<!-- Table data -->
-										<td>10</td>
+                        <!-- Table data -->
+                        <td>4/1/2023</td>
 
-										<!-- Table data -->
-										<td>4/1/2023</td>
+                        <!-- Table data -->
+                        <td>
+                          <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
+                          <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
 
-										<!-- Table data -->
-										<td>
-											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
-											<button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
-										</td>
-									</tr>
+                      <!-- Table item -->
+                      <tr>
+                        <!-- Table data -->
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <!-- Image -->
+                            <div class="avatar avatar-md mb-2 mb-md-0">
+                              <img src="assets/images/avatar/03.jpg" class="rounded" alt="">
+                            </div>
+                            <div class="mb-0 ms-2">
+                              <!-- Title -->
+                              <h6 class="mb-0"><a href="#" class="stretched-link">Dennis Barrett</a></h6>
+                              <!-- Address -->
+                              <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>New york</span>
+                            </div>
+                          </div>
+                        </td>
 
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex align-items-center position-relative">
-												<!-- Image -->
-												<div class="avatar avatar-md mb-2 mb-md-0">
-													<img src="assets/images/avatar/03.jpg" class="rounded" alt="">
-												</div>
-												<div class="mb-0 ms-2">
-													<!-- Title -->
-													<h6 class="mb-0"><a href="#" class="stretched-link">Dennis Barrett</a></h6>
-													<!-- Address -->
-													<span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>New york</span>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td class="text-center text-sm-start">
+                          <div class=" overflow-hidden">
+                            <h6 class="mb-0">40%</h6>
+                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                              <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </td>
 
-										<!-- Table data -->
-										<td class="text-center text-sm-start">
-											<div class=" overflow-hidden">
-												<h6 class="mb-0">40%</h6>
-												<div class="progress progress-sm bg-primary bg-opacity-10">
-													<div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
-													</div>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td>12</td>
 
-										<!-- Table data -->
-										<td>12</td>
+                        <!-- Table data -->
+                        <td>9/1/2023</td>
 
-										<!-- Table data -->
-										<td>9/1/2023</td>
+                        <!-- Table data -->
+                        <td>
+                          <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
+                          <button class="btn btn-danger btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Unblock" data-bs-original-title="Unblock"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
 
-										<!-- Table data -->
-										<td>
-											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
-											<button class="btn btn-danger btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Unblock" data-bs-original-title="Unblock"><i class="fas fa-ban"></i></button>
-										</td>
-									</tr>
+                      <!-- Table item -->
+                      <tr>
+                        <!-- Table data -->
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <!-- Image -->
+                            <div class="avatar avatar-md mb-2 mb-md-0">
+                              <img src="assets/images/avatar/04.jpg" class="rounded" alt="">
+                            </div>
+                            <div class="mb-0 ms-2">
+                              <!-- Title -->
+                              <h6 class="mb-0"><a href="#" class="stretched-link">Billy Vasquez</a></h6>
+                              <!-- Address -->
+                              <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Paris</span>
+                            </div>
+                          </div>
+                        </td>
 
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex align-items-center position-relative">
-												<!-- Image -->
-												<div class="avatar avatar-md mb-2 mb-md-0">
-													<img src="assets/images/avatar/04.jpg" class="rounded" alt="">
-												</div>
-												<div class="mb-0 ms-2">
-													<!-- Title -->
-													<h6 class="mb-0"><a href="#" class="stretched-link">Billy Vasquez</a></h6>
-													<!-- Address -->
-													<span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Paris</span>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td class="text-center text-sm-start">
+                          <div class=" overflow-hidden">
+                            <h6 class="mb-0">62%</h6>
+                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                              <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 62%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </td>
 
-										<!-- Table data -->
-										<td class="text-center text-sm-start">
-											<div class=" overflow-hidden">
-												<h6 class="mb-0">62%</h6>
-												<div class="progress progress-sm bg-primary bg-opacity-10">
-													<div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 62%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
-													</div>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td>08</td>
 
-										<!-- Table data -->
-										<td>08</td>
+                        <!-- Table data -->
+                        <td>10/1/2023</td>
 
-										<!-- Table data -->
-										<td>10/1/2023</td>
+                        <!-- Table data -->
+                        <td>
+                          <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
+                          <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
 
-										<!-- Table data -->
-										<td>
-											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
-											<button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
-										</td>
-									</tr>
+                      <!-- Table item -->
+                      <tr>
+                        <!-- Table data -->
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <!-- Image -->
+                            <div class="avatar avatar-md mb-2 mb-md-0">
+                              <img src="assets/images/avatar/09.jpg" class="rounded" alt="">
+                            </div>
+                            <div class="mb-0 ms-2">
+                              <!-- Title -->
+                              <h6 class="mb-0"><a href="#" class="stretched-link">Carolyn Ortiz</a></h6>
+                              <!-- Address -->
+                              <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Delhi</span>
+                            </div>
+                          </div>
+                        </td>
 
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex align-items-center position-relative">
-												<!-- Image -->
-												<div class="avatar avatar-md mb-2 mb-md-0">
-													<img src="assets/images/avatar/09.jpg" class="rounded" alt="">
-												</div>
-												<div class="mb-0 ms-2">
-													<!-- Title -->
-													<h6 class="mb-0"><a href="#" class="stretched-link">Carolyn Ortiz</a></h6>
-													<!-- Address -->
-													<span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Delhi</span>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td class="text-center text-sm-start">
+                          <div class=" overflow-hidden">
+                            <h6 class="mb-0">60%</h6>
+                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                              <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </td>
 
-										<!-- Table data -->
-										<td class="text-center text-sm-start">
-											<div class=" overflow-hidden">
-												<h6 class="mb-0">60%</h6>
-												<div class="progress progress-sm bg-primary bg-opacity-10">
-													<div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-													</div>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td>06</td>
 
-										<!-- Table data -->
-										<td>06</td>
+                        <!-- Table data -->
+                        <td>20/1/2023</td>
 
-										<!-- Table data -->
-										<td>20/1/2023</td>
+                        <!-- Table data -->
+                        <td>
+                          <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
+                          <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
 
-										<!-- Table data -->
-										<td>
-											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
-											<button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
-										</td>
-									</tr>
+                      <!-- Table item -->
+                      <tr>
+                        <!-- Table data -->
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <!-- Image -->
+                            <div class="avatar avatar-md mb-2 mb-md-0">
+                              <img src="assets/images/avatar/07.jpg" class="rounded" alt="">
+                            </div>
+                            <div class="mb-0 ms-2">
+                              <!-- Title -->
+                              <h6 class="mb-0"><a href="#" class="stretched-link">Larry Lawson</a></h6>
+                              <!-- Address -->
+                              <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>London</span>
+                            </div>
+                          </div>
+                        </td>
 
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex align-items-center position-relative">
-												<!-- Image -->
-												<div class="avatar avatar-md mb-2 mb-md-0">
-													<img src="assets/images/avatar/07.jpg" class="rounded" alt="">
-												</div>
-												<div class="mb-0 ms-2">
-													<!-- Title -->
-													<h6 class="mb-0"><a href="#" class="stretched-link">Larry Lawson</a></h6>
-													<!-- Address -->
-													<span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>London</span>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td class="text-center text-sm-start">
+                          <div class=" overflow-hidden">
+                            <h6 class="mb-0">35%</h6>
+                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                              <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </td>
 
-										<!-- Table data -->
-										<td class="text-center text-sm-start">
-											<div class=" overflow-hidden">
-												<h6 class="mb-0">35%</h6>
-												<div class="progress progress-sm bg-primary bg-opacity-10">
-													<div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
-													</div>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td>04</td>
 
-										<!-- Table data -->
-										<td>04</td>
+                        <!-- Table data -->
+                        <td>12/1/2023</td>
 
-										<!-- Table data -->
-										<td>12/1/2023</td>
+                        <!-- Table data -->
+                        <td>
+                          <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
+                          <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
 
-										<!-- Table data -->
-										<td>
-											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
-											<button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
-										</td>
-									</tr>
+                      <!-- Table item -->
+                      <tr>
+                        <!-- Table data -->
+                        <td>
+                          <div class="d-flex align-items-center position-relative">
+                            <!-- Image -->
+                            <div class="avatar avatar-md mb-2 mb-md-0">
+                              <img src="assets/images/avatar/06.jpg" class="rounded" alt="">
+                            </div>
+                            <div class="mb-0 ms-2">
+                              <!-- Title -->
+                              <h6 class="mb-0"><a href="#" class="stretched-link">Frances Guerrero</a></h6>
+                              <!-- Address -->
+                              <span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Pune</span>
+                            </div>
+                          </div>
+                        </td>
 
-									<!-- Table item -->
-									<tr>
-										<!-- Table data -->
-										<td>
-											<div class="d-flex align-items-center position-relative">
-												<!-- Image -->
-												<div class="avatar avatar-md mb-2 mb-md-0">
-													<img src="assets/images/avatar/06.jpg" class="rounded" alt="">
-												</div>
-												<div class="mb-0 ms-2">
-													<!-- Title -->
-													<h6 class="mb-0"><a href="#" class="stretched-link">Frances Guerrero</a></h6>
-													<!-- Address -->
-													<span class="text-body small"><i class="fas fa-fw fa-map-marker-alt me-1 mt-1"></i>Pune</span>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td class="text-center text-sm-start">
+                          <div class=" overflow-hidden">
+                            <h6 class="mb-0">42%</h6>
+                            <div class="progress progress-sm bg-primary bg-opacity-10">
+                              <div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+                              </div>
+                            </div>
+                          </div>
+                        </td>
 
-										<!-- Table data -->
-										<td class="text-center text-sm-start">
-											<div class=" overflow-hidden">
-												<h6 class="mb-0">42%</h6>
-												<div class="progress progress-sm bg-primary bg-opacity-10">
-													<div class="progress-bar bg-primary aos aos-init aos-animate" role="progressbar" data-aos="slide-right" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out" style="width: 42%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
-													</div>
-												</div>
-											</div>
-										</td>
+                        <!-- Table data -->
+                        <td>14</td>
 
-										<!-- Table data -->
-										<td>14</td>
+                        <!-- Table data -->
+                        <td>8/1/2023</td>
 
-										<!-- Table data -->
-										<td>8/1/2023</td>
-
-										<!-- Table data -->
-										<td>
-											<a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
-											<button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
-										</td>
-									</tr>
-								</tbody>
-								<!-- Table body END -->
-</table>
+                        <!-- Table data -->
+                        <td>
+                          <a href="#" class="btn btn-success-soft btn-round me-1 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Message" data-bs-original-title="Message"><i class="far fa-envelope"></i></a>
+                          <button class="btn btn-danger-soft btn-round mb-0" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Block" data-bs-original-title="Block"><i class="fas fa-ban"></i></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <!-- Table body END -->
+                  </table>
 
 </body>

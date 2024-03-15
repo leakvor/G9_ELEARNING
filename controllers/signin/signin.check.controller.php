@@ -1,7 +1,7 @@
 <?php
 session_start();
-require('../../database/database.php');
-require('../../models/student.model.php');
+require "../../database/database.php";
+require "../../models/student.model.php";
 
 $no_account = "Undefine your account!";
 $wrong_password = "Please correct email or password!";
@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
     if (preg_match($regex_email, $email) && preg_match($regex_password, $password)){
-        echo "corect";
         $_SESSION['acc']='';
         $user = accountExist($email);
         if (count($user) > 0){

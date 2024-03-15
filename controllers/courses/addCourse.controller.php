@@ -1,7 +1,7 @@
 <!-- <h1>leak</h1> -->
 <?php
-require('database/database.php');
-require('models/course.model.php');
+require "database/database.php";
+require "models/course.model.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['category'])){

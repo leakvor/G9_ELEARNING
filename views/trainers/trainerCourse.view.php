@@ -1,8 +1,6 @@
-
 <body>
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
-
 <!-- =======================
 Page Banner START -->
 <section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
@@ -42,7 +40,6 @@ Page content START -->
 		<div class="row g-4">
 		<?php
 if (empty($trainerCourse)) {
-    // Display message when $displayCourses is empty
     echo "<h1>This page will have Courses Soon....</h1>";
 } else {
     foreach($trainerCourse as $displayCourse):
@@ -90,11 +87,6 @@ if (empty($trainerCourse)) {
     endforeach;
 }
 ?>
-	
-			
-
-		
-
 		<!-- Pagination START -->
 		<div class="col-12">
 			<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
