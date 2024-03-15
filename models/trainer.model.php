@@ -73,3 +73,46 @@ function trainer_students($email)
     return $result;
 }
 
+
+function displayStudent($id){
+        global $connection;
+        $statment=$connection->prepare("select users.username,users.img, users.email,course.user_id,student_course.date from student_course
+        inner join users on users.user_id=student_course.user_id
+       inner join course on course.course_id=student_course.course_id where course.user_id=:id and role='user'");
+        $statment->execute([':id'=>$id]);
+    
+        return $statment->fetchAll();
+
+     
+}
+
+
+function countCoursesPerStudent($id) {
+    global $connection;
+    try {
+        $statement = $connection->prepare("SELECT users.user_id, users.username, COUNT(course.course_id) AS course_count 
+            FROM users 
+            LEFT JOIN student_course ON users.user_id = student_course.user_id 
+            LEFT JOIN course ON course.course_id = student_course.course_id 
+            WHERE course.user_id = :id AND users.role = 'user' 
+            GROUP BY users.user_id");
+        $statement->execute([':id' => $id]);
+        $courseCounts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $courseCounts;
+    } catch (PDOException $e) {
+        // Handle database errors here
+        echo "Error: " . $e->getMessage();
+        return []; // Return an empty array or handle the error as per your application's logic
+    }
+}
+
+function trainer_Profile($id)
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT * from users where user_id=:id");
+    $statement->execute([":id" => $id]);
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+

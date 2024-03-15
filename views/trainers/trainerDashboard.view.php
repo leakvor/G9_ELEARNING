@@ -38,17 +38,6 @@
 								</div>
 							</div>
 							<hr>
-						</li>
-						<!-- Links -->
-						<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a>
-						</li>
-						<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a>
-						</li>
-						<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-						<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
 						<!-- Dark mode switch START -->
 						<li>
 							<div class="modeswitch-wrap" id="darkModeSwitch">
@@ -182,8 +171,8 @@ Page content START -->
 											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 											<a class="list-group-item " href="
 											"><i class="bi bi-basket fa-fw me-2"></i>My Course</a>
-											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<a class="list-group-item" href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
+											<a class="list-group-item" href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
 											<form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">

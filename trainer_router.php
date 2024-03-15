@@ -19,11 +19,15 @@ if (isset($_SESSION['path'])||isset($_SESSION['teacher'])){
         '/createCourse' => 'controllers/trainerCourse/course.controller.php',
         '/updateCourse' => 'controllers/trainerCourse/formupdateCourses.controller.php',
         '/homepagelesson'=>'controllers/lesson/homepagelesson.controller.php',
-    
+        // '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
     ];
 }else{
         $routes = [
             '/trainer' => 'controllers/trainers/trainer.signin.controller.php',
+            // '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
+            
+        
+      
             
     ];
 }
