@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $isCreate = updateTeacher($username, $email, $password, $id, $new_img_name);
 
                         if ($isCreate) {
-                            header("Location: /adminTrainer");
+                            // header("Location: /adminTrainer");
                         } else {
                             echo "<script>alert('Error occurred while updating course.');</script>";
                         }
