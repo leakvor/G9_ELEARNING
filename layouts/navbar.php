@@ -28,7 +28,7 @@
               $pathCourse="/signins";
             }
              ?>
-            <a href="<?=$pathCourse?>"><i class="fa fa-book"> My Course</i></a>
+            <a href="<?=$pathCourse?>"><i class="fa fa-book" style="color:black"> My Course</i></a>
          
           </a>
 
