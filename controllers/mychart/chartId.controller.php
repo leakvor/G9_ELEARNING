@@ -13,7 +13,7 @@ function studentChart($user_id, $course_id, $date)
     ]);
 }
 
-function getcourse_student($user_id, $course_id)
+function getchart_student($user_id, $course_id)
 {
     global $connection;
     $statment = $connection->prepare("SELECT * FROM chart WHERE user_id= :id AND course_id= :course_id");
@@ -25,13 +25,13 @@ function getcourse_student($user_id, $course_id)
 $user_id = $_POST['user_id'];
 $course_id = $_POST['course_id'];
 $date = date('Y-m-d H:i:s');
-$recordStuCou = getcourse_student($user_id, $course_id);
+$recordStuCou = getchart_student($user_id, $course_id);
 
 if (count($recordStuCou) > 0) {
-    header('Location: /displayChart');
+    header('Location: /');
 } else {
     studentChart($user_id, $course_id, $date);
-    header('Location: /displayChart');
+    header('Location: /');
 }
 
 

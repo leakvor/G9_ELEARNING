@@ -40,7 +40,9 @@ Page content START -->
 										require("database/database.php");
 										require("models/​student_course.model.php");
 										$user = $_SESSION['user'];
-										$allMychart = myChart($user['user_id']); ?>
+										$allMychart = myChart($user['user_id']); 
+										$totalAllcourse=totalAllcourse($user['user_id']);
+										?>
 										<?php
 										foreach ($allMychart as $chart): ?>
 											<tr>
@@ -71,7 +73,7 @@ Page content START -->
 												</td>
 												<!-- Action item -->
 												<td>
-													<a href="../../controllers/mychart/deleteMychart.controller.php?id=<?=$chart['chart_id']?>" class="btn btn-sm btn-danger-soft px-2 mb-0"><i class="fas fa-fw fa-times"></i></a>
+													<a href="../../controllers/mychart/deleteMychart.controller.php?id=<?=$chart['chart_id']?> "onclick="return functionDelete()" class="btn btn-sm btn-danger-soft px-2 mb-0" ><i class="fas fa-fw fa-times" ></i></a>
 												</td>
 											</tr>
 										<?php endforeach ?>
@@ -95,27 +97,11 @@ Page content START -->
 							<!-- Price and detail -->
 							<ul class="list-group list-group-borderless mb-2">
 								<li class="list-group-item px-0 d-flex justify-content-between">
-									<span class="h6 fw-light mb-0">Original Price</span>
-									<span class="h6 fw-light mb-0 fw-bold">$500</span>
-								</li>
-								<li class="list-group-item px-0 d-flex justify-content-between">
-									<span class="h6 fw-light mb-0">Coupon Discount</span>
-									<span class="text-danger">-$20</span>
-								</li>
-								<li class="list-group-item px-0 d-flex justify-content-between">
-									<span class="h5 mb-0">Total</span>
-									<span class="h5 mb-0">$480</span>
+									<span class="h5 mb-0">Total:</span>
+									<span class="h5 mb-0 text-success"><?=$totalAllcourse?>$</span>
 								</li>
 							</ul>
 
-							<!-- Button -->
-							<div class="d-grid">
-								<a href="checkout.html" class="btn btn-lg btn-success">Proceed to Checkout</a>
-							</div>
-
-							<!-- Content -->
-							<p class="small mb-0 mt-2 text-center">By completing your purchase, you agree to these <a
-									href="#"><strong>Terms of Service</strong></a></p>
 
 						</div>
 						<!-- Card total END -->
