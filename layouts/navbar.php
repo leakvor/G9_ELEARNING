@@ -230,10 +230,7 @@
       <!-- Right header content START -->
       <!-- Add to cart -->
       <div class="navbar-nav position-relative overflow-visible me-3">
-        <a href="#" class="nav-link">	<i class="fas fa-shopping-cart fs-5"></i></a>
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-success mt-xl-2 ms-n1">5 
-          <span class="visually-hidden">unread messages</span>
-        </span>
+        <a href="/displayChart" class="nav-link">	<i class="fas fa-shopping-cart fs-5"></i></a>
       </div>
       
       <?php

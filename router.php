@@ -16,7 +16,8 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/coursepay' => 'views/students/student_pay.view.php',
         '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
         '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
-        '/stu_lesson' => 'controllers/students/stu_lesson.view.controller.php'
+        '/stu_lesson' => 'controllers/students/stu_lesson.view.controller.php',
+        '/displayChart' => 'controllers/mychart/displayChart.controller.php',
     ];
 }else{
     $routes = [
@@ -24,7 +25,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signups' => 'controllers/signup/signup.controler.php',
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
-        '/displayChart' => 'controllers/mychart/displayChart.controller.php',
+        
        
     ];
 }
