@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
     if (preg_match($regex_email, $email) && preg_match($regex_password, $password)){
-        echo "corect";
         $_SESSION['acc']='';
         $user = accountExist($email);
         if (count($user) > 0){

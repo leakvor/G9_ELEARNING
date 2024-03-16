@@ -7,7 +7,6 @@ function getTeacher() : array
     $statement->execute();
     return $statement->fetchAll();
 }
-
 function createTrainer(string $username, string $email, string $password, string $img) : bool
 {
     global $connection;

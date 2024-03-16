@@ -2,61 +2,7 @@
     <?php
     // session_start()
     ?>
-    <!-- Header START -->
-    <header class="navbar-light navbar-sticky">
-        <!-- Logo Nav START -->
-        <nav class="navbar navbar-expand-xl">
-            <div class="container">
-                <!-- Logo START -->
-                <a class="navbar-brand" href="">
-                    <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
-                    <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
-                </a>
-                <!-- Responsive navbar toggler -->
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-animation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-
-                <!-- Main navbar START -->
-                <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-                </div>
-                <!-- Main navbar END -->
-
-                <!-- Profile START -->
-                <div class="dropdown ms-1 ms-lg-0">
-                    <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-                        <!-- Profile info -->
-                        <!-- Links -->
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                        <li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <!-- Dark mode switch START -->
-                        <li>
-                            <div class="modeswitch-wrap" id="darkModeSwitch">
-                                <div class="modeswitch-item">
-                                    <div class="modeswitch-icon"></div>
-                                </div>
-                                <span>Dark mode</span>
-                            </div>
-                        </li>
-                        <!-- Dark mode switch END -->
-                    </ul>
-                </div>
-                <!-- Profile START -->
-            </div>
-        </nav>
-        <!-- Logo Nav END -->
-    </header>
+   
 
     <!-- Header END -->
 
@@ -88,12 +34,6 @@ Page Banner START -->
                                     <div>
                                         <h1 class="my-1 fs-4"><?= $user['username'] ?><i class="bi bi-patch-check-fill text-info small"></i></h1>
                                         <p><?php echo $user['email'] ?></p>
-                                        <ul class="list-inline mb-0">
-                                            <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-                                            <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled
-                                                Students</li>
-                                            <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +79,7 @@ Page content START -->
                                         <div class="list-group list-group-dark list-group-borderless">
                                             <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
                                             <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-
+                                            <a class="list-group-item " href="/trainerList"><i class="bi bi-people fa-fw me-2"></i>Trainer</a>
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
                                                 <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
                                                     <li class="nav-item dropdown">
