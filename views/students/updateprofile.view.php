@@ -100,7 +100,7 @@
             <!-- =========================================pic Students================== -->
             <div class="col-auto mt-4 mt-md-0">
               <div class="avatar avatar-xxl mt-n3">
-                <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile">
+                <a href="/studentDashboard"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
               </div>
             </div>
             <!-- Profile info -->
@@ -171,7 +171,7 @@ Page content START -->
           <!-- Card body START -->
           <div class="card-body">
             <!-- Form -->
-            <form action="../../controllers/profiles/profile.controller.php" class="row g-4">
+            <form action="controllers/profiles/updateprofile.controller.php"  method="post" class="row g-4">
 
               <!-- Profile picture -->
               <div class="col-12 justify-content-center align-items-center">
@@ -188,23 +188,29 @@ Page content START -->
                   <!-- Upload button -->
                   <label class="btn btn-primary-soft mb-0 editProfile" for="uploadfile-1">Change</label>
                   <input id="uploadfile-1" class="form-control d-none" type="file">
-                  <!-- <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" 
-                  style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">  -->
+
                 </div>
               </div>
+              <input type="hidden" value="<?= $user['user_id']?>" name="user_id">
               <!-- Username -->
               <div class="col-md-6">
                 <label class="form-label">Username</label>
                 <div class="input-group">
                   <!-- <span class="input-group-text">Eduport.com</span> -->
                   <input type="text" class="form-control" value="<?= $user['username'] ?>" name="username">
+                  <!-- <?php var_dump( $user['username']) ?> -->
                 </div>
               </div>
 
               <!-- Email id -->
               <div class="col-md-6">
                 <label class="form-label">Email</label>
-                <input class="form-control" type="email" value="<?= $user['email'] ?>" placeholder="Email">
+                <input class="form-control" type="email" name="email" value="<?= $user['email'] ?>" placeholder="Email">
+              </div>
+                <!-- Phone number -->
+                <div class="col-md-6">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" name="password" value="<?=$user['password']?>" placeholder="Phone number">
               </div>
               <!-- Save button -->
               <div class="d-sm-flex justify-content-end">
