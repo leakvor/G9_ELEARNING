@@ -71,7 +71,7 @@ Inner part START -->
 			</div>
 			<!-- Search option END -->
 			<!-- Instructor list START -->
-			<div class="row g-4 justify-content-center">
+			<div class="row g-4 ">
 				<?php $statement = $connection->prepare("select * from users where role='teacher'");
 				$statement->execute();
 				$teachers = $statement->fetchAll();

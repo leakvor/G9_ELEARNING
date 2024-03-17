@@ -2,7 +2,7 @@
     <?php
     // session_start()
     ?>
-   
+
 
     <!-- Header END -->
 
@@ -26,7 +26,7 @@ Page Banner START -->
                                 <!-- Avatar -->
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <a href="/studentEditprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>" alt="studentProfile"></a>
+                                        <a href="/studentEditprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?= $user['img'] ?>" alt="studentProfile"></a>
                                     </div>
                                 </div>
                                 <!-- Profile info -->
@@ -78,7 +78,6 @@ Page content START -->
                                         <!-- Dashboard menu -->
                                         <div class="list-group list-group-dark list-group-borderless">
                                             <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-                                            <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
                                             <a class="list-group-item " href="/trainerList"><i class="bi bi-people fa-fw me-2"></i>Trainer</a>
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
                                                 <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
@@ -92,7 +91,7 @@ Page content START -->
                                                 </ul>
                                             </form>
 
-                                            <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?=$user['user_id']?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                                            <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?= $user['user_id'] ?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
                                             <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Log
                                                 Out</a>
                                         </div>
@@ -100,14 +99,8 @@ Page content START -->
                                 </div>
                             </div>
                         </nav>
-                        <!-- Responsive offcanvas body END -->
                     </div>
-                    <!-- Right sidebar END -->
-
-                    <!-- Main content START -->
                     <div class="col-xl-9">
-
-                        <!-- Counter boxes START -->
                         <div class="row g-4">
                             <!-- Counter item -->
                             <div class="col-sm-6 col-lg-4">
@@ -177,17 +170,17 @@ Page content START -->
                         </div>
                         <!-- Chart END -->
 
-                      
-                                       
-                                    </div>
-                                    <!-- Card body START -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Course List table END -->
+
+
                     </div>
-                    <!-- Main content END -->
-                </div><!-- Row END -->
+                    <!-- Card body START -->
+                </div>
+            </div>
+            </div>
+            <!-- Course List table END -->
+            </div>
+            <!-- Main content END -->
+            </div><!-- Row END -->
             </div>
         </section>
         <!-- =======================

@@ -46,7 +46,7 @@ Page content START -->
 				<!-- Course list START -->
 
 				
-				<div class="row g-4 justify-content-center">
+				<div class="row g-4">
 					<?php
 					if (empty($displayCourses)) {
 						// Display message when $displayCourses is empty

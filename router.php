@@ -19,7 +19,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
         '/stu_lesson' => 'controllers/students/stu_lesson.view.controller.php',
         '/trainerList' => 'controllers/trainers/trainer.controller.php',
-        '/trainerCourses'=>"controllers/trainers/trainerCourse.controller.php",
+         '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
 
     ];
 }else{
