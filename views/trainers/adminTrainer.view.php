@@ -69,7 +69,7 @@
 
 
 <div class="container-fluid pt-4 px-4" style="overflow-x: auto">
-  <button type="button" class="btn btn-primary mb-3 " data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary m-4" data-toggle="modal" data-target="#myModal">
     Add new trainer
   </button>
   <div class="modal" id="myModal">

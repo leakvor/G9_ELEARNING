@@ -13,36 +13,6 @@ $categories=getCategorys();
 $categoryCoursesCount=displayCourseCategory();
 $teachers=getTeacher();
 
-// $statement = $connection->prepare("select * from category");
-// $statement->execute();
-// $categories = $statement->fetchAll();
-
-
-
-
-
-// // Initializing an array to store the count of courses in each category
-// $categoryCoursesCount = [];
-
-// // Looping through each category and counting the number of courses
-// foreach ($categories as $category) {
-//     $statement = $connection->prepare("SELECT COUNT(*) AS count FROM course WHERE cate_id = ?");
-//     $statement->execute([$category['cat_id']]);
-//     $count = $statement->fetchColumn();
-//     $categoryCoursesCount[$category['cateName']] = $count;
-// }
-
-// // Fetching IT courses specifically
-// $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username, category.cateName, users.img 
-//                                    FROM course 
-//                                    INNER JOIN category ON category.cat_id = course.cate_id 
-//                                    INNER JOIN users ON users.user_id = course.user_id 
-//                                    WHERE category.cateName = 'IT'");
-// $statement->execute();
-// $courseITs = $statement->fetchAll();
-
-
-// var_dump($courseTeachers);
 ?>
 
 		<!-- Title and SVG START -->

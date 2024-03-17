@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,8 +14,8 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
-    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -31,7 +30,7 @@
     <!-- Template Stylesheet -->
     <link href="vendor/css/admin.css" rel="stylesheet">
     <style>
-        h1{
+        h1 {
             color: "while"
         }
     </style>
@@ -47,18 +46,18 @@
         </div>
         <!-- Spinner End -->
         <?php
-		    if (isset($_SESSION['trainer'])){
-                $validation = ($_SESSION['trainer']);
-            }else{
-                $validation = '';
-            }
-        ?>	
-        
+        if (isset($_SESSION['trainer'])) {
+            $validation = ($_SESSION['trainer']);
+        } else {
+            $validation = '';
+        }
+        ?>
+
         <!-- Sign In Start -->
         <div class="container-fluid">
             <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
                 <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                    <form action="controllers/trainers/check.trainer_lognin.php" method = 'post'>
+                    <form action="controllers/trainers/check.trainer_lognin.php" method='post'>
                         <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
                             <div class="d-flex align-items-center justify-content-between mb-3">
                                 <a href="index.html" class="">
@@ -74,7 +73,7 @@
                                 <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-                            <p class="text-danger"><?= $validation?></p>
+                            <p class="text-danger"><?= $validation ?></p>
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -89,7 +88,7 @@
                 </div>
             </div>
         </div>
-        						
+
         <!-- Sign In End -->
     </div>
 

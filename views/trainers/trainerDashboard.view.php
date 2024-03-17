@@ -10,7 +10,6 @@
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
 				<!-- Logo END -->
-
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -19,12 +18,10 @@
 						<span></span>
 					</span>
 				</button>
-
 				<!-- Main navbar START -->
 				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
 				</div>
 				<!-- Main navbar END -->
-
 				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
 					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
@@ -41,17 +38,6 @@
 								</div>
 							</div>
 							<hr>
-						</li>
-						<!-- Links -->
-						<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a>
-						</li>
-						<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a>
-						</li>
-						<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-						<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
 						<!-- Dark mode switch START -->
 						<li>
 							<div class="modeswitch-wrap" id="darkModeSwitch">
@@ -87,16 +73,16 @@ Page Banner START -->
 				}else{
 					echo 'NOT SET!';
 				}
-				require('database/database.php');
-				require('models/student.model.php');
-				require('./models/trainer.model.php');
+				require "database/database.php";
+				require "models/student.model.php";
+				require "./models/trainer.model.php";
 
 				$trainer_email = $trainer['email'];
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
 					if (isset($trainer_profile)){
-						// echo "<script>alert('Edit profile!');</script>";
+						
 					}
 				}
 				
@@ -185,8 +171,8 @@ Page content START -->
 											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 											<a class="list-group-item " href="
 											"><i class="bi bi-basket fa-fw me-2"></i>My Course</a>
-											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<a class="list-group-item" href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
+											<a class="list-group-item" href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
 
 											<form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">

@@ -1,12 +1,18 @@
 <?php
 
-function getCourse(): array
-{
-    global $connection;
+if (!function_exists('getCourse')) {
+    function getCourse() {
+        // Function logic here
+        global $connection;
     $statement = $connection->prepare("SELECT course.course_id, course.course_img, course.title, course.paid, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id");
     $statement->execute();
     return $statement->fetchAll();
+    }
 }
+// function getCourse(): array
+// {
+    
+// }
 
 function createCourse(string $title, string $img, int $user_id, int $cate_id, int $paid)
 {

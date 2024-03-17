@@ -3,7 +3,6 @@
 	$statement->execute();
 	$categories = $statement->fetchAll();
 ?>
-
 <body>
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
@@ -97,11 +96,6 @@ Page content START -->
     endforeach;
 }
 ?>
-	
-			
-
-		
-
 		<!-- Pagination START -->
 		<div class="col-12">
 			<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">

@@ -30,6 +30,7 @@ if (isset($_SESSION['admin'])){
     '/addCourse' => 'controllers/courses/addCourse.controller.php',
     '/displayStudent' => 'controllers/students/displayStudent.controller.php',
 
+   
     ];
 }
 
