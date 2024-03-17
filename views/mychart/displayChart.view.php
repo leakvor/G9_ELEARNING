@@ -73,6 +73,7 @@ Page content START -->
 												</td>
 												<!-- Action item -->
 												<td>
+													<a href=" "onclick="return functionDelete()" class="btn btn-sm btn-success-soft px-2 mb-0" ><i class="fas fa-arrows-alt" ></i></a>
 													<a href="../../controllers/mychart/deleteMychart.controller.php?id=<?=$chart['chart_id']?> "onclick="return functionDelete()" class="btn btn-sm btn-danger-soft px-2 mb-0" ><i class="fas fa-fw fa-times" ></i></a>
 												</td>
 											</tr>

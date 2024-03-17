@@ -89,6 +89,7 @@
 	if (isset($_SESSION['pay_id'])) {
 		$cours_id = $_SESSION['pay_id'];
 		$course = eachCourse($cours_id);
+		
 
 		if ($course[0]['paid'] != 0) {
 			$to_pay = 'PAY ' . $course[0]['paid'] . '$';
@@ -113,13 +114,12 @@
 							<div class="two_style" style="display: flex;justify-content: space-between;">
 							<h5 class="card-title">Select Amount to Pay</h5>
 							<form action="../../controllers/mychart/chartId.controller.php" method="post">
-									<input type="hidden" name="course_id" value="<?= $cours_id ?>">
-									<input type="hidden" name="user_id" value="<?= $student_id ?>">
+									<input type="hidden" name="course_id" value="<?= $_SESSION['pay_id'] ?>">
+									<input type="hidden" name="user_id" value="<?= $_SESSION['user']['user_id'] ?>">
 									<input type="hidden" name="datejoin" value="<?= $date_join ?>">
 									<button type="submit" class="btn-danger" style="margin-left:30px;">Add to chart</button>
 								</form>
 							</div>
-						
 							<div class="btn-group" style="height: 150px; width:100%" role="group"
 								aria-label="Basic outlined example">
 								<button type="checkbox" class="btn btn-outline-primary bg-dark fs-2" name="name"
@@ -134,7 +134,7 @@
 								<li>Confirmation Message Upon Successful Submission</li>
 								<li>Information on Next Steps</li>
 							</div>
-							<form action="<?= $path ?>" id="paymentForm" method="post">
+							<form action="controllers/students/student.course.controller.php" id="paymentForm" method="post">
 								<input type="hidden" name="course_id" value="<?= $cours_id ?>">
 								<input type="hidden" name="user_id" value="<?= $student_id ?>">
 								<input type="hidden" name="datejoin" value="<?= $date_join ?>">

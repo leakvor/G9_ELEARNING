@@ -33,13 +33,9 @@
          
           </a>
 
-          <ul class="dropdown-menu z-index-unset" aria-labelledby="categoryMenu">
+          
 
-            <!-- Dropdown submenu -->
-            <li class="dropdown-submenu dropend">
-              <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
-              </ul>
-            </li>
+            
             <!-- Dropdown submenu -->
             <li class="dropdown-submenu dropend">
               <!-- <a class="dropdown-item dropdown-toggle" href="#">Marketing</a> -->
