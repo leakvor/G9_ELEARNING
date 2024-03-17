@@ -1,13 +1,6 @@
 <body>
     <main>
-        <?php
-        require("models/trainer.model.php");
-
-        $allStudent = $_SESSION['student'];
-        $countPreStudent = countCoursesPerStudent($allStudent[0]['user_id']);
-        $profile=trainer_Profile($allStudent[0]['user_id']);
-        var_dump($profile);
-        ?>
+        
         <!-- Main Banner START -->
         <section class="pt-0">
             <!-- Main banner background image -->
@@ -27,6 +20,15 @@
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/instructor/<?=$profile['img']?>" alt="">
                                     </div>
                                 </div>
+                                <?php
+        require ("database/database.php");
+        require("models/trainer.model.php");
+
+        $allStudent = $_SESSION['student'];
+        $countPreStudent = countCoursesPerStudent($allStudent[0]['user_id']);
+        $profile=trainer_Profile($allStudent[0]['user_id']);
+        var_dump($profile);
+        ?>
                                 <!-- Profile info -->
                                 <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                     <div>

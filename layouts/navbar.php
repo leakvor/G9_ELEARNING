@@ -19,7 +19,8 @@
       <!-- Category menu START -->
       <ul class="navbar-nav navbar-nav-scroll dropdown-clickable">
         <li class="nav-item dropdown dropdown-menu-shadow-stacked">
-          <a class="nav-link" href="" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link" href="" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <i class="bi bi-grid-3x3-gap-fill me-3 fs-5 me-xl-1 d-xl-none"></i>
             <?php 
             if(isset($_SESSION['user'])){
@@ -32,7 +33,7 @@
          
           </a>
 
-          <!-- <ul class="dropdown-menu z-index-unset" aria-labelledby="categoryMenu">
+          <ul class="dropdown-menu z-index-unset" aria-labelledby="categoryMenu">
 
             <!-- Dropdown submenu -->
             <li class="dropdown-submenu dropend">
@@ -71,7 +72,8 @@
                     <div class="d-flex mb-4 position-relative">
                       <img src="assets/images/client/uni-logo-01.svg" class="icon-md" alt="">
                       <div class="ms-3">
-                        <h6 class="mb-0"><a class="stretched-link" href="#">American Century University, New Mexico</a></h6>
+                        <h6 class="mb-0"><a class="stretched-link" href="#">American Century University, New Mexico</a>
+                        </h6>
                         <p class="mb-0 small">Bachelor of computer science</p>
                       </div>
                     </div>
@@ -148,7 +150,8 @@
                   </div>
 
                   <div class="col-12">
-                    <div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden" style="background:url(assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
+                    <div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden"
+                      style="background:url(assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
                       <!-- SVG decoration -->
                       <figure class="position-absolute bottom-0 end-0 mb-n4 d-none d-md-block">
                         <svg width="92.6px" height="135.2px">
@@ -163,8 +166,10 @@
                       <!-- Body -->
                       <div class="card-body">
                         <!-- Title -->
-                        <h5 class="card-title text-white mb-2">Access 25K Online courses from 120 institutions, Start today!</h5>
-                        <p class="text-white text-opacity-75">Here is the description of premium features which will allow users to get benefits and save a lot of money</p>
+                        <h5 class="card-title text-white mb-2">Access 25K Online courses from 120 institutions, Start
+                          today!</h5>
+                        <p class="text-white text-opacity-75">Here is the description of premium features which will
+                          allow users to get benefits and save a lot of money</p>
                         <!-- Button -->
                         <a href="#" class="btn btn-sm btn-dark mb-0">Purchase Premium</a>
                       </div>
@@ -174,7 +179,8 @@
                 <!-- Advertisement -->
                 <div class="row d-none">
                   <div class="col-12">
-                    <div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden" style="background:url(assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
+                    <div class="card bg-blue rounded-0 rounded-bottom p-3 position-relative overflow-hidden"
+                      style="background:url(assets/images/pattern/05.png) no-repeat center center; background-size:cover;">
                       <!-- SVG decoration -->
                       <figure class="position-absolute bottom-0 end-0 mb-n4 d-none d-md-block">
                         <svg width="92.6px" height="135.2px">
@@ -189,8 +195,10 @@
                       <!-- Body -->
                       <div class="card-body">
                         <!-- Title -->
-                        <h5 class="card-title text-white mb-2">Access 25K Online courses from 120 institutions, Start today!</h5>
-                        <p class="text-white text-opacity-75">Here is the description of premium features which will allow users to get benefits and save a lot of money</p>
+                        <h5 class="card-title text-white mb-2">Access 25K Online courses from 120 institutions, Start
+                          today!</h5>
+                        <p class="text-white text-opacity-75">Here is the description of premium features which will
+                          allow users to get benefits and save a lot of money</p>
                         <!-- Button -->
                         
                         <a href="#" class="btn btn-sm btn-dark mb-0">Purchase Premium</a>
@@ -229,11 +237,23 @@
 
       <!-- Right header content START -->
       <!-- Add to cart -->
+      <!-- <div class="navbar-nav position-relative overflow-visible me-3">
+        <a href="/displayChart" class="nav-link"> <i class="fas fa-shopping-cart fs-5"></i></a>
+      </div> -->
       <div class="navbar-nav position-relative overflow-visible me-3">
-        <a href="#" class="nav-link"> <i class="fas fa-shopping-cart fs-5"></i></a>
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-success mt-xl-2 ms-n1">5
-          <span class="visually-hidden">unread messages</span>
+        <a href="/displayChart" class="nav-link"> <i class="fas fa-shopping-cart fs-5"></i></a>
+        <?php
+        if (isset($_SESSION['user'])) :
+          require("database/database.php");
+          require_once("models/​student_course.model.php");
+
+          $user = $_SESSION['user'];
+          $allMychart = myChart($user['user_id']);
+        
+        ?>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-success mt-xl-2 ms-n1"><?=count($allMychart)?>
         </span>
+        <?php endif?>
       </div>
 
       <?php
@@ -248,7 +268,8 @@
       <!-- Language -->
       <ul class="navbar-nav navbar-nav-scroll me-3 d-none d-xl-block">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
             <i class="fas fa-user-friends"></i>
             <span class="d-none d-lg-inline-block">Roles</span>
           </a>

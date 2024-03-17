@@ -12,9 +12,7 @@ $courseTeachers = displayCourses();
 $categories=getCategorys();
 $categoryCoursesCount=displayCourseCategory();
 $teachers=getTeacher();
-
 ?>
-
 		<!-- Title and SVG START -->
 		<div class="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
 			<div class="col-lg-8 text-center mx-auto position-relative">
