@@ -81,8 +81,8 @@
 		date_default_timezone_set('Asia/Phnom_Penh');
 		$date_join = date("Y-m-d H:i:s");;
 	}
-	if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-		$cours_id = $_GET['idc'];
+	if (isset($_SESSION['pay_id'])) {
+		$cours_id = $_SESSION['pay_id'];
 		$course = eachCourse($cours_id);
 
 		if ($course[0]['paid'] != 0) {
@@ -92,7 +92,7 @@
 		} else {
 			$to_pay = 'Free course';
 			$pay_btn = 'Learn free';
-			$path = 'controllers/students/student.course.controller.php';
+			$path = '/stu_lesson';
 		}
 	}
 
