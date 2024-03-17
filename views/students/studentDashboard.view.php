@@ -20,12 +20,10 @@
                         <span></span>
                     </span>
                 </button>
-
                 <!-- Main navbar START -->
                 <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
                 </div>
                 <!-- Main navbar END -->
-
                 <!-- Profile START -->
                 <div class="dropdown ms-1 ms-lg-0">
                     <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
@@ -80,7 +78,7 @@ Page Banner START -->
                                 <!-- Avatar -->
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <a href="/studentEditprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$user['img']?>" alt="studentProfile"></a>
+                                        <a href="/studentEditprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?= $user['img'] ?>" alt="studentProfile"></a>
                                     </div>
                                 </div>
                                 <!-- Profile info -->
@@ -152,7 +150,7 @@ Page content START -->
                                                 </ul>
                                             </form>
 
-                                            <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?=$user['user_id']?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                                            <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?= $user['user_id'] ?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
                                             <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Log
                                                 Out</a>
                                         </div>
@@ -237,17 +235,17 @@ Page content START -->
                         </div>
                         <!-- Chart END -->
 
-                      
-                                       
-                                    </div>
-                                    <!-- Card body START -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Course List table END -->
+
+
                     </div>
-                    <!-- Main content END -->
-                </div><!-- Row END -->
+                    <!-- Card body START -->
+                </div>
+            </div>
+            </div>
+            <!-- Course List table END -->
+            </div>
+            <!-- Main content END -->
+            </div><!-- Row END -->
             </div>
         </section>
         <!-- =======================

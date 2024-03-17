@@ -1,13 +1,13 @@
 <?php
-require '../../database/database.php';
-require '../../models/category.model.php';
+require "../../database/database.php";
+require "../../models/category.model.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $category=$_POST['cateName'];
     $id=$_POST['id'];
     echo($category);
-    $image=$_FILES['im'];
-    var_dump ($img);
+    $image=$_FILES['img'];
+    
 
     
     if(empty($_FILES['img']['name'])){

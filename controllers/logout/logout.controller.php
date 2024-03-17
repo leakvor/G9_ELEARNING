@@ -6,4 +6,4 @@ session_start();
 session_unset();
 
 header('location: /');
-require ('controllers/home/home.controller.php');
+require "controllers/home/home.controller.php";

@@ -1,2 +1,2 @@
 <?php
-require_once('views/signup/signup.view.php');
+require_once "views/signup/signup.view.php";
