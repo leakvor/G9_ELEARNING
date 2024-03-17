@@ -99,8 +99,8 @@
     require('database/database.php');
     require('models/lesson.model.php');
 
-    if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-        $lessons = (displayAlllesson($_GET['cou_id']));
+    if ($_SESSION['pay_id']){
+        $lessons = (displayAlllesson($_SESSION['pay_id']));
     }
 ?>
 
