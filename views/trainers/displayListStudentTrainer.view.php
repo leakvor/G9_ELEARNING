@@ -1,19 +1,12 @@
 <body>
     <main>
-        <?php
-        require("models/trainer.model.php");
 
-        $allStudent = $_SESSION['student'];
-        $countPreStudent = countCoursesPerStudent($allStudent[0]['user_id']);
-        $profile=trainer_Profile($allStudent[0]['user_id']);
-        var_dump($profile);
-        ?>
         <!-- Main Banner START -->
         <section class="pt-0">
             <!-- Main banner background image -->
             <div class="container-fluid px-0">
                 <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
-                </div>
+            </div>
             </div>
             <div class="container mt-n4">
                 <div class="row">
@@ -22,22 +15,31 @@
                         <div class="card bg-transparent card-body p-0">
                             <div class="row d-flex justify-content-between">
                                 <!-- Avatar -->
+                                <?php
+                                require("database/database.php");
+                                require("models/trainer.model.php");
+                                $allStudent = $_SESSION['student'];
+                                $profile = $_SESSION['trainer'];
+                                $countPreStudent = countCoursesPerStudent($profile['user_id']);
+                                // var_dump($profile);
+                                ?>
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/instructor/<?=$profile['img']?>" alt="">
+                                        <img class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/instructor/<?= $profile['img'] ?>" alt="">
                                     </div>
                                 </div>
+
                                 <!-- Profile info -->
                                 <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                     <div>
-                                        <h1 class="my-1 fs-4"><?=$profile['username']?> <i class="bi bi-patch-check-fill text-info small"></i></h1>
+                                        <h1 class="my-1 fs-4"><?= $profile['username'] ?> <i class="bi bi-patch-check-fill text-info small"></i></h1>
+                                        <p><?= $profile['email'] ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Divider -->
                         <hr class="d-xl-none">
-                        <!-- Advanced filter responsive toggler END -->
                     </div>
                 </div>
             </div>
@@ -61,7 +63,7 @@
                                             <a class="list-group-item" href="instructor-earning.html"><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
                                             <a class="list-group-item active" href="instructor-studentlist.html"><i class="bi bi-people fa-fw me-2"></i>Students</a>
                                             <a class="list-group-item" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</a>
-                                            <a class="list-group-item" href="controllers/trainers/trainer.delete.controller.php?id=<?=$profile['user_id']?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                                            <a class="list-group-item" href="controllers/trainers/trainer.delete.controller.php?id=<?= $profile['user_id'] ?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
                                             <a class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
                                         </div>
                                     </div>
@@ -91,9 +93,8 @@
                                     </thead>
                                     <!-- Table body START -->
                                     <tbody>
-                                        <?php foreach ($allStudent as $student) : ?>
+                                        <?php foreach ($countPreStudent as $student) : ?>
                                             <tr>
-                                                <!-- Table data -->
                                                 <td>
                                                     <div class="d-flex align-items-center position-relative">
                                                         <!-- Image -->
@@ -112,7 +113,7 @@
                                                     </div>
                                                 </td>
                                                 <!-- Table data -->
-                                                <td> <span> <?= isset($countPreStudent[$student['username']]) ? ($countPreStudent[$student['username']] < 2 ? $countPreStudent[$student['username']] . " course" : $countPreStudent[$student['username']] . " courses") : 1 ?></span></td>
+                                                <td> <span><?= $student['course_count'] ?></span></td>
                                                 <!-- Table data -->
                                                 <td><?= $student['date'] ?></td>
                                             </tr>

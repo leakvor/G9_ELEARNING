@@ -34,8 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             } else {
                 $_SESSION['trainer'] = $verify_pass;
-
-
                 header('Location: /trainer');
             }
         } else {

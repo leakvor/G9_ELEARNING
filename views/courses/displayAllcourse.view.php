@@ -1,30 +1,30 @@
-<?php 
-	$statement = $connection->prepare("SELECT * FROM category");
-	$statement->execute();
-	$categories = $statement->fetchAll();
+<?php
+$statement = $connection->prepare("SELECT * FROM category");
+$statement->execute();
+$categories = $statement->fetchAll();
 ?>
 <body>
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
+	<!-- **************** MAIN CONTENT START **************** -->
+	<main>
 
-<!-- =======================
+		<!-- =======================
 Page Banner START -->
-<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
-	<!-- Main banner background image -->
-	<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<!-- Title -->
-					<h1 class="text-white">Course List</h1>
-					<!-- Breadcrumb -->
+		<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
+			<!-- Main banner background image -->
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<!-- Title -->
+						<h1 class="text-white">Course List</h1>
+						<!-- Breadcrumb -->
+					</div>
 				</div>
 			</div>
-	</div>
-</section>
-<!-- =======================
+		</section>
+		<!-- =======================
 Page Banner END -->
 
-<!-- =======================
+		<!-- =======================
 Page content START -->
 <section class="pt-5">
 	<div class="container">
@@ -152,26 +152,75 @@ Action box START -->
 						</div>
 					</div>
 				</div>
-			</div> <!-- Row END -->
-		</div>
-	</div>
-</section>
-<!-- =======================
-Action box END -->
+				<!-- Search option END -->
 
-</main>
-<!-- **************** MAIN CONTENT END **************** -->
-<!-- =======================
+				<!-- Course list START -->
+
+				
+				<div class="row g-4 justify-content-center">
+					<?php
+					if (empty($displayCourses)) {
+						// Display message when $displayCourses is empty
+						echo "<h1>This page will have Courses Soon....</h1>";
+					} else {
+						foreach ($displayCourses as $displayCourse) :
+					?>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+							<!-- Card item START -->
+							<div class="col-lg-10 col-xxl-6">
+								<div class="card rounded overflow-hidden shadow">
+									<div class="row g-0">
+										<!-- Image -->
+										<div class="col-md-4">
+											<img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image">
+										</div>
+
+										<!-- Card body -->
+										<div class="col-md-8">
+											<div class="card-body">
+												<!-- Title -->
+												<div class="d-flex justify-content-between mb-2">
+													<h5 class="card-title mb-0"><a href="#"><?= $displayCourse['title'] ?></a></h5>
+													<!-- Wishlist icon -->
+													<a href="#"><i class="fas fa-heart text-danger"></i></a>
+												</div>
+												<!-- Rating -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					<?php
+						endforeach;
+					}
+					?>
+				</div>
+
+			</div>
+		</section>
+		
+
+	</main>
+	<!-- **************** MAIN CONTENT END **************** -->
+	<!-- =======================
 Footer END -->
 
-<!-- Back to top -->
-<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+	<!-- Back to top -->
+	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
 
-<!-- Bootstrap JS -->
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Vendors -->
-<script src="assets/vendor/choices/js/choices.min.js"></script>
+	<!-- Vendors -->
+	<script src="assets/vendor/choices/js/choices.min.js"></script>
 
-<!-- Template Functions -->
-<script src="assets/js/functions.js"></script>
+	<!-- Template Functions -->
+	<script src="assets/js/functions.js"></script>

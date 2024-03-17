@@ -20,6 +20,8 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/displaystudentCourse' => 'controllers/courses/displaystudentCourse.controller.php',
         '/myLessons' => 'controllers/lesson/displayMylesson.controller.php',
         // '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
+        '/displayChart' => 'controllers/mychart/displayChart.controller.php',
+        '/coursePay'=>'controllers/students/coursePay.controller.php',
     ];
 }else{
     $routes = [
