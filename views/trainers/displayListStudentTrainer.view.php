@@ -6,7 +6,7 @@
             <!-- Main banner background image -->
             <div class="container-fluid px-0">
                 <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
-                </div>
+            </div>
             </div>
             <div class="container mt-n4">
                 <div class="row">
@@ -19,16 +19,16 @@
                                 require("database/database.php");
                                 require("models/trainer.model.php");
                                 $allStudent = $_SESSION['student'];
-                                $profile=$_SESSION['trainer'];
+                                $profile = $_SESSION['trainer'];
                                 $countPreStudent = countCoursesPerStudent($profile['user_id']);
                                 // var_dump($profile);
                                 ?>
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <img class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/instructor/<?=$profile['img']?>" alt="">
+                                        <img class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/instructor/<?= $profile['img'] ?>" alt="">
                                     </div>
                                 </div>
-                               
+
                                 <!-- Profile info -->
                                 <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                     <div>
@@ -93,13 +93,13 @@
                                     </thead>
                                     <!-- Table body START -->
                                     <tbody>
-                                        <?php foreach ($countPreStudent as $student) :?>
+                                        <?php foreach ($countPreStudent as $student) : ?>
                                             <tr>
                                                 <td>
                                                     <div class="d-flex align-items-center position-relative">
                                                         <!-- Image -->
                                                         <div class="avatar avatar-md mb-2 mb-md-0">
-                                                            <img src="assets/images/profile/<?=$student['img']?>" class="rounded" alt="">
+                                                            <img src="assets/images/profile/<?= $student['img'] ?>" class="rounded" alt="">
                                                         </div>
                                                         <div class="mb-0 ms-2">
                                                             <h6 class="mb-0"><?= $student['username'] ?></h6>
@@ -113,7 +113,7 @@
                                                     </div>
                                                 </td>
                                                 <!-- Table data -->
-                                                <td> <span><?=$student['course_count']?></span></td>
+                                                <td> <span><?= $student['course_count'] ?></span></td>
                                                 <!-- Table data -->
                                                 <td><?= $student['date'] ?></td>
                                             </tr>
