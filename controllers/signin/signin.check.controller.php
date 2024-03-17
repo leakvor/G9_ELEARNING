@@ -6,7 +6,7 @@ require "../../models/student.model.php";
 $no_account = "Undefine your account!";
 $wrong_password = "Please correct email or password!";
 
-$regex_email = "/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z\.]{2,30}\.[a-z]{1,3}$/";
+$regex_email = "/^[a-z\.]{4,20}\@[a-z\.]{2,40}\.[a-z]{1,3}$/";
 $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
 
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             if (password_verify($password, $user['password'])){
                 header('Location: /');
                 $_SESSION['user'] = $user;
-                $_SESSION['acc']='';
+                unset($_SESSION['acc']);
             }
         }else{
             echo "incorrect pass!";

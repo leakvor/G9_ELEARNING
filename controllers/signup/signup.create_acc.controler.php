@@ -6,7 +6,7 @@ require('../../models/student.model.php');
 $is_creat_acc = "Email has already create!";
 $is_wrong_validate = "Please correct your validation!";
 
-$regex_email = "/^[a-z]{4,10}\.[a-z]{1,10}\@[a-z\.]{2,30}\.[a-z]{1,3}$/";
+$regex_email = "/^[a-z\.]{4,20}\@[a-z\.]{2,40}\.[a-z]{1,3}$/";
 $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
 $regex_first_name = "/^[A-Z][a-z]{1,10}$/";
 $regex_last_name = "/^[A-Z][a-z]{1,10}$/";
