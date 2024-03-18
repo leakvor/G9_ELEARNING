@@ -30,8 +30,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Handle other HTTP methods (GET, etc.) if needed
     echo "Invalid request method!";
 }
-// echo '<script>
-//         setTimeout(function() {
-//             location.reload();
-//         }, 200000); // Refresh after 3 seconds (adjust as needed)
-//       </script>';
