@@ -51,7 +51,7 @@ Page content START -->
 													<div class="d-lg-flex align-items-center">
 														<!-- Image -->
 														<div class="w-100px w-md-80px mb-2 mb-md-0">
-															<img src="../../assets/images/course/<?= $chart['course_img'] ?>"class="rounded" alt="">
+															<img src="../../assets/images/course/<?= $chart['course_img'] ?>"class="rounded" alt="" style="width: 100%; height: 80px; object-fit: cover;">
 														</div>
 														<!-- Title -->
 														<h6 class="mb-0 ms-lg-3 mt-2 mt-lg-0">

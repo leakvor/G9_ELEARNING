@@ -189,9 +189,12 @@ Page Banner START -->
 
 <!-- =======================
 Newsletter END -->
-<div class="container d-flex alin-item-center gap-4 flex-wrap" style="background-color: #f0f0f0;">
+<div class="container d-flex alin-item-center gap-4 flex-wrap" >
 <?php
 $unite = 0;
+if(empty($lessons)){
+	echo "<h1>This page will have lesson Soon....</h1>";}
+	else{
 foreach($lessons as $lesson):
 
 ?>
@@ -205,7 +208,8 @@ foreach($lessons as $lesson):
 </div>
 
 <?php
-endforeach
+endforeach;
+}
 ?>
 </div>
 

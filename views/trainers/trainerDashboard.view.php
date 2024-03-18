@@ -356,7 +356,7 @@ Page content START -->
 															<div class="d-flex align-items-center">
 																<!-- Image -->
 																<div class="w-100px w-md-60px">
-																<a href="<?=$path?>"><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" ></a>
+																<a href="<?=$path?>"><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" style="width: 100%; height: 60px; object-fit: cover;"></a>
 																</div>
 																<!-- Title -->
 																<h6 class="mb-0 ms-2">

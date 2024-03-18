@@ -383,7 +383,7 @@
                             <div class="col-sm-6 col-lg-4 col-xl-3">
                                 <div class="card shadow h-100">
                                     <!-- Image -->
-                                    <a href="controllers/lesson/displayLessonEachcourse.controller.php?id=<?=$myCourse['course_id']?>"><img src="assets/images/course/<?=$myCourse['course_img']?>" class="card-img-top" alt="course image"></a>
+                                    <a href="controllers/lesson/displayLessonEachcourse.controller.php?id=<?=$myCourse['course_id']?>"><img src="assets/images/course/<?=$myCourse['course_img']?>" class="card-img-top" alt="course image" style="width: 100%; height: 250px; object-fit: cover;"></a>
                                     
                                     <!-- Card body -->
                                     <div class="card-body pb-0">

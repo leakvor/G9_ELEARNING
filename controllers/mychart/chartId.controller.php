@@ -5,7 +5,7 @@ require '../../database/database.php';
 function studentChart($user_id, $course_id, $date)
 {
     global $connection;
-    $statement = $connection->prepare("INSERT INTO chart (course_id, user_id, date) VALUES (:course_id, :user_id, :date)");
+    $statement = $connection->prepare("INSERT INTO chart ( user_id,course_id, date) VALUES ( :user_id, :course_id,:date)");
     $statement->execute([
         ':user_id' => $user_id,
         ':course_id' => $course_id,

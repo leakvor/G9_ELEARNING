@@ -105,7 +105,7 @@ $categories= getCategorys();
             <td><?= $course['title'] ?></td>
             <td><?= $course['username'] ?></td>
             <td><?= $course['cateName'] ?></td>
-            <td><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" style="width: 70px;height: 70px;object-fit: cover;"></td>
+            <td><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" style="width: 30%; height: 90px; object-fit: cover;"></td>
             <td><?= $course['paid'] ?>$</td>
             <td><a href="controllers/courses/deleteCourse.controller.php?id=<?= $course['course_id'] ?>" class="btn bg-gradient-danger btn-danger" onclick="return functionDelete()">
                 <i class="fa fa-trash" style="color:white;"></i></a>

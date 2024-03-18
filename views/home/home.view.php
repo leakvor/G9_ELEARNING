@@ -144,7 +144,7 @@ Featured course START -->
 					<div class="card p-2 shadow h-100">
 						<div class="rounded-top overflow-hidden">
 							<div class="card-overlay-hover">
-								<img src="assets/images/course/<?= $courseTeacher['course_img'] ?>" class="card-img-top" alt="course image" style="width: 100%;height: 100%;object-fit: cover;">
+								<img src="assets/images/course/<?= $courseTeacher['course_img'] ?>" class="card-img-top" alt="course image" style="width: 100%; height: 250px; object-fit: cover;">
 							</div>
 							<!-- Hover element -->
 							<div class="card-img-overlay">
@@ -277,7 +277,7 @@ IT courses START -->
 				<div class="col-sm-6 col-lg-4 col-xl-3">
 					<!-- Image -->
 					<div class="card card-metro overflow-hidden rounded-3">
-						<a href="<?=$path?>"><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt=""></a>			
+						<a href="<?=$path?>"><img src="assets/images/instructor/<?= $teacher['img'] ?>" alt="" style="width: 100%; height: 250px; object-fit: cover;"></a>			
 						<!-- Image overlay -->
 					</div>
 				</div>

@@ -99,7 +99,7 @@
                                                     <div class="d-flex align-items-center position-relative">
                                                         <!-- Image -->
                                                         <div class="avatar avatar-md mb-2 mb-md-0">
-                                                            <img src="assets/images/profile/<?= $student['img'] ?>" class="rounded" alt="">
+                                                            <img src="assets/images/profile/<?= $student['img'] ?>" class="rounded" alt="" style="width: 100%; height: 60px; object-fit: cover;">
                                                         </div>
                                                         <div class="mb-0 ms-2">
                                                             <h6 class="mb-0"><?= $student['username'] ?></h6>

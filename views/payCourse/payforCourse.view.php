@@ -63,7 +63,7 @@ Page content START -->
 										<!-- Accordion body -->
 										<div class="accordion-body">
 											<!-- Form START -->
-											<form class="row g-3" action="controllers/mychart/payment.controller.php" method="post">
+											<form class="row g-3" action="controllers/payCourse/paymentCourse.controller.php" method="post">
 												<!-- Card number -->
 												<div class="col-12">
 													<input type="hidden" value="<?=$course['course_id']?>" name="course_id">

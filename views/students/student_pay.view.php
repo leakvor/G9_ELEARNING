@@ -94,11 +94,11 @@
 		if ($course[0]['paid'] != 0) {
 			$to_pay = 'PAY ' . $course[0]['paid'] . '$';
 			$pay_btn = 'Pay course';
-			$path = '/';
+			$path = '/payForCourses';
 		} else {
 			$to_pay = 'Free course';
 			$pay_btn = 'Learn free';
-			$path = '/stu_lesson';
+			$path = 'controllers/students/student.course.controller.php';
 		}
 	}
 
@@ -134,7 +134,7 @@
 								<li>Confirmation Message Upon Successful Submission</li>
 								<li>Information on Next Steps</li>
 							</div>
-							<form action="controllers/students/student.course.controller.php" id="paymentForm" method="post">
+							<form action="<?=$path?>" id="paymentForm" method="post">
 								<input type="hidden" name="course_id" value="<?= $cours_id ?>">
 								<input type="hidden" name="user_id" value="<?= $student_id ?>">
 								<input type="hidden" name="datejoin" value="<?= $date_join ?>">

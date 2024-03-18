@@ -19,11 +19,12 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/stu_lesson' => 'controllers/students/stu_lesson.view.controller.php',
         '/displaystudentCourse' => 'controllers/courses/displaystudentCourse.controller.php',
         '/myLessons' => 'controllers/lesson/displayMylesson.controller.php',
-        // '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
+        '/myLesson' => 'controllers/lesson/myLesson.controller.php',
         '/paymentCours' => 'controllers/payCourse/payCourse.controller.php',
         '/displayChart' => 'controllers/mychart/displayChart.controller.php',
         '/coursePay'=>'controllers/students/coursePay.controller.php',
         '/payForCourse'=>'controllers/mychart/payMoney.controller.php',
+        '/payForCourses'=>'controllers/payCourse/PayForCourse.controller.php',
         
     ];
 }else{
