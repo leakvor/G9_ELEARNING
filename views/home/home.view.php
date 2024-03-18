@@ -12,9 +12,7 @@ $courseTeachers = displayCourses();
 $categories=getCategorys();
 $categoryCoursesCount=displayCourseCategory();
 $teachers=getTeacher();
-
 ?>
-
 		<!-- Title and SVG START -->
 		<div class="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
 			<div class="col-lg-8 text-center mx-auto position-relative">
@@ -189,7 +187,7 @@ Featured course START -->
 							}
 							?>
 							<!-- Title -->
-							<h6 class="card-title"><a href="<?=$coursePay; $_SESSION['pay_id']=$courseTeacher['course_id']?>"><?= $courseTeacher['title']?></a></h6>
+							<h6 class="card-title"><a href="controllers/students/payId.controller.php?id=<?=$courseTeacher['course_id']?>"><?= $courseTeacher['title']?></a></h6>
 							<!-- Badge and Price -->
 							<div class="d-flex justify-content-between align-items-center mb-0">
 								<div><a href="<?= $path?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>

@@ -74,23 +74,23 @@ function trainer_students($email)
 }
 
 
-function displayStudent($id){
-        global $connection;
-        $statment=$connection->prepare("select users.username,users.img, users.email,course.user_id,student_course.date from student_course
+function displayStudent($id)
+{
+    global $connection;
+    $statment = $connection->prepare("select users.username,users.img, users.email,course.user_id,student_course.date from student_course
         inner join users on users.user_id=student_course.user_id
        inner join course on course.course_id=student_course.course_id where course.user_id=:id and role='user'");
-        $statment->execute([':id'=>$id]);
-    
-        return $statment->fetchAll();
+    $statment->execute([':id' => $id]);
 
-     
+    return $statment->fetchAll();
 }
 
 
-function countCoursesPerStudent($id) {
+function countCoursesPerStudent($id)
+{
     global $connection;
     try {
-        $statement = $connection->prepare("SELECT users.user_id, users.username, COUNT(course.course_id) AS course_count 
+        $statement = $connection->prepare("SELECT users.user_id, users.username,users.img,users.email,student_course.date, COUNT(course.course_id) AS course_count 
             FROM users 
             LEFT JOIN student_course ON users.user_id = student_course.user_id 
             LEFT JOIN course ON course.course_id = student_course.course_id 
@@ -115,4 +115,3 @@ function trainer_Profile($id)
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
-

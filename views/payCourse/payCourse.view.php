@@ -1,5 +1,12 @@
 <main>
-
+<?php 
+require "database/database.php";
+require "models/​student_course.model.php";
+$id=$_SESSION['pay_id'];
+$course=showCourse($id);
+date_default_timezone_set('Asia/Phnom_Penh');
+$date_join = date("Y-m-d H:i:s");
+?>
 <!-- =======================
 Page Banner START -->
 <section class="pt-50">
@@ -56,36 +63,31 @@ Page content START -->
 										<!-- Accordion body -->
 										<div class="accordion-body">
 											<!-- Form START -->
-											<form class="row g-3">
-				
+											<form class="row g-3" action="controllers/mychart/payment.controller.php" method="post">
 												<!-- Card number -->
 												<div class="col-12">
+													<input type="hidden" value="<?=$course['course_id']?>" name="course_id">
+													<input type="hidden" value="<?=$course['paid']?>" name="paid">
+													<input type="hidden" value="<?=$_SESSION['user']['user_id']?>" name="user_id">
+													<input type="hidden" value="<?=$date_join?>" name="date">
 													<label class="form-label">Card Number <span class="text-danger">*</span></label>
 													<div class="position-relative">
-														<input type="text" class="form-control" placeholder="xxxx xxxx xxxx xxxx">
+														<input type="text" class="form-control" placeholder="xxxx xxxx xxxx xxxx" name="numberCard">
 														<img src="assets/images/client/visa.svg" class="w-40px position-absolute top-50 end-0 translate-middle-y me-2 d-none d-sm-block" alt="">
 													</div>	
 												</div>
-												<!-- Expiration Date -->
-												<div class="col-md-6">
-													<label class="form-label">Expiration date <span class="text-danger">*</span></label>
-													<div class="input-group">
-														<input type="text" class="form-control" maxlength="2" placeholder="Month">
-														<input type="text" class="form-control" maxlength="4" placeholder="Year">
-													</div>
-												</div>	
 												<!--Cvv code  -->
 												<div class="col-md-6">
 													<label class="form-label">CVV / CVC <span class="text-danger">*</span></label>
-													<input type="text" class="form-control" maxlength="3" placeholder="xxx">
+													<input type="text" class="form-control" maxlength="3" placeholder="xxx" name="cvv">
 												</div>
 												<!-- Card name -->
 												<div class="col-12">
 													<label class="form-label">Name on Card <span class="text-danger">*</span></label>
-													<input type="text" class="form-control" aria-label="name of card holder" placeholder="Enter card holder name">
+													<input type="text" class="form-control" aria-label="name of card holder" placeholder="Enter card holder name" name="nameCard">
 												</div>
 												<div class="col-12 text-end">
-												<button type="submit" class="btn btn-primary mb-0" disabled="">Save changes</button>
+												<button type="submit" class="btn btn-primary mb-0" >Save changes</button>
 												</div>
 											</form>
 											<!-- Form END -->
@@ -145,39 +147,23 @@ Page content START -->
 							<h4 class="mb-4">Order Summary</h4>
 							<hr>
 							<!-- Coupon END -->
-
+								
 							<!-- Course item START -->
 							<div class="row g-3">
 								<!-- Image -->
 								<div >
-									<img  src="assets/images/courses/4by3/08.jpg" alt="" width="600px">
+									<img  src="assets/images/course/<?=$course['course_img']?>" alt="" width="600px">
 								</div>
 								<!-- Info -->
 								<div class="col-sm-8">
-									<h6 class="mb-0"><a href="#">Sketch from A to Z: for an app designer</a></h6>
+									<h6 class="mb-0"><a href="#"><?=$course['title']?></a></h6>
 									<!-- Info -->
 									<div class="d-flex justify-content-between align-items-center mt-3">
 										<!-- Price -->
-										<span class="text-success">$150</span>
-
-										<!-- Remove and edit button -->
-										<div class="text-primary-hover">
-											<a href="#" class="text-body me-2"><i class="bi bi-trash me-1"></i>Remove</a>
-											<a href="#" class="text-body me-2"><i class="bi bi-pencil-square me-1"></i>Edit</a>
-										</div>
+										<span class="text-success"><?=$course['paid']?>$</span>
 									</div>
 								</div>
-							</div>
-							<!-- Course item END -->
-							
-							<hr> <!-- Divider -->
-
-							
-							<!-- Course item END -->
-
-							<hr> <!-- Divider -->
-
-							
+							</div>												
 						<!-- Order summary END -->
 					</div>
 

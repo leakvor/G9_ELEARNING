@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
     $recordStuCou = getcourse_student($user_id, $course_id);
     if (count($recordStuCou) > 0){
         $_SESSION['cou_id'] = $course_id;
-        header('Location: /stu_lesson?cou_id='.$_SESSION['cou_id']);
+        header('Location: /stu_lesson');
     }else{
         courseStudent($user_id, $course_id, $date_join); 
         $_SESSION['cou_id'] = $course_id;
-        header('Location: /stu_lesson?cou_id='.$_SESSION['cou_id']);
+        header('Location: /stu_lesson');
     }
 }
 

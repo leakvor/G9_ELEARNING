@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         if (in_array($img_ex_lc, $allowed_exs)) {
 
                             $new_img_name = uniqid("", true) . '.' . $img_ex_lc;
-                                // var_dump($new_img_name);
                             $img_upload_path = 'assets/images/instructor/' . $new_img_name;
                             move_uploaded_file($tmp_name, $img_upload_path);
 
@@ -38,7 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             if ($isCreate) {
                                 $teachers = getTeacher();
                                     require "views/trainers/adminTrainer.view.php";
-                                    // header("Location: /adminTrainer");
                             }
                         }else{
 

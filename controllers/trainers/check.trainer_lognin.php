@@ -8,11 +8,7 @@ $verify_pass = "Can't verify your password!";
 $wrong_password = "Please correct email or password!";
 $roles = "You are not a trainer!";
 
-<<<<<<< HEAD
-$regex_email = "/^[a-z\.]{4,20}\@[a-z\.]{2,40}\.[a-z]{1,3}$/";
-=======
 $regex_email = "/^[a-z]{4,10}@[a-z\.]{2,30}\.[a-z]{1,3}$/";
->>>>>>> 8c613fbd3aef7706d4fb1ad68bc79110714d74b7
 $regex_password = "/^[a-zA-Z\d\!\@\#\$\%]{5,8}$/";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -35,8 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             } else {
                 $_SESSION['trainer'] = $verify_pass;
-
-
                 header('Location: /trainer');
             }
         } else {

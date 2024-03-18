@@ -17,7 +17,9 @@
 				<!-- Logo END -->
 
 				<!-- Responsive navbar toggler -->
-				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+					aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
 						<span></span>
 						<span></span>
@@ -32,13 +34,15 @@
 
 				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
-					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
+						aria-labelledby="profileDropdown">
 						<!-- Profile info -->
 						<li class="px-3">
 							<div class="d-flex align-items-center">
 								<!-- Avatar -->
 								<div class="avatar me-3">
-									<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
+									<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg"
+										alt="avatar">
 								</div>
 								<div>
 									<a class="h6" href="#">Lori Ferguson</a>
@@ -53,7 +57,8 @@
 						<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a>
 						</li>
 						<li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-						<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
+						<li><a class="dropdown-item bg-danger-soft-hover" href="#"><i
+									class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
 						<li>
 							<hr class="dropdown-divider">
 						</li>
@@ -84,6 +89,7 @@
 	if (isset($_SESSION['pay_id'])) {
 		$cours_id = $_SESSION['pay_id'];
 		$course = eachCourse($cours_id);
+		
 
 		if ($course[0]['paid'] != 0) {
 			$to_pay = 'PAY ' . $course[0]['paid'] . '$';
@@ -105,17 +111,30 @@
 					<h2 class="text-center mb-4 text-white">Course Payment</h2>
 					<div class="card mb-4">
 						<div class="card-body">
+							<div class="two_style" style="display: flex;justify-content: space-between;">
 							<h5 class="card-title">Select Amount to Pay</h5>
-
-							<div class="btn-group" style="height: 150px; width:100%" role="group" aria-label="Basic outlined example">
-								<button type="checkbox" class="btn btn-outline-primary bg-dark fs-2" name="name" value="qwqwq" style="height: 150px; width:100%"><?= $to_pay ?></button>
+							<form action="../../controllers/mychart/chartId.controller.php" method="post">
+									<input type="hidden" name="course_id" value="<?= $_SESSION['pay_id'] ?>">
+									<input type="hidden" name="user_id" value="<?= $_SESSION['user']['user_id'] ?>">
+									<input type="hidden" name="datejoin" value="<?= $date_join ?>">
+									<button type="submit" class="btn-danger" style="margin-left:30px;">Add to chart</button>
+								</form>
 							</div>
-							<button class="btn dropdown-toggle btn-lg btn-block mt-2 dropbtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Show plan</button>
+							<div class="btn-group" style="height: 150px; width:100%" role="group"
+								aria-label="Basic outlined example">
+								<button type="checkbox" class="btn btn-outline-primary bg-dark fs-2" name="name"
+									value="qwqwq" style="height: 150px; width:100%">
+									<?= $to_pay ?>
+								</button>
+							</div>
+							<button class="btn dropdown-toggle btn-lg btn-block mt-2 dropbtn" type="button"
+								id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">Show plan</button>
 							<div class="dropInfor" style="display:none">
 								<li>Confirmation Message Upon Successful Submission</li>
 								<li>Information on Next Steps</li>
 							</div>
-							<form action="<?= $path ?>" id="paymentForm" method="post">
+							<form action="controllers/students/student.course.controller.php" id="paymentForm" method="post">
 								<input type="hidden" name="course_id" value="<?= $cours_id ?>">
 								<input type="hidden" name="user_id" value="<?= $student_id ?>">
 								<input type="hidden" name="datejoin" value="<?= $date_join ?>">

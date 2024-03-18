@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (($admin['password'] == $adminPassword)){
             $_SESSION['admin'] = $admin;
             header('Location: /admins');
-            var_dump($_SESSION['admin']);
         }else{
             header('Location: /admin');
         }
