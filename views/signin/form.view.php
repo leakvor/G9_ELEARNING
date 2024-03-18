@@ -1,5 +1,7 @@
-<main>
-	<section class="p-0 d-flex align-items-center position-relative overflow-hidden">
+<body>
+<!-- **************** MAIN CONTENT START **************** -->
+
+	<section class="p-7 d-flex ">
 	
 		<div class="container-fluid">
 			<div class="row">
@@ -60,4 +62,17 @@
 			</div> <!-- Row END -->
 		</div>
 	</section>
-</main>
+
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- Back to top -->
+<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Template Functions -->
+<script src="assets/js/functions.js"></script>
+
+
+</body>
