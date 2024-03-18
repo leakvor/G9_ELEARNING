@@ -182,15 +182,15 @@ Page Banner START -->
 					</div>
 					<!-- ===========================comment================= -->
 						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment</a>
-						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none" style="width:100%">
+						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none" style="width:100%;">
 							<div class="row p-2">
-									<div class="card shadow-0 border" style=" background-color:#E0E0E0;width:95%; margin-left: 30px;">
-										<div class="form-outline mb-4" style="width:100%;">
+									<div class="card shadow-0 border" style="width:95%; margin-left: 30px;">
+										<div class="form-outline mb-4" style="width:100%; margin-top:20px;">
 										<input type="text" id="ddANote" class="form-control" placeholder="Type comment...">
 										<button type="submit" style="margin:10px; padding:5px ;border:none;border-radius:5px">+ Add a note</button>
 										
 										<div class="card mb-5">
-										<div class="card-body">
+										<div class="card-body" style=" background-color:#E0E0E0;">
 											<p>Type your note, and hit enter to add it</p>
 
 											<div class="d-flex justify-content-between">
@@ -208,7 +208,7 @@ Page Banner START -->
 										</div>
 
 										<div class="card mb-4">
-										<div class="card-body">
+										<div class="card-body"style=" background-color:#E0E0E0;">
 											<p>Type your note, and hit enter to add it</p>
 
 											<div class="d-flex justify-content-between">
@@ -226,7 +226,7 @@ Page Banner START -->
 										</div>
 
 										<div class="card mb-4">
-										<div class="card-body">
+										<div class="card-body"style=" background-color:#E0E0E0;">
 											<p>Type your note, and hit enter to add it</p>
 
 											<div class="d-flex justify-content-between">
@@ -244,7 +244,7 @@ Page Banner START -->
 										</div>
 
 										<div class="card">
-										<div class="card-body">
+										<div class="card-body"style=" background-color:#E0E0E0;">
 											<p>Type your note, and hit enter to add it</p>
 
 											<div class="d-flex justify-content-between">
