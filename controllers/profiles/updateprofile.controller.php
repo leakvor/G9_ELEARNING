@@ -1,7 +1,7 @@
 <?php
 require '../../database/database.php';
 require '../../models/student.model.php';
-session_start();
+// session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if user_id email  and username are provided
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $email = $_POST['email'];
         
-        // Check if username and id are not empty
+        // Check if username email and id are not empty
         if($username !== '' && $email !=='' && $id!=='') {
             // Call the function in models
             updateStudentNoImg($username,$email,$id);

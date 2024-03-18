@@ -1,4 +1,3 @@
-
 <div class="container-fluid pt-4 px-4">
 <div class="form-row" style="display: flex; flex-direction: column;">
 <form class="d-none d-md-flex " >
@@ -27,7 +26,7 @@
             <td><?= $student['email'] ?></td>
             <td><img src="assets/images/profile/<?= $student["img"] ?>" alt="" style="width: 50px;height: 50px;object-fit: cover; border-radius: 50%;"></td>
               
-            <td><a class="btn bg-gradient-danger btn-danger" href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>  "onclick="return functionDelete()">
+            <td><a class="btn bg-gradient-danger btn-danger" href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>"onclick="return functionDelete()">
             <i class="fa fa-trash" style="color:white;"></i></a>
             <script>
                         function functionDelete() {

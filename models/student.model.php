@@ -13,12 +13,12 @@ function createAcc(string $username, string $email, string $password) : bool
     return $statement->rowCount() > 0;
 }
 
-function accountExist(string $email): array
+function accountExist(string $id): array
 {
     global $connection;
-    $statement = $connection->prepare("SELECT * FROM users WHERE email = :email");
+    $statement = $connection->prepare("SELECT * FROM users WHERE user_id=:id");
     $statement->execute([
-        ':email' => $email,
+        ':id' => $id,
     ]);
 
     if ($statement->rowCount() > 0){

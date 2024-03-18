@@ -139,7 +139,7 @@
                                         <div class="list-group list-group-dark list-group-borderless">
                                             <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
                                             <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-<!-- ==========================================================studentEditprofile============================================================= -->
+                            <!-- =========================================studentEditprofile============================================================= -->
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
                                                 <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
                                                     <li class="nav-item dropdown">
@@ -236,9 +236,6 @@
                             </div>
                         </div>
                         <!-- Chart END -->
-
-                      
-                                       
                                     </div>
                                     <!-- Card body START -->
                                 </div>
@@ -251,7 +248,7 @@
             </div>
         </section>
         <!-- =======================
-Page content END -->
+        Page content END -->
 
     </main>
 
