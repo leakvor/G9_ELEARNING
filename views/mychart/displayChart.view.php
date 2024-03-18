@@ -55,7 +55,7 @@ Page content START -->
 														</div>
 														<!-- Title -->
 														<h6 class="mb-0 ms-lg-3 mt-2 mt-lg-0">
-															<a href="controllers/mychart/payForcharId.controller.php?id=<?=$chart['course_id']?>">
+															<a href="controllers/mychart/payForcharId.controller.php?id=<?=$chart['course_id']?>&chart_id=<?=$chart['chart_id']?>">
 																<?= $chart['title'] ?>
 															</a>
 														</h6>
@@ -73,7 +73,7 @@ Page content START -->
 												</td>
 												<!-- Action item -->
 												<td>
-													<a href=" "onclick="return functionDelete()" class="btn btn-sm btn-success-soft px-2 mb-0" ><i class="fas fa-arrows-alt" ></i></a>
+													<a href="controllers/mychart/payForcharId.controller.php?id=<?=$chart['course_id']?>&chart_id=<?=$chart['chart_id']?>" class="btn btn-sm btn-success-soft px-2 mb-0" ><i class="fas fa-arrows-alt" ></i></a>
 													<a href="../../controllers/mychart/deleteMychart.controller.php?id=<?=$chart['chart_id']?> "onclick="return functionDelete()" class="btn btn-sm btn-danger-soft px-2 mb-0" ><i class="fas fa-fw fa-times" ></i></a>
 												</td>
 											</tr>
@@ -81,9 +81,7 @@ Page content START -->
 									</tbody>
 								</table>
 							</div>
-
 							<!-- Coupon input and button -->
-
 						</div>
 					</div>
 					<!-- Main content END -->

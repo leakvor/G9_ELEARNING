@@ -24,6 +24,7 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/displayChart' => 'controllers/mychart/displayChart.controller.php',
         '/coursePay'=>'controllers/students/coursePay.controller.php',
         '/payForCourse'=>'controllers/mychart/payMoney.controller.php',
+        
     ];
 }else{
     $routes = [

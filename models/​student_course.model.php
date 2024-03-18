@@ -118,4 +118,27 @@ if (!function_exists('showCourse')){
     
     }
 
+if (!function_exists('deleteChart')){
+    function deleteChart(int $id): bool
+    {
+        global $connection;
+        $statement = $connection->prepare("delete from chart where chart_id=:id");
+        $statement->execute([':id' => $id]);
+        $statement->fetchAll();
+        return $statement->rowCount() > 0;
+    }
+    
+}
+
+
+if (!function_exists('GetpayCourse')) {
+    function GetpayCourse($user_id, $course_id) {
+        global $connection;
+        $statement = $connection->prepare("SELECT * FROM payment WHERE user_id= :id AND course_id= :course_id");
+        $statement->execute([':id' => $user_id, ':course_id' => $course_id]);
+
+        return $statement->fetchAll();
+    }
+}
+
 
