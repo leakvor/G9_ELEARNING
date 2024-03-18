@@ -1,7 +1,8 @@
 <body>
-<!-- **************** MAIN CONTENT START **************** -->
 
-	<section class="p-7 d-flex ">
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+	<section class="p-0 pt-7 d-flex align-items-center position-relative overflow-hidden">
 	
 		<div class="container-fluid">
 			<div class="row">
@@ -62,7 +63,7 @@
 			</div> <!-- Row END -->
 		</div>
 	</section>
-
+</main>
 <!-- **************** MAIN CONTENT END **************** -->
 
 <!-- Back to top -->
