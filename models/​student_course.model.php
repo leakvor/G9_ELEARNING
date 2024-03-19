@@ -148,3 +148,17 @@ if (!function_exists('GetpayCourse')) {
         return $statement->fetchAll();
     }
 }
+
+
+if (!function_exists('isPaymentExist')){
+    function isPaymentExist( int $userId,int $courseId): bool{
+        global $connection;
+        $statement = $connection->prepare("SELECT * FROM payment WHERE course_id = :courseId AND user_id = :userId");
+        $statement->execute([
+            ':userId' => $userId,
+            ':courseId' => $courseId
+        ]);
+        return $statement->rowCount()>0;
+    }
+        
+}
