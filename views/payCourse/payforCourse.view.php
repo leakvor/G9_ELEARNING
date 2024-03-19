@@ -12,23 +12,7 @@ $date_join = date("Y-m-d H:i:s");
 ?>
 
 <?php
-// if (isset($_SESSION['cardName'])){
-// 	$cardNameMsg = $_SESSION['cardName'];
-// }else{
-// 	$cardNameMsg ='';
-// }
 
-// if ($_SESSION['cardNumber']){
-// 	$cardNumberMsg = $_SESSION['cardNumber'];
-// }else{
-// 	$cardNumberMsg ='';
-// }
-
-// if ($_SESSION['cardCvv']){
-// 	$cvvMsg = $_SESSION['cardCvv'];
-// }else{
-// 	$cvvMsg ='';
-// }
 
 $cardNameMsg = isset($_SESSION['cardName']) ? $_SESSION['cardName'] : '';
 $cardNumberMsg = $_SESSION['cardNumber'] ?? '';
