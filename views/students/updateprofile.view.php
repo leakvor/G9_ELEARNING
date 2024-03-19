@@ -188,11 +188,11 @@ Page content START -->
                       <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>"  alt="">
                     </span>
                     <!-- Remove btn -->
-                    <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
-                  </label>
+                    <!-- <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
+                  </label> -->
                   <!-- Upload button -->
-                  <label class="btn btn-primary-soft mb-0 editProfile" for="uploadfile-1">Change</label>
-                  <input id="uploadfile-1" class="form-control d-none" type="file">
+                  <!-- <label class="btn btn-primary-soft mb-0 editProfile" for="uploadfile-1">Change</label>
+                  <input id="uploadfile-1" class="form-control d-none" type="file"> -->
 
                 </div>
               </div>
