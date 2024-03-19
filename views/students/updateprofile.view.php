@@ -103,17 +103,6 @@
                 if (isset($_SESSION['user'])){
                   // var_dump($_SESSION['user']);
               ?>
-            <?php 
-            // require 'models/student.model.php';
-            // $username = accountExist($user['email']);
-            // var_dump($user['email']);
-            // echo('hello word')
-            // if (isset($username)){
-            //   $newUsername = $username['username'];
-            // }else{
-            //   $newUsername = '';
-            // }
-            ?>
             <div class="col-auto mt-4 mt-md-0">
               <div class="avatar avatar-xxl mt-n3">
                 <a href="/studentDashboard"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
@@ -122,8 +111,8 @@
             <!-- Profile info -->
             <div class="col d-md-flex justify-content-between align-items-center mt-4">
               <div>
-                <h1 class="my-1 fs-4"><?=$nextUser['username']?><i class="bi bi-patch-check-fill text-info small"></i></h1>
-                <p><?=$nextUser['email'] ?></p>
+                <h1 class="my-1 fs-4"><?=$profile['username']?><i class="bi bi-patch-check-fill text-info small"></i></h1>
+                <p><?=$profile['email'] ?></p>
                 <ul class="list-inline mb-0">
                   <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
                   <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled Students</li>
@@ -213,15 +202,15 @@ Page content START -->
                 <label class="form-label">Username</label>
                 <div class="input-group">
                   <!-- <span class="input-group-text">Eduport.com</span> -->
-                  <input type="text" class="form-control" value="<?=$nextUser['username']?>" name="username">
+                  <input type="text" class="form-control" value="<?=$profile['username']?>" name="username">
                   <!-- <?php var_dump($user['username']) ?> -->
                 </div>
               </div>
 
               <!-- Email id -->
               <div class="col-md-6">
-                <label class="form-label">Email</label>
-                <input class="form-control" type="email" name="email" value="<?= $nextUser['email'] ?>" placeholder="Email">
+                <!-- <label class="form-label">Email</label> -->
+                <input class="form-control" type="hidden" name="email" value="<?= $profile['email'] ?>" placeholder="Email">
               </div>
               <!-- Save button -->
               <div class="d-sm-flex justify-content-end">

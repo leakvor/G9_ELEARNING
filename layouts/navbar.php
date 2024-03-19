@@ -291,12 +291,12 @@
 
       <?php 
         require 'models/student.model.php';
-        $profile = accountExist($user['user_id']);
-        var_dump($profile['user_id']);
+        $profile = accountExist($user['email']);
+        // var_dump($profile['email']);
         if (isset($profile)){
           $profileImg = $profile['img'];
-          $_SESSION['user'] = $profile;
-          $nextUser = $_SESSION['user'];
+          // $_SESSION['user'] = $profile;
+          // $nextUser = $_SESSION['user'];
           // var_dump($nextUser);
         }else{
           $profileImg = '65d81497323c28.92025204.jpg';
@@ -305,20 +305,18 @@
 
       <div class="nav-item dropdown">
         <a href="/studentDashboard" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-          <img class="rounded-circle me-lg-2" src="assets/images/profile/<?php echo $profileImg?>" alt="" style="width: 40px; height: 40px;">
-          <span class="d-none d-lg-inline-flex"><?php echo $user['username']?></span>
+          <img class="rounded-circle me-lg-2" src="assets/images/profile/<?=$profileImg?>" alt="" style="width: 40px; height: 40px;">
+          <span class="d-none d-lg-inline-flex"><?=$profile['username']?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-end bg-dark border-0 rounded-0 rounded-bottom m-0">
-          <!-- <a href="views/profile/form.profile.view.php" class="dropdown-item" id="profile">My Profile</a> -->
           <li class="dropdown-submenu">
-              <!-- <a class="dropdown-item dropdown-toggle" href="#">My Profile</a> -->
               <div class="card dropdown-menu d-flex align-items-center" style="width:330px" data-bs-popper="none">
                 
-                <a href="/studentDashboard"><img src="assets/images/profile/<?php echo $profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
-                <h5 class="card-title dropdown-item text-center"><?php echo $nextUser ['username']?></h5>
-                <p class="card-text dropdown-item text-center"><?php echo $nextUser ['email']?></p>
+                <a href="/studentDashboard"><img src="assets/images/profile/<?=$profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
+                <h5 class="card-title dropdown-item text-center"><?=$profile ['username']?></h5>
+                <p class="card-text dropdown-item text-center"><?=$profile ['email']?></p>
                 <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
-                  <input type="hidden" value="<?php echo $user['email']?>" name="email">
+                  <input type="hidden" value="<?= $profile['email']?>" name="email">
                   <Button type="submit" class="btn btn-primary editProfile" style="width:320px">Edit Profile</button>
                   <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">  
                 </form>
