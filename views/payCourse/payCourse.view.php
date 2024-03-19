@@ -74,17 +74,20 @@ Page content START -->
 													<div class="position-relative">
 														<input type="text" class="form-control" placeholder="xxxx xxxx xxxx xxxx" name="numberCard">
 														<img src="assets/images/client/visa.svg" class="w-40px position-absolute top-50 end-0 translate-middle-y me-2 d-none d-sm-block" alt="">
+														
 													</div>	
 												</div>
 												<!--Cvv code  -->
 												<div class="col-md-6">
 													<label class="form-label">CVV / CVC <span class="text-danger">*</span></label>
 													<input type="text" class="form-control" maxlength="3" placeholder="xxx" name="cvv">
+
 												</div>
 												<!-- Card name -->
 												<div class="col-12">
 													<label class="form-label">Name on Card <span class="text-danger">*</span></label>
 													<input type="text" class="form-control" aria-label="name of card holder" placeholder="Enter card holder name" name="nameCard">
+
 												</div>
 												<div class="col-12 text-end">
 												<button type="submit" class="btn btn-primary mb-0" >Save changes</button>
