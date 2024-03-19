@@ -6,12 +6,12 @@ require "../../models/lesson.model.php";
 session_start();
 
 
-$cardNameMsg = $cardNumberMsg = $expDateMsg = $cvvMsg=$exitAcc = '';
+$cardNameMsg = $cardNumberMsg = $expDateMsg = $cvvMsg = $exitAcc = '';
 $oldCardName = $oldCardNumber = $oldExpDate = $oldCvv = '';
 $isValidForm = true;
-$_SESSION['cardName']='';
-$_SESSION['cardNumber']='';
-$_SESSION['cardCvv']='';
+$_SESSION['cardName'] = '';
+$_SESSION['cardNumber'] = '';
+$_SESSION['cardCvv'] = '';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $myLesson = displayAlllesson($_POST['course_id']);
     $pay = GetpayCourse($_POST['user_id'], $_POST['course_id']);
@@ -20,9 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $oldCardName = $_POST['nameCard'];
         if (strlen($_POST['nameCard']) < 5) {
             $cardNameMsg = "Invalid card name";
-            $_SESSION['cardName']=$cardNameMsg;
+            $_SESSION['cardName'] = $cardNameMsg;
             $isValidForm = false;
-            header("Location: /payForCourses");
         }
     }
 
@@ -30,9 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $oldCardNumber = $_POST['numberCard'];
         if (!validateCreditCard($_POST['numberCard'])) {
             $cardNumberMsg = "Invalid card number";
-            $_SESSION['cardNumber']=$cardNumberMsg;
+            $_SESSION['cardNumber'] = $cardNumberMsg;
             $isValidForm = false;
-            header("Location: /payForCourses");
         }
     }
 
@@ -40,23 +38,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $oldCvv = $_POST['cvv'];
         if (strlen($_POST['cvv']) !== 3) {
             $cvvMsg = "Invalid CVV number";
-            $_SESSION['cardCvv']=$cvvMsg;
+            $_SESSION['cardCvv'] = $cvvMsg;
             $isValidForm = false;
-            header("Location: /payForCourses");
         }
     }
     if ($isValidForm) {
 
-            if (!isPaymentExist($_POST['user_id'], $_POST['course_id']) ) {
-                $isCreate = paymentCourse($_POST['user_id'], $_POST['course_id'], $_POST['paid'], $_POST['date'], $_POST['numberCard'], $_POST['cvv'], $_POST['nameCard']);
-                courseStudent($_POST['user_id'], $_POST['course_id'], $_POST['date']);
-                $_SESSION['myLesson'] = $myLesson;
-                header("Location: /myLessons");
-            }
+        if (!isPaymentExist($_POST['user_id'], $_POST['course_id'])) {
+            $isCreate = paymentCourse($_POST['user_id'], $_POST['course_id'], $_POST['paid'], $_POST['date'], $_POST['numberCard'], $_POST['cvv'], $_POST['nameCard']);
+            courseStudent($_POST['user_id'], $_POST['course_id'], $_POST['date']);
             $_SESSION['myLesson'] = $myLesson;
             header("Location: /myLessons");
-            
-    }else{
+        } else {
+            $_SESSION['myLesson'] = $myLesson;
+            header("Location: /myLessons");
+        }
+    } else {
         header("Location: /payForCourses");
     }
 }
