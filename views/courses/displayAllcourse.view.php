@@ -71,15 +71,7 @@ Page content START -->
 													<!-- Wishlist icon -->
 													<a href="#"><i class="fas fa-heart text-danger"></i></a>
 												</div>
-												<h5 style="color: green;">
-													<?php
-													if ($displayCourse['paid'] == 0) {
-														echo 'Free';
-													} else {
-														echo $displayCourse['paid']. '$';
-													}
-													?>
-												</h5>
+												<h5 style="color: green;"> <?php echo ($displayCourse['paid'] == 0) ? 'Free' : $displayCourse['paid'] . '$'; ?></h5>
 											</div>
 										</div>
 									</div>

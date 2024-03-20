@@ -192,7 +192,7 @@ Featured course START -->
 							<div class="d-flex justify-content-between align-items-center mb-0">
 								<div><a href="<?= $path?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
 								<!-- Price -->
-								<h5 class="text-success mb-0"><?= $courseTeacher['paid'] ?>$</h5>
+								<h5 class="text-success mb-0"><?php echo $courseTeacher['paid'] == 0 ? 'Free' : $courseTeacher['paid'] . '$'; ?></h5>
 							</div>
 						</div>
 					</div>

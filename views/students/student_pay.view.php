@@ -123,7 +123,7 @@
 							<div class="btn-group" style="height: 150px; width:100%" role="group"
 								aria-label="Basic outlined example">
 								<button type="checkbox" class="btn btn-outline-primary bg-dark fs-2" name="name"
-									value="qwqwq" style="height: 150px; width:100%">
+									style="height: 150px; width:100%">
 									<?= $to_pay ?>
 								</button>
 							</div>
