@@ -132,7 +132,17 @@ Featured course START -->
 		<div class="row g-4">
 			<?php
 			foreach ($courseTeachers as $courseTeacher):
-				$alredyPay=GetpayCourse($_SESSION['user']['user_id'],$courseTeacher['course_id'] );
+				if(isset($_SESSION['user'])){
+					$alredyPay=GetpayCourse($_SESSION['user']['user_id'],$courseTeacher['course_id'] );
+					if(count($alredyPay)>0){
+						$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($courseTeacher['course_id']);
+					}else{
+						$path="controllers/students/payId.controller.php". "?id=" . urlencode($courseTeacher['course_id']);
+					}
+				}else{
+					$path="/signins";
+				}
+				;
 			?>
 				<div class="col-md-6 col-lg-4 col-xxl-3">
 					<div class="card p-2 shadow h-100">
@@ -173,13 +183,7 @@ Featured course START -->
 							</div>
 							<!-- Divider -->
 							<hr>
-							<?php
-							if(count($alredyPay)>0){
-								$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($courseTeacher['course_id']);
-							}else{
-								$path="controllers/students/payId.controller.php". "?id=" . urlencode($courseTeacher['course_id']);
-							}
-							?>
+							
 							<!-- Title -->
 							<h6 class="card-title"><a href="<?=$path?>"><?= $courseTeacher['title']?></a></h6>
 							<!-- Badge and Price -->
