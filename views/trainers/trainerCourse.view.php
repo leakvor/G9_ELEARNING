@@ -1,6 +1,10 @@
 <body>
 	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
+<<<<<<< HEAD
+=======
+
+>>>>>>> trainer_page
 		<!-- =======================
 Page Banner START -->
 		<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
@@ -34,6 +38,7 @@ Page content START -->
 						</form>
 					</div>
 				</div>
+<<<<<<< HEAD
 				<div class="row g-4">
 					<?php
 					if (empty($trainerCourse)) {
@@ -147,6 +152,71 @@ Action box START -->
 		<!-- =======================
 Action box END -->
 
+=======
+				<!-- Search option END -->
+
+				<!-- Course list START -->
+				<div class="row g-4">
+					<?php
+					require "database/database.php";
+					require "models/course.model.php";
+					$trainerCourse=trainerCourse($_SESSION['id']);
+					if (empty($trainerCourse)) {
+						// Display message when $displayCourses is empty
+						echo "<h1>This trainer will have Courses Soon....</h1>";
+					} else {
+						foreach ($trainerCourse as $displayCourse) :
+							
+					?>
+							<!-- Card item START -->
+							<div class="col-lg-10 col-xxl-6">
+								<div class="card rounded overflow-hidden shadow">
+									<div class="row g-0">
+										<!-- Image -->
+										<div class="col-md-4">
+											<img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image">
+										</div>
+
+										<!-- Card body -->
+										<div class="col-md-8">
+											<div class="card-body">
+												<!-- Title -->
+												<div class="d-flex justify-content-between mb-2">
+													<h5 class="card-title mb-0"><a href="#"><?= $displayCourse['title'] ?></a></h5>
+													<!-- Wishlist icon -->
+													<a href="#"><i class="fas fa-heart text-danger"></i></a>
+												</div>
+												<!-- Content -->
+												<!-- Info -->
+												<ul class="list-inline mb-1">
+													<li class="list-inline-item h6 fw-light mb-1 mb-sm-0"><i class="far fa-clock text-danger me-2"></i>6h 56m</li>
+													<li class="list-inline-item h6 fw-light mb-1 mb-sm-0"><i class="fas fa-table text-orange me-2"></i>82 lectures</li>
+													<li class="list-inline-item h6 fw-light"><i class="fas fa-signal text-success me-2"></i>Beginner</li>
+												</ul>
+												<!-- Rating -->
+												<ul class="list-inline mb-0">
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
+													<li class="list-inline-item me-0 small"><i class="fas fa-star-half-alt text-warning"></i></li>
+													<li class="list-inline-item ms-2 h6 fw-light">4.5/5.0</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					<?php
+						endforeach;
+					}
+					?>
+
+
+
+				</div>
+
+>>>>>>> trainer_page
 	</main>
 	<!-- **************** MAIN CONTENT END **************** -->
 	<!-- =======================
