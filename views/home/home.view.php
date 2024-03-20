@@ -47,16 +47,6 @@ $teachers=getTeacher();
 				<!-- Title -->
 				<h1>Education, talents, and career opportunities. All in one place.</h1>
 				<p>Get inspired and discover something new today. Grow your skill with the most reliable online courses and certifications in marketing, information technology, programming, and data science. </p>
-
-				<!-- Search course -->
-				<div class="col-md-8 text-center mx-auto pb-5">
-					<form class="bg-body shadow rounded p-2">
-						<div class="input-group">
-							<input class="form-control border-0 me-1" type="search" placeholder="Find your course">
-							<button type="button" class="btn btn-primary mb-0 rounded z-index-1"><i class="fas fa-search"></i></button>
-						</div>
-					</form>
-				</div>
 			</div>
 		</div>
 		<!-- Title and SVG END -->

@@ -1,5 +1,4 @@
 <body>
-<<<<<<< HEAD
 	<!-- Header START -->
 	<header class="navbar-light navbar-sticky">
 		<!-- Logo Nav START -->
@@ -7,8 +6,8 @@
 			<div class="container">
 				<!-- Logo START -->
 				<a class="navbar-brand" href="/trainers">
-					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
-					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.png" alt="logo" style="width: 100%;height:60px">
+					<!-- <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">	 -->
 				</a>
 				<!-- Logo END -->
 				<!-- Responsive navbar toggler -->
@@ -59,8 +58,6 @@
 
 	<!-- Header END -->
 
-=======
->>>>>>> trainer_page
 	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
 

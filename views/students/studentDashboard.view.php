@@ -1,63 +1,6 @@
 <body>
-    <?php
-    // session_start()
-    ?>
-    <!-- Header START -->
-    <header class="navbar-light navbar-sticky">
-        <!-- Logo Nav START -->
-        <nav class="navbar navbar-expand-xl">
-            <div class="container">
-                <!-- Logo START -->
-                <a class="navbar-brand" href="">
-                    <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
-                    <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
-                </a>
-                <!-- Responsive navbar toggler -->
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-animation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
-                <!-- Main navbar START -->
-                <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-                </div>
-                <!-- Main navbar END -->
-                <!-- Profile START -->
-                <div class="dropdown ms-1 ms-lg-0">
-                    <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-                        <!-- Profile info -->
-                        <!-- Links -->
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a>
-                        </li>
-                        <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
-                        <li><a class="dropdown-item bg-danger-soft-hover" href="#"><i class="bi bi-power fa-fw me-2"></i>Sign Out</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <!-- Dark mode switch START -->
-                        <li>
-                            <div class="modeswitch-wrap" id="darkModeSwitch">
-                                <div class="modeswitch-item">
-                                    <div class="modeswitch-icon"></div>
-                                </div>
-                                <span>Dark mode</span>
-                            </div>
-                        </li>
-                        <!-- Dark mode switch END -->
-                    </ul>
-                </div>
-                <!-- Profile START -->
-            </div>
-        </nav>
-        <!-- Logo Nav END -->
-    </header>
-
-    <!-- Header END -->
-
+    
+    
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
 
@@ -65,8 +8,8 @@
 Page Banner START -->
         <section class="pt-0">
             <!-- Main banner background image -->
-            <div class="container-fluid px-0">
-                <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
+            <div class="container-fluid px-0" >
+                <div class="bg-blue h-1000px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover; height: 1000px;">
                 </div>
             </div>
             <div class="container mt-n4">
