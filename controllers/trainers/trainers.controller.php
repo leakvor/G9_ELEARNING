@@ -8,6 +8,5 @@ if(isset($_GET['id'])){
     $_SESSION['id']=$id;
     header("Location: /trainerCourse");
     exit();
-
 }  
 

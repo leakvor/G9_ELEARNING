@@ -21,56 +21,6 @@ Page Banner END -->
 Inner part START -->
 	<section class="pt-4">
 		<div class="container">
-			<!-- Search option START -->
-			<div class="row mb-4 align-items-center">
-				<!-- Search bar -->
-				<div class="col-sm-6 col-xl-4">
-
-					<form class="bg-body shadow rounded p-2">
-						<div class="input-group input-borderless">
-							<input class="form-control me-1" type="search" id="search" placeholder="search">
-							<!-- <button type="button" class="btn btn-primary mb-0 rounded" ><i class="fas fa-search"></i></button> -->
-						</div>
-					</form>
-
-				</div>
-				<!-- Select option -->
-				<div class="col-sm-6 col-xl-3 mt-3 mt-lg-0">
-					<form class="bg-body shadow rounded p-2 input-borderless">
-						<select class="form-select form-select-sm js-choice" aria-label=".form-select-sm">
-							<option value="">Category</option>
-							<option>All</option>
-							<option>Development</option>
-							<option>Design</option>
-							<option>Accounting</option>
-							<option>Translation</option>
-							<option>Finance</option>
-							<option>Legal</option>
-							<option>Photography</option>
-							<option>Writing</option>
-							<option>Marketing</option>
-						</select>
-					</form>
-				</div>
-				<!-- Select option -->
-				<div class="col-sm-6 col-xl-3 mt-3 mt-xl-0">
-					<form class="bg-body shadow rounded p-2 input-borderless">
-						<select class="form-select form-select-sm js-choice" aria-label=".form-select-sm">
-							<option value="">Sort by</option>
-							<option>Most popular</option>
-							<option>Most viewed</option>
-							<option>Top rated</option>
-						</select>
-					</form>
-				</div>
-
-				<!-- Button -->
-				<div class="col-sm-6 col-xl-2 mt-3 mt-xl-0 d-grid">
-					<a href="#" class="btn btn-lg btn-primary mb-0">Filter Results</a>
-				</div>
-			</div>
-			<!-- Search option END -->
-			<!-- Instructor list START -->
 			<div class="row g-4 ">
 				<?php $statement = $connection->prepare("select * from users where role='teacher'");
 				$statement->execute();
@@ -92,7 +42,7 @@ Inner part START -->
 								<!-- ---------Image ------->
 								<div class="col-md-4">
 									<a href="<?= $path ?>">
-										<img src="assets/images/instructor/<?= $teacher['img'] ?>" class="rounded-3" alt="...">
+										<img src="assets/images/instructor/<?= $teacher['img'] ?>" class="rounded-3" alt="img course" style="width: 100%; height: 180px; object-fit: cover;">
 									</a>
 								</div>
 								<!-- Card body -->
@@ -192,7 +142,7 @@ Action box START -->
 	<!-- =======================
 Action box END -->
 </main>
-<!-- **************** MAIN CONTENT END **************** -->
+<!-- **************** MAIN CONTENT END ****************
 
 <script>
 	document.addEventListener('DOMContentLoaded', function() {
@@ -211,4 +161,4 @@ Action box END -->
 			});
 		});
 	});
-</script>
+</script> -->
