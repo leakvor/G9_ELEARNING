@@ -1,5 +1,4 @@
 <body>
-
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
 	<section class="p-0 pt-7 d-flex align-items-center position-relative overflow-hidden">
@@ -65,7 +64,7 @@
 										<input type="password" class="form-control border-0 bg-light rounded-end ps-1" placeholder="*********" id="inputPassword6">
 									</div>
 								</div>
-								<!-- Check box -->
+							
 								<div class="mb-4">
 									<div class="form-check">
 										<input type="checkbox" class="form-check-input" id="checkbox-1">
