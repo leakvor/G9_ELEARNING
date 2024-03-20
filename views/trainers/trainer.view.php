@@ -124,7 +124,6 @@
 							<!-- Card body -->
 							<div class="col-md-8">
 								<div class="card-body">
-									<!-- Title -->
 									<div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
 										<div>
 											<h5 class="card-title mb-0"><a href="#">Jacqueline Miller</a></h5>
@@ -132,13 +131,9 @@
 										</div>
 										<span class="h6 fw-light">4.0<i class="fas fa-star text-warning ms-1"></i></span>
 									</div>
-									<!-- Content -->
 									<p class="text-truncate-2 mb-3">Passage its ten led hearted removal cordial. Preference any astonished unreserved Mrs.</p>
-									<!-- Info -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center">
-										<!-- Title -->
 										<h6 class="text-orange mb-0">Graphic Designer</h6>
-
 										<!-- Social button -->
 										<ul class="list-inline mb-0 mt-3 mt-sm-0">
 											<li class="list-inline-item">
@@ -171,7 +166,6 @@
 							<!-- Card body -->
 							<div class="col-md-8">
 								<div class="card-body">
-									<!-- Title -->
 									<div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
 										<div>
 											<h5 class="card-title mb-0"><a href="#">Louis Ferguson</a></h5>
@@ -179,13 +173,9 @@
 										</div>
 										<span class="h6 fw-light">3.8<i class="fas fa-star text-warning ms-1"></i></span>
 									</div>
-									<!-- Content -->
 									<p class="text-truncate-2 mb-3">Passage its ten led hearted removal cordial. Preference any astonished unreserved Mrs.</p>
-									<!-- Info -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center">
-										<!-- Title -->
 										<h6 class="text-orange mb-0">Engineering Physics</h6>
-										<!-- Social button -->
 										<ul class="list-inline mb-0 mt-3 mt-sm-0">
 											<li class="list-inline-item">
 												<a class="mb-0 me-1 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
@@ -225,9 +215,7 @@
 										</div>
 										<span class="h6 fw-light">4.5<i class="fas fa-star text-warning ms-1"></i></span>
 									</div>
-									<!-- Content -->
 									<p class="text-truncate-2 mb-3">As it so contrasted oh estimating instrument. Size like body some one had. Are conduct viewing boy minutes warrant the expense</p>
-									<!-- Info -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center">
 										<!-- Title -->
 										<h6 class="text-orange mb-0">Graphic Designer</h6>

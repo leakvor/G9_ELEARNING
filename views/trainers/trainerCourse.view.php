@@ -3,13 +3,10 @@
 	<main>
 		<!-- Page Banner START -->
 		<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
-			<!-- Main banner background image -->
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
-						<!-- Title -->
 						<h1 class="text-white">Course List</h1>
-						<!-- Breadcrumb -->
 					</div>
 				</div>
 			</div>
@@ -17,7 +14,6 @@
 		<!-- Page content START -->
 		<section class="pt-5">
 			<div class="container">
-				<!-- Search option START -->
 				<div class="row mb-4 align-items-center">
 					<!-- Search bar -->
 					<div class="col-sm-6 col-xl-4">
@@ -44,18 +40,12 @@
 										<div class="col-md-4">
 											<img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image">
 										</div>
-
-										<!-- Card body -->
 										<div class="col-md-8">
 											<div class="card-body">
-												<!-- Title -->
 												<div class="d-flex justify-content-between mb-2">
 													<h5 class="card-title mb-0"><a href="#"><?= $displayCourse['title'] ?></a></h5>
-													<!-- Wishlist icon -->
 													<a href="#"><i class="fas fa-heart text-danger"></i></a>
 												</div>
-												<!-- Content -->
-												<!-- Info -->
 												<ul class="list-inline mb-1">
 													<li class="list-inline-item h6 fw-light mb-1 mb-sm-0"><i class="far fa-clock text-danger me-2"></i>6h 56m</li>
 													<li class="list-inline-item h6 fw-light mb-1 mb-sm-0"><i class="fas fa-table text-orange me-2"></i>82 lectures</li>
@@ -97,7 +87,6 @@
 		<!-- Action box START -->
 		<section class="pt-0">
 			<div class="container position-relative">
-				<!-- SVG -->
 				<figure class="position-absolute top-50 start-50 translate-middle ms-3">
 					<svg>
 						<path d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z" fill="#fff" fill-rule="evenodd" opacity=".502"></path>
@@ -109,7 +98,6 @@
 
 				<div class="bg-success p-4 p-sm-5 rounded-3">
 					<div class="row justify-content-center position-relative">
-						<!-- Svg -->
 						<figure class="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
 							<svg width="141px" height="141px">
 								<path d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"></path>
@@ -118,12 +106,10 @@
 						<!-- Action box -->
 						<div class="col-11 position-relative">
 							<div class="row align-items-center">
-								<!-- Title -->
 								<div class="col-lg-7">
 									<h3 class="text-white">Become an Instructor!</h3>
 									<p class="text-white mb-3 mb-lg-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished.</p>
 								</div>
-								<!-- Button -->
 								<div class="col-lg-5 text-lg-end">
 									<a href="#" class="btn btn-dark mb-0">Start Teaching today</a>
 								</div>

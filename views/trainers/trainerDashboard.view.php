@@ -136,12 +136,10 @@
 						<!-- Responsive offcanvas body START -->
 						<nav class="navbar navbar-light navbar-expand-xl mx-0">
 							<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-								<!-- Offcanvas header -->
 								<div class="offcanvas-header bg-light">
 									<h5 class="offcanvas-title" id="offcanvasNavbarLabel">My profile</h5>
 									<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 								</div>
-								<!-- Offcanvas body -->
 								<div class="offcanvas-body p-3 p-xl-0">
 									<div class="bg-dark border rounded-3 pb-0 p-3 w-100">
 										<!-- Dashboard menu -->
@@ -177,7 +175,6 @@
 					<div class="col-xl-9">
 						<!-- Counter boxes START -->
 						<div class="row g-4">
-							<!-- Counter item -->
 							<div class="col-sm-6 col-lg-4" id="show_course">
 								<div class="d-flex justify-content-center align-items-center p-4 bg-warning bg-opacity-15 rounded-3">
 									<span class="display-6 text-warning mb-0"><i class="fas fa-tv fa-fw"></i></span>
@@ -262,7 +259,6 @@
 											<h4 class="text-primary my-2">$35000</h4>
 											<p class="mb-0"><span class="text-success me-1">0.20%<i class="bi bi-arrow-up"></i></span>vs last month</p>
 										</div>
-										<!-- Content -->
 										<div class="col-sm-6 col-md-4">
 											<span class="badge bg-dark text-white">Last Month</span>
 											<h4 class="my-2">$28000</h4>
@@ -287,9 +283,7 @@
 									<!-- Card body START -->
 									<div class="card-body">
 										<div class="table-responsive-lg border-0 rounded-3">
-											<!-- Table START -->
 											<table class="table table-dark-gray align-middle p-4 mb-0">
-												<!-- Table head -->
 												<thead>
 													<tr>
 														<th scope="col" class="border-0 rounded-start">Course Name</th>
@@ -297,9 +291,7 @@
 														<th scope="col" class="border-0 rounded-end">Action</th>
 													</tr>
 												</thead>
-												<!-- Table body START -->
 												<tbody>
-
 													<tr>
 														<?php
 														foreach ($tra_student as $course) :
@@ -314,11 +306,9 @@
 														<!-- Course item -->
 														<td>
 															<div class="d-flex align-items-center">
-																<!-- Image -->
 																<div class="w-100px w-md-60px">
 																	<a href="<?= $path ?>"><img src="assets/images/course/<?= $course['course_img'] ?>" alt="" style="width: 100%; height: 60px; object-fit: cover;"></a>
 																</div>
-																<!-- Title -->
 																<h6 class="mb-0 ms-2">
 																	<a href="<?= $path ?>"><?= $course["title"]; ?></a>
 																</h6>
@@ -326,11 +316,8 @@
 														</td>
 														<!-- Selling item -->
 														<!-- <td><?= $course["cateName"]; ?></td> -->
-														<!-- Amount item -->
 														<td><?= $course["paid"] . "$"; ?></td>
-														<!-- Action item -->
 														<td>
-
 															<a href="controllers/trainerCourse/editcourse.controller.php?id=<?= $course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
 															<a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?= $course["course_id"] ?>" class="btn btn-sm btn-danger-soft btn-round mb-0" onclick="return functionDelete()">
 																<i class="fas fa-fw fa-times"></i></a>
@@ -347,18 +334,13 @@
 													</tr>
 												</tbody>
 											<?php endforeach; ?>
-
 											</tbody>
-											<!-- Table body END -->
 											</table>
-											<!-- Table END -->
 										</div>
-
 										<!-- Pagination -->
 										<div class="d-sm-flex justify-content-sm-between align-items-sm-center mt-3">
 											<!-- Content -->
 											<p class="mb-0 text-center text-sm-start">Showing 1 to 8 of 20 entries</p>
-											<!-- Pagination -->
 											<nav class="d-flex justify-content-center mb-0" aria-label="navigation">
 												<ul class="pagination pagination-sm pagination-primary-soft mb-0 pb-0">
 													<li class="page-item mb-0"><a class="page-link" href="#" tabindex="-1"><i class="fas fa-angle-left"></i></a></li>
@@ -370,13 +352,11 @@
 											</nav>
 										</div>
 									</div>
-									<!-- Card body START -->
+
 								</div>
 							</div>
 						</div>
-						<!-- Course List table END -->
 					</div>
-					<!-- Main content END -->
 				</div>
 			</div>
 		</section>
