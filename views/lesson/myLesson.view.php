@@ -48,25 +48,24 @@ foreach($lessons as $lesson):
 
 ?>
 <div class="col-sm-6 col-lg-4 col-xl-3">
-                                <div class="card shadow h-100">
-                                    <!-- Image -->
-                                    <iframe class="card-img-top" width="400" height="315" src="https://www.youtube.com/embed/cnXImeAq2f8?si=Rps6sPsulteyVBIC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	<div class="card shadow h-100">
+    <!-- Image -->
+        <iframe class="card-img-top" width="400" height="315" src="<?= $lesson['document']?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     
-                                    <!-- Card body -->
-                                    <div class="card-body pb-0">
-                                        <!-- Title -->
-                                        <h5 class="card-title"><?= $lesson['lesson_title'] ?><a href="#"></a></h5>
-                                      
-                                    </div>
-                                    <!-- Card footer -->
-                                    <div class="card-footer pt-0 pb-3">
-                                        <hr>
-                                        <div class="d-flex justify-content-between">
-                                            <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- Card body -->
+        <div class="card-body pb-0">
+			<!-- Title -->
+			<h5 class="card-title"><?= $lesson['lesson_title'] ?><a href="#"></a></h5>                             
+    	</div>
+        <!-- Card footer -->
+        <div class="card-footer pt-0 pb-3">
+        <hr>
+            <div class="d-flex justify-content-between">
+                <span class="h6 fw-light mb-0"><i class="fas fa-table text-orange me-2"></i></span>
+            </div>
+    	</div>
+    </div>
+</div>
 <?php
 endforeach;
 }
