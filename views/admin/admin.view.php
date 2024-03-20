@@ -42,32 +42,89 @@
             </div>
             <!-- Sale & Revenue End -->
 
-
+<!-- --------------------------------------------------------------------- -->
             <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
+            <div class="pt-4 px-4">
+                <div class="row g-5">
+                    <div class="">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Worldwide Sales</h6>
                                 <a href="">Show All</a>
                             </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
+                            <?php
+                            require("database/database.php");
+                            require("models/course.model.php");
+
+                            // Retrieve data from the database
+                            $datas = chartBar();
+
+                            // ==========monthname===========
+                            $monthNames = [
+                                1 => 'January',
+                                2 => 'February',
+                                3 => 'March',
+                                4 => 'April',
+                                5 => 'May',
+                                6 => 'June',
+                                7 => 'July',
+                                8 => 'August',
+                                9 => 'September',
+                                10 => 'October',
+                                11 => 'November',
+                                12 => 'December'
+                            ];
+
+                            // Initialize array to store data points
+                            $dataPoints = [];
+
+                            // Check if data is retrieved
+                            if ($datas) {
+                                foreach ($datas as $data) {
+                                    // Assuming $data['month'] contains the month information and $data['total_paid'] contains the total paid amount
+                                    // You can customize this based on your actual data structure
+                                    $monthName =  $monthNames[$data['month']];
+                                    $dataPoints[] = [
+                                        "label" => $monthName,
+                                        "y"     => $data['total_paid']
+                                    ];
+                                }
+                            } else {
+                                // Handle case when no data is retrieved
+                                echo "No data found.";
+                            }
+                            ?>
+                            <head>  
+                                <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+                                <script>
+                                    window.onload = function () {
+                                        var chart = new CanvasJS.Chart("chartContainer", {
+                                            animationEnabled: true,
+                                            theme: "dark1",
+                                            axisY: {
+                                                title: "Total Paid"
+                                            },
+                                            data: [{
+                                                type: "column",
+                                                indexLabel: "{y}",
+                                                yValueFormatString: "$#0.##",
+                                                color: "orange",
+                                                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                                            }]
+                                        });
+                                        chart.render();
+                                    }
+                                </script>
+                            </head>
+                            <body>
+                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                            </body>
+                        </div>       
                     </div>
                 </div>
             </div>
             <!-- Sales Chart End -->
-
+<!-- -------------------------------------------------------------------- -->
 
             <!-- Recent Sales Start -->
             <div class="container-fluid pt-4 px-4">
