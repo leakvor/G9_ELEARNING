@@ -1,5 +1,4 @@
 <body>
-
 <!-- **************** MAIN CONTENT START **************** -->
 <main>
 	<section class="p-0 pt-7 d-flex align-items-center position-relative overflow-hidden">
@@ -43,7 +42,7 @@
 				<div class="col-12 col-lg-6 m-auto">
 					<div class="row my-5">
 						<div class="col-sm-10 col-xl-8 m-auto">
-							<!-- Title -->
+					
 							<span class="mb-0 fs-1">👋</span>
 							<h1 class="fs-2">Login into Eduport!</h1>
 							<p class="lead mb-4">Nice to see you! Please log in with your account.</p>
