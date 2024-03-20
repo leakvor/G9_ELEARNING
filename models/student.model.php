@@ -84,3 +84,11 @@ function updateStudentNoImg($username,$email,$password,$id){
     $statement->rowCount() >0;
 }
 
+
+function displayAllcomment(int $id) : array
+{
+    global $connection;
+    $statement = $connection->prepare(" select username,img from users where user_id=id;");
+    $statement->execute([':id' => $id]);
+    return $statement->fetch();
+}
