@@ -180,8 +180,8 @@ Page Banner START -->
 							</ol>
 						</nav>
 					</div>
-					<!-- ===========================comment================= -->
-						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment</a>
+<!-- ===========================comment================= -->
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment</a>
 						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none" style="width:100%;">
 							<div class="row p-2">
 									<div class="card shadow-0 border" style="width:95%; margin-left: 30px;">
