@@ -17,14 +17,20 @@ if (!function_exists('paymentCourse')) {
     }
 }
 
-function isPaymentExist( int $userId,int $courseId): bool{
+function isPaymentExist(int $userId, int $courseId): bool
+{
     global $connection;
     $statement = $connection->prepare("SELECT * FROM payment WHERE course_id = :courseId AND user_id = :userId");
     $statement->execute([
         ':userId' => $userId,
         ':courseId' => $courseId
     ]);
-    return $statement->rowCount()>0;
+    return $statement->rowCount() > 0;
 }
-
-
+function getPayment(): array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from payment");
+    $statement->execute();
+    return $statement->fetchAll();
+}

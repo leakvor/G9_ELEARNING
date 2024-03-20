@@ -1,8 +1,7 @@
 <body>
 	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
-		<!-- =======================
-Page Banner START -->
+		<!-- Page Banner START -->
 		<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
 			<!-- Main banner background image -->
 			<div class="container">
@@ -15,11 +14,7 @@ Page Banner START -->
 				</div>
 			</div>
 		</section>
-		<!-- =======================
-Page Banner END -->
-
-		<!-- =======================
-Page content START -->
+		<!-- Page content START -->
 		<section class="pt-5">
 			<div class="container">
 				<!-- Search option START -->
@@ -97,15 +92,9 @@ Page content START -->
 							</ul>
 						</nav>
 					</div>
-					<!-- Pagination END -->
-
 				</div>
 		</section>
-		<!-- =======================
-Page content END -->
-
-		<!-- =======================
-Action box START -->
+		<!-- Action box START -->
 		<section class="pt-0">
 			<div class="container position-relative">
 				<!-- SVG -->
@@ -140,18 +129,13 @@ Action box START -->
 								</div>
 							</div>
 						</div>
-					</div> <!-- Row END -->
+					</div>
 				</div>
 			</div>
 		</section>
-		<!-- =======================
-Action box END -->
-
+		<!-- Action box END -->
 	</main>
 	<!-- **************** MAIN CONTENT END **************** -->
-	<!-- =======================
-Footer END -->
-
 	<!-- Back to top -->
 	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
 

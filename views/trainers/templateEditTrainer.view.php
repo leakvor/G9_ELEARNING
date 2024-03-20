@@ -9,8 +9,6 @@
 					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
-				<!-- Logo END -->
-
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -71,23 +69,16 @@
 								</button>
 							</div>
 						</li>
-						<!-- Dark mode options END-->
 					</ul>
 				</div>
-				<!-- Profile START -->
 			</div>
 		</nav>
-		<!-- Logo Nav END -->
 	</header>
 	<div id="sticky-space"></div>
-	<!-- Header END -->
-
 	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
-
-		<!-- =======================Page Banner START -->
+		<!-- Page Banner START -->
 		<section class="pt-0">
-			<!-- Main banner background image -->
 			<div class="container-fluid px-0">
 				<div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
 				</div>
@@ -114,14 +105,10 @@
 											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
 										</ul>
 									</div>
-									<!-- Button -->
 								</div>
 							</div>
 						</div>
-						<!-- Profile banner END -->
-
 						<!-- Advanced filter responsive toggler START -->
-						<!-- Divider -->
 						<hr class="d-xl-none">
 						<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
 							<a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
@@ -129,21 +116,14 @@
 								<i class="fas fa-sliders-h"></i>
 							</button>
 						</div>
-						<!-- Advanced filter responsive toggler END -->
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- =======================
-Page Banner END -->
-
-		<!-- =======================
-Page content START -->
+		<!-- Page content START -->
 		<section class="pt-0">
 			<div class="container">
 				<div class="row">
-
-					<!-- Left sidebar START -->
 					<div class="col-xl-3">
 						<!-- Responsive offcanvas body START -->
 						<div class="offcanvas-body p-3 p-xl-0">
@@ -161,33 +141,23 @@ Page content START -->
 								</div>
 							</div>
 						</div>
-						<!-- Responsive offcanvas body END -->
 					</div>
-					<!-- Left sidebar END -->
-
 					<!-- Main content START -->
 					<div class="col-xl-9">
-						<!-- Edit profile START -->
 						<div class="card bg-transparent border rounded-3">
-							<!-- Card header -->
 							<div class="card-header bg-transparent border-bottom">
 								<h3 class="card-header-title mb-0">Edit Profile</h3>
 							</div>
-							<!-- Card body START -->
 							<div class="card-body">
 								<!-- Form -->
 								<form class="row g-4">
-
-									<!-- Profile picture -->
 									<div class="col-12 justify-content-center align-items-center">
 										<label class="form-label">Profile picture</label>
 										<div class="d-flex align-items-center">
 											<label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
-												<!-- Avatar place holder -->
 												<span class="avatar avatar-xl">
 													<img id="uploadfile-1-preview" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/07.jpg" alt="">
 												</span>
-												<!-- Remove btn -->
 												<button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
 											</label>
 											<!-- Upload button -->
@@ -195,7 +165,6 @@ Page content START -->
 											<input id="uploadfile-1" class="form-control d-none" type="file">
 										</div>
 									</div>
-
 									<!-- Full name -->
 									<div class="col-12">
 										<label class="form-label">Full name</label>
@@ -204,7 +173,6 @@ Page content START -->
 											<input type="text" class="form-control" value="Stevens" placeholder="Last name">
 										</div>
 									</div>
-									<!-- Email id -->
 									<div class="col-md-6">
 										<label class="form-label">Email id</label>
 										<input class="form-control" type="email" value="example@gmail.com" placeholder="Email">
@@ -213,45 +181,31 @@ Page content START -->
 										<label class="form-label">Password</label>
 										<input class="form-control" type="password" value="example@gmail.com" placeholder="Email">
 									</div>
-
-									<!-- Save button -->
 									<div class="d-sm-flex justify-content-end">
 										<button type="button" class="btn btn-primary mb-0">Save changes</button>
 									</div>
 								</form>
 							</div>
-							<!-- Card body END -->
 						</div>
-						<!-- Edit profile END -->
-					</div><!-- Row END -->
+					</div>
 				</div>
 		</section>
-		<!-- =======================
-Page content END -->
-
+		<!-- Page content END -->
 	</main>
 	<!-- **************** MAIN CONTENT END **************** -->
-
-	<!-- =======================
-Footer START -->
+	<!-- Footer START -->
 	<footer class="bg-dark p-3">
 		<div class="container">
 			<div class="row align-items-center">
-				<!-- Widget -->
 				<div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-					<!-- Logo START -->
 					<a href="index.html"> <img class="h-20px" src="assets/images/logo-light.svg" alt="logo"> </a>
 				</div>
-
-				<!-- Widget -->
 				<div class="col-md-4 mb-3 mb-md-0">
 					<div class="text-center text-white text-primary-hover">
 						Copyrights ©2023 Eduport. Build by <a href="https://www.webestica.com/" target="_blank" class="text-white">Webestica</a>.
 					</div>
 				</div>
-				<!-- Widget -->
 				<div class="col-md-4">
-					<!-- Rating -->
 					<ul class="list-inline mb-0 text-center text-md-end">
 						<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-facebook"></i></a></li>
 						<li class="list-inline-item ms-2"><a href="#"><i class="text-white fab fa-instagram"></i></a></li>
@@ -262,8 +216,7 @@ Footer START -->
 			</div>
 		</div>
 	</footer>
-	<!-- =======================
-Footer END -->
+	<!-- Footer END -->
 
 	<!-- Back to top -->
 	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
