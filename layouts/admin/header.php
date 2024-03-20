@@ -35,6 +35,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/js/search_trainer.js" defer></script>
+
+    <!-- ============chart script=========== -->
+	<script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+
 </head>
 
 <body>

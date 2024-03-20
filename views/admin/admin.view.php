@@ -44,99 +44,82 @@
 
 <!-- --------------------------------------------------------------------- -->
             <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
+            <div class="pt-4 px-4">
+                <div class="row g-5">
+                    <div class="">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Worldwide Sales</h6>
                                 <a href="">Show All</a>
                             </div>
-                            <!-- <canvas id="worldwide-sales"></canvas> -->
                             <?php
                             require("database/database.php");
                             require("models/course.model.php");
-                            var_dump(chartBar());
-                                $dataPoints1 = array(
-                                    array("label"=> "2010", "y"=> 36.12),
-                                    array("label"=> "2011", "y"=> 34.87),
-                                    array("label"=> "2012", "y"=> 40.30),
-                                    array("label"=> "2013", "y"=> 35.30),
-                                    array("label"=> "2014", "y"=> 39.50),
-                                    array("label"=> "2015", "y"=> 50.82),
-                                    array("label"=> "2016", "y"=> 74.70),
-                                    array("label"=> "2017", "y"=> 74.70),
-                                    array("label"=> "2018", "y"=> 74.70)
-                                );
-                                $dataPoints2 = array(
-                                    array("label"=> "2010", "y"=> 64.61),
-                                    array("label"=> "2011", "y"=> 70.55),
-                                    array("label"=> "2012", "y"=> 72.50),
-                                    array("label"=> "2013", "y"=> 81.30),
-                                    array("label"=> "2014", "y"=> 63.60),
-                                    array("label"=> "2015", "y"=> 69.38),
-                                    array("label"=> "2016", "y"=> 69.38),
-                                    array("label"=> "2017", "y"=> 69.38),
-                                    array("label"=> "2018", "y"=> 98.70)
-                                );
-                                                            
-                                ?>
-                            <!DOCTYPE HTML>
-                            <html>
+
+                            // Retrieve data from the database
+                            $datas = chartBar();
+
+                            // ==========monthname===========
+                            $monthNames = [
+                                1 => 'January',
+                                2 => 'February',
+                                3 => 'March',
+                                4 => 'April',
+                                5 => 'May',
+                                6 => 'June',
+                                7 => 'July',
+                                8 => 'August',
+                                9 => 'September',
+                                10 => 'October',
+                                11 => 'November',
+                                12 => 'December'
+                            ];
+
+                            // Initialize array to store data points
+                            $dataPoints = [];
+
+                            // Check if data is retrieved
+                            if ($datas) {
+                                foreach ($datas as $data) {
+                                    // Assuming $data['month'] contains the month information and $data['total_paid'] contains the total paid amount
+                                    // You can customize this based on your actual data structure
+                                    $monthName =  $monthNames[$data['month']];
+                                    $dataPoints[] = [
+                                        "label" => $monthName,
+                                        "y"     => $data['total_paid']
+                                    ];
+                                }
+                            } else {
+                                // Handle case when no data is retrieved
+                                echo "No data found.";
+                            }
+                            ?>
                             <head>  
+                                <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
                                 <script>
                                     window.onload = function () {
-                                
                                         var chart = new CanvasJS.Chart("chartContainer", {
                                             animationEnabled: true,
-                                            theme: "light2",
-                                            axisY:{
-                                                includeZero: true
+                                            theme: "dark1",
+                                            axisY: {
+                                                title: "Total Paid"
                                             },
                                             data: [{
                                                 type: "column",
-                                                name: "Real Trees",
                                                 indexLabel: "{y}",
                                                 yValueFormatString: "$#0.##",
-                                                showInLegend: true,
-                                                dataPoints: <?php echo json_encode($dataPoints1, JSON_NUMERIC_CHECK); ?>
-                                            },{
-                                                type: "column",
-                                                name: "Artificial Trees",
-                                                indexLabel: "{y}",
-                                                yValueFormatString: "$#0.##",
-                                                showInLegend: true,
-                                                dataPoints: <?php echo json_encode($dataPoints2, JSON_NUMERIC_CHECK); ?>
+                                                color: "orange",
+                                                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
                                             }]
                                         });
                                         chart.render();
-                                        
-                                        function toggleDataSeries(e){
-                                            if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-                                                e.dataSeries.visible = false;
-                                            }
-                                            else{
-                                                e.dataSeries.visible = true;
-                                            }
-                                            chart.render();
-                                        }
-                                        
                                     }
                                 </script>
                             </head>
                             <body>
-                            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-                                <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-                            </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-secondary text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
+                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                            </body>
+                        </div>       
                     </div>
                 </div>
             </div>
