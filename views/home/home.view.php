@@ -8,10 +8,12 @@ Main Banner START -->
 require "database/database.php";
 require "models/course.model.php";
 require "models/trainer.model.php";
+require "models/​student_course.model.php";
 $courseTeachers = displayCourses();
 $categories=getCategorys();
 $categoryCoursesCount=displayCourseCategory();
 $teachers=getTeacher();
+
 ?>
 		<!-- Title and SVG START -->
 		<div class="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
@@ -139,7 +141,9 @@ Featured course START -->
 
 		<div class="row g-4">
 			<?php
-			foreach ($courseTeachers as $courseTeacher):?>
+			foreach ($courseTeachers as $courseTeacher):
+				$alredyPay=GetpayCourse($_SESSION['user']['user_id'],$courseTeacher['course_id'] );
+			?>
 				<div class="col-md-6 col-lg-4 col-xxl-3">
 					<div class="card p-2 shadow h-100">
 						<div class="rounded-top overflow-hidden">
@@ -180,14 +184,14 @@ Featured course START -->
 							<!-- Divider -->
 							<hr>
 							<?php
-							if (isset($_SESSION['user'])){
-								$coursePay = "/coursepay";
+							if(count($alredyPay)>0){
+								$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($courseTeacher['course_id']);
 							}else{
-								$coursePay = "/";
+								$path="controllers/students/payId.controller.php". "?id=" . urlencode($courseTeacher['course_id']);
 							}
 							?>
 							<!-- Title -->
-							<h6 class="card-title"><a href="controllers/students/payId.controller.php?id=<?=$courseTeacher['course_id']?>"><?= $courseTeacher['title']?></a></h6>
+							<h6 class="card-title"><a href="<?=$path?>"><?= $courseTeacher['title']?></a></h6>
 							<!-- Badge and Price -->
 							<div class="d-flex justify-content-between align-items-center mb-0">
 								<div><a href="<?= $path?>" class="badge bg-info bg-opacity-10 text-info me-2"><i class="fas fa-circle small fw-bold"></i> Personal Development </a></div>
