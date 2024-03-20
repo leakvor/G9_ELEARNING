@@ -18,6 +18,7 @@ if (isset($_SESSION['admin'])) {
         '/adminCourse' => 'controllers/courses/adminCourse.controller.php',
         '/addCourse' => 'controllers/courses/addCourse.controller.php',
         '/displayStudent' => 'controllers/students/displayStudent.controller.php',
+        '/payadmin' => 'controllers/payadmin/payadmin.controller.php',
 
     ];
 } else {
@@ -29,7 +30,6 @@ if (isset($_SESSION['admin'])) {
         '/adminCourse' => 'controllers/courses/adminCourse.controller.php',
         '/addCourse' => 'controllers/courses/addCourse.controller.php',
         '/displayStudent' => 'controllers/students/displayStudent.controller.php',
-        '/payadmin' => 'controllers/payadmin/payadmin.controller.php',
 
     ];
 }
