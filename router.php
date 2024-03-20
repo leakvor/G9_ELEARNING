@@ -36,19 +36,9 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signups' => 'controllers/signup/signup.controler.php',
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
-<<<<<<< HEAD
         '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
         
        
-=======
-        // '/trainerdashboard' => 'controllers/trainers/trainerDashboard.controller.php',
-        '/templateEditTrainer' => 'controllers/trainers/templateEditTrainer.controller.php',
-        '/templateStudentCours' => 'controllers/students/templateStudentCours.controller.php',
-        '/templatePaymentTrainer' => 'controllers/trainers/templatePaymentTrainer.controller.php',
-        // '/trainerList' => 'controllers/trainers/trainer.controller.php',
-        // '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
-        
->>>>>>> trainer_page
     ];
 }
 
