@@ -54,7 +54,7 @@ Page content START -->
 						echo "<h1>This page will have Courses Soon....</h1>";
 					} else {
 						foreach ($displayCourses as $displayCourse) :
-							$alredyPay=GetpayCourse($_SESSION['user']['user_id'],$displayCourse['course_id'] );
+							$alredyPay=getcourse_student($_SESSION['user']['user_id'],$displayCourse['course_id'] );
 							if(count($alredyPay)>0){
 								$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($displayCourse['course_id']);
 							}else{

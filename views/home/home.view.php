@@ -133,7 +133,7 @@ Featured course START -->
 			<?php
 			foreach ($courseTeachers as $courseTeacher):
 				if(isset($_SESSION['user'])){
-					$alredyPay=GetpayCourse($_SESSION['user']['user_id'],$courseTeacher['course_id'] );
+					$alredyPay=getcourse_student($_SESSION['user']['user_id'],$courseTeacher['course_id'] );
 					if(count($alredyPay)>0){
 						$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($courseTeacher['course_id']);
 					}else{

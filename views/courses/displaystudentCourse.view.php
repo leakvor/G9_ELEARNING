@@ -396,7 +396,7 @@
                                             <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
                                             <li class="list-inline-item me-0 small"><i class="fas fa-star text-warning"></i></li>
                                             <li class="list-inline-item me-0 small"><i class="far fa-star text-warning"></i></li>
-                                            <li class="list-inline-item ms-2 h6 fw-light mb-0"><?=$myCourse['paid']?>$</li>
+                                            <li class="list-inline-item ms-2 h6 fw-light mb-0"> <?php echo $myCourse['paid'] == 0 ? 'Free' : $myCourse['paid'] . '$'; ?></li>
                                         </ul>
                                     </div>
                                     <!-- Card footer -->
