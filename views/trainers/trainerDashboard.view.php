@@ -78,6 +78,8 @@ Page Banner START -->
 				require "./models/trainer.model.php";
 
 				$trainer_email = $trainer['email'];
+				$students=countCoursesPerStudent($trainer['user_id']);
+				// var_dump($students);
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
@@ -222,8 +224,7 @@ Page content START -->
 									<span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
 									<div class="ms-4">
 										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-delay="200">0</h5>
-											<span class="mb-0 h5">K+</span>
+											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?=count($students)?>" data-purecounter-delay="200"><?=count($students)?></h5>
 										</div>
 										<span class="mb-0 h6 fw-light">Total Students</span>
 									</div>

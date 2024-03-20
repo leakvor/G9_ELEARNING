@@ -115,3 +115,11 @@ function trainer_Profile($id)
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function myStudent($id){
+    global $connection;
+    $statment = $connection->prepare("select * from student_course inner join users on users.user_id=student_course.user_id where users.user_id=:id");
+    $statment->execute([':id' => $id]);
+
+    return $statment->fetchAll();
+}
