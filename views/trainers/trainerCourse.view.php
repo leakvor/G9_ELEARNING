@@ -3,7 +3,6 @@
 	<main>
 		<!-- Page Banner START -->
 		<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:350px">
-			<!-- Main banner background image -->
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -15,7 +14,6 @@
 		<!-- Page content START -->
 		<section class="pt-5">
 			<div class="container">
-				<!-- Search option START -->
 				<div class="row mb-4 align-items-center">
 					<div class="col-sm-6 col-xl-4">
 						<form class="border rounded p-2">
@@ -57,10 +55,8 @@
 										<!-- Card body -->
 										<div class="col-md-8">
 											<div class="card-body">
-												<!-- Title -->
 												<div class="d-flex justify-content-between mb-2">
 													<h5 class="card-title mb-0"><a href="#"><?= $displayCourse['title'] ?></a></h5>
-													<!-- Wishlist icon -->
 													<a href="#"><i class="fas fa-heart text-danger"></i></a>
 												</div>
 												<h5 style="color: green;"> <?php echo ($displayCourse['paid'] == 0) ? 'Free' : $displayCourse['paid'] . '$'; ?></h5>

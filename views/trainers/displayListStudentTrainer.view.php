@@ -1,12 +1,11 @@
 <body>
     <main>
-
         <!-- Main Banner START -->
         <section class="pt-0">
             <!-- Main banner background image -->
             <div class="container-fluid px-0">
                 <div class="bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
-            </div>
+                </div>
             </div>
             <div class="container mt-n4">
                 <div class="row">
@@ -21,14 +20,12 @@
                                 $allStudent = $_SESSION['student'];
                                 $profile = $_SESSION['trainer'];
                                 $countPreStudent = countCoursesPerStudent($profile['user_id']);
-                                // var_dump($profile);
                                 ?>
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
                                         <img class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/instructor/<?= $profile['img'] ?>" alt="">
                                     </div>
                                 </div>
-
                                 <!-- Profile info -->
                                 <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                     <div>
@@ -44,8 +41,6 @@
                 </div>
             </div>
         </section>
-        <!-- Main Banner END -->
-
         <!-- Inner part START -->
         <section class="pt-0">
             <div class="container">
@@ -78,7 +73,6 @@
                             <div class="card-header bg-transparent border-bottom">
                                 <h3 class="mb-0">My Students List</h3>
                             </div>
-                            <!-- Card body START -->
                             <!-- Student list table START -->
                             <div class="table-responsive border-0">
                                 <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
@@ -91,7 +85,6 @@
                                             <th scope="col" class="border-0">Enrolled date</th>
                                         </tr>
                                     </thead>
-                                    <!-- Table body START -->
                                     <tbody>
                                         <?php foreach ($countPreStudent as $student) : ?>
                                             <tr>
@@ -114,25 +107,18 @@
                                                 </td>
                                                 <!-- Table data -->
                                                 <td> <span><?= $student['course_count'] ?></span></td>
-                                                <!-- Table data -->
                                                 <td><?= $student['date'] ?></td>
                                             </tr>
                                         <?php endforeach ?>
                                     </tbody>
-                                    <!-- Table body END -->
                                 </table>
-                            </div><!-- Student list table END -->
-                            <!-- Pagination START -->
+                            </div>
                         </div>
-                        <!-- Card body START -->
                     </div>
-                    <!-- Card END -->
                 </div>
-                <!-- Main content END -->
-            </div><!-- Row END -->
+            </div>
             </div>
         </section>
-        <!-- Inner part END -->
     </main>
     <!-- Back to top -->
     <div class="back-top back-top-show"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>

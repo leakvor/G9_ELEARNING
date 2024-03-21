@@ -9,8 +9,6 @@
 					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
-				<!-- Logo END -->
-
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -26,10 +24,6 @@
 				$categories = $statement->fetchAll();
 
 				?>
-
-				
-							
-		<!-- Logo Nav END -->
 	</header>
 	<div id="sticky-space" style="height: 0px;"></div>
 	<!-- Header END -->
@@ -37,8 +31,6 @@
 		$id = ($_POST['id']);
 	}
 	?>
-	<!-- =======================
-Page Banner START -->
 	<section class="py-0 bg-blue h-100px align-items-center d-flex h-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
 		<!-- Main banner background image -->
 		<div class="container">
@@ -57,9 +49,7 @@ Page Banner START -->
 		<!-- Content -->
 		<p class="text-center">Use this interface to add a new Course to the portal. Once you are done adding the item it will be reviewed for quality. If approved, your course will appear for sale and you will be informed by email that your course has been accepted.</p>
 	</div>
-
-	<!-- =======================
-Page Banner END -->
+	<!-- Page Banner END -->
 	<div class="container">
 		<div class="modal-body">
 			<form action="controllers/trainerCourse/createCourse.controller.php" method="POST" enctype="multipart/form-data">
@@ -79,19 +69,14 @@ Page Banner END -->
 							<?php foreach ($categories as $category) : ?>
 								<option value="<?= $category['cat_id'] ?>"><?= $category['cateName'] ?></option>
 							<?php endforeach ?>
-
 						</select>
 						<span id="categoryValidationMsg" class="text-danger"></span>
 					</div>
-
 				</div>
 				<div class="col-md-12 mt-4 ">
 					<label for="course-description">Course price</label>
 					<input type="number" class="form-control" name="paid" id="course-price" placeholder="Enter course price" name='paid'>
 				</div>
-
-
-
 				<div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3 mt-4">
 					<!-- Image -->
 					<img src="" alt="">
@@ -110,19 +95,14 @@ Page Banner END -->
 			</form>
 		</div>
 	</div>
-
 	<!--Footer START -->
 	<footer class="bg-dark p-3">
 		<div class="container">
 			<div class="row align-items-center">
-				<!-- Widget -->
 				<div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
 					<!-- Logo START -->
 					<a href="index.html"> <img class="h-20px" src="assets/images/logo-light.svg" alt="logo"> </a>
 				</div>
-
-				<!-- Widget -->
-				<!-- Widget -->
 				<div class="col-md-4">
 					<!-- Rating -->
 					<ul class="list-inline mb-0 text-center text-md-end">
@@ -135,8 +115,5 @@ Page Banner END -->
 			</div>
 		</div>
 	</footer>
-
-	<!-- =======================
-Footer END -->
-
+	<!-- Footer END -->
 </body>

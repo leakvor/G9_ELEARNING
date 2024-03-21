@@ -100,3 +100,10 @@ function getTotalPaidThisMonth() {
     // Return the total paid for this month
     return $result['total_paid'];
 }
+function getPayment(): array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from payment");
+    $statement->execute();
+    return $statement->fetchAll();
+}

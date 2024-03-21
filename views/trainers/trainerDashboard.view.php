@@ -63,6 +63,7 @@
 			require "models/student.model.php";
 			require "./models/trainer.model.php";
 
+<<<<<<< HEAD
 				$trainer_email = $trainer['email'];
 				$students=countCoursesPerStudent($trainer['user_id']);
 				// var_dump($students);
@@ -73,6 +74,16 @@
 						
 					}
 				}
+=======
+			$trainer_email = $trainer['email'];
+			$trainer_data = accountExist($trainer_email);
+			if (isset($trainer)) {
+				$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
+				if (isset($trainer_profile)) {
+				}
+			}
+
+>>>>>>> payment_admin
 			$tra_student = trainer_students($trainer_email);
 			?>
 			<!-- Main banner background image -->
@@ -107,7 +118,11 @@
 								</div>
 							</div>
 						</div>
+<<<<<<< HEAD
 						<!-- Divider -->
+=======
+						<!-- Advanced filter responsive toggler START -->
+>>>>>>> payment_admin
 						<hr class="d-xl-none">
 						<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
 							<a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
@@ -126,7 +141,6 @@
 					<div class="col-xl-3">
 						<nav class="navbar navbar-light navbar-expand-xl mx-0">
 							<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-								<!-- Offcanvas header -->
 								<div class="offcanvas-header bg-light">
 									<h5 class="offcanvas-title" id="offcanvasNavbarLabel">My profile</h5>
 									<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -287,7 +301,6 @@
 															}
 														?>
 												<tbody>
-													<!-- Table item -->
 													<tr>
 														<td>
 															<div class="d-flex align-items-center">
@@ -347,7 +360,6 @@
 		</section>
 		<!-- Page content END -->
 	</main>
-
 	<!-- Back to top -->
 	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
 
