@@ -73,7 +73,6 @@
 						
 					}
 				}
-			}
 			$tra_student = trainer_students($trainer_email);
 			?>
 			<!-- Main banner background image -->

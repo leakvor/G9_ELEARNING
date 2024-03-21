@@ -73,9 +73,6 @@
 						endforeach;
 					}
 					?>
-
-
-
 				</div>
 
 	</main>
