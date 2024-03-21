@@ -1,9 +1,9 @@
 <div class="container-fluid pt-4 px-4">
     <div class="form-row" style="display: flex; flex-direction: column;">
         <form class="d-none d-md-flex ">
-            <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;width:200px" type="search" id="search" placeholder="Search">
+            <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;width:200px" type="search" id="search" placeholder="Search" name="user_id" >
         </form>
-        <!-- table p$payment -->
+        <!-- table payment -->
         <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <table class="table table-dark">
                 <thead>
@@ -32,9 +32,10 @@
                             <td><?= $payment['cvv'] ?></td>
                             <td><?= $payment['nameonCard'] ?></td>
                         </tr>
-                    <?php endforeach; ?>
+                    <?php endforeach;?>
                 </tbody>
                 </tbody>
             </table>
         </div>
-    </div>
+    </div>  
+    
