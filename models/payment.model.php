@@ -17,6 +17,7 @@ if (!function_exists('paymentCourse')) {
     }
 }
 
+if (!function_exists('isPaymentExist')) {
 function isPaymentExist( int $userId,int $courseId): bool{
     global $connection;
     $statement = $connection->prepare("SELECT * FROM payment WHERE course_id = :courseId AND user_id = :userId");
@@ -25,7 +26,7 @@ function isPaymentExist( int $userId,int $courseId): bool{
         ':courseId' => $courseId
     ]);
     return $statement->rowCount()>0;
-}
+}}
 
 
 function getTotalPaidToday() {
@@ -76,4 +77,26 @@ function getTotalPaidOverall() {
 
     // Return total paid or default to $0 if null
     return $result['total_paid'] !== null ? $result['total_paid'] : 0;
+}
+
+
+
+// Function to get total paid for this month
+function getTotalPaidThisMonth() {
+    global $connection; // Assuming $conn is your database connection object
+
+    // Get the current month and year
+    $currentMonth = date('m');
+    $currentYear = date('Y');
+
+    // Prepare and execute SQL query to get total paid for this month
+    $query = "SELECT SUM(paid) AS total_paid FROM payment WHERE MONTH(date) = :month AND YEAR(date) = :year";
+    $stmt = $connection->prepare($query);
+    $stmt->execute(array(':month' => $currentMonth, ':year' => $currentYear));
+
+    // Fetch the result
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Return the total paid for this month
+    return $result['total_paid'];
 }

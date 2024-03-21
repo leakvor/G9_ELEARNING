@@ -3,7 +3,7 @@ require ("database/database.php");
 require ("models/payment.model.php");
 $totalPaidToday = getTotalPaidToday();
 $totalPaidYesterday = getTotalPaidYesterday();
-$totalRevenueToday = getTotalRevenueToday();
+$totalPaidThisMonth = getTotalPaidThisMonth();
 $totalPaidOverall = getTotalPaidOverall();
 ?>
             <!-- Sale & Revenue Start -->
@@ -31,8 +31,8 @@ $totalPaidOverall = getTotalPaidOverall();
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Revenue Today</p>
-                                <h6 class="mb-0"><?php echo $totalRevenueToday; ?>$</h6>
+                                <p class="mb-2">Total this month</p>
+                                <h6 class="mb-0"><?php echo $totalPaidThisMonth; ?>$</h6>
                             </div>
                         </div>
                     </div>
@@ -133,7 +133,18 @@ $totalPaidOverall = getTotalPaidOverall();
             <!-- Sales Chart End -->
 <!-- -------------------------------------------------------------------- -->
 
-           
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Chart for course</h6>
+                        <a href="">Show All</a>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Recent Sales End -->
+
 
             <!-- Widgets Start -->
             <div class="container-fluid pt-4 px-4">
