@@ -102,7 +102,26 @@ $totalPaidOverall = getTotalPaidOverall();
                             }
                             ?>
                             <head>  
-                               
+                            <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+                                <script>
+                                    window.onload = function () {
+                                        var chart = new CanvasJS.Chart("chartContainer", {
+                                            animationEnabled: true,
+                                            theme: "dark1",
+                                            axisY: {
+                                                title: "Total Paid"
+                                            },
+                                            data: [{
+                                                type: "column",
+                                                indexLabel: "{y}",
+                                                yValueFormatString: "$#0.##",
+                                                color: "orange",
+                                                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                                            }]
+                                        });
+                                        chart.render();
+                                    }
+                                </script>
                             </head>
                             <body>
                                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
