@@ -1,4 +1,11 @@
-
+<?php 
+require ("database/database.php");
+require ("models/payment.model.php");
+$totalPaidToday = getTotalPaidToday();
+$totalPaidYesterday = getTotalPaidYesterday();
+$totalPaidThisMonth = getTotalPaidThisMonth();
+$totalPaidOverall = getTotalPaidOverall();
+?>
             <!-- Sale & Revenue Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -7,7 +14,7 @@
                             <i class="fa fa-chart-line fa-3x text-primary"></i>
                             <div class="ms-3">
                                 <p class="mb-2">Today Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <h6 class="mb-0"><?php echo $totalPaidToday; ?>$</h6>
                             </div>
                         </div>
                     </div>
@@ -15,8 +22,8 @@
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Sale</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Yesterday</p>
+                                <h6 class="mb-0"><?php echo $totalPaidYesterday; ?>$</h6>
                             </div>
                         </div>
                     </div>
@@ -24,8 +31,8 @@
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Today Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total this month</p>
+                                <h6 class="mb-0"><?php echo $totalPaidThisMonth; ?>$</h6>
                             </div>
                         </div>
                     </div>
@@ -33,8 +40,8 @@
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Total Revenue</p>
-                                <h6 class="mb-0">$1234</h6>
+                                <p class="mb-2">Total</p>
+                                <h6 class="mb-0"><?php echo $totalPaidOverall; ?>$</h6>
                             </div>
                         </div>
                     </div>
@@ -95,26 +102,7 @@
                             }
                             ?>
                             <head>  
-                                <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-                                <script>
-                                    window.onload = function () {
-                                        var chart = new CanvasJS.Chart("chartContainer", {
-                                            animationEnabled: true,
-                                            theme: "dark1",
-                                            axisY: {
-                                                title: "Total Paid"
-                                            },
-                                            data: [{
-                                                type: "column",
-                                                indexLabel: "{y}",
-                                                yValueFormatString: "$#0.##",
-                                                color: "orange",
-                                                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                                            }]
-                                        });
-                                        chart.render();
-                                    }
-                                </script>
+                               
                             </head>
                             <body>
                                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
@@ -130,7 +118,7 @@
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Recent Salse</h6>
+                        <h6 class="mb-0">Chart for course</h6>
                         <a href="">Show All</a>
                     </div>
                     <div class="table-responsive">
