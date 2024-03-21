@@ -6,8 +6,8 @@
 			<div class="container">
 				<!-- Logo START -->
 				<a class="navbar-brand" href="/trainers">
-					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
-					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.png" alt="logo" style="width: 100%;height:60px">
+					<!-- <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">	 -->
 				</a>
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,11 +63,15 @@
 			require "models/student.model.php";
 			require "./models/trainer.model.php";
 
-			$trainer_email = $trainer['email'];
-			$trainer_data = accountExist($trainer_email);
-			if (isset($trainer)) {
-				$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
-				if (isset($trainer_profile)) {
+				$trainer_email = $trainer['email'];
+				$students=countCoursesPerStudent($trainer['user_id']);
+				// var_dump($students);
+				$trainer_data = accountExist($trainer_email);
+				if (isset($trainer)){
+					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
+					if (isset($trainer_profile)){
+						
+					}
 				}
 			}
 			$tra_student = trainer_students($trainer_email);
@@ -93,11 +97,6 @@
 										<h1 class="my-1 fs-4"><?= $trainer['username'] ?><i class="bi bi-patch-check-fill text-info small"></i></h1>
 										<p><?php echo $trainer['email'] ?></p>
 										<ul class="list-inline mb-0">
-											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled
-												Students</li>
-											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
-										</ul>
 									</div>
 									<div class="d-flex align-items-center mt-2 mt-md-0">
 										<form action="/createCourse" method="post">
@@ -139,15 +138,27 @@
 											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 											<a class="list-group-item " href="
 											"><i class="bi bi-basket fa-fw me-2"></i>My Course</a>
-											<a class="list-group-item" href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item" href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
+											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<?php
+												if (isset($_SESSION['user'])){
+													$user = $_SESSION['user']; 
+													echo("channy ");
+												}
+											?>
+
 											<form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
 													<li class="nav-item dropdown">
+														<!-- =================================edit profile================================ -->
 														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
+
 														<ul class="dropdown-menu dropdown-menu-end min-w-auto">
-															<input type="hidden" value="<?php echo $trainer['email'] ?>" name="email">
-															<li><input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload"></li>
+															<input type="hidden" value="<?php echo $trainer['email']?>" name="email">
+															<li>
+																<input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload">
+																
+														</li>
 														</ul>
 													</li>
 												</ul>
@@ -184,8 +195,7 @@
 									<span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
 									<div class="ms-4">
 										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-delay="200">0</h5>
-											<span class="mb-0 h5">K+</span>
+											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?=count($students)?>" data-purecounter-delay="200"><?=count($students)?></h5>
 										</div>
 										<span class="mb-0 h6 fw-light">Total Students</span>
 									</div>

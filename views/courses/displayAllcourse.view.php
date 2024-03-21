@@ -46,13 +46,20 @@ Page content START -->
 				<!-- Course list START -->
 				<div class="row g-4 ">
 					<?php
-
+					require "database/database.php";
+					require "models/​student_course.model.php";
 					// echo "here";
 					if (empty($displayCourses)) {
 						// Display message when $displayCourses is empty
 						echo "<h1>This page will have Courses Soon....</h1>";
 					} else {
 						foreach ($displayCourses as $displayCourse) :
+							$alredyPay=getcourse_student($_SESSION['user']['user_id'],$displayCourse['course_id'] );
+							if(count($alredyPay)>0){
+								$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($displayCourse['course_id']);
+							}else{
+								$path="controllers/students/payId.controller.php". "?id=" . urlencode($displayCourse['course_id']);
+							}
 					?>
 							<!-- Card item START -->
 							<div class="col-lg-10 col-xxl-6">
@@ -60,7 +67,7 @@ Page content START -->
 									<div class="row g-0">
 										<!-- Image -->
 										<div class="col-md-4">
-											<a href="controllers/students/payId.controller.php?id=<?= $displayCourse['course_id'] ?>"><img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image" style="width: 100%; height: 180px; object-fit: cover;"></a>
+											<a href="<?=$path?>"><img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image" style="width: 100%; height: 180px; object-fit: cover;"></a>
 										</div>
 										<!-- Card body -->
 										<div class="col-md-8">
