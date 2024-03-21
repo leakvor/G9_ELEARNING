@@ -62,7 +62,7 @@
     <main>
 
         <!-- =======================
-Page Banner START -->
+        Page Banner START -->
         <section class="pt-0">
             <!-- Main banner background image -->
             <div class="container-fluid px-0">
@@ -78,13 +78,13 @@ Page Banner START -->
                                 <!-- Avatar -->
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <a href="/studentEditprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?= $user['img'] ?>" alt="studentProfile"></a>
+                                        <a href="/updateprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
                                     </div>
                                 </div>
                                 <!-- Profile info -->
                                 <div class="col d-md-flex justify-content-between align-items-center mt-4">
                                     <div>
-                                        <h1 class="my-1 fs-4"><?= $user['username'] ?><i class="bi bi-patch-check-fill text-info small"></i></h1>
+                                        <h1 class="my-1 fs-4"><?= $profile['username'] ?><i class="bi bi-patch-check-fill text-info small"></i></h1>
                                         <p><?php echo $user['email'] ?></p>
                                         <ul class="list-inline mb-0">
                                             <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
@@ -113,10 +113,10 @@ Page Banner START -->
             </div>
         </section>
         <!-- =======================
-Page Banner END -->
+                Page Banner END -->
 
         <!-- =======================
-Page content START -->
+                Page content START -->
         <section class="pt-0">
             <div class="container">
                 <div class="row">
@@ -137,7 +137,7 @@ Page content START -->
                                         <div class="list-group list-group-dark list-group-borderless">
                                             <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
                                             <a class="list-group-item " href=""><i class="bi bi-basket fa-fw me-2"></i>My Courses</a>
-
+                            <!-- =========================================studentEditprofile============================================================= -->
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
                                                 <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
                                                     <li class="nav-item dropdown">
@@ -234,9 +234,12 @@ Page content START -->
                             </div>
                         </div>
                         <!-- Chart END -->
-
-
-
+                                    </div>
+                                    <!-- Card body START -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Course List table END -->
                     </div>
                     <!-- Card body START -->
                 </div>
@@ -249,7 +252,7 @@ Page content START -->
             </div>
         </section>
         <!-- =======================
-Page content END -->
+        Page content END -->
 
     </main>
 

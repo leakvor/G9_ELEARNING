@@ -171,16 +171,27 @@ Page content START -->
 											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 											<a class="list-group-item " href="
 											"><i class="bi bi-basket fa-fw me-2"></i>My Course</a>
-											<a class="list-group-item" href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item" href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
+											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<?php
+												if (isset($_SESSION['user'])){
+													$user = $_SESSION['user']; 
+													echo("channy ");
+												}
+											?>
 
 											<form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
 													<li class="nav-item dropdown">
+														<!-- =================================edit profile================================ -->
 														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
+
 														<ul class="dropdown-menu dropdown-menu-end min-w-auto">
 															<input type="hidden" value="<?php echo $trainer['email']?>" name="email">
-															<li><input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload"></li>
+															<li>
+																<input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload">
+																
+														</li>
 														</ul>
 													</li>
 												</ul>	
