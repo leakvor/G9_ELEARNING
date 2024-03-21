@@ -11,12 +11,24 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/signins' => 'controllers/home/home.controller.php',
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',
+        // '/trainers' => 'controllers/trainers/trainer.controller.php',
         '/profileimg' => 'controllers/profiles/profile.controller.php',
         '/displayAllcourse' => 'controllers/courses/displayAllcourse.controller.php',
         '/coursepay' => 'views/students/student_pay.view.php',
         '/studentDashboard' => 'controllers/students/studentDashboard.controller.php',
         '/trainerCourse'=>'controllers/courses/trainerCourse.controller.php',
-        '/updateprofile'=>'controllers/profiles/information.profile.controller.php',
+        '/stu_lesson' => 'controllers/students/stu_lesson.view.controller.php',
+        '/displaystudentCourse' => 'controllers/courses/displaystudentCourse.controller.php',
+        '/myLessons' => 'controllers/lesson/displayMylesson.controller.php',
+        '/myLesson' => 'controllers/lesson/myLesson.controller.php',
+        '/paymentCours' => 'controllers/payCourse/payCourse.controller.php',
+        '/displayChart' => 'controllers/mychart/displayChart.controller.php',
+        '/coursePay'=>'controllers/students/coursePay.controller.php',
+        '/payForCourse'=>'controllers/mychart/payMoney.controller.php',
+        '/payForCourses'=>'controllers/payCourse/PayForCourse.controller.php',
+        '/trainerList' => 'controllers/trainers/trainer.controller.php',
+         '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
+        
     ];
 }else{
     $routes = [

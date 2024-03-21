@@ -6,8 +6,8 @@
 			<div class="container">
 				<!-- Logo START -->
 				<a class="navbar-brand" href="/trainers">
-					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
-					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.png" alt="logo" style="width: 100%;height:60px">
+					<!-- <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">	 -->
 				</a>
 				<!-- Logo END -->
 				<!-- Responsive navbar toggler -->
@@ -78,6 +78,8 @@ Page Banner START -->
 				require "./models/trainer.model.php";
 
 				$trainer_email = $trainer['email'];
+				$students=countCoursesPerStudent($trainer['user_id']);
+				// var_dump($students);
 				$trainer_data = accountExist($trainer_email);
 				if (isset($trainer)){
 					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
@@ -112,11 +114,6 @@ Page Banner START -->
 										<h1 class="my-1 fs-4"><?= $trainer['username']?><i class="bi bi-patch-check-fill text-info small"></i></h1>
 										<p><?php echo $trainer['email']?></p>
 										<ul class="list-inline mb-0">
-											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled
-												Students</li>
-											<li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
-										</ul>
 									</div>
 									<!-- Button -->
 									<div class="d-flex align-items-center mt-2 mt-md-0">
@@ -233,8 +230,7 @@ Page content START -->
 									<span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
 									<div class="ms-4">
 										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="25" data-purecounter-delay="200">0</h5>
-											<span class="mb-0 h5">K+</span>
+											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?=count($students)?>" data-purecounter-delay="200"><?=count($students)?></h5>
 										</div>
 										<span class="mb-0 h6 fw-light">Total Students</span>
 									</div>
