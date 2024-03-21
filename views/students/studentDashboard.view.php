@@ -1,5 +1,8 @@
 <body>
-    
+    <?php
+    require "database/database.php";
+    require "models/payment.model.php";
+     ?>
     
     <!-- **************** MAIN CONTENT START **************** -->
     <main>

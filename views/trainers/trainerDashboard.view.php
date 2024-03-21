@@ -201,18 +201,6 @@
 								</div>
 								<hr class="mt-2 custom-hr active_bars" style="display:none">
 							</div>
-							<div class="col-sm-6 col-lg-4">
-								<div class="d-flex justify-content-center align-items-center p-4 bg-info bg-opacity-10 rounded-3">
-									<span class="display-6 text-info mb-0"><i class="fas fa-gem fa-fw"></i></span>
-									<div class="ms-4">
-										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="12" data-purecounter-delay="300">0</h5>
-											<span class="mb-0 h5">K</span>
-										</div>
-										<span class="mb-0 h6 fw-light">Enrolled Students</span>
-									</div>
-								</div>
-							</div>
 						</div>
 						<!-- display teacher cours name -->
 						<div class="d-flex gap-2 mt-3">
@@ -256,12 +244,10 @@
 										<div class="col-sm-6 col-md-4">
 											<span class="badge bg-dark text-white">Current Month</span>
 											<h4 class="text-primary my-2">$35000</h4>
-											<p class="mb-0"><span class="text-success me-1">0.20%<i class="bi bi-arrow-up"></i></span>vs last month</p>
 										</div>
 										<div class="col-sm-6 col-md-4">
 											<span class="badge bg-dark text-white">Last Month</span>
 											<h4 class="my-2">$28000</h4>
-											<p class="mb-0"><span class="text-danger me-1">0.10%<i class="bi bi-arrow-down"></i></span>Then last month</p>
 										</div>
 									</div>
 									<div id="ChartPayout"></div>
