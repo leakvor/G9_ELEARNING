@@ -1,5 +1,7 @@
  <!-- Sidebar Start -->
  <?php
+    require('database/database.php');
+    require('models/notifi.model.php');
     if (isset($_SESSION['admin'])) {
         $admin = $_SESSION['admin'];
         $adminname = strtoupper($admin['username']);
@@ -41,7 +43,9 @@
         $activeTrainer = '';
     }
 
-    ?>
+    $notifications= notifi();
+
+?>
 
 
 
@@ -148,30 +152,33 @@
                      <a href="#" class="dropdown-item text-center">See all message</a>
                  </div>
              </div>
-             <div class="nav-item dropdown">
-                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                     <i class="fa fa-bell me-lg-2"></i>
-                     <span class="d-none d-lg-inline-flex">Notificatin</span>
-                 </a>
-                 <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                     <a href="#" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">Profile updated</h6>
-                         <small>15 minutes ago</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                     <a href="#" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">New user added</h6>
-                         <small>15 minutes ago</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                     <a href="#" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">Password changed</h6>
-                         <small>15 minutes ago</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                     <a href="#" class="dropdown-item text-center">See all notifications</a>
-                 </div>
-             </div>
+<!-- ============================================= -->
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="fa fa-bell me-lg-2"></i>
+        <span class="d-none d-lg-inline-flex">Notifications</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0" id="notification-dropdown">
+        <?php foreach ($notifications as $notification): ?>
+            <a href="#" class="dropdown-item notification-item">
+                <h6 class="fw-normal mb-0"><?= $notification['student_username'] ?></h6>
+                <small>enrolled in <?= $notification['course_title']?></small>
+                <span>
+                    <p><?= $notification['teacher_name'] ?> teaching</p>
+                </span>
+            </a>
+        <?php endforeach; ?>
+            <a href="#" class="dropdown-item text-center show-all-notifications">See all notifications</a>
+    </div>
+</div>
+
+
+
+
+
+<!-- =========================================== -->
+
+
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                      <img class="rounded-circle me-lg-2" src="assets/images/avatar/photo.jpg" alt="" style="width: 40px; height: 40px;">

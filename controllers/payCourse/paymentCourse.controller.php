@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             courseStudent($_POST['user_id'], $_POST['course_id'], $_POST['date']);
             $_SESSION['myLesson'] = $myLesson;
             header("Location: /myLessons");
+
+            // $_SESSION['test'] = 'test';
         } else {
             $_SESSION['myLesson'] = $myLesson;
             header("Location: /myLessons");
