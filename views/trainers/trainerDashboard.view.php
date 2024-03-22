@@ -1,61 +1,5 @@
 <body>
-	<!-- Header START -->
-	<header class="navbar-light navbar-sticky">
-		<!-- Logo Nav START -->
-		<nav class="navbar navbar-expand-xl">
-			<div class="container">
-				<!-- Logo START -->
-				<a class="navbar-brand" href="/trainers">
-					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.png" alt="logo" style="width: 100%;height:60px">
-					<!-- <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">	 -->
-				</a>
-				<!-- Logo END -->
-				<!-- Responsive navbar toggler -->
-				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-animation">
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-				</button>
-				<!-- Main navbar START -->
-				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-				</div>
-				<!-- Main navbar END -->
-				<!-- Profile START -->
-				<div class="dropdown ms-1 ms-lg-0">
-					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-						<!-- Profile info -->
-						<li class="px-3">
-							<div class="d-flex align-items-center">
-								<!-- Avatar -->
-								<div class="avatar me-3">
-									<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
-								</div>
-								<div>
-									<a class="h6" href="#">Lori Ferguson</a>
-									<p class="small m-0">example@gmail.com</p>
-								</div>
-							</div>
-							<hr>
-						<!-- Dark mode switch START -->
-						<li>
-							<div class="modeswitch-wrap" id="darkModeSwitch">
-								<div class="modeswitch-item">
-									<div class="modeswitch-icon"></div>
-								</div>
-								<span>Dark mode</span>
-							</div>
-						</li>
-						<!-- Dark mode switch END -->
-					</ul>
-				</div>
-				<!-- Profile START -->
-			</div>
-		</nav>
-		<!-- Logo Nav END -->
-	</header>
-
+	
 	<!-- Header END -->
 
 	<!-- **************** MAIN CONTENT START **************** -->
@@ -170,7 +114,6 @@ Page content START -->
 										<!-- Dashboard menu -->
 										<div class="list-group list-group-dark list-group-borderless">
 											<a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 											<a class="list-group-item " href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
 											<?php
 												if (isset($_SESSION['user'])){
@@ -313,7 +256,7 @@ Page content START -->
 									<!-- Card header START -->
 									<div class="card-header border-bottom">
 										<div class="d-sm-flex justify-content-sm-between align-items-center">
-											<h3 class="mb-2 mb-sm-0">Most Selling Courses</h3>
+											<h3 class="mb-2 mb-sm-0">My Courses</h3>
 											<a href="#" class="btn btn-sm btn-primary-soft mb-0">View all</a>
 										</div>
 									</div>
