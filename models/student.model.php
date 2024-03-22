@@ -72,13 +72,14 @@ function updateStudent($username,$email,$password,$id,$img){
     $statement->rowCount() >0;
 }
 
-function updateStudentNoImg($username,$email,$id){
+function updateStudentNoImg($username, $email, $image, $id) {
     global $connection;
-    $statement= $connection->prepare("update users set username=:username,email =:email where user_id=:id");
+    $statement = $connection->prepare("UPDATE users SET username = :username, email = :email, img = :image WHERE user_id = :id");
     $statement->execute([
         ':id' => $id,
-        ':username'=>$username,
+        ':username' => $username,
         ':email' => $email,
+        ':image' => $image,
     ]);
-    $statement->rowCount() >0;
+    return $statement->rowCount() > 0;
 }

@@ -304,7 +304,7 @@
         ?>
 
       <div class="nav-item dropdown">
-        <a href="/studentDashboard" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <a href="/updateprofile" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img class="rounded-circle me-lg-2" src="assets/images/profile/<?=$profileImg?>" alt="" style="width: 40px; height: 40px;">
           <span class="d-none d-lg-inline-flex"><?=$profile['username']?></span>
         </a>
@@ -312,14 +312,14 @@
           <li class="dropdown-submenu">
               <div class="card dropdown-menu d-flex align-items-center" style="width:330px" data-bs-popper="none">
                 
-                <a href="/studentDashboard"><img src="assets/images/profile/<?=$profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
+                <a href="/updateprofile"><img src="assets/images/profile/<?=$profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
                 <h5 class="card-title dropdown-item text-center"><?=$profile ['username']?></h5>
                 <p class="card-text dropdown-item text-center"><?=$profile ['email']?></p>
-                <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
+                <!-- <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
                   <input type="hidden" value="<?= $profile['email']?>" name="email">
                   <Button type="submit" class="btn btn-primary editProfile" style="width:320px">Edit Profile</button>
                   <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">  
-                </form>
+                </form> -->
             </div>
           </li>
 

@@ -105,7 +105,7 @@
               ?>
             <div class="col-auto mt-4 mt-md-0">
               <div class="avatar avatar-xxl mt-n3">
-                <a href="/studentDashboard"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
+                <a href=""><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
               </div>
             </div>
             <!-- Profile info -->
@@ -154,7 +154,9 @@ Page content START -->
             <div class="bg-dark border rounded-3 pb-0 p-3 w-100">
               <!-- Dashboard menu -->
               <div class="list-group list-group-dark list-group-borderless">
+                <a class="list-group-item " href="/studentDashboard"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
                 <a class="list-group-item active" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</a>
+
                 <a class="list-group-item" href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
                 <a class="list-group-item text-danger bg-danger-soft-hover" href="sign-in.html"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
               </div>
@@ -176,7 +178,7 @@ Page content START -->
           <!-- Card body START -->
           <div class="card-body">
             <!-- Form -->
-            <form action="controllers/profiles/updateprofile.controller.php"  method="post" class="row g-4">
+            <form action="controllers/profiles/updateprofile.controller.php"  method="post"class="row g-4">
 
               <!-- Profile picture -->
               <div class="col-12 justify-content-center align-items-center">
@@ -185,7 +187,7 @@ Page content START -->
                   <label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
                     <!-- Avatar place holder -->
                     <span class="avatar avatar-xl">
-                      <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>"  alt="">
+                      <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profile['img']?>"  alt="">
                     </span>
                     <!-- Remove btn -->
                     <!-- <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
@@ -197,16 +199,19 @@ Page content START -->
                 </div>
               </div>
               <input type="hidden" value="<?= $user['user_id']?>" name="user_id">
+              <div class="col-md-6">
+                <label class="form-label">Update Profile</label>
+                <input type="file" class="form-control bg-white"   name="img" id="img" placeholder="Choose image" value="$profile['img']">
+                  <?=var_dump($profile['img'])?>
+              </div>
               <!-- Username -->
               <div class="col-md-6">
                 <label class="form-label">Username</label>
                 <div class="input-group">
-                  <!-- <span class="input-group-text">Eduport.com</span> -->
                   <input type="text" class="form-control" value="<?=$profile['username']?>" name="username">
                   <!-- <?php var_dump($user['username']) ?> -->
                 </div>
               </div>
-
               <!-- Email id -->
               <div class="col-md-6">
                 <!-- <label class="form-label">Email</label> -->
