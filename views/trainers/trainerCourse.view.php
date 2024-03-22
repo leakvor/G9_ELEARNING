@@ -24,7 +24,6 @@
 						</form>
 					</div>
 				</div>
-				<!-- Search option END -->
 
 				<!-- Course list START -->
 				<div class="row g-4">
@@ -32,17 +31,16 @@
 					require "database/database.php";
 					require "models/course.model.php";
 					require "models/​student_course.model.php";
-					$trainerCourse=trainerCourse($_SESSION['id']);
+					$trainerCourse = trainerCourse($_SESSION['id']);
 					if (empty($trainerCourse)) {
-						// Display message when $displayCourses is empty
 						echo "<h1>This trainer will have Courses Soon....</h1>";
 					} else {
 						foreach ($trainerCourse as $displayCourse) :
-							$alredyPay=getcourse_student($_SESSION['user']['user_id'],$displayCourse['course_id'] );
-							if(count($alredyPay)>0){
-								$path="controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($displayCourse['course_id']);
-							}else{
-								$path="controllers/students/payId.controller.php". "?id=" . urlencode($displayCourse['course_id']);
+							$alredyPay = getcourse_student($_SESSION['user']['user_id'], $displayCourse['course_id']);
+							if (count($alredyPay) > 0) {
+								$path = "controllers/lesson/displayLessonEachcourse.controller.php" . "?id=" . urlencode($displayCourse['course_id']);
+							} else {
+								$path = "controllers/students/payId.controller.php" . "?id=" . urlencode($displayCourse['course_id']);
 							}
 					?>
 							<div class="col-lg-10 col-xxl-6">
@@ -50,7 +48,7 @@
 									<div class="row g-0">
 										<!-- Image -->
 										<div class="col-md-4">
-											<a href="<?=$path?>"><img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image" style="width: 100%; height: 180px; object-fit: cover;"></a>
+											<a href="<?= $path ?>"><img src="assets/images/course/<?= $displayCourse['course_img'] ?>" alt="card image" style="width: 100%; height: 180px; object-fit: cover;"></a>
 										</div>
 										<!-- Card body -->
 										<div class="col-md-8">

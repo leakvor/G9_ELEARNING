@@ -9,7 +9,6 @@
 					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
-				<!-- Logo END -->
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -20,7 +19,6 @@
 				</button>
 				<!-- Main navbar START -->
 				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-					<!-- Nav Main menu START -->
 					<ul class="navbar-nav navbar-nav-scroll mx-auto">
 						<!-- Nav item 1 Demos -->
 						<li class="nav-item dropdown">
@@ -68,7 +66,6 @@
 										<li> <a class="dropdown-item" href="course-video-player.html">Course Full Screen Video</a></li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">About</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -80,7 +77,7 @@
 										<li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Hero Banner</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -97,7 +94,7 @@
 								<li> <a class="dropdown-item" href="abroad-single.html">Abroad Single</a></li>
 								<li> <a class="dropdown-item" href="workshop-detail.html">Workshop Detail</a></li>
 								<li> <a class="dropdown-item" href="event-detail.html">Event Detail</a></li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Shop</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -109,7 +106,7 @@
 										<li> <a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Help</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -118,7 +115,7 @@
 										<li> <a class="dropdown-item" href="faq.html">FAQs</a></li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -127,7 +124,7 @@
 										<li> <a class="dropdown-item" href="forgot-password.html">Forgot Password</a></li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Form</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -137,7 +134,7 @@
 										<li> <a class="dropdown-item" href="university-admission-form.html">Admission Form</a></li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Specialty</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -167,7 +164,7 @@
 										<li> <a class="dropdown-item" href="instructor-payout.html"><i class="fas fa-wallet fa-fw me-1"></i>Payout</a> </li>
 									</ul>
 								</li>
-								<!-- Dropdown submenu -->
+
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>Student</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -263,7 +260,6 @@
 							</ul>
 						</li>
 					</ul>
-					<!-- Nav Main menu END -->
 					<!-- Nav Search START -->
 					<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
 						<div class="nav-item w-100">
@@ -275,9 +271,7 @@
 							</form>
 						</div>
 					</div>
-					<!-- Nav Search END -->
 				</div>
-				<!-- Main navbar END -->
 				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
 					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
@@ -287,7 +281,6 @@
 						<!-- Profile info -->
 						<li class="px-3 mb-3">
 							<div class="d-flex align-items-center">
-								<!-- Avatar -->
 								<div class="avatar me-3">
 									<img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg" alt="avatar">
 								</div>
@@ -332,22 +325,18 @@
 								</button>
 							</div>
 						</li>
-						<!-- Dark mode options END-->
 					</ul>
 				</div>
-				<!-- Profile START -->
 			</div>
 		</nav>
-		<!-- Logo Nav END -->
 	</header>
 	<div id="sticky-space" class="" style="height: 0px;"></div>
-	<!-- Header END -->
 
 	<!-- **************** MAIN CONTENT START **************** -->
 	<main>
 
 
-		<!-- ------------------Page Banner START-------------- -->
+		<!---Page Banner START- -->
 		<section class="pt-0">
 			<div class="container-fluid px-0">
 				<div class="card bg-blue h-100px h-md-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
@@ -399,16 +388,11 @@
 								<i class="fas fa-sliders-h"></i>
 							</button>
 						</div>
-						<!-- Advanced filter responsive toggler END -->
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- =======================
-Page Banner END -->
-
-		<!-- =======================
-Page content START -->
+		<!-- Page content START -->
 		<section class="pt-0">
 			<div class="container">
 				<div class="row">
@@ -431,7 +415,6 @@ Page content START -->
 										<a class="list-group-item" href="instructor-setting.html"><i class="bi bi-gear fa-fw me-2"></i>Settings</a>
 										<a class="list-group-item" href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
 										<a class="list-group-item text-danger bg-danger-soft-hover" href="#"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out</a>
-										<!-- Collapse menu -->
 										<a class="list-group-item" data-bs-toggle="collapse" href="#collapseauthentication" role="button" aria-expanded="false" aria-controls="collapseauthentication">
 											<i class="bi bi-lock fa-fw me-2"></i>Dropdown level
 										</a>
@@ -444,20 +427,15 @@ Page content START -->
 								</div>
 							</div>
 						</div>
-						<!-- Responsive offcanvas body END -->
 					</div>
 					<div class="col-xl-9">
 						<!-- Payment method START -->
 						<div class="card bg-transparent border rounded-3">
 							<!-- <div class="card bg-transparent border rounded-3 mb-4 z-index-9"> -->
-							<!-- Card header START -->
 							<div class="card-header bg-transparent d-sm-flex justify-content-sm-between align-items-center border-bottom">
 								<h3 class="mb-2 mb-sm-0">Payment methods</h3>
 								<a href="#" class="btn btn-sm btn-primary-soft mb-0" data-bs-toggle="modal" data-bs-target="#addNewcard">Add new card</a>
 							</div>
-							<!-- Card header END -->
-
-							<!-- Card body START -->
 							<div class="card-body">
 								<div class="accordion accordion-circle" id="accordioncircle">
 									<!-- Credit or debit card START -->
@@ -499,12 +477,9 @@ Page content START -->
 														<input type="text" class="form-control" aria-label="name of card holder" placeholder="Enter name">
 													</div>
 												</form>
-												<!-- Form END -->
 											</div>
 										</div>
 									</div>
-									<!-- Credit or debit card END -->
-
 									<!-- Net banking START -->
 									<div class="accordion-item mb-3">
 										<h6 class="accordion-header font-base" id="heading-2">
@@ -540,22 +515,19 @@ Page content START -->
 														</div>
 													</div>
 												</form>
-												<!-- Form END -->
 											</div>
 										</div>
 									</div>
-									<!-- Net banking END -->
 								</div>
 							</div>
-							<!-- Card body START -->
 						</div>
 						<!-- Payment method END -->
+
 						<div class="card bg-transparent border rounded-3 mt-4">
 							<!-- Card header START -->
 							<div class="card-header bg-transparent border-bottom">
 								<h3 class="mb-0">Billing history</h3>
 							</div>
-							<!-- Card header END -->
 							<!-- Card body START -->
 							<div class="card-body">
 								<!-- Title and select START -->
@@ -582,7 +554,7 @@ Page content START -->
 									</form>
 								</div>
 							</div>
-							<!-- Title and select END -->
+
 							<!-- Student list table START -->
 							<div class="table-responsive border-0">
 								<table class="table table-dark-gray align-middle p-4 mb-0 table-hover">

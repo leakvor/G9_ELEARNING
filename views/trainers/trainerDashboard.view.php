@@ -9,7 +9,6 @@
 					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.png" alt="logo" style="width: 100%;height:60px">
 					<!-- <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">	 -->
 				</a>
-				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
 						<span></span>
@@ -136,24 +135,24 @@
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
 											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
 											<?php
-												if (isset($_SESSION['user'])){
-													$user = $_SESSION['user']; 
-													echo("channy ");
-												}
+											if (isset($_SESSION['user'])) {
+												$user = $_SESSION['user'];
+												echo ("channy ");
+											}
 											?>
 
 											<form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
 												<ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
 													<li class="nav-item dropdown">
-														<!-- =================================edit profile================================ -->
+														<!-- edit profile-->
 														<button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
 
 														<ul class="dropdown-menu dropdown-menu-end min-w-auto">
-															<input type="hidden" value="<?php echo $trainer['email']?>" name="email">
+															<input type="hidden" value="<?php echo $trainer['email'] ?>" name="email">
 															<li>
 																<input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload">
-																
-														</li>
+
+															</li>
 														</ul>
 													</li>
 												</ul>
@@ -190,7 +189,7 @@
 									<span class="display-6 text-purple mb-0"><i class="fas fa-user-graduate fa-fw"></i></span>
 									<div class="ms-4">
 										<div class="d-flex">
-											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?=count($students)?>" data-purecounter-delay="200"><?=count($students)?></h5>
+											<h5 class="purecounter mb-0 fw-bold" data-purecounter-start="0" data-purecounter-end="<?= count($students) ?>" data-purecounter-delay="200"><?= count($students) ?></h5>
 										</div>
 										<span class="mb-0 h6 fw-light">Total Students</span>
 									</div>
@@ -340,7 +339,6 @@
 				</div>
 			</div>
 		</section>
-		<!-- Page content END -->
 	</main>
 	<!-- Back to top -->
 	<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
