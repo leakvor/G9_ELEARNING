@@ -15,13 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $email = htmlspecialchars($_POST['email']);
     $password = htmlspecialchars($_POST['password']);
+    
     if (preg_match($regex_email, $email) && preg_match($regex_password, $password)){
         $_SESSION['acc']='';
         $user = accountExist($email);
         $role = $user['role'];
         if (count($user) > 0){
             if ($role != 'user'){
-                header('Location: /signin');
+                header('Location: /signins');
                 $_SESSION['acc'] = $no_account;
             }
             else if (password_verify($password, $user['password'])){

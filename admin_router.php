@@ -6,7 +6,6 @@ $page = "";
 if (isset($_SESSION['admin'])){
     $routes = [
         '/admin' => 'controllers/admin/admin.controller.php',
-        '/admins' => 'controllers/admin/admin.controller.php',
         '/trainer-review' => 'controllers/reviews/review.controller.php',
         '/trainer-classroom' => 'controllers/classroom/classroom.controller.php',
         '/displayCategory'=>'controllers/category/displayCategory.controller.php',

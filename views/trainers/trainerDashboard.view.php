@@ -169,11 +169,11 @@ Page content START -->
 											<a class="list-group-item " href="
 											"><i class="bi bi-basket fa-fw me-2"></i>My Course</a>
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item " href=""><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<a class="list-group-item " href="/displayListStudentTrainer"><i class="bi bi-people fa-fw me-2"></i>Students</a>
 											<?php
 												if (isset($_SESSION['user'])){
 													$user = $_SESSION['user']; 
-													echo("channy ");
+													
 												}
 											?>
 

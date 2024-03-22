@@ -18,7 +18,7 @@
                                 <?php
                                 require("database/database.php");
                                 require("models/trainer.model.php");
-                                $allStudent = $_SESSION['student'];
+                                // $allStudent = $_SESSION['student'];
                                 $profile = $_SESSION['trainer'];
                                 $countPreStudent = countCoursesPerStudent($profile['user_id']);
                                 // var_dump($profile);
