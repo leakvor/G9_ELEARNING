@@ -165,11 +165,9 @@ Page content START -->
 									<div class="bg-dark border rounded-3 pb-0 p-3 w-100">
 										<!-- Dashboard menu -->
 										<div class="list-group list-group-dark list-group-borderless">
-											<a class="list-group-item " href=""><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-											<a class="list-group-item " href="
-											"><i class="bi bi-basket fa-fw me-2"></i>My Course</a>
+											<a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
 											<a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
-											<a class="list-group-item " href="/displayListStudentTrainer"><i class="bi bi-people fa-fw me-2"></i>Students</a>
+											<a class="list-group-item " href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
 											<?php
 												if (isset($_SESSION['user'])){
 													$user = $_SESSION['user']; 
