@@ -26,6 +26,8 @@ if(isset($_SESSION['id'])){
 	// var_dump($_SESSION['id']);
 	$lessons=displayAlllesson($_SESSION['id']);
 	$comments=displayAllcomment($_SESSION['id']);
+	date_default_timezone_set('Asia/Phnom_Penh');
+    $date_comment = date("Y-m-d H:i:s");
 }
 ?>	
 					<!-- Breadcrumb -->
@@ -53,7 +55,9 @@ if(isset($_SESSION['id'])){
 												<img src="assets/images/profile/" alt="avatar" width="25" height="25">
 												<p class="small mb-0 ms-2"><?=$comment['username']?></p>
 											</div>
-                        <a href="controllers/comment/deletecomment.controller.php?id=<?=$comment['comment_id'] ?>&user_id=<?=$_SESSION['user']['user_id']?>"onclick="return functionDelete()"class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fa fa-trash" style="color:red;margin-top: -0.16rem;"></i></a>
+											<div claass="d-flex flex-row align-items-center">
+                        <p class="small mb-0"><?=$comment['date']?></p>
+                        					<a href="controllers/comment/deletecomment.controller.php?id=<?=$comment['comment_id'] ?>&user_id=<?=$_SESSION['user']['user_id']?>"onclick="return functionDelete()"class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fa fa-trash" style="color:red;margin-top: -0.16rem;"></i></a>
 											</div>
 										</div>
 										</div>
