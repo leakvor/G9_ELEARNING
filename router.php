@@ -27,8 +27,8 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/payForCourse'=>'controllers/mychart/payMoney.controller.php',
         '/payForCourses'=>'controllers/payCourse/PayForCourse.controller.php',
         '/trainerList' => 'controllers/trainers/trainer.controller.php',
-         '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
-        
+         '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php",
+        //  '/commentcourse'=>'controllers/comment/displaycomment.controller.php',
     ];
 }else{
     $routes = [
@@ -37,7 +37,6 @@ if(isset($_SESSION['user'])||isset($_SESSION['teacher'])){
         '/signins' => 'controllers/signin/signin.controller.php',
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
-        '/trainerList' => 'controllers/trainers/trainer.controller.php',
        
     ];
 }
@@ -54,4 +53,3 @@ require "layouts/navbar.php";
 require $page;
 require "layouts/footer.php";
 
-// already

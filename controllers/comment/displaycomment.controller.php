@@ -1,8 +1,8 @@
 
-<?php
+<?php 
 require "database/database.php";
 require "models/comment.model.php";
-$comments=getComment();
+$comments=displayAllcomment();
 var_dump($comments);
-// echo('channy');
-require('views/lesson/stu_lesson.php');
+require "views/lesson/myLesson.view.php";
+?>
