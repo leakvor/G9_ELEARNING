@@ -20,7 +20,6 @@
 				<!-- Main navbar START -->
 				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
 				</div>
-				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
 					<ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
 						<li class="px-3">
@@ -63,18 +62,6 @@
 			require "models/student.model.php";
 			require "./models/trainer.model.php";
 
-<<<<<<< HEAD
-				$trainer_email = $trainer['email'];
-				$students=countCoursesPerStudent($trainer['user_id']);
-				// var_dump($students);
-				$trainer_data = accountExist($trainer_email);
-				if (isset($trainer)){
-					$trainer_profile = 'assets/images/instructor/' . $trainer_data['img'];
-					if (isset($trainer_profile)){
-						
-					}
-				}
-=======
 			$trainer_email = $trainer['email'];
 			$trainer_data = accountExist($trainer_email);
 			if (isset($trainer)) {
@@ -83,7 +70,6 @@
 				}
 			}
 
->>>>>>> payment_admin
 			$tra_student = trainer_students($trainer_email);
 			?>
 			<!-- Main banner background image -->
@@ -118,11 +104,7 @@
 								</div>
 							</div>
 						</div>
-<<<<<<< HEAD
-						<!-- Divider -->
-=======
 						<!-- Advanced filter responsive toggler START -->
->>>>>>> payment_admin
 						<hr class="d-xl-none">
 						<div class="col-12 col-xl-3 d-flex justify-content-between align-items-center">
 							<a class="h6 mb-0 fw-bold d-xl-none" href="#">Menu</a>
