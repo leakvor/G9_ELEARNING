@@ -18,8 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     if (preg_match($regex_email, $email) && preg_match($regex_password, $password)){
         $_SESSION['acc']='';
         $user = accountExist($email);
+        $role = $user['role'];
         if (count($user) > 0){
-            if (password_verify($password, $user['password'])){
+            if ($role != 'user'){
+                header('Location: /signin');
+                $_SESSION['acc'] = $no_account;
+            }
+            else if (password_verify($password, $user['password'])){
                 header('Location: /');
                 $_SESSION['user'] = $user;
                 unset($_SESSION['acc']);
