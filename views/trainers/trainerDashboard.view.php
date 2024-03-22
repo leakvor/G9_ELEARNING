@@ -76,6 +76,7 @@ Page Banner START -->
 				require "database/database.php";
 				require "models/student.model.php";
 				require "./models/trainer.model.php";
+				require "./models/payment.model.php";
 
 				$trainer_email = $trainer['email'];
 				$students=countCoursesPerStudent($trainer['user_id']);
@@ -89,7 +90,10 @@ Page Banner START -->
 				}
 				
 				$tra_student = trainer_students($trainer_email);
-				
+				$paidToday=totalTodayTrainer($trainer['user_id']);
+				$paidThismonth=totalthisMonthTrainer($trainer['user_id']);
+				$paidAll=totalAll(($trainer['user_id']));
+				$selingCourse=sellingCourse($trainer['user_id']);
 			?>
 			<!-- Main banner background image -->
 			<div class="container-fluid px-0">
@@ -280,18 +284,22 @@ Page content START -->
 									<div class="row g-4">
 										<!-- Content -->
 										<div class="col-sm-6 col-md-4">
-											<span class="badge bg-dark text-white">Current Month</span>
-											<h4 class="text-primary my-2">$35000</h4>
+											<span class="badge bg-dark text-white">Total Today</span>
+											<h4 class="text-primary my-2"><?= $paidToday['total_paid_today'] !== null ? $paidToday['total_paid_today'] : '0' ?>$</h4>
 										</div>
 										<!-- Content -->
 										<div class="col-sm-6 col-md-4">
-											<span class="badge bg-dark text-white">Last Month</span>
-											<h4 class="my-2">$28000</h4>
+											<span class="badge bg-dark text-white">This months</span>
+											<h4 class="text-primary my-2"><?= $paidThismonth['total_paid_month'] !== null ? $paidThismonth['total_paid_month'] : '0' ?>$</h4>
+										</div>
+										<div class="col-sm-6 col-md-4">
+											<span class="badge bg-dark text-white">Total all</span>
+											<h4 class="text-primary my-2"><?= $paidAll['total_paid_all'] !== null ? $paidAll['total_paid_all'] : '0' ?>$</h4>
 										</div>
 									</div>
-
+									<h3 style="margin-top: 10px;">Selling Course</h3>
 									<!-- Apex chart -->
-									<div id="ChartPayout"></div>
+									<div id="Chart"></div>
 
 								</div>
 							</div>
@@ -434,6 +442,73 @@ Page content END -->
 		}
 	</script>
 
+<?php
+
+$courseSellingData = sellingCourse($trainer['user_id']);
+?>
+
+<!-- Add this script inside your HTML body where you want to display the chart -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+<script>
+    // JavaScript code to initialize and update ApexCharts
+    document.addEventListener('DOMContentLoaded', function () {
+        var courseSellingData = <?php echo json_encode($courseSellingData); ?>;
+
+        var options = {
+            series: [{
+                data: courseSellingData.map(function (item) {
+                    return {
+                        x: item.title,
+                        y: item.student_count
+                    };
+                })
+            }],
+            chart: {
+                type: 'bar',
+                height: 350,
+                toolbar: {
+                    show: false
+                }
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: false,
+                    columnWidth: '55%',
+                    endingShape: 'rounded'
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            xaxis: {
+                type: 'category',
+                labels: {
+                    rotate: -45,
+                    style: {
+                        fontSize: '12px'
+                    }
+                }
+            },
+            yaxis: {
+                title: {
+                    text: 'Selling Course'
+                }
+            },
+            tooltip: {
+                shared: false,
+                y: {
+                    formatter: function (val) {
+                        return val;
+                    }
+                }
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#Chart"), options);
+        chart.render();
+    });
+</script>
 
 </body>
 
