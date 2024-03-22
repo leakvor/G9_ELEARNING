@@ -22,12 +22,12 @@ if (isset($_SESSION['user']) || isset($_SESSION['teacher'])) {
         '/myLesson' => 'controllers/lesson/myLesson.controller.php',
         '/paymentCours' => 'controllers/payCourse/payCourse.controller.php',
         '/displayChart' => 'controllers/mychart/displayChart.controller.php',
-        '/coursePay'=>'controllers/students/coursePay.controller.php',
-        '/payForCourse'=>'controllers/mychart/payMoney.controller.php',
-        '/payForCourses'=>'controllers/payCourse/PayForCourse.controller.php',
+        '/coursePay' => 'controllers/students/coursePay.controller.php',
+        '/payForCourse' => 'controllers/mychart/payMoney.controller.php',
+        '/payForCourses' => 'controllers/payCourse/PayForCourse.controller.php',
         '/trainerList' => 'controllers/trainers/trainer.controller.php',
-         '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php"
-        
+        '/trainerCourse' => "controllers/trainers/trainerCourse.controller.php"
+
     ];
 } else {
     $routes = [
@@ -37,7 +37,7 @@ if (isset($_SESSION['user']) || isset($_SESSION['teacher'])) {
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
         '/trainerList' => 'controllers/trainers/trainer.controller.php',
-       
+
     ];
 }
 
@@ -52,5 +52,3 @@ require "layouts/header.php";
 require "layouts/navbar.php";
 require $page;
 require "layouts/footer.php";
-
-// already
