@@ -52,11 +52,11 @@ if(isset($_SESSION['id'])){
 
 											<div class="d-flex justify-content-between">
 											<div class="d-flex flex-row align-items-center">
-												<img src="assets/images/profile/" alt="avatar" width="25" height="25">
+												 <img src="assets/images/profile/<?= $comment["img"] ?>" width="25" height="25">
 												<p class="small mb-0 ms-2"><?=$comment['username']?></p>
 											</div>
 											<div claass="d-flex flex-row align-items-center">
-                        <p class="small mb-0"><?=$comment['date']?></p>
+                        					<p class="small mb-0"><?=$comment['date']?></p>
                         					<a href="controllers/comment/deletecomment.controller.php?id=<?=$comment['comment_id'] ?>&user_id=<?=$_SESSION['user']['user_id']?>"onclick="return functionDelete()"class="btn btn-sm btn-danger-soft btn-round mb-0"><i class="fa fa-trash" style="color:red;margin-top: -0.16rem;"></i></a>
 											</div>
 										</div>

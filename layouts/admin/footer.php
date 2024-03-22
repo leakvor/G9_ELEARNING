@@ -41,6 +41,7 @@
     <script src="vendor/js/validationCourseAdmin.js"></script>
     <script src="vendor/js/validationCategory.js"></script>
     <script src="vendor/js/search_trainer.js"></script>
+    <script src="vendor/js/searchPay.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,5 @@
-<!-- **************** MAIN CONTENT START **************** -->
 <main>
-	<!-- =======================
-Page Banner START -->
-	<!-- <section class="py-0"> -->
+	<!-- Page Banner START -->
 	<section class="bg-dark align-items-center d-flex" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;height:330px">
 		<div class="container">
 			<div class="row">
@@ -14,11 +11,7 @@ Page Banner START -->
 			</div>
 		</div>
 	</section>
-	<!-- =======================
-Page Banner END -->
-
-	<!-- =======================
-Inner part START -->
+	<!-- Inner part START -->
 	<section class="pt-4">
 		<div class="container">
 			<div class="row g-4 ">
@@ -39,7 +32,7 @@ Inner part START -->
 					<div class="col-lg-10 col-xl-6">
 						<div class="card shadow p-2">
 							<div class="row g-0">
-								<!-- ---------Image ------->
+								<!--Image -->
 								<div class="col-md-4">
 									<a href="<?= $path ?>">
 										<img src="assets/images/instructor/<?= $teacher['img'] ?>" class="rounded-3" alt="img course" style="width: 100%; height: 180px; object-fit: cover;">
@@ -81,7 +74,6 @@ Inner part START -->
 					</div>
 				<?php endforeach ?>
 			</div>
-			<!-- Instructor list END -->
 			<!-- Pagination START -->
 			<nav class="mt-4 d-flex justify-content-center" aria-label="navigation">
 				<ul class="pagination pagination-primary-soft rounded mb-0">
@@ -93,14 +85,9 @@ Inner part START -->
 					<li class="page-item mb-0"><a class="page-link" href="#"><i class="fas fa-angle-double-right"></i></a></li>
 				</ul>
 			</nav>
-			<!-- Pagination END -->
 		</div>
 	</section>
-	<!-- =======================
-Inner part END -->
-
-	<!-- =======================
-Action box START -->
+	<!-- Action box START -->
 	<section class="pt-0">
 		<div class="container position-relative">
 			<!-- SVG -->
@@ -115,21 +102,17 @@ Action box START -->
 
 			<div class="bg-success p-4 p-sm-5 rounded-3">
 				<div class="row justify-content-center position-relative">
-					<!-- Svg -->
 					<figure class="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
 						<svg width="141px" height="141px">
 							<path d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"></path>
 						</svg>
 					</figure>
-					<!-- Action box -->
 					<div class="col-11 position-relative">
 						<div class="row align-items-center">
-							<!-- Title -->
 							<div class="col-lg-7">
 								<h3 class="text-white">Become an Instructor!</h3>
 								<p class="text-white mb-3 mb-lg-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished.</p>
 							</div>
-							<!-- Button -->
 							<div class="col-lg-5 text-lg-end">
 								<a href="#" class="btn btn-dark mb-0">Start Teaching today</a>
 							</div>
@@ -139,26 +122,4 @@ Action box START -->
 			</div>
 		</div>
 	</section>
-	<!-- =======================
-Action box END -->
 </main>
-<!-- **************** MAIN CONTENT END ****************
-
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		let searchInput = document.querySelector('#search');
-
-		let cardTitles = document.querySelector('.card-title');
-		searchInput.addEventListener('input', function() {
-			let searchTerm = searchInput.value.trim().toLowerCase();
-			cardTitles.forEach(function(title) {
-				let card = title.closest('.card');
-				if (title.textContent.trim(1).toLowerCase().includes(searchTerm)) {
-					card.style.display = '';
-				} else {
-					card.style.display = 'none';
-				}
-			});
-		});
-	});
-</script> -->

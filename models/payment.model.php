@@ -32,92 +32,69 @@ if (!function_exists('isPaymentExist')) {
     }
 }
 
-// =====Total for today(admin)=======
+
+
 function getTotalPaidToday()
 {
-    global $connection; // Assuming $connection is your database connection
-
+    global $connection;
     $today = date('Y-m-d');
     $query = "SELECT SUM(paid) AS total_paid FROM payment WHERE DATE(date) = ?";
     $statement = $connection->prepare($query);
     $statement->execute([$today]);
     $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-    return $result['total_paid'] !== null ? $result['total_paid'] : 0; // Return total paid or default to 0
-}
-
-
-// =====Total for Yesterday(admin)=======
-function getTotalPaidYesterday()
-{
-    global $connection; // Assuming $connection is your database connection
-
-    // Query to get total paid amount for yesterday
-    $query = "SELECT IFNULL(SUM(paid), 0) AS total_paid_yesterday FROM payment WHERE DATE(date) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)";
-    $statement = $connection->prepare($query);
-    $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-    // Return total paid amount for yesterday
-    return $result['total_paid_yesterday'];
-}
-
-
-
-// =====Total for Revenue(admin)=======
-function getTotalRevenueToday()
-{
-    global $connection; // Assuming $connection is your database connection
-
-    $today = date('Y-m-d');
-    $query = "SELECT SUM(paid) AS total_revenue FROM payment WHERE DATE(date) = ?";
-    $statement = $connection->prepare($query);
-    $statement->execute([$today]);
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-    // Return total revenue or default to $0 if null
-    return $result['total_revenue'] !== null ? $result['total_revenue'] : 0;
-}
-
-
-// =====Total for all (admin)=======
-function getTotalPaidOverall()
-{
-    global $connection; // Assuming $connection is your database connection
-
-    $query = "SELECT SUM(paid) AS total_paid FROM payment";
-    $statement = $connection->prepare($query);
-    $statement->execute();
-    $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-    // Return total paid or default to $0 if null
     return $result['total_paid'] !== null ? $result['total_paid'] : 0;
 }
 
 
 
-// Function to get total paid for this month
-function getTotalPaidThisMonth()
+
+function getTotalPaidYesterday()
 {
-    global $connection; // Assuming $conn is your database connection object
+    global $connection;
+    $query = "SELECT IFNULL(SUM(paid), 0) AS total_paid_yesterday FROM payment WHERE DATE(date) = DATE_SUB(CURDATE(), INTERVAL 1 DAY)";
+    $statement = $connection->prepare($query);
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    return $result['total_paid_yesterday'];
+}
 
-    // Get the current month and year
-    $currentMonth = date('m');
-    $currentYear = date('Y');
-
-    // Prepare and execute SQL query to get total paid for this month
-    $query = "SELECT SUM(paid) AS total_paid FROM payment WHERE MONTH(date) = :month AND YEAR(date) = :year";
-    $stmt = $connection->prepare($query);
-    $stmt->execute(array(':month' => $currentMonth, ':year' => $currentYear));
-
-    // Fetch the result
-    $result = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // Return the total paid for this month
-    return $result['total_paid'];
+function getTotalRevenueToday()
+{
+    global $connection;
+    $today = date('Y-m-d');
+    $query = "SELECT SUM(paid) AS total_revenue FROM payment WHERE DATE(date) = ?";
+    $statement = $connection->prepare($query);
+    $statement->execute([$today]);
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    return $result['total_revenue'] !== null ? $result['total_revenue'] : 0;
 }
 
 
+
+function getTotalPaidOverall()
+{
+    global $connection;
+    $query = "SELECT SUM(paid) AS total_paid FROM payment";
+    $statement = $connection->prepare($query);
+    $statement->execute();
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+    return $result['total_paid'] !== null ? $result['total_paid'] : 0;
+}
+
+
+function getTotalPaidThisMonth()
+{
+    global $connection;
+    $currentMonth = date('m');
+    $currentYear = date('Y');
+
+    $query = "SELECT SUM(paid) AS total_paid FROM payment WHERE MONTH(date) = :month AND YEAR(date) = :year";
+    $stmt = $connection->prepare($query);
+    $stmt->execute(array(':month' => $currentMonth, ':year' => $currentYear));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result['total_paid'];
+}
 // =====Total paid today for trainer=====
 function totalTodayTrainer($id)
 {
@@ -171,3 +148,10 @@ function sellingCourse($id): array {
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getPayment(): array
+{
+    global $connection;
+    $statement = $connection->prepare("select * from payment");
+    $statement->execute();
+    return $statement->fetchAll();
+}
