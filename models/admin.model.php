@@ -51,8 +51,6 @@ function deletePost(int $id) : bool
     return $statement->rowCount() > 0;
 }
 
-
-
 // _________________senrin-code-function_____________________
 
 function accountExist(string $email): array
@@ -68,4 +66,43 @@ function accountExist(string $email): array
     }else{
         return [];
     }
+}
+
+
+function getPaetToday(): array {
+    global $connection;
+    $statement = $connection->prepare("SELECT DATE(date) AS payment_day, SUM(paid) AS total_paid
+    FROM payment
+    GROUP BY DATE(date);");
+    
+    $statement->execute();
+    
+    return $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getPaymentData(): array {
+    global $connection;
+    $statement = $connection->prepare("
+        SELECT u.username, c.title, p.date, p.paid
+        FROM payment p
+        INNER JOIN users u ON p.user_id = u.user_id
+        INNER JOIN course c ON p.course_id = c.course_id
+    ");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function getCourseUserData(): array {
+    global $connection;
+    $statement = $connection->prepare("
+        SELECT c.title AS course_title, COUNT(u.username) AS user_count
+        FROM student_course sc
+        JOIN course c ON sc.course_id = c.course_id
+        JOIN users u ON sc.user_id = u.user_id
+        GROUP BY c.title;
+    ");
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
 }

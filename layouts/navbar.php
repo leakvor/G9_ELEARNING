@@ -236,19 +236,27 @@
       </div> -->
       <div class="navbar-nav position-relative overflow-visible me-3">
         <a href="/trainerList" class="nav-link"><i class="fas fa-user-alt"></i>Our Trainer</a>
-        <a href="/displayChart" class="nav-link" style="margin-left: 70px;"> <i class="fas fa-shopping-cart fs-5"></i></a>
         <?php
-        if (isset($_SESSION['user'])) :
-          require("database/database.php");
-          require_once("models/​student_course.model.php");
+        if (isset($_SESSION['user'])){
+          $path="/displayChart";
 
-          $user = $_SESSION['user'];
-          $allMychart = myChart($user['user_id']);
-
+        }else{
+          $path="/signins";
+        }
+        
         ?>
+        <a href="<?=$path?>" class="nav-link" style="margin-left: 70px;"> <i class="fas fa-shopping-cart fs-5"></i></a>
+        <?php if(isset($_SESSION['user'])):
+           require("database/database.php");
+           require_once("models/​student_course.model.php");
+           $user = $_SESSION['user'];
+           $allMychart = myChart($user['user_id']);
+         ?>
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-success mt-xl-2 ms-n1"><?= count($allMychart) ?>
           </span>
-        <?php endif ?>
+         <?php endif ?>
+        
+          
       </div>
 
       <?php

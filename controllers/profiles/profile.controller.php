@@ -1,11 +1,6 @@
 <?php
-<<<<<<< HEAD
-require "../../database/database.php";
-require "../../models/student.model.php";
-=======
 require("../../database/database.php");
 require("../../models/student.model.php");
->>>>>>> updateprofile_student
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];

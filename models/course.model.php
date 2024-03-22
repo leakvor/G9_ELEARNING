@@ -189,3 +189,5 @@ function chartBar(): array {
     // Return the result array
     return $result;
 }
+
+
