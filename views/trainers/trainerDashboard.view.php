@@ -108,33 +108,8 @@ Page content START -->
                     <!-- Dashboard menu -->
                     <div class="list-group list-group-dark list-group-borderless">
                       <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-                      <a class="list-group-item " href=""><i class="bi bi-graph-up fa-fw me-2"></i>Earnings</a>
                       <a class="list-group-item " href="controllers/trainers/displatTrainerId.controller.php?id=<?= $trainer['user_id'] ?>"><i class="bi bi-people fa-fw me-2"></i>Students</a>
-                      <?php
-                        if (isset($_SESSION['user'])){
-                          $user = $_SESSION['user']; 
-                          
-                        }
-                      ?>
-
-                      <form action="../../controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
-                        <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
-                          <li class="nav-item dropdown">
-                            <!-- =================================edit profile================================ -->
-                            <button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
-
-                            <ul class="dropdown-menu dropdown-menu-end min-w-auto">
-                              <input type="hidden" value="<?php echo $trainer['email']?>" name="email">
-                              <li>
-                                <input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload">
-                                
-                            </li>
-                            </ul>
-                          </li>
-                        </ul>  
-                      </form>
-
-                      <a class="list-group-item " href="instructor-delete-account.html"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                   	<a class="list-group-item " href="/displayAllmycourse"><i class="bi bi-trash fa-fw me-2"></i>My Course</a>
                       <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Sign
                         Out</a>
                     </div>
@@ -227,7 +202,7 @@ Page content START -->
                       <span class="badge bg-dark text-white">This months</span>
                       <h4 class="text-primary my-2"><?= $paidThismonth['total_paid_month'] !== null ? $paidThismonth['total_paid_month'] : '0' ?>$</h4>
                     </div>
-                    <div class="col-sm-6 col-md-4">
+                    <div class="col-sm-6 col-md-4">-
                       <span class="badge bg-dark text-white">Total all</span>
                       <h4 class="text-primary my-2"><?= $paidAll['total_paid_all'] !== null ? $paidAll['total_paid_all'] : '0' ?>$</h4>
                     </div>
@@ -248,7 +223,7 @@ Page content START -->
                   <!-- Card header START -->
                   <div class="card-header border-bottom">
                     <div class="d-sm-flex justify-content-sm-between align-items-center">
-                      <h3 class="mb-2 mb-sm-0">Most Selling Courses</h3>
+                      <h3 class="mb-2 mb-sm-0">My Courses</h3>
                       <a href="#" class="btn btn-sm btn-primary-soft mb-0">View all</a>
                     </div>
                   </div>
@@ -306,15 +281,6 @@ Page content START -->
                               <a href="controllers/trainerCourse/editcourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-success-soft btn-round me-1 mb-0"><i class="far fa-fw fa-edit"></i></a>
                               <a href="controllers/trainerCourse/deleteCourse.controller.php?id=<?=$course["course_id"] ?>" class="btn btn-sm btn-danger-soft btn-round mb-0" onclick="return functionDelete()">
                             <i class="fas fa-fw fa-times"></i></a>
-                            <script>
-                              function functionDelete() {
-                              if (confirm("Are you sure you want to delete this course?")) {
-                                return true;
-                              } else {
-                                return false;
-                              }
-                              }
-                            </script>
                             </td>
                           </tr>
                         </tbody>

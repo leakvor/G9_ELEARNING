@@ -9,10 +9,7 @@ if (!function_exists('getCourse')) {
     return $statement->fetchAll();
     }
 }
-// function getCourse(): array
-// {
-    
-// }
+
 
 function createCourse(string $title, string $img, int $user_id, int $cate_id, int $paid)
 {
