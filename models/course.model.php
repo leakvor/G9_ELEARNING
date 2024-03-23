@@ -179,7 +179,6 @@ function chartBar(): array {
 
     // Execute the statement
     $statement->execute();
-
     // Fetch the results as an associative array
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
