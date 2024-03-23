@@ -1,11 +1,5 @@
 <?php
-function getComment():array{
-    global $connection;
-    $statement=$connection->prepare("select * from comment");
-    $statement->execute();
-    return $statement->fetchAll();
 
-}
 
     function displayAllcomment($id)
     {

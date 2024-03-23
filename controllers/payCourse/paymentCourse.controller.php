@@ -47,12 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!isPaymentExist($_POST['user_id'], $_POST['course_id'])) {
             $isCreate = paymentCourse($_POST['user_id'], $_POST['course_id'], $_POST['paid'], $_POST['date'], $_POST['numberCard'], $_POST['cvv'], $_POST['nameCard']);
             courseStudent($_POST['user_id'], $_POST['course_id'], $_POST['date']);
-            $_SESSION['myLesson'] = $myLesson;
+            $_SESSION['id']=$_POST['course_id'];
+            // $_SESSION['myLesson'] = $myLesson;
             header("Location: /myLessons");
 
             // $_SESSION['test'] = 'test';
         } else {
-            $_SESSION['myLesson'] = $myLesson;
+            $_SESSION['id']=$_POST['course_id'];
+            // $_SESSION['myLesson'] = $myLesson;
             header("Location: /myLessons");
         }
     } else {

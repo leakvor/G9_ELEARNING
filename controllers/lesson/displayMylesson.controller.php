@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['id'])){
-    $myLesson=$_SESSION['id'];
-    // var_dump($myLesson);
+    $id=$_SESSION['id'];
+    var_dump($id);
+    require ("views/lesson/myLesson.view.php");
 }
-require ("views/lesson/myLesson.view.php");

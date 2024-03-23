@@ -33,7 +33,7 @@ if (!function_exists('isPaymentExist')) {
 }
 
 
-
+if (!function_exists('getTotalPaidToday')) {
 function getTotalPaidToday()
 {
     global $connection;
@@ -43,11 +43,11 @@ function getTotalPaidToday()
     $statement->execute([$today]);
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     return $result['total_paid'] !== null ? $result['total_paid'] : 0;
-}
+}}
 
 
 
-
+if (!function_exists('getTotalPaidYesterday')) {
 function getTotalPaidYesterday()
 {
     global $connection;
@@ -56,8 +56,9 @@ function getTotalPaidYesterday()
     $statement->execute();
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     return $result['total_paid_yesterday'];
-}
+}}
 
+if (!function_exists('getTotalRevenueToday')) {
 function getTotalRevenueToday()
 {
     global $connection;
@@ -67,10 +68,10 @@ function getTotalRevenueToday()
     $statement->execute([$today]);
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     return $result['total_revenue'] !== null ? $result['total_revenue'] : 0;
-}
+}}
 
 
-
+if (!function_exists('getTotalPaidOverall')) {
 function getTotalPaidOverall()
 {
     global $connection;
@@ -80,8 +81,9 @@ function getTotalPaidOverall()
     $result = $statement->fetch(PDO::FETCH_ASSOC);
     return $result['total_paid'] !== null ? $result['total_paid'] : 0;
 }
+}
 
-
+if (!function_exists('getTotalPaidThisMonth')) {
 function getTotalPaidThisMonth()
 {
     global $connection;
@@ -94,8 +96,9 @@ function getTotalPaidThisMonth()
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     return $result['total_paid'];
-}
+}}
 // =====Total paid today for trainer=====
+if (!function_exists('totalTodayTrainer')) {
 function totalTodayTrainer($id)
 {
     global $connection;
@@ -106,9 +109,10 @@ function totalTodayTrainer($id)
                       AND DATE(payment.date) = CURDATE()");
     $statement->execute([':id' => $id]);
     return $statement->fetch();  
-}
+}}
 
 // =====Total paid this months for trainer=====
+if (!function_exists('totalthisMonthTrainer')) {
 function totalthisMonthTrainer($id)
 {
     global $connection;
@@ -120,8 +124,9 @@ function totalthisMonthTrainer($id)
       AND YEAR(payment.date) = YEAR(CURDATE())");
     $statement->execute([':id' => $id]);
     return $statement->fetch();  
-}
+}}
 // =====Total paid all for trainer=====
+if (!function_exists('totalAll')) {
 function totalAll($id)
 {
     global $connection;
@@ -131,9 +136,10 @@ function totalAll($id)
     WHERE course.user_id =:id");
     $statement->execute([':id' => $id]);
     return $statement->fetch();  
-}
+}}
 
-
+// =======selling course of trainer==========
+if (!function_exists('sellingCourse')) {
 function sellingCourse($id): array {
     global $connection;
     $statement = $connection->prepare("
@@ -146,12 +152,60 @@ function sellingCourse($id): array {
     ");
     $statement->execute([':id' => $id]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);
-}
+}}
 
+// ====get all data in payment======
+if (!function_exists('getPayment')) {
 function getPayment(): array
 {
     global $connection;
     $statement = $connection->prepare("select * from payment");
     $statement->execute();
     return $statement->fetchAll();
-}
+}}
+
+// ======get total paid for each student======
+if (!function_exists('totalTodayStudent')) {
+function totalTodayStudent($id)
+{
+    global $connection;
+    $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_today, CURDATE() AS date
+    FROM payment
+    WHERE user_id =:id AND DATE(date) = CURDATE()
+    GROUP BY user_id");
+    $statement->execute([':id' => $id]);
+    return $statement->fetch();  
+}}
+// =====Total paid this months for student=====
+if (!function_exists('totalthisMonthStudent')) {
+    function totalthisMonthStudent($id)
+    {
+        global $connection;
+        $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_month, DATE_FORMAT(date, '%Y-%m') AS month_year
+        FROM payment
+        WHERE DATE_FORMAT(date, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m') AND user_id =:id
+        GROUP BY user_id, DATE_FORMAT(date, '%Y-%m');");
+        $statement->execute([':id' => $id]);
+        return $statement->fetch();  
+    }}
+// =============student totalAll===========
+    if (!function_exists('totalAllpaidStudent')) {
+        function totalAllpaidStudent($id)
+        {
+            global $connection;
+            $statement = $connection->prepare("select user_id,course_id, SUM(paid) as total_paid,date from payment where user_id=:id");
+            $statement->execute([':id' => $id]);
+            return $statement->fetch();  
+        }}
+
+
+        
+// ====total student course===========
+if (!function_exists('totalCourse')) {
+function totalCourse($id)
+{
+    global $connection;
+    $statement = $connection->prepare(" select count(course_id) as total_course from student_course where user_id=:id");
+    $statement->execute([':id' => $id]);
+    return $statement->fetch();  
+}}
