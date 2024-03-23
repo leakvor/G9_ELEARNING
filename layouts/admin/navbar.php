@@ -1,5 +1,7 @@
  <!-- Sidebar Start -->
  <?php
+    require('database/database.php');
+    require('models/notifi.model.php');
     if (isset($_SESSION['admin'])) {
         $admin = $_SESSION['admin'];
         $adminname = strtoupper($admin['username']);
@@ -39,9 +41,23 @@
         $activeStudent = '';
         $activeAdmin = '';
         $activeTrainer = '';
+    }else if ($URL == '/payadmin') {
+        $activepay = 'active';
+        $activeCategiry = '';
+        $activeStudent = '';
+        $activeAdmin = '';
+        $activeTrainer = '';
+    }else if ($URL == '/admin') {
+        $activedashboard = 'active';
+        $activeCategiry = '';
+        $activeStudent = '';
+        $activeAdmin = '';
+        $activeTrainer = '';
     }
 
-    ?>
+    $notifications= notifi();
+
+?>
 
 
 
@@ -53,7 +69,7 @@
          </a>
          <div class="d-flex align-items-center ms-4 mb-4">
              <div class="position-relative">
-                 <img class="rounded-circle" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
+                 <img class="rounded-circle" src="assets/images/avatar/photo.jpg" alt="" style="width: 40px; height: 40px;">
                  <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
              </div>
              <div class="ms-3">
@@ -64,23 +80,26 @@
          <div class="navbar-nav w-100">
              <?php
                 if (isset($_SESSION['admin'])) {
-                    $dasboad = '/admins';
+                    $dasboad = '/admin';
                     $teacherPath = "/adminTrainer";
                     $studentPath = "/displayStudent";
                     $categories = "/displayCategory";
                     $admincourse = "/adminCourse";
+                    $adminpayment = "/payadmin";
                 } else {
                     $dasboad = '/admin';
                     $teacherPath = "/admin";
                     $studentPath = "/admin";
                     $categories = "/admin";
                     $admincourse = "/admin";
+                
                 }
                 ?>
-             <a href="<?php echo $dasboad ?>" class="nav-item nav-link <?= $activeAdmin ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+             <a href="<?php echo $dasboad ?>" class="nav-item nav-link <?= $activedashboard ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
              <a href="<?php echo $teacherPath ?>" class="nav-item nav-link <?= $activeTrainer ?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
              <a href="<?php echo $studentPath ?>" class="nav-item nav-link <?= $activeStudent ?>"><i class="fa fa-user me-2"></i>Students</a>
              <a href="<?php echo $categories ?>" class="nav-item nav-link <?= $activeCategiry ?>"><i class="far fa-folder-open me-2"></i>Categories</a>
+             <a href="<?php echo  $adminpayment ?>" class="nav-item nav-link <?=$activepay?>"><i class="far fa-money-bill-alt me-2"></i>Payment</a>
              <a href="<?php echo $admincourse ?>" class="nav-item nav-link <?= $activeCourse ?>"><i class="fas fa-book me-2"></i>Course</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
@@ -148,33 +167,36 @@
                      <a href="#" class="dropdown-item text-center">See all message</a>
                  </div>
              </div>
+<!-- ============================================= -->
+<div class="nav-item dropdown">
+    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="fa fa-bell me-lg-2"></i>
+        <span class="d-none d-lg-inline-flex">Notifications</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0" id="notification-dropdown">
+        <?php foreach ($notifications as $notification): ?>
+            <a href="#" class="dropdown-item notification-item">
+                <h6 class="fw-normal mb-0"><?= $notification['student_username'] ?></h6>
+                <small>enrolled in <?= $notification['course_title']?></small>
+                <span>
+                    <p><?= $notification['teacher_name'] ?> teaching</p>
+                </span>
+            </a>
+        <?php endforeach; ?>
+            <a href="#" class="dropdown-item text-center show-all-notifications">See all notifications</a>
+    </div>
+</div>
+
+
+
+
+
+<!-- =========================================== -->
+
+
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                     <i class="fa fa-bell me-lg-2"></i>
-                     <span class="d-none d-lg-inline-flex">Notificatin</span>
-                 </a>
-                 <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                     <a href="#" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">Profile updated</h6>
-                         <small>15 minutes ago</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                     <a href="#" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">New user added</h6>
-                         <small>15 minutes ago</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                     <a href="#" class="dropdown-item">
-                         <h6 class="fw-normal mb-0">Password changed</h6>
-                         <small>15 minutes ago</small>
-                     </a>
-                     <hr class="dropdown-divider">
-                     <a href="#" class="dropdown-item text-center">See all notifications</a>
-                 </div>
-             </div>
-             <div class="nav-item dropdown">
-                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                     <img class="rounded-circle me-lg-2" src="assets/images/user.jpg" alt="" style="width: 40px; height: 40px;">
+                     <img class="rounded-circle me-lg-2" src="assets/images/avatar/photo.jpg" alt="" style="width: 40px; height: 40px;">
                      <span class="d-none d-lg-inline-flex"><?= $adminname ?></span>
                  </a>
                  <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">

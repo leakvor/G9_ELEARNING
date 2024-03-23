@@ -9,10 +9,7 @@ if (!function_exists('getCourse')) {
     return $statement->fetchAll();
     }
 }
-// function getCourse(): array
-// {
-    
-// }
+
 
 function createCourse(string $title, string $img, int $user_id, int $cate_id, int $paid)
 {
@@ -168,3 +165,24 @@ function trainerCourseid($id)
     );
     return $statement->fetch();
 }
+
+function chartBar(): array {
+    global $connection;
+
+    // Prepare the SQL statement
+    $statement = $connection->prepare("SELECT MONTH(date) AS month, 
+                                        YEAR(date) AS year, 
+                                        SUM(paid) AS total_paid 
+                                        FROM payment 
+                                        GROUP BY YEAR(date), MONTH(date) 
+                                        ORDER BY YEAR(date), MONTH(date)");
+
+    // Execute the statement
+    $statement->execute();
+    // Fetch the results as an associative array
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    // Return the result array
+    return $result;
+}
+

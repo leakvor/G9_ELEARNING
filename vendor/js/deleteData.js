@@ -7,3 +7,8 @@ function functionDelete() {
     return false;
   }
 }
+
+
+function showAlert() {
+  alert("Are sure you want to sign out?");
+}

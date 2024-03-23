@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if the 'id' parameter exists in the POST data
     if(isset($_POST['id'])) {
