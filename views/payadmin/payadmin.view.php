@@ -1,21 +1,26 @@
 <div class="container-fluid pt-4 px-4">
     <div class="form-row" style="display: flex; flex-direction: column;">
-        <form class="d-none d-md-flex ">
-            <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;width:200px" type="search" id="search" placeholder="Search">
-        </form>
-        <!-- table p$payment -->
+        <div class="for-row" style="display: flex;">
+            <form class="d-none d-md-flex ">
+                <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;width:200px" type="search" id="search1" placeholder="Search by id of course" name="user_id">
+            </form>
+            <form class="d-none d-md-flex" style="margin-left: 40px;">
+                <input class="form-control bg-dark mt-3 mb-3" style="border: 1px solid gray;width:200px" type="search" id="search3" placeholder="Search (YYYY-MM)" name="date">
+            </form>
+        </div>
         <div class="table-wrapper-scroll-y my-custom-scrollbar">
+            <!-- table payment -->
             <table class="table table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
-                        <th scope="col">user_id</th>
-                        <th scope="col">course_id</th>
-                        <th scope="col">paid</th>
-                        <th scope="col">date</th>
-                        <th scope="col">numberofCard</th>
-                        <th scope="col">cvv</th>
-                        <th scope="col">nameonCard</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">User_id</th>
+                        <th scope="col">Course_id</th>
+                        <th scope="col">Paid</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">NumberofCard</th>
+                        <th scope="col">Cvv</th>
+                        <th scope="col">NameonCard</th>
                     </tr>
                 </thead>
                 <tbody>

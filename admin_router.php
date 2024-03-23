@@ -32,6 +32,8 @@ if (isset($_SESSION['admin'])) {
     '/displayStudent' => 'controllers/students/displayStudent.controller.php',
    
 
+    
+
     ];
 }
 

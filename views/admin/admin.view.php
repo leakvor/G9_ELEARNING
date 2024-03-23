@@ -73,7 +73,6 @@
             echo '<td><a class="btn btn-sm btn-primary" href="">Detail</a></td>';
             echo '</tr>';
         }
-
         echo '</tbody>';
         echo '</table>';
     }
@@ -176,7 +175,6 @@
             }]
         });
         chart.render();
-
         var chart2 = new CanvasJS.Chart("chartContainer2", {
             animationEnabled: true,
             theme: "dark1",

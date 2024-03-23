@@ -68,7 +68,7 @@
          <div class="navbar-nav w-100">
              <?php
                 if (isset($_SESSION['admin'])) {
-                    $dasboad = '/admins';
+                    $dasboad = '/admin';
                     $teacherPath = "/adminTrainer";
                     $studentPath = "/displayStudent";
                     $categories = "/displayCategory";
