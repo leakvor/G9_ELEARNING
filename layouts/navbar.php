@@ -210,30 +210,6 @@
       </ul>
       </li>
       </ul>
-      <!-- Category menu END -->
-
-      <!-- Main navbar START -->
-      <!-- <div class="navbar-collapse collapse" id="navbarCollapse"> -->
-      <!-- Nav Search START -->
-      <!-- <div class="col-xl-8">
-          <div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
-            <div class="nav-item w-100">
-              <form class="rounded position-relative">
-                <input class="form-control pe-5 bg-secondary bg-opacity-10 border-0" id="search" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y" type="submit"><i class="fas fa-search fs-6 text-primary"></i></button>
-              </form>
-            </div>
-          </div>
-        </div> -->
-      <!-- Nav Search END -->
-      <!-- </div> -->
-      <!-- Main navbar END -->
-
-      <!-- Right header content START -->
-      <!-- Add to cart -->
-      <!-- <div class="navbar-nav position-relative overflow-visible me-3">
-        <a href="/displayChart" class="nav-link"> <i class="fas fa-shopping-cart fs-5"></i></a>
-      </div> -->
       <div class="navbar-nav position-relative overflow-visible me-3">
         <a href="/trainerList" class="nav-link"><i class="fas fa-user-alt"></i>Our Trainer</a>
         <?php

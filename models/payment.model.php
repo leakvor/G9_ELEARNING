@@ -4,7 +4,7 @@ if (!function_exists('paymentCourse')) {
     function paymentCourse($user_id, $course_id, $paid, $date, $numberCard, $cvv, $nameCard)
     {
         global $connection;
-        $statment = $connection->prepare("INSERT INTO payment(user_id,course_id,paid,date,numberofCard,cvv,nameonCard) VALUES(:user_id,:course_id,:paid, :date,:numberofCard,:cvv,:nameonCard)");
+        $statment = $connection->prepare("INSERT INTO payment(user_id,course_id,paid,date,numberofCard,cvv,nameonCard,status) VALUES(:user_id,:course_id,:paid, :date,:numberofCard,:cvv,:nameonCard,:status)");
         $statment->execute([
             ':user_id' => $user_id,
             ':course_id' => $course_id,
@@ -12,7 +12,8 @@ if (!function_exists('paymentCourse')) {
             ':paid' => $paid,
             ':numberofCard' => $numberCard,
             ':cvv' => $cvv,
-            ':nameonCard' => $nameCard
+            ':nameonCard' => $nameCard,
+            ':status'=>true,
         ]);
         return $statment->rowCount() > 0;
     }

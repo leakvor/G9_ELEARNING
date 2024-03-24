@@ -42,6 +42,7 @@
     <script src="vendor/js/validationCategory.js"></script>
     <script src="vendor/js/search_trainer.js"></script>
     <script src="vendor/js/searchPay.js"></script>
+    <script src="vendor/js/notification.js"></script>
 </body>
 
 </html>
