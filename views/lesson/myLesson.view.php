@@ -47,14 +47,12 @@ Page Banner START -->
 
 												foreach ($comments as $comment) : ?>
 													<div class="card mb-5">
-														
-														<div class="card-body​" style=" background-color:#DCDCDC;margin-top:30px">
+														<div class="card-body​" style=" padding:15px;margin:10px ;background-color:#DCDCDC;">
 															<p><?= $comment['title'] ?></p>
-
 															<div class="d-flex justify-content-between">
 																<div class="d-flex flex-row align-items-center">
-																	<img src="assets/images/profile/<?= $comment["img"] ?>" width="25" height="25">
-																	<p class="small mb-0 ms-2"><?= $comment['username'] ?></p>
+																	<img src="assets/images/profile/<?= $comment["img"] ?>" width="35" height="40">
+																	<p class="small" style="margin-left:10px"><?= $comment['username'] ?></p>
 																</div>
 																<div claass="d-flex flex-row align-items-center">
 																	<p class="small mb-0"><?= $comment['date'] ?></p>
