@@ -37,6 +37,7 @@ if (isset($_SESSION['user']) || isset($_SESSION['teacher'])) {
         '/trainer' => 'controllers/trainers/signinTrainer.controller.php',
         '/displayListStudentTrainer' => 'controllers/trainers/displayListStudentTrainer.controller.php',
         '/trainerList' => 'controllers/trainers/trainer.controller.php',
+        '/studentReview' => 'controllers/students/studentReview.controller.php',
 
     ];
 }

@@ -7,8 +7,7 @@
     <!-- **************** MAIN CONTENT START **************** -->
     <main>
 
-        <!-- =======================
-        Page Banner START -->
+        <!-- Page Banner START -->
         <section class="pt-0">
             <!-- Main banner background image -->
             <div class="container-fluid px-0" >
