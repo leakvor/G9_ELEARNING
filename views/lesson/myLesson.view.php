@@ -53,7 +53,7 @@ Page Banner START -->
 
 															<div class="d-flex justify-content-between">
 																<div class="d-flex flex-row align-items-center">
-																	<img src="assets/images/profile/<?= $comment["img"] ?>" width="25" height="25">
+																	<img src="assets/images/instructor/<?= $comment["img"] ?>" width="25" height="25">
 																	<p class="small mb-0 ms-2"><?= $comment['username'] ?></p>
 																</div>
 																<div claass="d-flex flex-row align-items-center">

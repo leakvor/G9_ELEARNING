@@ -25,7 +25,7 @@
     <section class="pt-4">
         <div class="container">
             <div class="row g-4">
-                <?php 
+                <?php
                 $statement = $connection->prepare("select * from users where role='teacher'");
                 $statement->execute();
                 $teachers = $statement->fetchAll();
@@ -37,45 +37,44 @@
                         $path = "/signins";
                     }
                 ?>
-                <!-- Card item START -->
-                <div class="col-lg-10 col-xl-6">
-                    <div class="card shadow p-2">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <a href="<?= $path ?>">
-                                    <img src="assets/images/instructor/<?= $teacher['img'] ?>" class="rounded-3" alt="img course" style="width: 100%; height: 180px; object-fit: cover;">
-                                </a>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
-                                        <div>
-                                            <h5 class="card-title" id="Nameteacher"><a href="/trainer-classroom"><?= $teacher['username'] ?></a></h5>
+                    <!-- Card item START -->
+                    <div class="col-lg-10 col-xl-6">
+                        <div class="card shadow p-2">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <a href="<?= $path ?>">
+                                        <img src="assets/images/instructor/<?= $teacher['img'] ?>" class="rounded-3" alt="img course" style="width: 100%; height: 180px; object-fit: cover;">
+                                    </a>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
+                                            <div>
+                                                <h5 class="card-title" id="Nameteacher"><a href="/trainer-classroom"><?= $teacher['username'] ?></a></h5>
+                                            </div>
                                         </div>
-                                        <span class="h6 fw-light">4.3<i class="fas fa-star text-warning ms-1"></i></span>
-                                    </div>
-                                    <p class="text-truncate-2 mb-3">Perceived end knowledge certainly day sweetness why cordially.</p>
-                                    <div class="d-sm-flex justify-content-sm-between align-items-center">
-                                        <ul class="list-inline mb-0 mt-3 mt-sm-0">
-                                            <li class="list-inline-item">
-                                                <a class="mb-0 me-1 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="mb-0 me-1 text-instagram-gradient" href="#"><i class="fab fa-fw fa-instagram"></i></a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="mb-0 me-1 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="mb-0 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                                            </li>
-                                        </ul>
+                                        <p class="text-truncate-2 mb-3">Perceived end knowledge certainly day sweetness why cordially.</p>
+                                        <div class="d-sm-flex justify-content-sm-between align-items-center">
+                                            <ul class="list-inline mb-0 mt-3 mt-sm-0">
+                                                <li class="list-inline-item">
+                                                    <a class="mb-0 me-1 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="mb-0 me-1 text-instagram-gradient" href="#"><i class="fab fa-fw fa-instagram"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="mb-0 me-1 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a>
+                                                </li>
+                                                <li class="list-inline-item">
+                                                    <a class="mb-0 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php endforeach ?>
             </div>
             <!-- Pagination START -->
