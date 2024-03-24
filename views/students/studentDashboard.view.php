@@ -76,7 +76,7 @@
                                         <div class="list-group list-group-dark list-group-borderless">
                                             <a class="list-group-item " href="#"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
                                             <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
-                                                <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
+                                                <!-- <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
                                                     <li class="nav-item dropdown">
                                                         <button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
                                                         <ul class="dropdown-menu dropdown-menu-end min-w-auto">
@@ -84,7 +84,7 @@
                                                             <li><input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload"></li>
                                                         </ul>
                                                     </li>
-                                                </ul>
+                                                </ul> -->
                                             </form>
                                             <a class="list-group-item " href="/applyTrainer"><i class="fa fa-angle-double-right me-2"></i>Apply for trainer</a>
                                             <a class="list-group-item " href="/studentReview"><i class="fab fa-facebook-messenger me-2" ></i>Message</a>

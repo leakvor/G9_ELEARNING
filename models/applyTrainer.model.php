@@ -46,7 +46,7 @@ function message($user_id){
     $statement = $connection->prepare("insert into messageapply (title,message,user_id) values (:title,:message,:user_id)");
     $statement->execute([
         ':title' => "Welcome to be a partner of us",
-        ':message'=>"I am approve so you can teach in our website : You can create video (lesson) of each courses that you want to teach. Thank you :)",
+        ':message'=>"I am approve so you can teach in our website : You can create video (lesson) of each courses that you want to teach. Thank you :) Please log out from student account and login as a trainer",
         ':user_id'=>$user_id,
 
     ]);
