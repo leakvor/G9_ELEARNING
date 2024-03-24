@@ -1,6 +1,4 @@
-
 <body>
-
 <!-- Header START -->
 <header class="navbar-light navbar-sticky">
   <!-- Logo Nav START -->
@@ -177,64 +175,52 @@ Page content START -->
           </div>
           <!-- Card body START -->
           <div class="card-body">
-            <!-- Form -->
-            <form action="controllers/profiles/updateprofile.controller.php"  method="post"class="row g-4">
-
-              <!-- Profile picture -->
-              <div class="col-12 justify-content-center align-items-center">
+            <!-- Form======================= -->
+            <form action="controllers/profiles/updateprofile.controller.php" method="post" enctype="multipart/form-data" class="row g-4">
+            <!-- Profile picture -->
+            <div class="col-12 justify-content-center align-items-center">
                 <label class="form-label">Profile picture</label>
                 <div class="d-flex align-items-center">
-                  <label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
-                    <!-- Avatar place holder -->
-                    <span class="avatar avatar-xl">
-                      <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profile['img']?>"  alt="">
-                    </span>
-                    <!-- Remove btn -->
-                    <!-- <button type="button" class="uploadremove"><i class="bi bi-x text-white"></i></button>
-                  </label> -->
-                  <!-- Upload button -->
-                  <!-- <label class="btn btn-primary-soft mb-0 editProfile" for="uploadfile-1">Change</label>
-                  <input id="uploadfile-1" class="form-control d-none" type="file"> -->
-
+                    <label class="position-relative me-4" for="uploadfile-1" title="Replace this pic">
+                        <!-- Avatar place holder -->
+                        <span class="avatar avatar-xl">
+                            <img id="imageUpload" class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/profile/<?= $profile['img']?>" alt="">
+                        </span>
+                    </label>
+                    <!-- Upload button -->
                 </div>
-              </div>
-              <input type="hidden" value="<?= $user['user_id']?>" name="user_id">
-              <div class="col-md-6">
+            </div>
+            <input type="hidden" value="<?= $user['user_id']?>" name="user_id">
+            <div class="col-md-6">
                 <label class="form-label">Update Profile</label>
-                <input type="file" class="form-control bg-white"   name="img" id="img" placeholder="Choose image" value="$profile['img']">
-                  <?=var_dump($profile['img'])?>
-              </div>
-              <!-- Username -->
-              <div class="col-md-6">
+                <input type="file" class="form-control custom-file-input" name="img" id="imageUpload" placeholder="Choose image">
+
+            </div>
+            <!-- Username -->
+            <div class="col-md-6">
                 <label class="form-label">Username</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" value="<?=$profile['username']?>" name="username">
-                  <!-- <?php var_dump($user['username']) ?> -->
+                    <input type="text" class="form-control" value="<?=$profile['username']?>" name="username">
                 </div>
-              </div>
-              <!-- Email id -->
-              <div class="col-md-6">
+            </div>
+            <!-- Email id -->
+            <div class="col-md-6">
                 <!-- <label class="form-label">Email</label> -->
                 <input class="form-control" type="hidden" name="email" value="<?= $profile['email'] ?>" placeholder="Email">
-              </div>
-              <!-- Save button -->
-              <div class="d-sm-flex justify-content-end">
+            </div>
+            <!-- Save button -->
+            <div class="d-sm-flex justify-content-end">
                 <button type="submit" class="btn btn-primary mb-0 editProfile">Save changes</button>
-              </div>
-            </form>
+            </div>
+        </form>
+        <!-- ===================================end========================== -->
           </div>
           <!-- Card body END -->
         </div>
-        <!-- Edit profile END -->
-        
-
-      <!-- Main content END -->
     </div><!-- Row END -->
   </div>
       <?php }?>
 </section>
-<!-- =======================
-Page content END -->
 
 </main>
 <!-- **************** MAIN CONTENT END **************** -->

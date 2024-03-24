@@ -265,7 +265,6 @@
           <ul class="dropdown-menu dropdown-menu-end min-w-auto">
             <li> <a class="dropdown-item" href="<?= $path?>"><i class="fas fa-chalkboard-teacher fa-fw me-2"></i>Trainers</a></li>
             <li> <a class="dropdown-item" href="/"><i class="fas fa-user-graduate fa-fw me-2"></i>Students</a></li>
-            <!-- <li> <a class="dropdown-item" href="#"><img class="fa-fw me-2" src="assets/images/flags/sp.svg" alt="">French</a></li> -->
           </ul>
         </li>
       </ul>
@@ -295,14 +294,10 @@
         // var_dump($profile['email']);
         if (isset($profile)){
           $profileImg = $profile['img'];
-          // $_SESSION['user'] = $profile;
-          // $nextUser = $_SESSION['user'];
-          // var_dump($nextUser);
         }else{
           $profileImg = '65d81497323c28.92025204.jpg';
         }
         ?>
-
       <div class="nav-item dropdown">
         <a href="/updateprofile" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
           <img class="rounded-circle me-lg-2" src="assets/images/profile/<?=$profileImg?>" alt="" style="width: 40px; height: 40px;">
@@ -315,11 +310,6 @@
                 <a href="/updateprofile"><img src="assets/images/profile/<?=$profileImg?>" alt="Profile Image" class="card-img-top profile-image mt-3 dropdown-item avatar-img rounded-circle me-lg-2" style="width: 100px; height: 80px"></a>
                 <h5 class="card-title dropdown-item text-center"><?=$profile ['username']?></h5>
                 <p class="card-text dropdown-item text-center"><?=$profile ['email']?></p>
-                <!-- <form action="controllers/profiles/profile.controller.php" method="post" enctype="multipart/form-data">
-                  <input type="hidden" value="<?= $profile['email']?>" name="email">
-                  <Button type="submit" class="btn btn-primary editProfile" style="width:320px">Edit Profile</button>
-                  <input type="file" name="img" class="hidefile form-control custom-file-input" id="imageUpload" style="display:none; width:320px; border: 1px blue solid; border-radius: 5px">  
-                </form> -->
             </div>
           </li>
 
