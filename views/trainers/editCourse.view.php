@@ -9,8 +9,6 @@
 					<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
 					<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
 				</a>
-				<!-- Logo END -->
-
 				<!-- Responsive navbar toggler -->
 				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-animation">
@@ -19,13 +17,10 @@
 						<span></span>
 					</span>
 				</button>
-
 				<!-- Main navbar START -->
 				<div class="navbar-collapse w-100 collapse" id="navbarCollapse">
-
 					<!-- Nav Main menu START -->
 					<ul class="navbar-nav navbar-nav-scroll mx-auto">
-						<!-- Nav item 1 Demos -->
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Demos</a>
 							<ul class="dropdown-menu" aria-labelledby="demoMenu">
@@ -42,12 +37,10 @@
 								<li> <a class="dropdown-item" href="index-11.html">Home Workshop</a></li>
 							</ul>
 						</li>
-
 						<!-- Nav item 2 Pages -->
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
 							<ul class="dropdown-menu" aria-labelledby="pagesMenu">
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Course</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -72,8 +65,6 @@
 										<li> <a class="dropdown-item" href="course-video-player.html">Course Full Screen Video</a></li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">About</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -85,8 +76,6 @@
 										<li> <a class="dropdown-item" href="pricing.html">Pricing</a></li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Hero Banner</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -97,15 +86,12 @@
 										</li>
 									</ul>
 								</li>
-
 								<li> <a class="dropdown-item" href="instructor-list.html">Instructor List</a></li>
 								<li> <a class="dropdown-item" href="instructor-single.html">Instructor Single</a></li>
 								<li> <a class="dropdown-item" href="become-instructor.html">Become an Instructor</a></li>
 								<li> <a class="dropdown-item" href="abroad-single.html">Abroad Single</a></li>
 								<li> <a class="dropdown-item" href="workshop-detail.html">Workshop Detail</a></li>
 								<li> <a class="dropdown-item" href="event-detail.html">Event Detail</a></li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Shop</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -117,8 +103,6 @@
 										<li> <a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Help</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -127,8 +111,6 @@
 										<li> <a class="dropdown-item" href="faq.html">FAQs</a></li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Authentication</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -137,8 +119,6 @@
 										<li> <a class="dropdown-item" href="forgot-password.html">Forgot Password</a></li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Form</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -148,8 +128,6 @@
 										<li> <a class="dropdown-item" href="university-admission-form.html">Admission Form</a></li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#">Specialty</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -163,7 +141,6 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="accounntMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounts</a>
 							<ul class="dropdown-menu" aria-labelledby="accounntMenu">
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-tie fa-fw me-1"></i>Instructor</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -179,8 +156,6 @@
 										<li> <a class="dropdown-item" href="instructor-payout.html"><i class="fas fa-wallet fa-fw me-1"></i>Payout</a> </li>
 									</ul>
 								</li>
-
-								<!-- Dropdown submenu -->
 								<li class="dropdown-submenu dropend">
 									<a class="dropdown-item dropdown-toggle" href="#"><i class="fas fa-user-graduate fa-fw me-1"></i>Student</a>
 									<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
@@ -193,7 +168,6 @@
 										<li> <a class="dropdown-item" href="student-bookmark.html"><i class="fas bi-cart-check-fill fa-fw me-1"></i>Wishlist</a> </li>
 									</ul>
 								</li>
-
 								<li> <a class="dropdown-item" href="admin-dashboard.html"><i class="fas fa-user-cog fa-fw me-1"></i>Admin</a> </li>
 								<li>
 									<hr class="dropdown-divider">
@@ -201,7 +175,6 @@
 								<li> <a class="dropdown-item" href="instructor-edit-profile.html"><i class="fas fa-fw fa-edit me-1"></i>Edit Profile</a> </li>
 								<li> <a class="dropdown-item" href="instructor-setting.html"><i class="fas fa-fw fa-cog me-1"></i>Settings</a> </li>
 								<li> <a class="dropdown-item" href="instructor-delete-account.html"><i class="fas fa-fw fa-trash-alt me-1"></i>Delete Profile</a> </li>
-
 								<li>
 									<hr class="dropdown-divider">
 								</li>
@@ -219,7 +192,6 @@
 											</ul>
 										</li>
 										<li> <a class="dropdown-item" href="#">Dropdown item</a> </li>
-
 										<!-- dropdown submenu open left -->
 										<li class="dropdown-submenu dropstart">
 											<a class="dropdown-item dropdown-toggle" href="#">Dropdown (start)</a>
@@ -237,17 +209,14 @@
 						$statement = $connection->prepare("select * from category");
 						$statement->execute();
 						$categories = $statement->fetchAll();
-
 						$statement = $connection->prepare("SELECT course.course_id, course.course_img, course.paid, course.title, users.username,category.cateName FROM course INNER JOIN category ON category.cat_id=course.cate_id inner join users on users.user_id=course.user_id where course_id=:id;");
 						$statement->execute(
 							[':id' => $id],
 						);
 						$course = $statement->fetch();
-
 						?>
 						<!-- Nav item 4 Component-->
 						<li class="nav-item"><a class="nav-link" href="docs/alerts.html">Components</a></li>
-
 						<!-- Nav item 5 link-->
 						<li class="nav-item dropdown">
 							<a class="nav-link" href="#" id="advanceMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -293,8 +262,6 @@
 							</ul>
 						</li>
 					</ul>
-					<!-- Nav Main menu END -->
-
 					<!-- Nav Search START -->
 					<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
 						<div class="nav-item w-100">
@@ -306,10 +273,7 @@
 							</form>
 						</div>
 					</div>
-					<!-- Nav Search END -->
 				</div>
-				<!-- Main navbar END -->
-
 				<!-- Profile START -->
 				<div class="dropdown ms-1 ms-lg-0">
 					<a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
@@ -364,13 +328,10 @@
 								</button>
 							</div>
 						</li>
-						<!-- Dark mode options END-->
 					</ul>
 				</div>
-				<!-- Profile START -->
 			</div>
 		</nav>
-		<!-- Logo Nav END -->
 	</header>
 	<div id="sticky-space" style="height: 0px;"></div>
 	<!-- Header END -->
@@ -379,8 +340,7 @@
 		$id = ($_POST['id']);
 	}
 	?>
-	<!-- =======================
-Page Banner START -->
+	<!-- Page Banner START -->
 	<section class="py-0 bg-blue h-100px align-items-center d-flex h-200px rounded-0" style="background:url(assets/images/pattern/04.png) no-repeat center center; background-size:cover;">
 		<!-- Main banner background image -->
 		<div class="container">
@@ -398,9 +358,7 @@ Page Banner START -->
 		<!-- Content -->
 		<p class="text-center">Use this interface to add a new Course to the portal. Once you are done adding the item it will be reviewed for quality. If approved, your course will appear for sale and you will be informed by email that your course has been accepted.</p>
 	</div>
-
-	<!-- =======================
-Page Banner END -->
+	<!-- Page Banner END -->
 	<div class="container">
 		<div class="row g-4">
 			<form action="controllers/trainerCourse/updateCourse.controller.php" method="POST" enctype="multipart/form-data">
@@ -448,7 +406,6 @@ Page Banner END -->
 			</form>
 		</div>
 	</div>
-
 	<!--Footer START -->
 	<footer class="bg-dark p-3">
 		<div class="container">
@@ -458,9 +415,6 @@ Page Banner END -->
 					<!-- Logo START -->
 					<a href="index.html"> <img class="h-20px" src="assets/images/logo-light.svg" alt="logo"> </a>
 				</div>
-
-				<!-- Widget -->
-				<!-- Widget -->
 				<div class="col-md-4">
 					<!-- Rating -->
 					<ul class="list-inline mb-0 text-center text-md-end">
@@ -473,15 +427,12 @@ Page Banner END -->
 			</div>
 		</div>
 	</footer>
-
-	<!-- =======================
-Footer END -->
+	<!-- Footer END -->
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			const titleInput = document.querySelector("#title");
 			const submitBtn = document.querySelector("#submitBtn");
 			const p = document.querySelector("#p");
-
 			titleInput.addEventListener("input", () => {
 				const text = titleInput.value.trim();
 				checkInput(text);

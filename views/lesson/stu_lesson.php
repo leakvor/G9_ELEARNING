@@ -55,7 +55,7 @@
 							</div>
 						</div>
 					</li>
-					<!-- Links -->
+
 					<li> <hr class="dropdown-divider"></li>
 					<li><a class="dropdown-item" href="#"><i class="bi bi-person fa-fw me-2"></i>Edit Profile</a></li>
 					<li><a class="dropdown-item" href="#"><i class="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
@@ -170,6 +170,14 @@ Page Banner START -->
 		<div class="row">
 			<div class="col-12">
 				<div class="bg-light p-4 text-center">
+				<?php 
+					require "database/database.php";
+					require "models/comment.model.php";
+					if(isset($lessons)){
+						$course_id=$lessons[0]['course_id'];
+						$comments=displayAllcomment($course_id);
+					}
+?>
 					<h1 class="m-0">Courses' lessons...</h1>
 					<!-- Breadcrumb -->
 					<div class="d-flex justify-content-center">
@@ -180,10 +188,49 @@ Page Banner START -->
 							</ol>
 						</nav>
 					</div>
+				<!-- ===========================comment================= -->
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comment</a>
+						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none" style="width:100%;">
+							<div class="row p-2">
+									<div class="card shadow-0 border" style="width:95%; margin-left: 30px;">
+										<div class="form-outline mb-4" style="width:100%; margin-top:20px;">
+										<form action="">
+											
+										</form>
+										<input type="text" id="ddANote" class="form-control" placeholder="Type comment...">
+										<button type="submit" style="margin:10px; padding:5px ;border:none;border-radius:5px">+ Add a note</button>
+										<?php
+										foreach($comments as $comment):
+											// var_dump($comment);
+										
+										?>
+
+										<div class="card mb-5">
+										<div class="card-body" style=" background-color:#E0E0E0;">
+											<p><?=$comment['title']?></p>
+
+											<div class="d-flex justify-content-between">
+											<div class="d-flex flex-row align-items-center">
+												<img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" width="25" height="25">
+												<p class="small mb-0 ms-2"><?=$comment['username ']?></p>
+											</div>
+											</div>
+										</div>
+										</div>
+										<?php
+										endforeach
+										?>
+										</div>
+										</div>
+									</div>
+									</div>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
 </section>
 
 

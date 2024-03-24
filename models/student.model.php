@@ -82,3 +82,7 @@ function updateStudentNoImg($username,$email,$id){
     ]);
     $statement->rowCount() >0;
 }
+
+
+
+
