@@ -19,6 +19,7 @@ if (isset($_SESSION['admin'])) {
         '/addCourse' => 'controllers/courses/addCourse.controller.php',
         '/displayStudent' => 'controllers/students/displayStudent.controller.php',
         '/payadmin' => 'controllers/payadmin/payadmin.controller.php',
+        '/applytoTrainer'=>'controllers/trainers/displayApplyTrainer.controller.php',
 
     ];
 } else {

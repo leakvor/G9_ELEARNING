@@ -51,12 +51,6 @@ Page Banner START -->
                   <div>
                     <h1 class="my-1 fs-4"><?= $trainer['username']?><i class="bi bi-patch-check-fill text-info small"></i></h1>
                     <p><?php echo $trainer['email']?></p>
-                    <ul class="list-inline mb-0">
-                      <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-star text-warning me-2"></i>4.5/5.0</li>
-                      <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-user-graduate text-orange me-2"></i>12k Enrolled
-                        Students</li>
-                      <li class="list-inline-item h6 fw-light me-3 mb-1 mb-sm-0"><i class="fas fa-book text-purple me-2"></i>25 Courses</li>
-                    </ul>
                   </div>
                   <?php 
                   
