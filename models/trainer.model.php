@@ -10,12 +10,12 @@ function getTeacher(): array
 function createTrainer(string $username, string $email, string $password, string $img): bool
 {
     global $connection;
-    $checkStatement = $connection->prepare("select count(*) from users where email = :email");
-    $checkStatement->execute([':email' => $email]);
-    $count = $checkStatement->fetchColumn();
-    if ($count > 0) {
-        return false;
-    }
+    // $checkStatement = $connection->prepare("select count(*) from users where email = :email");
+    // $checkStatement->execute([':email' => $email]);
+    // $count = $checkStatement->fetchColumn();
+    // if ($count > 0) {
+    //     return false;
+    // }
 
     $statement = $connection->prepare("insert into users (username, email, password, role, img) values (:username, :email, :password, :role, :img)");
     $result = $statement->execute([

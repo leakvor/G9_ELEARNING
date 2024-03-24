@@ -26,7 +26,7 @@
             <td><?= $student['email'] ?></td>
             <td><img src="assets/images/profile/<?= $student["img"] ?>" alt="" style="width: 40%; height: 70px; object-fit: cover;border-radius: 50%;"></td>
               
-            <td><a class="btn bg-gradient-danger btn-danger" href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>"onclick="return functionDelete()">
+            <td><a class="btn bg-gradient-danger btn-danger" href="controllers/students/deleteStudent.controller.php?id=<?=$student["user_id"] ?>>
             <i class="fa fa-trash" style="color:white;"></i></a>
         </tr>
       <?php endforeach; ?>
@@ -34,3 +34,4 @@
     </table>
   </div>
 </div>
+"onclick="return functionDelete()"

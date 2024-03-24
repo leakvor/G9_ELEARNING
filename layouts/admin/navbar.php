@@ -101,6 +101,7 @@
              <a href="<?php echo $categories ?>" class="nav-item nav-link <?= $activeCategiry ?>"><i class="far fa-folder-open me-2"></i>Categories</a>
              <a href="<?php echo  $adminpayment ?>" class="nav-item nav-link <?=$activepay?>"><i class="far fa-folder-open me-2"></i>Payment</a>
              <a href="<?php echo $admincourse ?>" class="nav-item nav-link <?= $activeCourse ?>"><i class="fas fa-book me-2"></i>Course</a>
+             <a href="/applytoTrainer" class="nav-item nav-link "><i class="fas fa-book me-2"></i>Apply to trainer</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                  <div class="dropdown-menu bg-transparent border-0">
