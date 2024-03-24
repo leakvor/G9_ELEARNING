@@ -166,16 +166,25 @@ function getPayment(): array
 
 // ======get total paid for each student======
 if (!function_exists('totalTodayStudent')) {
-function totalTodayStudent($id)
-{
-    global $connection;
-    $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_today, CURDATE() AS date
-    FROM payment
-    WHERE user_id =:id AND DATE(date) = CURDATE()
-    GROUP BY user_id");
-    $statement->execute([':id' => $id]);
-    return $statement->fetch();  
-}}
+    function totalTodayStudent($id)
+    {
+        global $connection;
+        $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_today, CURDATE() AS date
+        FROM payment
+        WHERE user_id = :id AND DATE(date) = CURDATE()
+        GROUP BY user_id");
+        $statement->execute([':id' => $id]);
+        
+        // Check if there are any results
+        $result = $statement->fetch();
+        if (!$result) {
+            return ['user_id' => $id, 'total_paid_today' => 0, 'date' => date('Y-m-d')];
+        }
+
+        return $result;
+    }
+}
+
 // =====Total paid this months for student=====
 if (!function_exists('totalthisMonthStudent')) {
     function totalthisMonthStudent($id)

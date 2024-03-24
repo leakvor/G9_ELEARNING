@@ -88,6 +88,7 @@
                                             </form>
 
                                             <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?= $user['user_id'] ?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
+                                            <a class="list-group-item " href="/applyTrainer"><i class="fa fa-angle-double-right me-2"></i>Apply for trainer</a>
                                             <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Log
                                                 Out</a>
                                         </div>

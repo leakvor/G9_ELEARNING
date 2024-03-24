@@ -211,7 +211,6 @@ Page content START -->
                   <h3 style="margin-top: 10px;">Selling Course</h3>
                   <!-- Apex chart -->
                   <div id="Chart"></div>
-
                 </div>
               </div>
             </div>
