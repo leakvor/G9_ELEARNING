@@ -123,3 +123,15 @@ function myStudent($id){
 
     return $statment->fetchAll();
 }
+
+function updateRole($id)
+{
+    global $connection;
+    $statement = $connection->prepare("update users set role=:role where user_id=:id");
+    $statement->execute([
+        ':role' => "teacher",
+        ':id'=>$id
+        
+    ]);
+    $statement->rowCount() > 0;
+}

@@ -185,18 +185,7 @@ if (!function_exists('totalTodayStudent')) {
     }
 }
 
-// =====Total paid this months for student=====
-if (!function_exists('totalthisMonthStudent')) {
-    function totalthisMonthStudent($id)
-    {
-        global $connection;
-        $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_month, DATE_FORMAT(date, '%Y-%m') AS month_year
-        FROM payment
-        WHERE DATE_FORMAT(date, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m') AND user_id =:id
-        GROUP BY user_id, DATE_FORMAT(date, '%Y-%m');");
-        $statement->execute([':id' => $id]);
-        return $statement->fetch();  
-    }}
+
 // =============student totalAll===========
     if (!function_exists('totalAllpaidStudent')) {
         function totalAllpaidStudent($id)

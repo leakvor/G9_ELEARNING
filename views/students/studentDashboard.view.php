@@ -23,7 +23,7 @@
                                 <!-- Avatar -->
                                 <div class="col-auto mt-4 mt-md-0">
                                     <div class="avatar avatar-xxl mt-n3">
-                                        <a href="/updateprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/profile/<?=$profileImg?>" alt="studentProfile"></a>
+                                        <a href="/updateprofile"><img class="avatar-img rounded-circle border border-white border-3 shadow" src="../../assets/images/instructor/<?=$profileImg?>" alt="studentProfile"></a>
                                     </div>
                                 </div>
                                 <!-- Profile info -->
@@ -89,6 +89,7 @@
 
                                             <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?= $user['user_id'] ?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
                                             <a class="list-group-item " href="/applyTrainer"><i class="fa fa-angle-double-right me-2"></i>Apply for trainer</a>
+                                            <a class="list-group-item " href="/studentReview"><i class="fab fa-facebook-messenger me-2" ></i>Message</a>
                                             <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Log
                                                 Out</a>
                                         </div>
@@ -102,7 +103,6 @@
                     require "models/payment.model.php";
                     $id=$_SESSION['user']['user_id'];
                     $totalToday=totalTodayStudent($id);
-                    $totalThisMonth=totalthisMonthStudent($id);
                     $totalAll=totalAllpaidStudent($id);
                     $totalCourse=totalCourse($id);
                      ?>
@@ -133,11 +133,7 @@
                                             <span class="badge bg-dark text-white">Total Today</span>
                                             <h4 class="text-primary my-2"><?= $totalToday['total_paid_today'] !== null ? $totalToday['total_paid_today'] : '0' ?>$</h4>
                                         </div>
-                                        <!-- Content -->
-                                        <div class="col-sm-6 col-md-4">
-                                            <span class="badge bg-dark text-white">Total This month</span>
-                                            <h4 class="text-primary my-2"><?= $totalThisMonth['total_paid_month'] !== null ? $totalThisMonth['total_paid_month'] : '0' ?>$</h4>
-                                        </div>
+                                        
                                         <div class="col-sm-6 col-md-4">
                                             <span class="badge bg-dark text-white">Total All</span>
                                             <h4 class="text-primary my-2"><?= $totalAll['total_paid'] !== null ? $totalAll['total_paid'] : '0' ?>$</h4>

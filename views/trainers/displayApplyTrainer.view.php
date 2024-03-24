@@ -28,6 +28,8 @@
               <td>
                 <a class="btn bg-gradient-danger btn-success" href="controllers/trainers/appovedTrainer.controller.php?id=<?=$applyTrainer['apply_id']?>" >
                   <i class="fa fa-book" style="color:white;"></i> Approved</a>
+                <a class="btn bg-gradient-danger btn-warning" href="controllers/trainers/notApporve.controller.php?id=<?=$applyTrainer['apply_id']?>" >
+                  <i class="fa fa-book" style="color:white;"></i>Not Approved</a>
                 <a class="btn bg-gradient-danger btn-danger" href="controllers/trainers/deleteApply_trainer.php?id=<?=$applyTrainer['apply_id']?> "onclick="return functionDelete()">
                   <i class="fa fa-trash" style="color:white;"></i></a>
             </tr>
