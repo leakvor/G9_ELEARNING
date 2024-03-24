@@ -10,4 +10,5 @@ if(isset($_GET['id'])){
     $message=message($apply['email'],$apply['password'],$apply['user_id']);
     $delApply = deleteApply($id);
     header("Location: /applytoTrainer");
+    
 }
