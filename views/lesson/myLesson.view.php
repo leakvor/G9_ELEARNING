@@ -51,8 +51,8 @@ Page Banner START -->
 															<p><?= $comment['title'] ?></p>
 															<div class="d-flex justify-content-between">
 																<div class="d-flex flex-row align-items-center">
-																	<img src="assets/images/profile/<?= $comment["img"] ?>" width="35" height="40">
-																	<p class="small" style="margin-left:10px"><?= $comment['username'] ?></p>
+																	<img src="assets/images/instructor/<?= $comment["img"] ?>" width="25" height="25">
+																	<p class="small mb-0 ms-2"><?= $comment['username'] ?></p>
 																</div>
 																<div claass="d-flex flex-row align-items-center">
 																	<p class="small mb-0"><?= $comment['date'] ?></p>

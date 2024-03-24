@@ -41,13 +41,13 @@
         $activeStudent = '';
         $activeAdmin = '';
         $activeTrainer = '';
-    }else if ($URL == '/payadmin') {
+    } else if ($URL == '/payadmin') {
         $activepay = 'active';
         $activeCategiry = '';
         $activeStudent = '';
         $activeAdmin = '';
         $activeTrainer = '';
-    }else if ($URL == '/admin') {
+    } else if ($URL == '/admin') {
         $activedashboard = 'active';
         $activeCategiry = '';
         $activeStudent = '';
@@ -55,9 +55,9 @@
         $activeTrainer = '';
     }
 
-    $notifications= notifi();
+    $notifications = notifi();
 
-?>
+    ?>
 
 
 
@@ -92,15 +92,15 @@
                     $studentPath = "/admin";
                     $categories = "/admin";
                     $admincourse = "/admin";
-                
                 }
                 ?>
              <a href="<?php echo $dasboad ?>" class="nav-item nav-link <?= $activedashboard ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
              <a href="<?php echo $teacherPath ?>" class="nav-item nav-link <?= $activeTrainer ?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
              <a href="<?php echo $studentPath ?>" class="nav-item nav-link <?= $activeStudent ?>"><i class="fa fa-user me-2"></i>Students</a>
              <a href="<?php echo $categories ?>" class="nav-item nav-link <?= $activeCategiry ?>"><i class="far fa-folder-open me-2"></i>Categories</a>
-             <a href="<?php echo  $adminpayment ?>" class="nav-item nav-link <?=$activepay?>"><i class="far fa-folder-open me-2"></i>Payment</a>
+             <a href="<?php echo  $adminpayment ?>" class="nav-item nav-link <?= $activepay ?>"><i class="far fa-folder-open me-2"></i>Payment</a>
              <a href="<?php echo $admincourse ?>" class="nav-item nav-link <?= $activeCourse ?>"><i class="fas fa-book me-2"></i>Course</a>
+             <a href="/applytoTrainer" class="nav-item nav-link "><i class="fas fa-book me-2"></i>Apply to trainer</a>
              <div class="nav-item dropdown">
                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                  <div class="dropdown-menu bg-transparent border-0">
@@ -167,31 +167,36 @@
                      <a href="#" class="dropdown-item text-center">See all message</a>
                  </div>
              </div>
-<!-- ============================================= -->
-<div class="nav-item dropdown">
-    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-        <i class="fa fa-bell me-lg-2"></i>
-        <span class="d-none d-lg-inline-flex">Notifications</span>
-    </a>
-    <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0" id="notification-dropdown">
-        <?php foreach ($notifications as $notification): ?>
-            <a href="#" class="dropdown-item notification-item">
-                <h6 class="fw-normal mb-0"><?= $notification['student_username'] ?></h6>
-                <small>enrolled in <?= $notification['course_title']?></small>
-                <span>
-                    <p><?= $notification['teacher_name'] ?> teaching</p>
-                </span>
-            </a>
-        <?php endforeach; ?>
-            <a href="#" class="dropdown-item text-center show-all-notifications">See all notifications</a>
-    </div>
-</div>
+             <!-- ============================================= -->
+             <div class="nav-item dropdown d-flex flex-row-reverse mt-4 p-2 ">
+                 <a href="#" class="nav-link dropdown-toggle " id="notificationDropdown" data-bs-toggle="dropdown">
+                     <span class="d-none d-lg-inline-flex ">Notifications</span>
+                     <a href="controllers/payadmin/updateStatus.controller.php"><i class="fa fa-bell me-lg-2 " id="notificationIcon">
+                             <?= count($notifications) ?>
+                         </i></a>
+
+                 </a>
+                 <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom mt-0" id="notification-dropdown">
+                     <?php foreach ($notifications as $notification) : ?>
+                         <a href="#" class="dropdown-item notification-item">
+                             <h6 class="fw-normal mb-0"><?= $notification['student_username'] ?></h6>
+                             <small>enrolled in <?= $notification['course_title'] ?></small>
+                             <span>
+                                 <p><?= $notification['teacher_name'] ?> teaching</p>
+                             </span>
+                         </a>
+                     <?php endforeach; ?>
+                     <a href="#" class="dropdown-item text-center show-all-notifications">See all notifications</a>
+                 </div>
+             </div>
 
 
 
 
 
-<!-- =========================================== -->
+
+
+             <!-- =========================================== -->
 
 
              <div class="nav-item dropdown">

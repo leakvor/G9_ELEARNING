@@ -4,7 +4,7 @@ if (!function_exists('paymentCourse')) {
     function paymentCourse($user_id, $course_id, $paid, $date, $numberCard, $cvv, $nameCard)
     {
         global $connection;
-        $statment = $connection->prepare("INSERT INTO payment(user_id,course_id,paid,date,numberofCard,cvv,nameonCard) VALUES(:user_id,:course_id,:paid, :date,:numberofCard,:cvv,:nameonCard)");
+        $statment = $connection->prepare("INSERT INTO payment(user_id,course_id,paid,date,numberofCard,cvv,nameonCard,status) VALUES(:user_id,:course_id,:paid, :date,:numberofCard,:cvv,:nameonCard,:status)");
         $statment->execute([
             ':user_id' => $user_id,
             ':course_id' => $course_id,
@@ -12,7 +12,8 @@ if (!function_exists('paymentCourse')) {
             ':paid' => $paid,
             ':numberofCard' => $numberCard,
             ':cvv' => $cvv,
-            ':nameonCard' => $nameCard
+            ':nameonCard' => $nameCard,
+            ':status'=>true,
         ]);
         return $statment->rowCount() > 0;
     }
@@ -166,28 +167,26 @@ function getPayment(): array
 
 // ======get total paid for each student======
 if (!function_exists('totalTodayStudent')) {
-function totalTodayStudent($id)
-{
-    global $connection;
-    $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_today, CURDATE() AS date
-    FROM payment
-    WHERE user_id =:id AND DATE(date) = CURDATE()
-    GROUP BY user_id");
-    $statement->execute([':id' => $id]);
-    return $statement->fetch();  
-}}
-// =====Total paid this months for student=====
-if (!function_exists('totalthisMonthStudent')) {
-    function totalthisMonthStudent($id)
+    function totalTodayStudent($id)
     {
         global $connection;
-        $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_month, DATE_FORMAT(date, '%Y-%m') AS month_year
+        $statement = $connection->prepare("SELECT user_id, SUM(paid) AS total_paid_today, CURDATE() AS date
         FROM payment
-        WHERE DATE_FORMAT(date, '%Y-%m') = DATE_FORMAT(CURDATE(), '%Y-%m') AND user_id =:id
-        GROUP BY user_id, DATE_FORMAT(date, '%Y-%m');");
+        WHERE user_id = :id AND DATE(date) = CURDATE()
+        GROUP BY user_id");
         $statement->execute([':id' => $id]);
-        return $statement->fetch();  
-    }}
+        
+        // Check if there are any results
+        $result = $statement->fetch();
+        if (!$result) {
+            return ['user_id' => $id, 'total_paid_today' => 0, 'date' => date('Y-m-d')];
+        }
+
+        return $result;
+    }
+}
+
+
 // =============student totalAll===========
     if (!function_exists('totalAllpaidStudent')) {
         function totalAllpaidStudent($id)
