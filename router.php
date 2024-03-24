@@ -28,6 +28,7 @@ if (isset($_SESSION['user']) || isset($_SESSION['teacher'])) {
         '/trainerList' => 'controllers/trainers/trainer.controller.php',
          '/trainerCourse'=>"controllers/trainers/trainerCourse.controller.php",
          '/commentcourse'=>'controllers/comment/displaycomment.controller.php',
+         '/applyTrainer'=>'controllers/trainers/applyTrainer.controller.php',
     ];
 } else {
     $routes = [
