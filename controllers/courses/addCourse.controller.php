@@ -31,7 +31,6 @@ if(!empty($_POST['title']) && !empty($_POST['teacher']) && !empty($_POST['catego
                     // if($isCreate){
                         // $courses = getCourse();
                         // require "views/courses/adminCourse.view.php";
-                    //     // header("Location: /adminCourse");
                     // }
                     }else{
                     

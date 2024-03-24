@@ -33,7 +33,7 @@
             ];
         }
     } else {
-        echo "No data found.";
+        // echo "No data found.";
     }
 
     // Get data for the new chart
