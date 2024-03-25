@@ -53,7 +53,7 @@
         $activeStudent = '';
         $activeAdmin = '';
         $activeTrainer = '';
-    }else if ($URL == '/applytoTrainer') {
+    } else if ($URL == '/applytoTrainer') {
         $activeapply = 'active';
         $activeCategiry = '';
         $activeStudent = '';
@@ -105,9 +105,9 @@
              <a href="<?php echo $teacherPath ?>" class="nav-item nav-link <?= $activeTrainer ?>"><i class="fas fa-chalkboard-teacher me-2"></i>Teachers</a>
              <a href="<?php echo $studentPath ?>" class="nav-item nav-link <?= $activeStudent ?>"><i class="fa fa-user me-2"></i>Students</a>
              <a href="<?php echo $categories ?>" class="nav-item nav-link <?= $activeCategiry ?>"><i class="far fa-folder-open me-2"></i>Categories</a>
-             <a href="<?php echo  $adminpayment ?>" class="nav-item nav-link <?=$activepay?>"><i class="far fa-money-bill-alt me-2"></i>Payment</a>
+             <a href="<?php echo  $adminpayment ?>" class="nav-item nav-link <?= $activepay ?>"><i class="far fa-money-bill-alt me-2"></i>Payment</a>
              <a href="<?php echo $admincourse ?>" class="nav-item nav-link <?= $activeCourse ?>"><i class="fas fa-book me-2"></i>Course</a>
-             <a href="<?php echo $applyTrainer ?>" class="nav-item nav-link <?=$activeapply?>"><i class="fas fa-book me-2"></i>Apply to trainer</a>
+             <a href="<?php echo $applyTrainer ?>" class="nav-item nav-link <?= $activeapply ?>"><i class="fas fa-book me-2"></i>Apply to trainer</a>
          </div>
  </div>
  </nav>
@@ -168,13 +168,10 @@
                  </div>
              </div>
              <!-- ============================================= -->
-             <div class="nav-item dropdown d-flex flex-row-reverse mt-4 p-2 ">
+             <div class="nav-item dropdown  ">
                  <a href="#" class="nav-link dropdown-toggle " id="notificationDropdown" data-bs-toggle="dropdown">
+                     <i class="fa fa-bell me-lg-2 " id="notificationIcon"></i>
                      <span class="d-none d-lg-inline-flex ">Notifications</span>
-                     <a href="controllers/payadmin/updateStatus.controller.php"><i class="fa fa-bell me-lg-2 " id="notificationIcon">
-                             <?= count($notifications) ?>
-                         </i></a>
-
                  </a>
                  <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom mt-0" id="notification-dropdown">
                      <?php foreach ($notifications as $notification) : ?>

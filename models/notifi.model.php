@@ -10,7 +10,7 @@ function notifi(): array {
     JOIN course c ON sc.course_id = c.course_id
     JOIN users u2 ON c.user_id = u2.user_id
     JOIN payment p ON p.course_id = c.course_id 
-    WHERE u2.role = 'teacher' AND p.status = 'true'
+    WHERE u2.role = 'teacher'
     ";
     
     // Prepare the statement
