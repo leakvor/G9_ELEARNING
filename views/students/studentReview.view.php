@@ -64,19 +64,6 @@
                                             <!-- Dashboard menu -->
                                             <div class="list-group list-group-dark list-group-borderless">
                                                 <a class="list-group-item " href="/studentDashboard"><i class="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard</a>
-                                                <form action="controllers/profiles/trainer.profile.php" method="post" enctype="multipart/form-data">
-                                                    <ul class="navbar-nav navbar-nav-scroll d-none d-xl-block">
-                                                        <li class="nav-item dropdown">
-                                                            <button class="list-group-item d-lg-inline-block" href="instructor-edit-profile.html"><i class="bi bi-pencil-square fa-fw me-2"></i>Edit Profile</button>
-                                                            <ul class="dropdown-menu dropdown-menu-end min-w-auto">
-                                                                <input type="hidden" value="<?php echo $trainer['email'] ?>" name="email">
-                                                                <li><input type="file" name="img" class="form-control custom-file-input dropdown-item" id="imageUpload"></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </form>
-
-                                                <a class="list-group-item " href="controllers/students/deleteprofile.controller.php?id=<?= $user['user_id'] ?>"><i class="bi bi-trash fa-fw me-2"></i>Delete Profile</a>
                                                 <a class="list-group-item " href="/applyTrainer"><i class="fa fa-angle-double-right me-2"></i>Apply for trainer</a>
                                                 <a class="list-group-item " href="#"><i class="fab fa-facebook-messenger me-2"></i>Message</a>
                                                 <a onclick="showAlert()" class="list-group-item text-danger bg-danger-soft-hover" href="controllers/logout/logout.controller.php"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Log
